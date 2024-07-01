@@ -18,7 +18,7 @@ ob_start();
 
 <!-- Start Company Logo
 ================================================== -->
-<div class="col-md-8 col-sm-8">
+<div class="col-md-8 col-sm-8 col-9">
     <?php
     if ('logo-detail' === get_option('job_board_listing') || 'without-detail' === get_option('job_board_listing')) {
         ?>

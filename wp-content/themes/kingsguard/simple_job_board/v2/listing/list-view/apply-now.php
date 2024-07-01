@@ -19,7 +19,7 @@ global $post;
 
 <!-- Start apply now button
 ================================================== -->
-<div class="col-md-4 col-sm-4 col-xs-12 sjb-apply-now-btn">
+<div class="col-md-4 col-sm-4 col-3 sjb-apply-now-btn">
 	<?php echo sjb_get_the_apply_now_btn(); ?>
 </div>
 <!-- ==================================================
