@@ -403,6 +403,9 @@ p {
 .mb100 {
     margin-bottom: 80px;
 }
+.pb100 {
+    padding-bottom: 80px;
+}
 .our_services_sec .our_services_cards .service_card {
     padding: 30px 20px;
 }
@@ -618,6 +621,9 @@ h5 {
 }
 .mb100 {
     margin-bottom: 60px;
+}
+.pb100 {
+    padding-bottom: 60px;
 }
 .main_nav_top.desktop_menu {
     display: none !important;
@@ -937,6 +943,9 @@ header.header.nav-up {
 }
 .mb100 {
     margin-bottom: 40px;
+}
+.pb100 {
+    padding-bottom: 40px;
 }
 .selectField {
     background-size: 12px 5px;
@@ -1470,6 +1479,9 @@ input:-moz-placeholder {
 }
 .sjb-container .sjb-page .list-view .list-data .v2 .job-info h4 a {
     font-size: 18px;
+}
+.noLicense_main {
+    padding: 30px;
 }
 }
 @media only screen and (max-width: 600px) {

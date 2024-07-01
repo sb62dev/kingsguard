@@ -64,7 +64,7 @@ p {
 button:focus {
     outline: none;
 }
-.btn-style, .wpcf7-submit[type=submit] {
+.btn-style, .wpcf7-submit[type=submit], .sjb-page button.btn-primary {
     font-family: 'Gilroy-SemiBold';
     display: inline-block;
     font-size: 14px !important;
@@ -83,7 +83,7 @@ button:focus {
     text-transform: capitalize !important;
     position: relative !important;
 }
-.btn-style:before, .wpcf7-submit[type=submit]:before {
+.btn-style:before, .wpcf7-submit[type=submit]:before, .sjb-page button.btn-primary:before {
     content: "";
     position: absolute;
     top: 0;
@@ -105,7 +105,9 @@ button:focus {
 .btn-style:hover::before, 
 .wpcf7-submit[type=submit]:hover:before, 
 .btn-style:focus::before, 
-.wpcf7-submit[type=submit]:focus:before {
+.wpcf7-submit[type=submit]:focus:before, 
+.sjb-page button.btn-primary:hover::before,
+.sjb-page button.btn-primary:focus::before {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
@@ -113,7 +115,9 @@ button:focus {
 .btn-style:hover, 
 .wpcf7-submit[type=submit]:hover, 
 .btn-style:focus, 
-.wpcf7-submit[type=submit]:focus {
+.wpcf7-submit[type=submit]:focus,
+.sjb-page button.btn-primary:hover,
+.sjb-page button.btn-primary:focus {
     color: #ffffff !important;
     text-decoration: none;
 }
@@ -140,17 +144,21 @@ button:focus {
 .whiteOutlinedBtn:focus {
     color: #000000 !important;
 }
-.gradientBtn {
+.gradientBtn,
+.sjb-page button.btn-primary {
     background-color: #0098FF !important;
     background: linear-gradient(to right, #0098FF, #1881ca);
     color: #ffffff !important;
 }
-.gradientBtn:before {
+.gradientBtn:before,
+.sjb-page button.btn-primary:before {
     background-color: #ffffff !important;
     background: linear-gradient(to right, #ffffff, #ffffff);
 }
 .gradientBtn:hover,
-.gradientBtn:focus {
+.gradientBtn:focus,
+.sjb-page button.btn-primary:hover,
+.sjb-page button.btn-primary:focus {
     color: #0098FF !important;
 }
 .slick-slider {
@@ -696,12 +704,14 @@ header.Sticky-fixed .logo .logotxt {
     height: auto;
     min-height: 52px !important;
 }
-textarea.wpforms-field-medium {
-    min-height: 100px;
+textarea.wpforms-field-medium,
+textarea {
+    min-height: 100px !important;
+    height: 100px !important;
 }
 .selectField,
 select.wpforms-field-medium,
-.form-control {
+select.form-control {
     -moz-appearance:none; 
     -webkit-appearance:none;
     appearance:none;
@@ -779,6 +789,9 @@ input:-moz-placeholder {
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
+.ftrMainMenu .menu-footer-menu-container ul li.current_page_item a {
+    color: #0098FF;
+}
 .ftrMainMenu .menu-footer-menu-container ul li a:hover,
 .ftrMainMenu .menu-footer-menu-container ul li a:focus {
     color: #0098FF;
@@ -836,6 +849,9 @@ input:-moz-placeholder {
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
+}
+.main_footer .ftrMenu2 ul li.current_page_item  a {
+    color: #0098FF;
 }
 .main_footer .ftrMenu2 ul li a:hover,
 .main_footer .ftrMenu2 ul li a:focus {
@@ -1523,7 +1539,7 @@ h3 .job-title {
     color: #1D1D1F;
 }
 .getstarted_input_main button.btn-style.gradientBtn {
-    position: absolute;
+    position: absolute !important;
     top: 6px;
     right: 6px;
     margin-top: 0;
@@ -2313,6 +2329,8 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .sjb-container .sjb-page .list-view .list-data .v2 .job-info h4 a {
     font-size: 20px;
     font-family: 'Gilroy-SemiBold';
+    padding-right: 10px;
+    display: block;
 }
 .sjb-container .sjb-page .list-view .list-data .v2 .row {
     align-items: center;
@@ -2383,4 +2401,54 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .sjb-container .sjb-page .sjb-detail .list-data .v2 .sjb-job-type-location-date {
     border-top: 0;
     padding: 0;
+}
+.noLicense_main {
+    position: relative;
+    padding: 50px;
+    border: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(to right, #0e5e95, #12517e, #14496e, #12517e, #0e5e95);
+}
+.noLicense {
+    position: relative;
+}
+.noLicense::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -180px;
+    background-image: url('../images/ellipse-left.svg');
+    width: 278px;
+    height: 556px;
+}
+.careersPage {
+    position: relative;
+}
+.careersPage::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url('../images/ellipse-right.svg');
+    width: 230px;
+    height: 538px;
+}
+.job-listings {
+    position: relative;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobpost-form .file {
+    background: transparent;
+    border: 2px solid #8D8D99;
+    border-radius: 10px;
+    box-shadow: none;
+    padding: 12px 20px;
+    height: 52px;
+    font-family: 'Gilroy-Light';
+    font-size: 18px;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobpost-form .file div {
+    right: 10px;
+    top: 10px;
+    border-radius: 6px;
 }
