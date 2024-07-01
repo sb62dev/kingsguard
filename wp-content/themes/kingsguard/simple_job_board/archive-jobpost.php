@@ -196,6 +196,4 @@ $html_archive = ob_get_clean();
  * 
  * @param   html    $html_archive   Jobs Archive Page HTML.                   
  */
-echo apply_filters('sjb_archive_template', $html_archive);
-
-get_footer();
+echo apply_filters('sjb_archive_template', $html_archive); 

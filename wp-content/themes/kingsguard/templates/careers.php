@@ -6,18 +6,15 @@ get_header();
 ?>
 
 <div class="pageBody">
-    <section class="careersPage pb100">
-        <div class="sm_container">
-            <!-- Custom Job Listings -->
-            <div class="job-listings">
-                <?php
-                get_template_part('simple_job_board/archive-jobpost'); 
-                ?>
-            </div>
-            <!-- End of Custom Job Listings -->
 
-        </div>
+    <section class="careersPage pb100"> 
+        <div class="job-listings">
+            <?php get_template_part('simple_job_board/archive-jobpost'); ?>   
+        </div>  
     </section>
-</div>
+
+    <?php get_template_part('template-parts/trainingsection'); ?>   
+
+</div> 
 
 <?php get_footer(); ?>

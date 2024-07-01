@@ -28,7 +28,7 @@ do_action('sjb_job_listing_list_view_before');
 <!-- Start Jobs List View 
 ================================================== -->
 
-<div class="col-md-4 col-sm-12">
+<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
     <div class="list-data">
         <div class="v2 <?php echo apply_filters('sjb-listing-classes', esc_attr( '' )); ?>">
 
