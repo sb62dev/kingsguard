@@ -1,0 +1,452 @@
+body {
+    background-color: #1E1E20;
+    font-family: 'Gilroy-Medium';
+    color: #ffffff;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff !important;
+}
+a,
+.wp-core-ui .button-link {
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+a:hover,
+a:focus,
+.wp-core-ui .button-link:hover,
+.wp-core-ui .button-link:focus {
+    color: #ffffff;
+    text-decoration: underline;
+    box-shadow: none;
+}
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    background-color: #1b2a36;
+}
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+    background-color: #18354a;
+    border-left: 4px solid #0098ff;
+}
+#adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top>a:focus {
+    color: #79c9ff;
+}
+.comment-ays, .feature-filter, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat, table.wp-list-table.widefat.striped.wpforms-table-list.table-view-list.has-few-columns {
+    border: 1px solid #414148;
+    background-color: #1b2a36;
+}
+.wpforms_page_wpforms-entries table.widefat thead {
+    background-color: #1b2a36;
+}
+.widefat thead td, .widefat thead th {
+    border-bottom: 1px solid #414148;
+}
+table.widefat thead {
+    background-color: #1b2a36;
+}
+.alternate, .striped>tbody>:nth-child(odd), ul.striped>:nth-child(odd) {
+    background-color: #21313f;
+}
+.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active, .button, .button-primary, .button-secondary,
+.wp-core-ui .button-primary-disabled, .wp-core-ui .button-primary.disabled, .wp-core-ui .button-primary:disabled, .wp-core-ui .button-primary[disabled], .bulk-select-button,
+.wpforms-admin-popup-btn {
+    background-color: #0098FF !important;
+    color: #ffffff !important;
+    font-family: 'Gilroy-SemiBold';
+    border-radius: 30px !important;
+    border: 0 !important;
+    font-size: 13px;
+}
+.button-secondary {
+    background-color: #ffffff !important;
+    color: #1e1e20 !important;
+}
+.plugins tr, .plugins .active td, .plugins .active th{
+    background: #4c4c4c;
+}
+.notice-warning.notice-alt, .notice, div.error, div.updated{
+    background: #000 !important;
+}
+.plugin-install #the-list td, .plugins .active td, .plugins .active th, .plugins .inactive td, .plugins .inactive th, .upgrade .plugins td, .upgrade .plugins th {
+    box-shadow: inset 0 -1px 0 rgb(255 255 255 / 10%);
+}
+.plugins, .plugins td, .plugins th {
+    color: #ffffff;
+}
+.widefat ol, .widefat p, .widefat ul {
+    color: #ffffff;
+}
+#screen-meta,
+.postbox,
+#wpforms-dash-widget-lite-connect-block {
+    background: #1b2a36;
+    border: 1px solid #414148;
+}
+.contextual-help-tabs .active a {
+    border-color: #414148;
+    color: #ffffff;
+}
+.contextual-help-tabs .active {
+    border-left: 2px solid #0098FF;
+    background: #1b2a36;
+}
+#contextual-help-back {
+    background: #1e1e20;
+}
+.contextual-help-tabs a:hover {
+    color: #ffffff;
+}
+#dashboard-widgets .postbox-container .empty-container:after {
+    color: #ffffff;
+}
+.accordion-section-title:after, .handlediv, .item-edit, .postbox .handlediv.button-link, .toggle-indicator {
+    color: #ffffff;
+}
+.wpforms-toggle-control .wpforms-toggle-control-icon {
+    background-color: #0890ec;
+}
+.wpforms-panels-toggle button.active, .wpforms-panels-toggle button.active:hover,
+.wpforms-add-fields-group button {
+    background-color: #0890ec !important;
+}
+.wpforms-field-option-group.active .wpforms-field-option-group-toggle {
+    border-bottom: 3px solid #0890ec !important;
+}
+.wpforms-toggle-control {
+    color: #ffffff;
+}
+.wpforms-dash-widget .wpforms-dash-widget-block.wpforms-dash-widget-block-title {
+    background-color: #1b2a36 !important;
+}
+.wpforms-dash-widget .wpforms-dash-widget-forms-list-block table td,
+.wpforms-panel-fields .wpforms-field.active {
+    background-color: #1b2a36 !important;
+    border-top: 1px solid #414148 !important;
+}
+.wpforms-dash-widget .wpforms-dash-widget-welcome-block {
+    background-color: #1b2a36 !important;
+    color: #ffffff !important;
+    border: 1px solid #414148;
+}
+.wpforms-dash-widget .wpforms-dash-widget-welcome-block strong, .accordion-section-title:hover:after, .handlediv:focus, .handlediv:hover, .item-edit:focus, .item-edit:hover, .postbox .handlediv.button-link:focus, .postbox .handlediv.button-link:hover, .sidebar-name:hover .toggle-indicator, .widget-action:focus, .widget-top:hover .widget-action,
+#wpforms-panel-fields .wpforms-tabs a {
+    color: #ffffff !important;
+}
+.wpforms-insert-form-button svg path  {
+    fill: #ffffff !important;
+}
+.postbox-header {
+    border-bottom: 1px solid #414148;
+}
+.wpforms-dash-widget .wpforms-dash-widget-recommended-plugin-block {
+    border-top: 1px solid #414148 !important;
+    color: #ffffff !important;
+}
+.wpforms-dash-widget .wpforms-dash-widget-recommended-plugin-block strong, .item-type, .is-submenu, .filter-links .current {
+    color: #ffffff !important;
+}
+.filter-links li>a {
+    color: #acafb4;
+}
+#sjb_dashboard_widget tr:first-child {
+    background: #1b2a36 !important;
+}
+.wp-core-ui select {
+    background-color: transparent !important;
+    background-image: url('../assets/images/down-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center right 12px;
+    background-size: 9px auto;
+    color: #ffffff !important;
+    font-family: 'Gilroy-SemiBold';
+    border-radius: 30px !important;
+    border-color: #414148 !important;
+    font-size: 13px;
+}
+.wp-core-ui select option {
+    background-color: #1e1e20 !important;
+    color: #ffffff !important;
+}
+.widefat tfoot tr td, .widefat tfoot tr th, .widefat thead tr td, .widefat thead tr th,
+.widefat td, .widefat th, .ac_match, .subsubsub a.current, .subsubsub a .count, .subsubsub a.current .count, th .comment-grey-bubble:before, .sorting-indicator:before  {
+    color: #ffffff;
+}
+.postbox .handle-order-higher, .postbox .handle-order-lower, #sjb_dashboard_widget .sjb-status-list li a strong, #sjb_dashboard_widget .sjb-status-list li a, .contact-form-editor-box-mail span.mailtag, .card .infobox, .wpforms-admin-wrap .tablenav, .howto, .sjb-wizard #sjb-wiz-id #sjb-inactive li strong, .sjb-wizard #sjb-wiz-id #sjb-inactive li span,
+.wpforms-add-fields-group a,
+.wpforms-field-option-field-title,
+#wpforms-builder,
+input[type=text], input[type=number], input[type=email], input[type=url], input[type=password], input[type=search], input[type=tel], textarea, select {
+    color: #ffffff !important;
+}
+#major-publishing-actions, textarea.wp-editor-area, .wp-editor-expand #post-status-info, .wp-editor-expand #wp-content-editor-tools, .attachments-browser .media-toolbar, 
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .notice, .manage-menus {
+    border-color: #414148;
+    background: #1b2a36;
+    color: #ffffff;
+}
+.quicktags-toolbar, .plugin-card, .plugin-card-bottom {
+    border-color: #414148 !important;
+    background: #1b2a36 !important;
+    color: #ffffff;
+}
+.wp-editor-container, #wpforms-overview .wp-list-table, #menu-management .menu-edit, #menu-settings-column .accordion-container, .comment-ays, .feature-filter, .manage-menus, .menu-item-handle, .popular-tags, .stuffbox, .widget-inside, .widget-top, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat, .accordion-section, .accordion-section-title, .customize-pane-child .accordion-section-title, #nav-menu-footer, #nav-menu-header, .nav-menus-php #post-body {
+    border-color: #414148 !important;
+}
+.acf-fields .acf-tab-wrap.-left .acf-tab-group li a {
+    border: 1px solid #414148;
+    color: #ffffff;
+    background: #1e1e20;
+}
+.acf-fields .acf-tab-wrap.-left .acf-tab-group li.active a, .menu-item-bar .menu-item-handle {
+    border-color: #414148;
+    color: #fff;
+    background: #1b2a36;
+}
+.acf-postbox .acf-fields.-sidebar:before {
+    border-right: #414148 solid 1px;
+    background: #1e1e20;
+}
+#adminmenu a {
+    color: #babfc2;
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea,
+.media-frame input[type=color], .media-frame input[type=date], .media-frame input[type=datetime-local], .media-frame input[type=datetime], .media-frame input[type=email], .media-frame input[type=month], .media-frame input[type=number], .media-frame input[type=password], .media-frame input[type=search], .media-frame input[type=tel], .media-frame input[type=text], .media-frame input[type=time], .media-frame input[type=url], .media-frame input[type=week], .media-frame select, .media-frame textarea {
+    box-shadow: 0 0 0 transparent;
+    border-radius: 4px;
+    border: 1px solid #505059;
+    background-color: transparent;
+    color: #ffffff;
+}
+.widefat tbody td, .widefat tbody th,
+.widefat tfoot td, .widefat tfoot th {
+    border-top: 1px solid #414148;
+    border-bottom: none;
+}
+#titlediv #title {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #414148;
+}
+.wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs {
+    border: 1px solid #414148;
+    border-bottom-color: #1d2327;
+    background-color: #1d2327;
+    color: #ffffff;
+}
+#post-body ul.add-menu-item-tabs li.tabs a, #post-body ul.category-tabs li.tabs a, #side-sortables .add-menu-item-tabs .tabs a, #side-sortables .category-tabs .tabs a, .wp-tab-bar .wp-tab-active a {
+    color: #ffffff;
+}
+.html-active .switch-html, .tmce-active .switch-tmce, .acf-icon, #wpforms-overview .wp-list-table.striped tbody>:nth-child(even), table.wpforms-table-list.striped>tbody>:nth-child(odd), table.wpforms-table-list tfoot th, table.wpforms-table-list thead th, .wpforms-panel-full-content .wpforms-panel-content, .wpforms-panel-sidebar-content .wpforms-panel-content, .wpforms-panels-toggle, .wpforms-admin-popup-content input[type=text].wpforms-admin-popup-shortcode {
+    background: #1b2a36 !important;
+    color: #ffffff !important;
+    border-color: #414148 !important;
+}
+.wp-switch-editor,.wpforms-admin-wrap .page-title,
+#wpforms-entries-single #wpforms-entry-details .inside #major-publishing-actions, #wpforms-entries-single #wpforms-entry-payment .inside #major-publishing-actions, #wpforms-entries-single #wpforms-entry-actions .inside #major-publishing-actions,
+.wpforms-admin-page .postbox {
+    background: #1b2a36 !important;
+    color: #ffffff !important;
+    border: 1px solid #414148 !important;
+}
+div.mce-panel, .js .control-section .accordion-section-title:focus, .js .control-section .accordion-section-title:hover, .js .control-section.open .accordion-section-title, .js .control-section:hover .accordion-section-title, .accordion-section-content, .control-section .accordion-section-title, .customize-pane-child .accordion-section-title, #nav-menu-footer, #nav-menu-header, .nav-menus-php #post-body, .sjb-wizard #sjb-wiz-id #sjb-inactive li {
+    background: #1e1e20;
+}
+.mce-container, .mce-container *, .mce-widget, .mce-widget *, .mce-reset {
+    background: #1e1e20 !important;
+    color: #ffffff !important;
+}
+.view-switch a:before {
+    color: #ffffff;
+}
+.view-switch a.current:before, .wpforms-admin-page a {
+    color: #0098ff;
+}
+.wp-filter {
+    border: 1px solid #414148;
+    background: #1b2a36;
+    color: #ffffff;
+}
+.tablenav-pages-navspan.button.disabled {
+    color: #ffffff !important;
+    border-color: #414148 !important;
+    background: #1b2a36 !important;
+}
+.acf-fields>.acf-tab-wrap .acf-tab-group li a:hover {
+    background: #1e1e20 !important;
+    color: #0098ff !important;
+}
+.acf-fields>.acf-field {
+    border-top: #414148 solid 1px !important;
+}
+#post-body #visibility:before, #post-body .misc-pub-comment-status:before, #post-body .misc-pub-post-status:before, #post-body .misc-pub-response-to:before, #post-body .misc-pub-revisions:before, #post-body .misc-pub-uploadedby:before, #post-body .misc-pub-uploadedto:before, .curtime #timestamp:before {
+    color: #ffffff;
+}
+.acf-repeater .acf-row-handle.order,
+.acf-fields.-left>.acf-field:before,
+.acf-repeater .acf-row-handle.remove,
+.acf-table>tbody>tr>th, .acf-table>tbody>tr>td, .acf-table>thead>tr>th, .acf-table>thead>tr>td,
+.acf-box,
+#wpforms-panel-fields .wpforms-tabs .active {
+    background: #1b2a36 !important;
+    border-color: #414148 !important;
+    color: #fff !important;
+}
+.acf-table, #contact-form-editor-tabs, .menu-settings,
+#wpforms-panel-fields .wpforms-tabs li:last-of-type {
+    border-color: #414148 !important;
+}
+.acf-icon.small, .acf-icon.-small {
+    line-height: 18px;
+}
+.acf-link .link-wrap, 
+.acf-field-object, 
+.acf-thead,
+#acf-field-group-fields .acf-field-list-wrap,
+.acf-field-object+.acf-field-object-tab:before, .acf-field-object+.acf-field-object-accordion:before,
+.acf-tfoot,
+#acf-field-group-fields .acf-field-list .no-fields-message,
+.acf-meta-box-wrap .acf-fields,
+#wpforms-panel-fields .wpforms-tabs,
+#wpforms-builder .wpforms-toolbar,
+#wpforms-builder .wpforms-toolbar #wpforms-exit,
+.wpforms-admin-popup {
+    border: #414148 solid 1px !important;
+    background: #1e1e20 !important;
+    color: #ffffff !important;
+}
+.form-table th, .form-wrap label {
+    color: #ffffff;
+}
+#contact-form-editor-tabs li a:hover {
+    color: #0098ff;
+}
+.nav-tab-wrapper, .wrap h2.nav-tab-wrapper, h1.nav-tab-wrapper {
+    border-bottom: 1px solid #414148;
+}
+.nav-tab.nav-tab-active, .nav-tab.nav-tab-active:focus, .nav-tab.nav-tab-active:focus:active, .nav-tab.nav-tab-active:hover, .media-router .active, .media-router .media-menu-item.active, #contact-form-editor-tabs li.ui-tabs-active a, #contact-form-editor .contact-form-editor-panel, #contact-form-editor-tabs li.ui-tabs-active, #contact-form-editor-tabs li.ui-tabs-active:hover, .sjb-wizard #sjb-wiz-id fieldset, .sjb-wizard #sjb-wiz-id #sjb-inactive li.active {
+    background: #1b2a36;
+    color: #fff;
+    border-color: #414148 !important;
+}
+.nav-tab, #contact-form-editor-tabs li a, #contact-form-editor-tabs li {
+    border: 1px solid #414148 !important;
+    background: #1e1e20;
+    color: #ffffff;
+}
+.nav-tab:focus, .nav-tab:hover {
+    background-color: #1b2a36;
+    color: #ffffff;
+}
+.media-menu .media-menu-item {
+    color: #ffffff;
+}
+.media-menu .active, .media-menu .active:hover {
+    color: #ffffff;
+}
+.media-menu .separator {
+    border-top: 1px solid #414148;
+}
+.embed-url, 
+.media-menu,
+.media-frame,
+.media-sidebar,
+.media-frame-content,
+.media-frame-toolbar .media-toolbar,
+#major-publishing-actions, textarea.wp-editor-area, .wp-editor-expand #post-status-info, .wp-editor-expand #wp-content-editor-tools, .attachments-browser .media-toolbar, .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel, .notice, .media-router .media-menu-item {
+    border-color: #414148;
+    background: #1e1e20;
+    color: #ffffff;
+}
+.theme-location-set {
+    color: #bec2c7;
+}
+.media-menu .media-menu-item:focus {
+    box-shadow: none;
+    color: #0098ff;
+    outline: none;
+}
+.sjb-section, .wpcf7-welcome-panel {
+    background-color: #1e1e20;
+    color: #ffffff;
+}
+.sjb-section.general .sjb-content .sjb-form-group label, .sjb-section.sjb-content-wrap .sjb-content .sjb-form-group label {
+    color: #fff;
+}
+#job_features .input-group-addon, #settings_job_features .input-group-addon, .sjb-settings-job-features .input-group-addon, #jobFeatureIcon .input-group-addon, #add-job_features .input-group-addon {
+    background-color: #1b2a36;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #414148;
+}
+.sjb-section.settings-fields.features-short-form #settings_app_form_fields li, .sjb-wizard #sjb-wiz-id fieldset .sjb-stripe {
+    background: #1b2a36;
+}
+.sjp-form-field-note {
+    color: rgb(0 152 255);
+}
+.acf-image-uploader .image-wrap img {
+    background: #1b2a36 !important;
+}
+.card {
+    background: #1b2a36 none repeat scroll 0 0;
+    border: 1px solid #414148;
+    border-left: 4px solid #414148;
+}
+@media only screen and (min-width: 783px) {
+    @supports (position:sticky) and (scroll-margin-bottom:130px) {
+        #nav-menu-footer {
+            box-shadow: 0 -1px 0 0 #414148;
+        }
+    }
+}
+.color-option.selected, .color-option:hover, 
+.wpforms-overview-chart-settings .wpforms-dash-widget-settings-menu, 
+.acf-admin-field-groups .wp-list-table tr:hover,
+.acf-admin-toolbar {
+    background: #1b2a36;
+}
+body div.jconfirm .jconfirm-box-container .jconfirm-box .jconfirm-content-pane .jconfirm-content * {
+    color: #000 !important;
+} 
+.wpforms-admin-page .postbox, #wpforms-entries-single #wpforms-entry-fields .inside .wpforms-entry-field-name {
+    background: #1b2a36 !important;
+}
+#wpforms-entries-single .wpforms-entries-settings-container .wpforms-entries-settings-menu {
+    background: #111a21 !important;
+}
+div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry-logs, #wpadminbar li#wp-admin-bar-wp-logo, 
+.post-type-general_settings #wpbody-content .subsubsub, .post-type-general_settings #wpbody-content .search-box, .post-type-general_settings  #wpbody-content .tablenav.top, .post-type-general_settings #wpbody-content .tablenav.bottom , .post-type-general_settings #wpbody-content .check-column {
+    display: none !important;
+}
+.plugins tr, .plugins .active td, .plugins .active th {
+    background: #1b2a36;
+}
+.plugins tr.active+tr.inactive td, .plugins tr.active+tr.inactive th, .plugins tr.active.plugin-update-tr+tr.inactive td, .plugins tr.active.plugin-update-tr+tr.inactive th {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02), inset 0 -1px 0 #1e1e20;
+}
+.notice-warning.notice-alt {
+    background-color: #1b2a36;
+}
+#wpforms-notifications {
+    background: #1e1e20 0 0 no-repeat padding-box;
+}
+#wpforms-notifications .wpforms-notifications-header .wpforms-notifications-title {
+    color: #ffffff;
+}
+#wpforms-overview .wp-list-table.striped tbody>:nth-child(odd),
+.wpforms-panel-sidebar-content .wpforms-panel-sidebar,
+#wpforms-field-options:before {
+    background-color: #1e1e20 !important;
+}
+.wpforms-field-option-group.active .wpforms-field-option-group-toggle:hover {
+    color: #0890ec !important;
+}
+#wpadminbar {
+    background: #1b2a36;
+}
