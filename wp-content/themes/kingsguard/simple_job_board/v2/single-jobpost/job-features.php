@@ -41,44 +41,42 @@ do_action("sjb_job_features_before");
     <?php
     endif;
     ?>
+ 
+    <?php
+        /**
+         * Fires before the job category under the job features section on job detail page.
+         * 
+         * @since   2.2.3
+         */
+        do_action("sjb_job_features_category_before");
 
-    <table class="table">
-        <tbody>
-            <?php
-            /**
-             * Fires before the job category under the job features section on job detail page.
-             * 
-             * @since   2.2.3
-             */
-            do_action("sjb_job_features_category_before");
-
-            // Job Category under Job Features Section
-            if (sjb_get_the_job_category()) :
-
-                ?>
-                <div class='row'>
-                    <div class='col-md-3 col-sm-6'>
-                        <div class='sjb-title-value'>
-                            <h4><i class='fab fa-black-tie' aria-hidden='true'></i><?php echo esc_html__('Job Category', 'simple-job-board') ?></h4>
-                            <p><?php sjb_the_job_category() ?></p>
-                        </div>
+        // Job Category under Job Features Section
+        if (sjb_get_the_job_category()) : ?>
+            <div class='row'>
+                <div class='col-md-3 col-sm-6'>
+                    <div class='sjb-title-value'>
+                        <h4><i class='fab fa-black-tie' aria-hidden='true'></i><?php echo esc_html__('Job Category', 'simple-job-board') ?></h4>
+                        <p><?php sjb_the_job_category() ?></p>
                     </div>
-                <?php
-            endif;
+                </div>
+            <?php
+        endif;
 
-            /**
-             * Fires after the job category under the job features section on job detail page.
-             * 
-             * @since   2.2.3
-             */
-            do_action("sjb_job_features_category_after");
+        /**
+         * Fires after the job category under the job features section on job detail page.
+         * 
+         * @since   2.2.3
+         */
+        do_action("sjb_job_features_category_after");
 
-            // Display Job Features
-            $enable_feature = get_post_meta(get_the_ID(), 'enable_job_feature', TRUE);
-            if($enable_feature == 'jobfeatures' || $enable_feature == '' ){
-                $keys = get_post_custom_keys(get_the_ID());
-                if ($keys != NULL) :
-                    foreach ($keys as $key) :
+        // Display Job Features
+        $enable_feature = get_post_meta(get_the_ID(), 'enable_job_feature', TRUE);
+
+        if($enable_feature == 'jobfeatures' || $enable_feature == '' ){  
+            $keys = get_post_custom_keys(get_the_ID());
+            if ($keys != NULL) : ?>
+                <div class='row'>
+                    <?php foreach ($keys as $key) :
                         if (substr($key, 0, 11) == 'jobfeature_') {
                             $val = get_post_meta($post->ID, $key, TRUE);
                             $val = maybe_unserialize($val);
@@ -103,9 +101,8 @@ do_action("sjb_job_features_before");
                             if(substr($icon_value,0,3) == 'fa-'){
                                 $icon_value = 'fa  '.$icon_value;
                             }
-                            if ($value != NULL) {
-                                ?>
-                                <div class='col-md-3 col-sm-6'>
+                            if ($value != NULL) { ?>
+                                <div class='col-xl-4 col-md-6 col-sm-4'>
                                     <div class='sjb-title-value'>
                                         <h4><i class='<?php echo esc_attr( $icon_value ); ?>' aria-hidden='true'></i><?php echo esc_attr( $label ); ?></h4>
                                         <p><?php echo esc_attr( $value ); ?></p>
@@ -114,29 +111,30 @@ do_action("sjb_job_features_before");
                                 <?php
                             }
                         }
-                    endforeach;
-                endif;
+                    endforeach; ?>
+                </div>
+                <?php endif;
 
-                /**
-                 * Modify the output of job feature section. 
-                 *                                       
-                 * @since   2.2.0
-                 * 
-                 * @param string  $metas job features                   
-                 */
-                echo apply_filters('sjb_job_features', $metas);
-                
+            /**
+             * Modify the output of job feature section. 
+             *                                       
+             * @since   2.2.0
+             * 
+             * @param string  $metas job features                   
+             */
+            echo apply_filters('sjb_job_features', $metas);
+            
+        }
+        else{
+            $settings_options = maybe_unserialize(get_option('jobfeature_settings_options'));
+
+            if (NULL == $settings_options) {
+                $settings_options = '';
             }
-            else{
-                $settings_options = maybe_unserialize(get_option('jobfeature_settings_options'));
 
-                if (NULL == $settings_options) {
-                    $settings_options = '';
-                }
-
-                if ($settings_options != NULL) :
-                     foreach ($settings_options as $key => $val):
-
+            if ($settings_options != NULL) : ?>
+                <div class='row'>
+                    <?php foreach ($settings_options as $key => $val): 
                         if (substr($key, 0, 11) == 'jobfeature_') {
                             
                             /**
@@ -155,9 +153,8 @@ do_action("sjb_job_features_before");
                             if(substr($icon_value,0,3) == 'fa-'){
                                 $icon_value = 'fa  '.$icon_value;
                             }
-                            if ($value != NULL) {
-                                ?>
-                                <div class='col-md-3 col-sm-6'>
+                            if ($value != NULL) { ?>
+                                <div class='col-xl-4 col-md-6 col-sm-4'>
                                     <div class='sjb-title-value'>
                                         <h4><i class='<?php echo esc_attr( $icon_value ); ?>' aria-hidden='true'></i><?php echo esc_attr( $label ); ?></h4>
                                         <p><?php echo esc_attr( $value ); ?></p>
@@ -165,23 +162,22 @@ do_action("sjb_job_features_before");
                                 </div>
                                 <?php
                             }
-                        }
-                    endforeach;
-                endif;
+                        } 
+                    endforeach; ?> 
+                </div>
+            <?php endif;
 
-                /**
-                 * Modify the output of job feature section. 
-                 *                                       
-                 * @since   2.2.0
-                 * 
-                 * @param string  $metas job features                   
-                 */
-                echo apply_filters('sjb_job_features', $metas);
-            }
+            /**
+             * Modify the output of job feature section. 
+             *                                       
+             * @since   2.2.0
+             * 
+             * @param string  $metas job features                   
+             */
+            echo apply_filters('sjb_job_features', $metas);
+        }
 
-            ?>
-        </tbody>
-    </table>
+    ?> 
 
 </div>
 <!-- ==================================================

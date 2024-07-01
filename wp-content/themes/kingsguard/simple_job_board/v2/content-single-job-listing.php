@@ -20,41 +20,57 @@ ob_start();
 <!-- Start Job Details
 ================================================== -->
 
-<?php
-/**
- * single_job_listing_start hook
- *
- * @hooked job_listing_meta_display - 20 ( Job Listing Company Meta )
- * 
- * @since   2.1.0
- */
-do_action('sjb_single_job_listing_start');
-?>
+<div class="jobDetails_wrap">
+    <div class="jobDetails_mainHeader">
+        <div class="jobDetails_header"> 
+            <?php
+                /**
+                 * single_job_listing_start hook 
+                 * @hooked job_listing_meta_display - 20 ( Job Listing Company Meta ) 
+                 * @since   2.1.0
+                 */
+                do_action('sjb_single_job_listing_start');
+            ?>
+        </div> 
+        <div class="jobDetails_headerBtn">
+            <a href="javascript:void(0)" class="btn-style gradientBtn"> Apply Now </a>
+        </div>
+    </div>
+    <div class="jobDetails_mainBody">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="jobDetails_wrap_lftside"> 
+                    <div class="job-description"> 
+                        <?php the_content(); ?>
+                    </div>   
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="jobDetails_wrap_rghtside">
+                    <div class="sjb_featuresWrap_1 sjb_featuresWrap_boxcmn">
+                        <?php do_action('sjb_single_job_listing_2_start') ?> 
+                    </div>
+                    <div class="sjb_featuresWrap sjb_featuresWrap_boxcmn">
+                        <?php do_action('sjb_single_job_listing_end_features'); ?> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
 
-<div class="job-description">
-    
+
+<div class="jobDetails_formWrap d-none"> 
     <?php
-    /**
-     * Display the post content.
-     * 
-     * The "the_content" is used to filter the content of the job post. Also make other plugins shortcode compatible with job post editor. 
-     */
-    the_content();
+        /**
+         * single-job-listing-end hook  
+         * @hooked job_listing_application_form - 30 ( Job Application Form ) 
+         * @since   2.1.0
+         */
+        do_action('sjb_single_job_listing_end');
     ?>
 </div>
-<div class="clearfix"></div>
 
-<?php
-/**
- * single-job-listing-end hook
- * 
- * @hooked job_listing_features - 20 ( Job Features )
- * @hooked job_listing_application_form - 30 ( Job Application Form )
- * 
- * @since   2.1.0
- */
-do_action('sjb_single_job_listing_end');
-?>
 <!-- ==================================================
 End Job Details -->
 

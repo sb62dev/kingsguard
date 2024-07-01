@@ -30,7 +30,11 @@ class Simple_Job_Board_Shortcode_job_details {
 		
 		do_action('sjb_single_job_content_start');
 
-		do_action('sjb_single_job_listing_start') ?>
+		do_action('sjb_single_job_listing_start');
+
+		do_action('sjb_single_job_listing_2_start');
+		
+		?>
 		
 		<div class="job-description" id="job-desc">
 		
