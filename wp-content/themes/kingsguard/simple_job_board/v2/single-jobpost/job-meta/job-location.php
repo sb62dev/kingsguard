@@ -19,9 +19,12 @@ ob_start();
 ================================================== -->
 <?php if ($job_location = sjb_get_the_job_location()) {
 	?>
-	<div class="col-md-3 col-sm-4">
-		<?php do_action('sjb_location_title'); ?>
-        <div class="job-location"><i class="fa  fa-map-marker"></i><?php sjb_the_job_location(); ?></div>
+	<div class="col-xl-4 col-md-6 col-sm-4">
+		<div class="job-meta-grid">
+			<?php do_action('sjb_location_title'); ?>
+			<h4 class="job-location job-meta-grid"><i class="fa  fa-map-marker"></i> Job Location</h4>
+			<p><?php sjb_the_job_location(); ?></p>
+		</div>
 	</div>
 <?php } ?> 
 <!-- ==================================================

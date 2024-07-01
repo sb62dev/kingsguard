@@ -931,7 +931,7 @@ h3 .job-title {
     font-family: 'Gilroy-SemiBold';
     text-transform: capitalize;
     margin-bottom: 40px;
-    letter-spacing: -4px;
+    letter-spacing: -1px;
     color: #ffffff !important;
     text-align: center;
 }
@@ -2483,19 +2483,59 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .job-features > .row > div {
     margin-bottom: 20px;
 }
+.jobDetails_wrap_rghtside .sjb-job-characteristics .job-meta-grid h4 i {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+.jobDetails_wrap_rghtside .sjb-job-characteristics .job-meta-grid h4 {
+    font-size: 12px;
+    color: #ffffff !important;
+    font-family: 'Gilroy-Light';
+    margin: 0 0 5px;
+}
+.jobDetails_wrap_rghtside .sjb-job-characteristics .job-meta-grid p {
+    font-size: 16px;
+    font-family: 'Gilroy-Bold';
+    margin: 0 !important;
+}
 .job-features .sjb-title-value h4 i {
     display: block;
     font-size: 32px;
     margin-bottom: 12px;
+    width: 100%;
 }
 .job-features .sjb-title-value h4 {
     font-size: 12px;
     color: #ffffff !important;
     font-family: 'Gilroy-Light';
-    margin: 0;
+    margin: 0 0 5px;
 }
 .job-features .sjb-title-value p {
     font-size: 16px;
     font-family: 'Gilroy-Bold';
     margin: 0 !important;
+}
+.jobDetails_wrap_rghtside .sjb-job-characteristicsWrap {
+    padding: 30px;
+    border-radius: 10px;
+    background: #1a2935;
+    border: 1px solid #0098ff;
+    margin-bottom: 30px;
+}
+.jobDetails_formWrap {
+    margin-top: 85px;
+}
+.jobDetails_formWrap h3 {
+    font-size: 36px !important;
+    font-family: 'Gilroy-SemiBold';
+    text-transform: capitalize;
+    margin: 0 0 30px !important;
+}
+.iti__country-list {
+    background-color: #1e1e20;
+}
+.form-control.sjb-phone-number {
+    padding-left: 50px !important;
 }

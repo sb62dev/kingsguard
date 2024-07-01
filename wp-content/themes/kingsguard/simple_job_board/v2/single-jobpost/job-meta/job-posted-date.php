@@ -20,9 +20,12 @@ ob_start();
 <?php if ($job_posting_time = sjb_get_the_job_posting_time()) {
     ?>
     <div class="col-md-3 col-sm-4">
-        <div class="job-date">
-            <?php do_action('sjb_posted_date_title'); ?>
-            <i class="fas fa-calendar-check"></i><?php printf( __('Posted %s ago', 'simple-job-board'), sjb_get_the_job_posting_time() ); ?>
+        <div class="job-meta-grid">
+            <h4 class="job-date">
+                <?php do_action('sjb_posted_date_title'); ?>
+                <i class="fas fa-calendar-check"></i> Job Posted
+            </h4>
+            <p><?php printf( __('Posted %s ago', 'simple-job-board'), sjb_get_the_job_posting_time() ); ?></p>
         </div>
 	</div>
 <?php } ?> 

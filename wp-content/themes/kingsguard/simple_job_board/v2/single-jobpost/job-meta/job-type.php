@@ -19,9 +19,12 @@ ob_start();
 ================================================== -->
 <?php if ($job_type = sjb_get_the_job_type()) {
     ?>
-	<div class="col-md-3 col-sm-4">
-        <?php do_action('sjb_job_type_title'); ?>
-        <div class="job-type"><i class="fa  fa-briefcase"></i><?php sjb_the_job_type(); ?></div>
+	<div class="col-xl-4 col-md-6 col-sm-4">
+        <div class="job-meta-grid">
+            <?php do_action('sjb_job_type_title'); ?>
+            <h4 class="job-type"><i class="fa  fa-briefcase"></i>Job Type</h4>
+            <p><?php sjb_the_job_type(); ?></p>
+        </div>
 	</div>
 <?php } ?> 
 <!-- ==================================================
