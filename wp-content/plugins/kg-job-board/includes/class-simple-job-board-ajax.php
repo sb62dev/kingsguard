@@ -313,6 +313,7 @@ class Simple_Job_Board_Ajax {
                     do_action('sjb_single_job_content_start');
                     get_option('job_board_pages_layout') == 'theme-layout' ? the_title('<h3><span class="job-title">', '</span></h3>') : null;
                     do_action('sjb_single_job_listing_start');
+                    do_action('sjb_single_job_listing_2_start');
                     ?>
                     <div class="job-description" id="job-desc">
                         <?php

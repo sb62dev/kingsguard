@@ -893,6 +893,22 @@ if (!function_exists('sjb_job_listing_meta_display')) {
 
 add_action('sjb_single_job_listing_start', 'sjb_job_listing_meta_display', 20);
 
+if (!function_exists('sjb_job_listing_meta_2_display')) {
+
+    /**
+     * Displays job meta data on the single job page.
+     * 
+     * @since   2.1.0
+     */
+    function sjb_job_listing_meta_2_display() {
+
+        get_simple_job_board_template('single-jobpost/content-single-job-listing-meta-2.php', array());
+    }
+
+}
+
+add_action('sjb_single_job_listing_2_start', 'sjb_job_listing_meta_2_display', 20);
+
 if (!function_exists('sjb_job_listing_features')) {
 
     /**
@@ -907,7 +923,7 @@ if (!function_exists('sjb_job_listing_features')) {
 
 }
 
-add_action('sjb_single_job_listing_end', 'sjb_job_listing_features', 20);
+add_action('sjb_single_job_listing_end_features', 'sjb_job_listing_features', 20); 
 
 if (!function_exists('sjb_job_listing_application_form')) {
 

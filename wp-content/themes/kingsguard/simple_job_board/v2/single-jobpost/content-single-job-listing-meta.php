@@ -28,81 +28,27 @@ do_action('single_job_listing_meta_before');
 
 <!-- Start Company Meta
 ================================================== -->
-<header>
-    <div class="row">
-        <div class="header-margin-top sjb-job-info">
-            <div class="sjb-company-wrapper-details">
-                <div class="row">
-                    <?php
+<div class="header-margin-top sjb-job-info">
+    <div class="sjb-company-wrapper-details">
+        <div class="row">
+            <?php 
+            /**
+             * Template -> Company Logo:
+             * 
+             * - Display Company Logo.
+             */
+            get_simple_job_board_template('single-jobpost/job-meta/company-logo.php'); 
+            /**
+             * Template -> Company Name:
+             * 
+             * - Display Company Name.
+             */
+            get_simple_job_board_template('single-jobpost/job-meta/company-name.php');
 
-                    /**
-                     * Template -> Company Logo:
-                     * 
-                     * - Display Company Logo.
-                     */
-                    get_simple_job_board_template('single-jobpost/job-meta/company-logo.php');
-
-                    /**
-                     * Template -> Company Name:
-                     * 
-                     * - Display Company Name.
-                     */
-                    get_simple_job_board_template('single-jobpost/job-meta/company-name.php');
-
-                    ?>
-                </div>
-            </div>
-
+            ?>
         </div>
-        
-        <div class=" sjb-job-characteristics">
-            <div class="sjb-job-type-location-date">
-                <div class="row">
-
-                <?php 
-
-                    /**
-                     * Fires before type, location, date displayed
-                     * 
-                     * @since 2.10.1
-                    */
-                    do_action('sjb_single_job_type_location_date_before'); 
-
-                    /**
-                     * Template -> Job Type:
-                     * 
-                     * - Display Job Type.
-                     */
-                    get_simple_job_board_template('single-jobpost/job-meta/job-type.php');
-
-                    /**
-                     * Template -> Job Location:
-                     * 
-                     * - Display Job Location.
-                     */
-                    get_simple_job_board_template('single-jobpost/job-meta/job-location.php');
-
-                    /**
-                     * Template -> Job Posted Date:
-                     * 
-                     * - Display Job Posted Date.
-                     */
-                    get_simple_job_board_template('single-jobpost/job-meta/job-posted-date.php');
-
-                    
-                    /**
-                     * Fires after type, location, date displayed
-                     * 
-                     * @since 2.10.1
-                    */
-                    do_action('sjb_single_job_type_location_date_after'); ?>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</header>
+    </div> 
+</div>
 <!-- ==================================================
 End Company Meta -->
 
