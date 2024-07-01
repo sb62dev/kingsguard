@@ -296,21 +296,22 @@ header.Sticky-fixed .main_nav_top {
         font-size: 16px; 
     }
     input::-webkit-input-placeholder {
-        font-size: 16px; 
+        font-size: 16px !important; 
     }
     input::-moz-placeholder {
-        font-size: 16px; 
+        font-size: 16px !important;
     }
     input:-ms-input-placeholder {
-        font-size: 16px; 
+        font-size: 16px !important;
     }
     input:-moz-placeholder {
-        font-size: 16px; 
+        font-size: 16px !important; 
     }
     .inputField,
     .selectField,
     .wpforms-field-medium,
-    .multipleSelect .selectBox {
+    .multipleSelect .selectBox,
+    .form-control {
         font-size: 16px !important;
     }
     .fetured_card_text2 h3 {
@@ -850,21 +851,22 @@ h3 .job-title {
     font-size: 14px; 
 }
 input::-webkit-input-placeholder {
-    font-size: 14px; 
+    font-size: 14px !important;
 }
 input::-moz-placeholder {
-    font-size: 14px; 
+    font-size: 14px !important;
 }
 input:-ms-input-placeholder {
-    font-size: 14px; 
+    font-size: 14px !important;
 }
 input:-moz-placeholder {
-    font-size: 14px; 
+    font-size: 14px !important;
 }
 .inputField,
 .selectField,
 .wpforms-field-medium,
-.multipleSelect .selectBox {
+.multipleSelect .selectBox,
+.form-control {
     font-size: 14px !important;
 }
 .fetured_card_text2 h3 {
@@ -1358,22 +1360,23 @@ div#collapsibleNavbar {
     font-size: 12px; 
 }
 input::-webkit-input-placeholder {
-    font-size: 12px; 
+    font-size: 12px !important;
 }
 input::-moz-placeholder {
-    font-size: 12px; 
+    font-size: 12px !important;
 }
 input:-ms-input-placeholder {
-    font-size: 12px; 
+    font-size: 12px !important; 
 }
 input:-moz-placeholder {
-    font-size: 12px; 
+    font-size: 12px !important;
 }
 .inputField,
 .selectField,
 .wpforms-field-medium,
-.multipleSelect .selectBox {
-    font-size: 12px;
+.multipleSelect .selectBox,
+.form-control {
+    font-size: 12px !important;
 }
 .fetured_card_text2 h3 {
     font-size: 18px;
@@ -1465,12 +1468,9 @@ input:-moz-placeholder {
 .wpforms-field-container label, div.wpforms-container-full .wpforms-field-label {
     font-size: 16px !important;
 }
-.inputField,
-.selectField,
-.wpforms-field-medium,
-.multipleSelect .selectBox{
-    font-size: 16px !important;
-}  
+.sjb-container .sjb-page .list-view .list-data .v2 .job-info h4 a {
+    font-size: 18px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {

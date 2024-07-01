@@ -715,7 +715,13 @@ select.wpforms-field-medium,
 .inputField:hover,
 .inputField:focus,
 .selectField:hover,
-.selectField:focus {
+.selectField:focus,
+.wpforms-field-medium:hover,
+.multipleSelect .selectBox:hover,
+.form-control:hover,
+.wpforms-field-medium:focus,
+.multipleSelect .selectBox:focus,
+.form-control:focus {
     border: 2px solid #ffffff !important;
 }
 .multipleSelect .wpforms-field-medium {
@@ -2254,10 +2260,6 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     font-size: 16px !important;
 }
 /****job-archive****/
-.sjb-container {
-    padding-top: 166px;
-    padding-bottom: 100px;
-}
 .sjb-container .sjb-page {
     background-color: #1e1e20;
     color: #fff;
@@ -2291,11 +2293,18 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .sjb-container .sjb-page .sjb-listing {
     margin-top: 50px;
 }
+.sjb-container .sjb-page .sjb-listing .list-view > .row > div {
+    margin-bottom: 30px;
+}
+.sjb-container .sjb-page .list-view .list-data {
+    height: 100%;
+}
 .sjb-container .sjb-page .list-view .list-data .v2 {
     background: #1a2935;
     border: 1px solid #0098ff;
-    margin: 15px 0;
+    margin: 0;
     border-radius: 8px;
+    height: 100%;
 }
 .sjb-container .sjb-page .list-view .list-data .sjb-job-type-location-date {
     border-top: 0;
@@ -2358,7 +2367,20 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .sjb-container .sjb-page .list-data .v2 .sjb-apply-now-btn a:focus {
     background-color: #1767b7 !important;
 }
-.sjb-page .sjb-job-type-location-date > .row {
+.sjb-container .sjb-page .sjb-job-type-location-date > .row {
     margin-left: 0;
     margin-right: 0;
+}
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .row {
+    align-items: center;
+    justify-content: space-between;
+}
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .header-margin-top {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 50%;
+}
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .sjb-job-type-location-date {
+    border-top: 0;
+    padding: 0;
 }
