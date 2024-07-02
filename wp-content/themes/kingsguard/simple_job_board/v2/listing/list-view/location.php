@@ -21,7 +21,7 @@ ob_start();
     ?>
 	<div class="col-md-3 col-sm-4 col-xs-12">
         <?php do_action('sjb_location_title'); ?>
-        <div class="job-location"><i class="fa  fa-map-marker"></i><?php sjb_the_job_location(); ?></div>
+        <div class="job-location"><span class="jobMetaIcon"><i class="fa  fa-map-marker"></i></span><span class="jobMetaText"><?php sjb_the_job_location(); ?></span></div>
 	</div>
 <?php } ?>
 <!-- ==================================================

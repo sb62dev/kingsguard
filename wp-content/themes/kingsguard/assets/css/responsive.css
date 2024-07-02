@@ -200,7 +200,7 @@ header.Sticky-fixed .main_nav_top {
     .aboutAccordion .card + .card {
         margin-top: 5px;
     }
-    .btn-style, .wpcf7-submit[type=submit] {
+    .btn-style, .wpcf7-submit[type=submit], .sjb-page button.btn-primary {
         padding: 18px 45px !important;
     }
     .joinUsInner p {
@@ -570,6 +570,19 @@ h3 .job-title {
 .projects_top_inputs_main {
     margin-top: 40px;
 }
+.sjb-page .sjb-detail .list-data .v2 .jobDetails_formWrap {
+    margin-top: 50px;
+    padding: 30px;
+}
+.mb_30 {
+    margin-bottom: 20px;
+}
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .jobDetails_wrap .jobDetails_mainHeader .jobDetails_header h3 .job-title {
+    font-size: 30px;
+}
+.jobDetails_formWrap h3 {
+    font-size: 30px !important;
+}
 } 
 
  
@@ -649,7 +662,7 @@ div#collapsibleNavbar {
 .main-navigation ul.website_nav > li + li {
     margin-left: 0;
 }
-.btn-style, .wpcf7-submit[type=submit] {
+.btn-style, .wpcf7-submit[type=submit], .sjb-page button.btn-primary {
     padding: 15px 30px !important;
     font-size: 13px !important;
 }
@@ -1482,6 +1495,33 @@ input:-moz-placeholder {
 }
 .noLicense_main {
     padding: 30px;
+}
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .jobDetails_wrap .jobDetails_mainHeader {
+    display: block;
+    margin-bottom: 40px;
+}
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .jobDetails_wrap .jobDetails_mainHeader .jobDetails_header {
+    width: 100%;
+    margin-bottom: 25px;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobDetails_formWrap {
+    margin-top: 30px;
+}
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .jobDetails_wrap .jobDetails_mainHeader .jobDetails_header h3 .job-title {
+    font-size: 26px;
+}
+.jobDetails_formWrap h3 {
+    font-size: 26px !important;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobDetails_formWrap .jobpost-form label {
+    font-size: 16px !important;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobpost-form .file {
+    font-size: 16px;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobpost-form .file div {
+    font-size: 11px;
+    padding: 6px 10px;
 }
 }
 @media only screen and (max-width: 600px) {

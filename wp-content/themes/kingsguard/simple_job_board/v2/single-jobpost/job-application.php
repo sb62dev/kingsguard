@@ -99,10 +99,10 @@ do_action('sjb_job_application_before');
                             $section_no++;
                             break;
                         case 'text':
-                            echo '<div class="col-md-3 col-xs-12">'
+                            echo '<div class="col-md-12 col-xs-12">'
                             . '<label for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                             . '</div>'
-                            . '<div class="col-md-9 col-xs-12">'
+                            . '<div class="col-md-12 col-xs-12 mb_30">'
                             . '<div class="form-group">'
                             . '<input type="text" name="' . esc_attr($name) . '" class="form-control ' . esc_attr($required_class) . '" id="' . esc_attr($id) . '" ' . esc_attr($is_required) . '>'
                             . '</div>'
@@ -110,10 +110,10 @@ do_action('sjb_job_application_before');
                             . '<div class="clearfix"></div>';
                             break;
                         case 'text_area':
-                            echo '<div class="col-md-3 col-xs-12">'
+                            echo '<div class="col-md-12 col-xs-12">'
                             . '<label for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                             . '</div>'
-                            . '<div class="col-md-9 col-xs-12">'
+                            . '<div class="col-md-12 col-xs-12 mb_30">'
                             . '<div class="form-group">'
                             . '<textarea name="' . esc_attr($name) . '" class="form-control ' . esc_attr($required_class) . '" id="' . esc_attr($id) . '" ' . esc_attr($is_required) . '  cols="30" rows="5"></textarea>'
                             . '</div>'
@@ -121,10 +121,10 @@ do_action('sjb_job_application_before');
                             . '<div class="clearfix"></div>';
                             break;
                         case 'email':
-                            echo '<div class="col-md-3 col-xs-12">'
+                            echo '<div class="col-md-12 col-xs-12">'
                             . '<label for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                             . '</div>'
-                            . '<div class="col-md-9 col-xs-12">'
+                            . '<div class="col-md-12 col-xs-12 mb_30">'
                             . '<div class="form-group">'
                             . '<input type="email" name="' . esc_attr($name) . '" class="form-control sjb-email-address ' . esc_attr($required_class) . '" id="' . esc_attr($id) . '" ' . esc_attr($is_required) . '><span class="sjb-invalid-email validity-note">' . esc_html__('A valid email address is required.', 'simple-job-board') . '</span>'
                             . '</div>'
@@ -132,10 +132,10 @@ do_action('sjb_job_application_before');
                             . '<div class="clearfix"></div>';
                             break;
                         case 'phone':
-                            echo '<div class="col-md-3 col-xs-12">'
+                            echo '<div class="col-md-12 col-xs-12">'
                             . '<label for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                             . '</div>'
-                            . '<div class="col-md-9 col-xs-12">'
+                            . '<div class="col-md-12 col-xs-12 mb_30">'
                             . '<div class="form-group">'
                             . '<input type="tel" name="' . esc_attr($name) . '" class="form-control sjb-phone-number sjb-numbers-only ' . $required_class . '" id="' . esc_attr($id) . '" ' . esc_attr($is_required) . '><span class="sjb-invalid-phone validity-note" id="' . esc_attr($id) . '-invalid-phone">' . esc_html__('A valid phone number is required.', 'simple-job-board') . ' </span>'
                             . '</div>'
@@ -143,10 +143,10 @@ do_action('sjb_job_application_before');
                             . '<div class="clearfix"></div>';
                             break;
                         case 'date':
-                            echo '<div class="col-md-3 col-xs-12">'
+                            echo '<div class="col-md-12 col-xs-12">'
                             . '<label for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                             . '</div>'
-                            . '<div class="col-md-9 col-xs-12">'
+                            . '<div class="col-md-12 col-xs-12 mb_30">'
                             . '<div class="form-group">'
                             . '<input type="text" name="' . esc_attr($name) . '" class="form-control sjb-datepicker ' . esc_attr($required_class) . '" id="' . esc_attr($id) . '" ' . esc_attr($is_required) . ' maxlength="10">'
                             . '</div>'
@@ -155,10 +155,10 @@ do_action('sjb_job_application_before');
                             break;
                         case 'radio':
                             if ($val['options'] != '') {
-                                echo '<div class="col-md-3 col-xs-12">'
+                                echo '<div class="col-md-12 col-xs-12">'
                                 . '<label class="sjb-label-control" for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                                 . '</div>'
-                                . '<div class="col-md-9 col-xs-12">'
+                                . '<div class="col-md-12 col-xs-12 mb_30">'
                                 . '<div class="form-group">';
                                 $options = explode(',', $val['options']);
                                 $i = 0;
@@ -172,10 +172,10 @@ do_action('sjb_job_application_before');
                             break;
                         case 'dropdown':
                             if ($val['options'] != '') {
-                                echo '<div class="col-md-3 col-xs-12">'
+                                echo '<div class="col-md-12 col-xs-12">'
                                 . '<label for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                                 . '</div>'
-                                . ' <div class="col-md-9 col-xs-12">'
+                                . ' <div class="col-md-12 col-xs-12 mb_30">'
                                 . '<div class="form-group">'
                                 . '<select class="form-control" name="' . esc_attr($name) . '" id="' . esc_attr($id) . '" ' . esc_attr($is_required) . '>';
                                 $options = explode(',', $val['options']);
@@ -190,10 +190,10 @@ do_action('sjb_job_application_before');
                             break;
                         case 'checkbox' :
                             if ($val['options'] != '') {
-                                echo '<div class="col-md-3 col-xs-12">'
+                                echo '<div class="col-md-12 col-xs-12">'
                                 . '<label for="' . esc_attr($key) . '">' . esc_attr($label) . wp_kses($required_field_asterisk, $allowed_tags) . '</label>'
                                 . '</div>'
-                                . '<div class="col-md-9 col-xs-12">'
+                                . '<div class="col-md-12 col-xs-12 mb_30">'
                                 . '<div class="form-group">';
                                 $options = explode(',', $val['options']);
                                 $i = 0;
@@ -226,10 +226,10 @@ do_action('sjb_job_application_before');
             echo '<div class="row">';
         }
 
-        $sjb_attach_resume = '<div class="col-md-3 col-xs-12">'
+        $sjb_attach_resume = '<div class="col-md-12 col-xs-12">'
                 . '<label for="applicant_resume">' . apply_filters('sjb_resume_label', __('Attach Resume', 'simple-job-board')) . '<span class="sjb-required required">*</span></label>'
                 . '</div>'
-                . '<div class="col-md-9 col-xs-12">
+                . '<div class="col-md-12 col-xs-12 mb_30">
                                     <div class="form-group">'
                 . '<input type="file" name="applicant_resume" id="applicant-resume" class="sjb-attachment form-control "' . apply_filters('sjb_resume_required', 'required="required"') . '>'
                 . '<span class="sjb-invalid-attachment validity-note" id="file-error-message"></span>'

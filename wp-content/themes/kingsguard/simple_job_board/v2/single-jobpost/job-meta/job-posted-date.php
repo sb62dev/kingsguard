@@ -19,7 +19,7 @@ ob_start();
 ================================================== -->
 <?php if ($job_posting_time = sjb_get_the_job_posting_time()) {
     ?>
-    <div class="col-md-3 col-sm-4">
+    <div class="col-xl-4 col-md-6 col-sm-4">
         <div class="job-meta-grid">
             <h4 class="job-date">
                 <?php do_action('sjb_posted_date_title'); ?>

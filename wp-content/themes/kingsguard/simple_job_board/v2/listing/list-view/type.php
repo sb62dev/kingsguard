@@ -21,7 +21,7 @@ ob_start();
     ?>
 	<div class="col-md-3 col-sm-4 col-xs-12">
         <?php do_action('sjb_job_type_title'); ?>
-        <div class="job-type"><i class="fa fa-briefcase"></i><?php sjb_the_job_type(); ?></div>
+        <div class="job-type"><span class="jobMetaIcon"><i class="fa fa-briefcase"></i></span><span class="jobMetaText"><?php sjb_the_job_type(); ?></span></div>
     </div>
 <?php } ?> 
 <!-- ==================================================

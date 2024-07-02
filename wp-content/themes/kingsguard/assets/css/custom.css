@@ -197,6 +197,9 @@ button:focus {
 .slick-arrow:focus {
     outline: none;
 }
+.mb_30 {
+    margin-bottom: 30px;
+}
 .mb30 {
     margin-bottom: -30px;
 }
@@ -2277,9 +2280,11 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 /****job-archive****/
 .sjb-container .sjb-page {
-    background-color: #1e1e20;
+    background-color: transparent;
     color: #fff;
     padding: 0;
+    z-index: 1;
+    position: relative;
 }
 .sjb-container .sjb-page .sjb-filters.sjb-filters-v2 {
     background-color: #1e1e20;
@@ -2333,7 +2338,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     display: block;
 }
 .sjb-container .sjb-page .list-view .list-data .v2 .row {
-    align-items: center;
+    align-items: flex-start;
 }
 .sjb-container .sjb-page .list-view .job-description-list p {
     color: #fff;
@@ -2350,9 +2355,16 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     color: #ffffff;
     font-size: 12px;
     word-wrap: break-word;
+    display: flex;
+}
+.sjb-container .sjb-page .list-view .list-data .v2 .jobMetaIcon {
+    width: 22px;
+}
+.sjb-container .sjb-page .list-view .list-data .v2 .jobMetaText {
+    width: calc(100% - 22px);
 }
 .sjb-container .sjb-page .sjb-detail .list-data .v2 {
-    background: #1e1e20;
+    background: transparent;
 }
 .sjb-container .sjb-page .sjb-detail .list-data .job-description h6 {
     font-size: 18px;
@@ -2384,10 +2396,6 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .sjb-container .sjb-page .list-data .v2 .sjb-apply-now-btn a:hover,
 .sjb-container .sjb-page .list-data .v2 .sjb-apply-now-btn a:focus {
     background-color: #1767b7 !important;
-}
-.sjb-container .sjb-page .sjb-job-type-location-date > .row {
-    margin-left: 0;
-    margin-right: 0;
 }
 .sjb-container .sjb-page .sjb-detail .list-data .v2 .jobDetails_wrap .jobDetails_mainHeader {
     display: flex;
@@ -2465,6 +2473,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     right: 10px;
     top: 10px;
     border-radius: 6px;
+    padding: 6px 12px;
 }
 .job-features {
     padding: 30px;
@@ -2477,10 +2486,16 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     font-family: 'Gilroy-Medium';
     margin: 0 0 20px !important;
 }
-.job-features > .row {
+.sjb-container .sjb-page .sjb-listing .list-data .v2 .sjb-job-type-location-date > .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.job-features > .row,
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .sjb-job-type-location-date > .row {
     margin-bottom: -20px;
 }
-.job-features > .row > div {
+.job-features > .row > div,
+.sjb-container .sjb-page .sjb-detail .list-data .v2 .sjb-job-type-location-date > .row > div {
     margin-bottom: 20px;
 }
 .jobDetails_wrap_rghtside .sjb-job-characteristics .job-meta-grid h4 i {
@@ -2488,9 +2503,11 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     font-size: 32px;
     margin-bottom: 12px;
     width: 100%;
+    margin-right: 0 !important;
+    margin-top: 0;
 }
 .jobDetails_wrap_rghtside .sjb-job-characteristics .job-meta-grid h4 {
-    font-size: 12px;
+    font-size: 12px !important;
     color: #ffffff !important;
     font-family: 'Gilroy-Light';
     margin: 0 0 5px;
@@ -2524,9 +2541,6 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     border: 1px solid #0098ff;
     margin-bottom: 30px;
 }
-.jobDetails_formWrap {
-    margin-top: 85px;
-}
 .jobDetails_formWrap h3 {
     font-size: 36px !important;
     font-family: 'Gilroy-SemiBold';
@@ -2538,4 +2552,46 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .form-control.sjb-phone-number {
     padding-left: 50px !important;
+}
+.sjb-page .pagination li {
+    display: inline-flex;
+}
+.sjb-page .jobPagination {
+    margin: 0 auto;
+}
+.sjb-page .jobPagination .pagination li {
+    margin-right: 6px;
+}
+.sjb-page .pagination li a {
+    background-color: #ffffff;
+    border-radius: 8px !important;
+    font-weight: 500;
+}
+.sjb-page .pagination li .next, .sjb-page .pagination li .prev {
+    border-radius: 8px !important;
+    font-size: 20px;
+}
+.sjb-page .pagination li.list-item span.current, .sjb-page .pagination li.list-item a:hover, .sjb-page .pagination li.list-item span.current:hover {
+    background: #0098ff;
+    border-color: #0098ff;
+    color: #fff;
+    border-radius: 8px;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobDetails_formWrap {
+    margin-top: 85px;
+    padding: 50px;
+    border-radius: 10px;
+    background: #1a2935;
+    border: 1px solid #0098ff;
+}
+.sjb-page .sjb-detail .list-data .v2 .jobDetails_formWrap .jobpost-form label {
+    font-family: 'Gilroy-Light';
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    font-weight: 400 !important;
+    margin-bottom: 15px;
+}
+.serviceTabImg img {
+    border-radius: 20px;
+    border: 1px solid #0098FF;
 }

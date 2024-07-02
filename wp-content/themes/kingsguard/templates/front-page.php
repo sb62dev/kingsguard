@@ -279,7 +279,7 @@ get_header();
     </section>
     <?php } ?>
 
-    <?php 
+    <!--<?php 
         $why_security_title = get_field('why_security_title');
         if(isset($why_security_title) && !empty($why_security_title)){
         $why_security_description = get_field('why_security_description');
@@ -307,7 +307,7 @@ get_header();
             </div>
         </div>
     </section>
-    <?php } ?>
+    <?php } ?>-->
 
     
     <?php if (have_rows('client_testimonials')) : ?>

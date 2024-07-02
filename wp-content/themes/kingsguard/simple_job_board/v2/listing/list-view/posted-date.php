@@ -21,7 +21,7 @@ ob_start();
     ?>
 	<div class="col-md-6 col-sm-4 col-xs-12">
         <?php do_action('sjb_posted_date_title'); ?>
-        <div class="job-date"><i class="fa  fa-calendar-check"></i><?php printf(__('Posted %s ago', 'simple-job-board'), sjb_get_the_job_posting_time() ); ?></div>
+        <div class="job-date"><span class="jobMetaIcon"><i class="fa  fa-calendar-check"></i></span><span class="jobMetaText"><?php printf(__('Posted %s ago', 'simple-job-board'), sjb_get_the_job_posting_time() ); ?></span></div>
 	</div>
 <?php } ?>
 <!-- ==================================================

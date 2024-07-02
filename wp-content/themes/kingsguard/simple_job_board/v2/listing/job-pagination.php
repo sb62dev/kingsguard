@@ -73,7 +73,7 @@ $pages = paginate_links( $pagination );
 if ( is_array( $pages ) ) {
     $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
     ?>
-    <nav aria-label="Page navigation">
+    <nav aria-label="Page navigation" class="jobPagination">
         <ul class="pagination">
             <?php
                 foreach ( $pages as $page ) {
