@@ -2,7 +2,8 @@
 
 /* Function to access google recaptcha response */
 function jobseeks_google_recaptcha($captcha_response) {
-    $url = 'https://www.google.com/recaptcha/api/siteverify?secret=6LePvL4kAAAAAPr-QIFAiU07xFGHymqDNsBqbIqn&response=' . $captcha_response;
+    $secret_key = GOOGLE_RECAPTCHA_SECRET_KEY;
+    $url = 'https://www.google.com/recaptcha/api/siteverify?secret==' . $secret_key . '&response=' . $captcha_response;
     $response = wp_remote_get($url);
     $responseBody = wp_remote_retrieve_body($response);
     $result = json_decode($responseBody);

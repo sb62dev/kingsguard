@@ -8,6 +8,8 @@ function jobseekers_login_form() {
         'nonce' => wp_create_nonce('jobseekers_login_form_save_action')
     ));
 
+    $site_key = GOOGLE_RECAPTCHA_SITE_KEY;
+
     ob_start(); ?>
     <form class="jobseekers_login_form" id="jobseekers_login_form" method="POST">
         <input type="hidden" name="action" id="action" value="jobseekers_login_form_save" />
@@ -35,7 +37,7 @@ function jobseekers_login_form() {
                 </div>
                 <div class="jobseek_login_col">
                     <div class="jobseek_login_captcha_Wrap">
-                        <div class="g-recaptcha" data-callback="jobseek_login_recaptchaCallback" data-sitekey="6LePvL4kAAAAAIWhaIlwjo7bK1K5boP4bUET-WAd"></div>
+                        <div class="g-recaptcha" data-callback="jobseek_login_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                         <div class="jobseek_error"></div>
                     </div>
                 </div>
