@@ -560,6 +560,9 @@ new Twenty_Twenty_One_Dark_Mode();
 // Custom User Role.
 require_once get_template_directory() . '/admin/custom-user-role-functions.php';
 
+// Custom Login Resiter Form.
+require_once get_template_directory() . '/admin/jobseekers/jobseekers-functions.php';
+
 /**
  * Enqueues scripts for the customizer preview.
  *
