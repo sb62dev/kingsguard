@@ -220,10 +220,10 @@ button:focus {
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
-    position: absolute;
-    top: 43px;
+    position: fixed;
+    top: 0;
     z-index: 999;
-    background: transparent;
+    background: #1e1e20;
     padding: 20px 0;
 } 
 .header_wrapper {
@@ -234,11 +234,11 @@ button:focus {
     align-items: center;
     justify-content: space-between;
 }
-header.Sticky-fixed {
+/* header.Sticky-fixed {
     background: #1e1e20;
     position: fixed;
     top: 0;
-}
+} */
 .logo {
     margin: auto;
     margin-left: inherit;
@@ -557,6 +557,7 @@ header.Sticky-fixed .logo .logotxt {
     position: relative;
     padding: 10px 0;
     z-index: 1;
+    display: none;
 }
 .topBarLeft ul {
     display: flex;
@@ -687,6 +688,23 @@ header.Sticky-fixed .logo .logotxt {
 }
 .slick-dots li.slick-active button {
     background-color: #00a8ff !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: none !important;
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+input:-internal-autofill-selected {
+    -webkit-box-shadow: none !important;
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
 }
 .inputField,
 .selectField,
@@ -926,7 +944,7 @@ button.modal_close:focus {
 }
 /****/
 .pageBody {
-    padding-top: 166px;
+    padding-top: 123px;
 }
 .h2,
 h3 .job-title {
@@ -1568,9 +1586,9 @@ h3 .job-title {
     height: 100%;
 }
 .featur_card_img_div img {
-    width: 100%;
+    width: 100% !important;
     object-fit: cover;
-    height: 300px;
+    height: 300px !important;
     border-radius: 12px 12px 0px 0px;
 }
 .fetured_card_text_main {
@@ -1643,7 +1661,8 @@ h3 .job-title {
 .singleBlogWrapper .singleBlogImage img {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
+    height: 700px !important;
+    object-fit: cover;
 }
 .singleBlogWrapper .singleBlogMeta {
     display: flex;
@@ -2381,6 +2400,12 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .sjb-container .sjb-page .sjb-detail .list-data .job-description ul li {
     font-family: 'Gilroy-Light';
 }
+.sjb-container .sjb-page .sjb-detail .list-data .job-description ul li strong {
+    font-family: 'Gilroy-Bold';
+}
+.sjb-container .sjb-page .sjb-detail .list-data .job-description ul ul {
+    margin: 0;
+}
 .sjb-container .sjb-page .list-data .v2 .sjb-apply-now-btn a {
     font-size: 12px;
     padding: 4px 10px;
@@ -2594,4 +2619,51 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .serviceTabImg img {
     border-radius: 20px;
     border: 1px solid #0098FF;
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+.slick-track {
+    margin: 0 auto;
+}
+.singleBlogWrapper .singleBlogContent ul {
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+.singleBlogWrapper .singleBlogContent ul li {
+    position: relative;
+    padding-left: 25px;
+}
+.singleBlogWrapper .singleBlogContent ul li::before {
+    color: #3297fa;
+    content: "\f101";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    font-size: 12px;
+    left: 0;
+    position: absolute;
+    top: 4px;
+}
+.singleBlogWrapper .singleBlogContent ul li + li {
+    margin-top: 15px;
+}
+.singleBlogWrapper .singleBlogContent ul li strong {
+    font-family: 'Gilroy-SemiBold';
+    font-weight: 600;
+}
+.clearFilterBtn {
+    margin-bottom: 20px;
+    text-align: right;
+}
+.clearFilterBtn .btn-primary {
+    background-color: transparent !important;
+    border: 0;
+    font-family: 'Gilroy-SemiBold';
+    font-weight: 600;
+}
+.clearFilterBtn .btn-primary:hover, .clearFilterBtn .btn-primary:focus {
+    background-color: transparent !important;
+    color: #198af9 !important;
+    outline: none;
+    box-shadow: none;
 }

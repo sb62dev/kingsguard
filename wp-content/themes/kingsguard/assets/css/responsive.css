@@ -16,9 +16,9 @@
 .main_nav_top {
     margin-bottom: 30px;
 }
-header.Sticky-fixed .main_nav_top {
+/* header.Sticky-fixed .main_nav_top {
     margin-bottom: 5px;
-}
+} */
 .main_header .logo {
     margin: 0;
     padding: 0;
@@ -38,9 +38,9 @@ header.Sticky-fixed .main_nav_top {
 .main_header .logo img {
     width: 57px !important;
 }
-.main_header.Sticky-fixed .logo img {
+/* .main_header.Sticky-fixed .logo img {
     width: 50px !important;
-}
+} */
 .main_header .main-navigation .navbar-collapse {
     width: 100%;
     justify-content: center;
@@ -583,6 +583,12 @@ h3 .job-title {
 .jobDetails_formWrap h3 {
     font-size: 30px !important;
 }
+.serviceTabImg img {
+    height: 400px;
+}
+.singleBlogWrapper .singleBlogImage img {
+    height: 600px !important;
+}
 } 
 
  
@@ -925,6 +931,9 @@ input:-moz-placeholder {
 .mobMenus .website_nav li .sub-menu-toggle {
     top: 7px;
 }
+.singleBlogWrapper .singleBlogImage img {
+    height: 500px !important;
+}
 } 
 @media screen and ( max-width: 767px ){
 p {
@@ -993,9 +1002,9 @@ h1, h2, h3, h4, h5, h6 {
 .main_header .logo img {
     width: 30px !important;
 }
-.main_header.Sticky-fixed .logo img {
+/* .main_header.Sticky-fixed .logo img {
     width: 40px !important;
-}
+} */
 .header_social_list {
     margin-top: 10px;
 }
@@ -1523,6 +1532,23 @@ input:-moz-placeholder {
     font-size: 11px;
     padding: 6px 10px;
 }
+.serviceTabImg img {
+    height: 300px;
+}
+.getstarted_input_main button.btn-style.gradientBtn {
+    top: 5px;
+    right: 5px;
+}
+.btn-style, .wpcf7-submit[type=submit], .sjb-page button.btn-primary {
+    padding: 12px 22px !important;
+    font-size: 12px !important;
+}
+.featur_card_img_div img {
+    height: 250px !important;
+}
+.singleBlogWrapper .singleBlogImage img {
+    height: 300px !important;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -1610,5 +1636,8 @@ input:-moz-placeholder {
     }
     p {
         font-size: 12px;
+    }
+    .serviceTabImg img {
+        height: 240px;
     }
 }
