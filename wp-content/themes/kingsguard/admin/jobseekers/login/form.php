@@ -19,14 +19,16 @@ function jobseekers_login_form() {
             <div class="jobseek_loader" style="display: none;">Loading...</div>
             <div class="jobseek_login_cmnError" style="display: none;"><div class="jobseek_login_cmnError_in"></div></div>
             <div class="jobseek_login_row">
-                <div class="jobseek_login_col">
+                <div class="jobseek_login_col"> 
                     <div class="jobseek_login_inputWrap">
+                        <label class="jobseek_register_label"> User Name* </label>
                         <input type="text" id="jobseek_user" name="jobseek_user" placeholder="Username">
                         <div class="jobseek_error"></div>
                     </div>
                 </div>
                 <div class="jobseek_login_col">
                     <div class="jobseek_login_inputWrap">
+                        <label class="jobseek_register_label"> Password* </label>
                         <input type="password" id="jobseek_password" name="jobseek_password" placeholder="Password">
                         <div class="jobseek_error"></div>
                     </div>

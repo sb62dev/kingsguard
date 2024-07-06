@@ -4,14 +4,7 @@ function handle_jobseekers_login() {
     $json_response = array();
 
     if (isset($_POST['jobseekers_login_form_save_nonce_field']) && wp_verify_nonce(sanitize_text_field($_POST['jobseekers_login_form_save_nonce_field']), 'jobseekers_login_form_save_action')) {
-        $errors = array();
-
-        if (empty($_POST['jobseek_user'])) {
-            $errors['username_error'] = 'Username or Email is required.';
-        }
-        if (empty($_POST['jobseek_password'])) {
-            $errors['password_error'] = 'Password is required.';
-        }
+        $errors = array(); 
 
         $captcha_response = sanitize_text_field($_POST['g-recaptcha-response']);
         $captcha_valid = jobseeks_google_recaptcha($captcha_response);

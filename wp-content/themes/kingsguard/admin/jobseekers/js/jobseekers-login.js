@@ -37,6 +37,10 @@ function validate_input(input_type, input_val) {
 		return false;
 	}
 }
+  
+var user_empty_err_msg = "Username or Email is required."; 
+var password_empty_err_msg = "Password is required."; 
+var captcha_empty_err_msg = "Captcha is required.";
 
 function form_id_scroll(id) {
 	if (id != '') {
@@ -50,7 +54,7 @@ jQuery(document).ready(function($) {
 
     $('#jobseekers_login_form').on('submit', function(e) {
         e.preventDefault();
-
+ 
         var user = $("#jobseek_user");
         var password = $("#jobseek_password");
         var captcha = $("#g-recaptcha-response");
@@ -61,19 +65,19 @@ jQuery(document).ready(function($) {
 
         // User or email validation
         if ('' == user.val().trim()) {
-            user.next('.jobseek_error').html('Username or Email is required.').show();
+            user.next('.jobseek_error').html(user_empty_err_msg).show();
             go_ahead = false;
         }
 
         // Password validation
         if ('' == password.val().trim()) {
-            password.next('.jobseek_error').html('Password is required.').show();
+            password.next('.jobseek_error').html(password_empty_err_msg).show();
             go_ahead = false;
         }
 
         // Captcha validation
         if (response.length == 0) {
-            captcha.closest('.jobseek_login_captcha_Wrap').find('.jobseek_error').html('Captcha is required.').show(); 
+            captcha.closest('.jobseek_login_captcha_Wrap').find('.jobseek_error').html(captcha_empty_err_msg).show(); 
             go_ahead = false;
         } else {
             captcha.closest('.jobseek_login_captcha_Wrap').find('.jobseek_error').hide();  
@@ -95,13 +99,9 @@ jQuery(document).ready(function($) {
                     if (res.success) {
                         $("html, body").animate({ scrollTop: 0 }, "slow");
                         $("#jobseekers_login_form")[0].reset();
-                        window.location.href = '/login';
+                        window.location.href = '/dashboard';
                     } else { 
-                        grecaptcha.reset();
-                        var errorMsg = '';
-                        if (res.data) {
-                            errorMsg = res.data.error || res.data.username_error || res.data.password_error || res.data.captcha_error;
-                        }
+                        grecaptcha.reset(); 
                         $('.jobseek_login_cmnError').show().find('.jobseek_login_cmnError_in').html(res.data.error); 
                     }
                 },
