@@ -708,6 +708,9 @@ header.Sticky-fixed {
 .pageBody {
     padding-top: 0;
 }
+.pageBody.homeBody {
+    padding-top: 0;
+}
 .ftrMainMenu .menu-footer-menu-container ul {
     justify-content: center;
 }

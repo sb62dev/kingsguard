@@ -118,7 +118,7 @@ get_header();
             $get_started_button_label = get_field('get_started_button_label', $homepage_id);
             ?> 
             <section>
-                <div class="joinUsSecOuter getStartedSec mt200">
+                <div class="joinUsSecOuter getStartedSec py100">
                     <div class="sm_container">
                         <div class="joinUsSec" data-aos="zoom-in-down" data-aos-duration="1000">
                             <div class="joinUsInner text-center">
