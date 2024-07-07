@@ -1049,10 +1049,6 @@ h3 .job-title {
 .whyChooseUs {
     position: relative;
 }
-.whyChooseUs .whyChooseInner {
-    position: relative;
-    z-index: 1;
-}
 .whyChooseUs::before {
     content: "";
     position: absolute;
@@ -1101,7 +1097,7 @@ h3 .job-title {
     margin-bottom: 30px;
 }
 .clientSec {
-    background-image: url(../images/pattern-bg.svg);
+    background-image: url('../images/pattern-bg.svg');
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1269,10 +1265,6 @@ h3 .job-title {
     width: 278px;
     height: 556px;
 }
-.joinUsSecOuter.getStartedSec .joinUsSec {
-    position: relative;
-    z-index: 1;
-}
 .testimonialsSec {
     position: relative;
 }
@@ -1284,10 +1276,6 @@ h3 .job-title {
     background-image: url('../images/ellipse-icon3.svg');
     width: 272px;
     height: 538px;
-}
-.testimonialsInner {
-    position: relative;
-    z-index: 1;
 }
 .testimonialsSec .testimonial_slide {
     margin: 0 10px;
@@ -1337,10 +1325,6 @@ h3 .job-title {
 .testimonialsSec .testimonial_slide_inner .testiClientName p {
     font-size: 14px;
     margin-bottom: 0;
-}
-.whySecurityMatters {
-    position: relative;
-    z-index: 1;
 }
 .whySecurityMatters .whySecurityMattersCont {
     max-width: 1000px;
@@ -2047,6 +2031,8 @@ h3 .job-title {
     width: 300px;
     height: 100vh;
     padding: 35px 20px;
+    position: fixed;
+    z-index: 3;
 }
 .dashboardSidebar .dashboardLogo {
     text-align: center;
@@ -2146,7 +2132,12 @@ h3 .job-title {
     width: calc(100% - 18px);
 }
 .dashboardContent {
-    width: calc(100% - 300px);
+    width: 100%;
+    padding-left: 300px;
+}
+.dashboard-main .careersPage,
+.dashboard-main .jobSingle-dashpost {
+    padding: 105px 50px 50px;
 }
 .dashboardContent .dashboardHead {
     background-color: #1b2a36;
@@ -2154,6 +2145,10 @@ h3 .job-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 .dashboardContent .dashboardNotifications .dashboardNotificationBtn,
 .dashboardContent .dashboardNotifications .dashboardNotificationBtn:hover,
@@ -2670,7 +2665,14 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     outline: none;
     box-shadow: none;
 }
-.jobListingWrapper {
+.jobListingWrapper,
+.noLicense_main,
+.singleJobcontent,
+.dashboard-container,
+.whyChooseUs .whyChooseInner,
+.joinUsSecOuter.getStartedSec .joinUsSec,
+.testimonialsInner,
+.whySecurityMatters  {
     position: relative;
     z-index: 1;
 }
@@ -2719,5 +2721,134 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     margin-top: 20px;
 }
 .jobListingWrapper .jobListGrid .jobListGridInner .jobListDesc, .jobListDesc p, .jobListDesc ul li {
+    font-size: 16px;
+}
+.singleJobcontent .applyBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+.singleJobcontent .jobContent .jobsInfo {
+    padding: 30px;
+    border-radius: 10px;
+    background: #1a2935;
+    border: 1px solid #0098ff;
+    margin-bottom: 30px;
+}
+.singleJobcontent .jobContent .jobsInfo > .row {
+    margin-bottom: -20px;
+}
+.singleJobcontent .jobContent .jobsInfo > .row > div {
+    margin-bottom: 20px;
+}
+.singleJobcontent .jobContent .jobsInfo .jobInfoInner .jobInfoIcon i {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 12px;
+    width: 100%;
+    color: #0098ff;
+}
+.singleJobcontent .jobContent .jobsInfo .jobInfoInner .jobInfoText h6 {
+    font-size: 12px;
+    color: #ffffff !important;
+    font-family: 'Gilroy-Light';
+    margin: 0 0 5px;
+}
+.singleJobcontent .jobContent .jobsInfo .jobInfoInner .jobInfoText p {
+    font-size: 16px;
+    font-family: 'Gilroy-Bold';
+    margin: 0 !important;
+}
+.singleJobcontent .jobContent .jobContentInner h6 {
+    font-size: 18px;
+    font-family: 'Gilroy-Bold';
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.singleJobcontent .jobContent .jobContentInner p, .singleJobcontent .jobContent .jobContentInner ul, .singleJobcontent .jobContent .jobContentInner ol {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Gilroy-Light';
+}
+.singleJobcontent .jobContent .jobContentInner ul ul,
+.singleJobcontent .jobContent .jobContentInner ol ol,
+.singleJobcontent .jobContent .jobContentInner ul ol,
+.singleJobcontent .jobContent .jobContentInner ol ul {
+    margin: 0;
+}
+.singleJobcontent .jobContent .jobContentInner ul li,
+.singleJobcontent .jobContent .jobContentInner ol li {
+    position: relative;
+    padding-left: 15px;
+}
+.singleJobcontent .jobContent .jobContentInner ul li::before,
+.singleJobcontent .jobContent .jobContentInner ol li::before {
+    color: #3297fa;
+    content: "\f101";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    font-size: 12px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.singleJobcontent .jobContent .jobContentInner ul li strong,
+.singleJobcontent .jobContent .jobContentInner ol li strong {
+    font-family: 'Gilroy-Bold';
+}
+.singleJobcontent .singleJobTitle {
+    margin-bottom: 50px;
+}
+.registerWrapper {
+    background-image: url('../images/patternBg.svg');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    padding: 100px;
+}
+.registerWrapper .registerInner .kingsLogo {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.registerWrapper .registerInner .kingsLogo img {
+    max-width: 57px;
+}
+.registerWrapper .registerInner {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.registerWrapper .registerInner h2 {
+    font-size: 36px;
+}
+.registerWrapper .registerInner .jobseek_login_cmnError,
+.registerWrapper .registerInner .jobseek_register_captcha_Wrap,
+.registerWrapper .registerInner .jobseek_register_inputWrap,
+.registerWrapper .registerInner .jobseek_login_inputWrap,
+.registerWrapper .registerInner .jobseek_login_captcha_Wrap {
+    margin-bottom: 25px;
+}
+.registerWrapper .registerInner label.jobseek_register_label {
+    text-align: left;
+    display: block;
+    font-family: 'Gilroy-Medium';
+    margin-bottom: 10px;
+}
+.registerWrapper .registerInner .jobseek_error {
+    margin-top: 10px;
+}
+.registerWrapper .registerInner .jobseek_error {
+    color: #ff0000;
+    font-size: 14px;
+}
+.registerWrapper .registerInner .jobseek_register_cmnError_in,
+.registerWrapper .registerInner .jobseek_login_cmnError_in {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 6px;
+    font-family: 'Gilroy-Medium';
     font-size: 16px;
 }
