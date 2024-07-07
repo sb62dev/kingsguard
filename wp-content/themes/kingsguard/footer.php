@@ -13,6 +13,7 @@
 
 ?>
 <?php
+	if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) ) { 
 	$general_post = 'footer'; 
 	$footer_post = get_page_by_path($general_post, OBJECT, 'general_settings');
 	if ($footer_post) {
@@ -178,11 +179,10 @@
 		</div>
 	</div>
 </footer>	
-<?php
-	}
-?>	
+<?php } } ?>
 
 <?php
+	if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) ) {  
 	$general_post_name = 'footer'; 
 	$general_post = get_page_by_path($general_post_name, OBJECT, 'general_settings');
 
@@ -207,10 +207,9 @@
 		<img src="<?php echo esc_url($whatsapp_logo_img_url); ?>" alt="<?php echo esc_attr($whatsapp_logo_alt); ?>">
 	</a>
 </div>
-<?php
-		}
-	}
-?>
+<?php } } } ?>
+
+
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/jquery.min.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/popper.min.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/bootstrap.min.js"></script>

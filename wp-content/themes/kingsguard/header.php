@@ -34,6 +34,9 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+<?php 
+if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) ) : ?>
     <div class="headerTopBar">
         <div class="sm_container">
             <div class="headerTopBarInner">
@@ -202,3 +205,4 @@
             </div>
         </div>
     </header>
+<?php endif; ?>
