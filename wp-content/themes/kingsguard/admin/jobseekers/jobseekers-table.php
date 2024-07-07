@@ -43,4 +43,26 @@ function create_jobseekers_table() {
 
 add_action('after_setup_theme', 'create_jobseekers_table');
 
+function create_job_applications_table() {
+    global $wpdb;
+    $jobseekers_table = $wpdb->prefix . 'custom_jobseekers';
+    $applications_table = $wpdb->prefix . 'custom_job_applications';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    $sql = "CREATE TABLE $applications_table (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        jobseeker_id mediumint(9) NOT NULL,
+        job_id mediumint(9) NOT NULL,
+        application_data text NOT NULL,
+        submission_date datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
+        FOREIGN KEY (jobseeker_id) REFERENCES $jobseekers_table(id) ON DELETE CASCADE,
+        PRIMARY KEY  (id)
+    ) $charset_collate;";
+
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+
+add_action('after_setup_theme', 'create_job_applications_table');
+
 ?>

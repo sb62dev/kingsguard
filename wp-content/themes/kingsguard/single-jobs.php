@@ -15,7 +15,7 @@ if (have_posts()) :
                 <?php include('admin/jobseeker-dashboard/dashboard-sidebar.php') ?> 
                 <div class="dashboardContent">
                     <?php include('admin/jobseeker-dashboard/dashboard-header.php') ?>  
-                    <div id="dashboard-content">
+                    <div id="dashboard-content" class="dashboard-main">
                         <div class="jobSingle-dashpost">  
                             <?php include('admin/jobseeker-dashboard/single-jobs-content.php') ?> 
                         </div>
@@ -26,9 +26,9 @@ if (have_posts()) :
             <div class="pageBody"> 
                 <div class="jobSingle-post">  
                     <div class="sm_container">
-                        <?php include('admin/jobseeker-dashboard/single-jobs-content.php') ?> 
-                        <?php get_template_part('template-parts/trainingsection'); ?>  
+                        <?php include('admin/jobseeker-dashboard/single-jobs-content.php') ?>   
                     </div>
+                    <?php get_template_part('template-parts/trainingsection'); ?> 
                 </div>
             </div>
         <?php endif; ?> 

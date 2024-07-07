@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Jobseekers Dashboard Careers
+ * Template Name: Jobseekers Dashboard Applications
 **/
 
 if ( !isset($_COOKIE['jobseeker_logged_in']) || $_COOKIE['jobseeker_logged_in'] !== 'true' ) {
@@ -17,13 +17,13 @@ get_header();
     <div class="dashboardContent">
         <?php include('jobseeker-dashboard/dashboard-header.php') ?> 
         <div id="dashboard-content" class="dashboard-main">
-            <section class="dash_careersPage pb100">   
-                <div class="dash_job-listings-wrap">
-                    <div class="dash_job-listings-header">
-                        <h1> Jobs Available </h1>
+            <section class="dash_appliPage pb100">   
+                <div class="dash_appli-listings-wrap">
+                    <div class="dash_appli-listings-header">
+                        <h1> My Applications </h1>
                     </div>
-                    <div class="jobListingWrapper"> 
-                        <?php include('jobseeker-dashboard/dashboard-careers-archive.php') ?>  
+                    <div class="dash_appli-listings-wrap"> 
+                        <?//php include('jobseeker-dashboard/dashboard-careers-archive.php') ?>   
                     </div>
                 </div> 
             </section>

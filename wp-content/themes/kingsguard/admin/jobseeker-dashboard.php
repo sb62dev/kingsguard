@@ -16,71 +16,73 @@ get_header();
     <?php include('jobseeker-dashboard/dashboard-sidebar.php') ?> 
     <div class="dashboardContent">
         <?php include('jobseeker-dashboard/dashboard-header.php') ?> 
-        <div id="dashboard-content">
+        <div id="dashboard-content" class="dashboard-main">
             <section class="careersPage pb100"> 
-                <div class="profileInfo-wrap">
-                    <?php 
-                        if ( isset( $_COOKIE['jobseeker_logged_in'] ) && $_COOKIE['jobseeker_logged_in'] === 'true' ) {
-                            global $wpdb;
-                            $username = isset( $_COOKIE['jobseeker_username'] ) ? esc_html( $_COOKIE['jobseeker_username'] ) : '';
-                            if ( $username ) { 
-                                $user = $wpdb->get_row( $wpdb->prepare(
-                                    "SELECT first_name, email FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s",
-                                    $username
-                                ));
-                        
-                                if ( $user ) { 
-                                    ?>
-                                        <h1> Welcome <?php echo esc_html( $user->first_name ); ?>! </h1>
-                                    <?php
+                <div class="dashboard-container">
+                    <div class="profileInfo-wrap">
+                        <?php 
+                            if ( isset( $_COOKIE['jobseeker_logged_in'] ) && $_COOKIE['jobseeker_logged_in'] === 'true' ) {
+                                global $wpdb;
+                                $username = isset( $_COOKIE['jobseeker_username'] ) ? esc_html( $_COOKIE['jobseeker_username'] ) : '';
+                                if ( $username ) { 
+                                    $user = $wpdb->get_row( $wpdb->prepare(
+                                        "SELECT first_name, email FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s",
+                                        $username
+                                    ));
+                            
+                                    if ( $user ) { 
+                                        ?>
+                                            <h1> Welcome <?php echo esc_html( $user->first_name ); ?>! </h1>
+                                        <?php
+                                    } else {
+                                        ?>
+                                            <h1> Welcome! </h1>
+                                        <?php
+                                    }
                                 } else {
                                     ?>
                                         <h1> Welcome! </h1>
                                     <?php
                                 }
-                            } else {
+                            } else { 
                                 ?>
                                     <h1> Welcome! </h1>
                                 <?php
                             }
-                        } else { 
-                            ?>
-                                <h1> Welcome! </h1>
-                            <?php
-                        }
-                    ?> 
-                    <p> View all job postings and applications </p>
+                        ?> 
+                        <p> View all job postings and applications </p>
+                    </div>
+                    <div class="job-applications-wrap">
+                        <div class="job-applications-header">
+                            <div class="row">
+                            <div class="col-md-6">
+                                    <h3> My Applications </h3>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                    <a href="javascript:void(0);"> View All </a> 
+                            </div>
+                            </div>  
+                        </div>
+                        <div class="job-listings">
+                            All the applications should be shown here 
+                        </div>  
+                    </div> 
+                    <div class="job-listings-wrap">
+                        <div class="job-listings-header">
+                            <div class="row">
+                            <div class="col-md-6">
+                                    <h3> Jobs Available </h3>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                    <a href="/jobseeker-dashboard/dashboard-careers-archive"> View All </a> 
+                            </div>
+                            </div>  
+                        </div>
+                        <div class="jobListingWrapper"> 
+                            <?php include('jobseeker-dashboard/dashboard-home-jobs.php') ?> 
+                        </div>
+                    </div> 
                 </div>
-                <div class="job-applications-wrap">
-                    <div class="job-applications-header">
-                        <div class="row">
-                           <div class="col-md-6">
-                                <h3> My Applications </h3>
-                           </div>
-                           <div class="col-md-6 text-right">
-                                <a href="javascript:void(0);"> View All </a> 
-                           </div>
-                        <div>  
-                    </div>
-                    <div class="job-listings">
-                        All the applications should be shown here 
-                    </div>  
-                </div> 
-                <div class="job-listings-wrap">
-                    <div class="job-listings-header">
-                        <div class="row">
-                           <div class="col-md-6">
-                            <h3> Jobs Available </h3>
-                           </div>
-                           <div class="col-md-6 text-right">
-                                <a href="/jobseeker-dashboard/dashboard-careers-archive"> View All </a> 
-                           </div>
-                        <div>  
-                    </div>
-                    <div class="job-listings-wrap"> 
-                        <?php include('jobseeker-dashboard/dashboard-home-jobs.php') ?> 
-                    </div>
-                </div> 
             </section>
         </div>
     </div>
