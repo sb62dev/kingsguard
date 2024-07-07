@@ -2670,3 +2670,54 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     outline: none;
     box-shadow: none;
 }
+.jobListingWrapper {
+    position: relative;
+    z-index: 1;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    background: #1a2935;
+    border: 1px solid #0098ff;
+    margin: 0;
+    border-radius: 8px;
+    height: 100%;
+    padding: 20px 20px;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner:hover,
+.jobListingWrapper .jobListGrid .jobListGridInner:focus {
+    text-decoration: none;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner h4 {
+    font-size: 20px;
+    font-family: 'Gilroy-SemiBold';
+    padding-right: 10px;
+    display: block;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobInfoIcon i {
+    font-size: 16px;
+    color: #0098ff;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobInfo {
+    display: flex;
+    align-items: center;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobInfoInner {
+    display: flex;
+    align-items: center;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobInfoInner + .jobInfoInner {
+    margin-left: 20px;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobInfoText {
+    font-size: 12px;
+    font-family: 'Gilroy-SemiBold';
+    margin-left: 6px;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobListDesc {
+    margin-top: 20px;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobListDesc, .jobListDesc p, .jobListDesc ul li {
+    font-size: 16px;
+}
