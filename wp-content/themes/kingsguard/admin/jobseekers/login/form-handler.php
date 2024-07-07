@@ -19,7 +19,7 @@ function handle_jobseekers_login() {
             $username = sanitize_text_field($_POST['jobseek_user']);
             $password = $_POST['jobseek_password']; 
             $query = $wpdb->prepare(
-                "SELECT * FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s",
+                "SELECT * FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
                 $username
             );  
             $user = $wpdb->get_row($query);  

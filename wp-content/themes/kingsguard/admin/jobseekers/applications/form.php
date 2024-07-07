@@ -9,6 +9,30 @@ function job_application_form() {
     ));
 
     $site_key = GOOGLE_RECAPTCHA_SITE_KEY;
+
+    $user_info = array(
+        'fname' => '',
+        'lname' => '',
+        'email' => ''
+    );
+
+    if ( isset($_COOKIE['jobseeker_logged_in']) && $_COOKIE['jobseeker_logged_in'] === 'true' ) {
+        global $wpdb;
+        $username = isset($_COOKIE['jobseeker_username']) ? esc_html($_COOKIE['jobseeker_username']) : '';
+        if ( $username ) {
+            $user = $wpdb->get_row($wpdb->prepare(
+                "SELECT first_name, last_name, email FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
+                $username
+            ));
+            if ($user) {
+                $user_info = array(
+                    'fname' => $user->first_name,
+                    'lname' => $user->last_name,
+                    'email' => $user->email
+                );
+            }
+        }
+    }
     
     ob_start(); ?>
     <div class="jobseekers_application_wrapper">
@@ -24,21 +48,21 @@ function job_application_form() {
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> First Name* </label>
-                                <input type="text" id="jobseek_application_fname" name="jobseek_application_fname" value="<?php echo esc_attr( $user_info['fname'] ); ?>">
+                                <input type="text" class="inputField" id="jobseek_application_fname" name="jobseek_application_fname" value="<?php echo esc_attr( $user_info['fname'] ); ?>">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Last Name* </label>
-                                <input type="text" id="jobseek_application_lname" name="jobseek_application_lname" value="<?php echo esc_attr( $user_info['lname'] ); ?>">
+                                <input type="text" class="inputField" id="jobseek_application_lname" name="jobseek_application_lname" value="<?php echo esc_attr( $user_info['lname'] ); ?>">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Email Address* </label>
-                                <input type="text" id="jobseek_application_email" name="jobseek_application_email" value="<?php echo esc_attr( $user_info['email'] ); ?>">
+                                <input type="text" class="inputField" id="jobseek_application_email" name="jobseek_application_email" value="<?php echo esc_attr( $user_info['email'] ); ?>">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>  
@@ -56,22 +80,22 @@ function job_application_form() {
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
-                        <div class="jobseek_application_col">
+                        <div class="jobseek_application_col col-md-12">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Resume* </label>
                                 <input type="file" id="jobseek_application_resume" name="jobseek_application_resume">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>  
-                        <div class="jobseek_application_col">
+                        <div class="jobseek_application_col col-md-12">
                             <div class="jobseek_application_captcha_Wrap">
                                 <div class="g-recaptcha" data-callback="jobseek_application_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
-                        <div class="jobseek_application_col">
+                        <div class="jobseek_application_col col-md-12">
                             <div class="jobseek_application_inputWrap">
-                                <button type="submit" name="submit" class="btn-style gradientBtn">Submit</button>
+                                <button type="submit" name="submit" class="btn-style gradientBtn">Submit</button> 
                             </div>
                         </div>
                     </div>

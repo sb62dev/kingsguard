@@ -32,7 +32,7 @@ function handle_jobseekers_registration() {
 
             // Check if the user already exists
             $user_exists = $wpdb->get_var($wpdb->prepare(
-                "SELECT COUNT(*) FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s OR email = %s",
+                "SELECT COUNT(*) FROM {$wpdb->prefix}jobseekers_users WHERE username = %s OR email = %s",
                 $username, $email
             ));
 
@@ -41,7 +41,7 @@ function handle_jobseekers_registration() {
             } else {
                 // Insert new user
                 $wpdb->insert(
-                    $wpdb->prefix . 'custom_jobseekers',
+                    $wpdb->prefix . 'jobseekers_users',
                     array(
                         'username' => $username,
                         'email' => $email,

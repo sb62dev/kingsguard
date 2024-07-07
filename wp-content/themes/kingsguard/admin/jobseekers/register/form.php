@@ -36,28 +36,28 @@ function jobseekers_register_form() {
                         </div>
                         <div class="jobseek_register_col col-md-6">
                             <div class="jobseek_register_inputWrap">
-                            <label class="jobseek_register_label"> Last Name* </label>
+                                <label class="jobseek_register_label"> Last Name* </label>
                                 <input type="text" class="inputField" id="jobseek_register_lname" name="jobseek_register_lname" placeholder="Last Name*">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_register_col col-md-12">
                             <div class="jobseek_register_inputWrap">
-                            <label class="jobseek_register_label"> Email Address* </label>
+                                <label class="jobseek_register_label"> Email Address* </label>
                                 <input type="text" class="inputField" id="jobseek_register_email" name="jobseek_register_email" placeholder="Email*">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div> 
                         <div class="jobseek_register_col col-md-6">
                             <div class="jobseek_register_inputWrap">
-                            <label class="jobseek_register_label"> Password* </label>
+                                <label class="jobseek_register_label"> Password* </label>
                                 <input type="password" class="inputField" id="jobseek_register_password" name="jobseek_register_password" placeholder="Password*">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_register_col col-md-6">
                             <div class="jobseek_register_inputWrap">
-                            <label class="jobseek_register_label"> Confirm Password* </label>
+                                <label class="jobseek_register_label"> Confirm Password* </label>
                                 <input type="password" class="inputField" id="jobseek_register_confirm_password" name="jobseek_register_confirm_password" placeholder="Confirm Password*">
                                 <div class="jobseek_error"></div>
                             </div>

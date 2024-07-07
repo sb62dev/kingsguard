@@ -67,10 +67,10 @@ jQuery(document).ready(function($) {
         // Clear previous errors
         $('.jobseek_error').html('');
 
-        // Username validation
+        // Phone validation
         if ('' == phone.val().trim()) {
-            phone.next('.jobseek_error').html(user_empty_err_msg).show();
-            go_ahead = false;
+            phone.next('.jobseek_error').html(phone_empty_err_msg).show();
+            go_ahead = false; 
         }
 
         // Resume validation
@@ -81,10 +81,10 @@ jQuery(document).ready(function($) {
 
         // Captcha validation
         if (response.length == 0) {
-            captcha.closest('.jobseek_register_captcha_Wrap').find('.jobseek_error').html(captcha_empty_err_msg).show();
+            captcha.closest('.jobseek_application_captcha_Wrap').find('.jobseek_error').html(captcha_empty_err_msg).show();
             go_ahead = false;
         } else {
-            captcha.closest('.jobseek_register_captcha_Wrap').find('.jobseek_error').hide();
+            captcha.closest('.jobseek_application_captcha_Wrap').find('.jobseek_error').hide();
         }
 
         if (go_ahead) {
@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
 
 });
 
-function jobseek_register_recaptchaCallback() {
+function jobseek_application_recaptchaCallback() {
     jQuery('.jobseek_application_captcha_Wrap').find('.jobseek_error').hide();
 }
 

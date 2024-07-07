@@ -10,13 +10,13 @@ function verify_jobseekers_email() {
 
         if (!empty($verification_token) && !empty($email)) {
             $user = $wpdb->get_row($wpdb->prepare(
-                "SELECT * FROM {$wpdb->prefix}custom_jobseekers WHERE email = %s AND verification_token = %s",
+                "SELECT * FROM {$wpdb->prefix}jobseekers_users WHERE email = %s AND verification_token = %s",
                 $email, $verification_token
             ));
 
             if ($user) {
                 $wpdb->update(
-                    $wpdb->prefix . 'custom_jobseekers',
+                    $wpdb->prefix . 'jobseekers_users',
                     array('email_verified' => 1, 'verification_token' => ''),
                     array('id' => $user->id)
                 );

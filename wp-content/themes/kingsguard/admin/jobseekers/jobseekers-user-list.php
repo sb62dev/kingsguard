@@ -2,7 +2,7 @@
 
 function jobseekers_user_list() {
     global $wpdb;
-    $users = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}custom_jobseekers");
+    $users = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}jobseekers_users");
 
     ob_start(); ?>
     <table>

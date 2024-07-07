@@ -14,7 +14,7 @@ function jobseekers_user_menu_shortcode() {
         $username = isset( $_COOKIE['jobseeker_username'] ) ? esc_html( $_COOKIE['jobseeker_username'] ) : '';
         if ( $username ) { 
             $user = $wpdb->get_row( $wpdb->prepare(
-                "SELECT first_name, email FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s",
+                "SELECT first_name, email FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
                 $username
             ));
     
