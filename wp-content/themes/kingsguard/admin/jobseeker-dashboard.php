@@ -73,13 +73,13 @@ get_header();
                             <h3> Jobs Available </h3>
                            </div>
                            <div class="col-md-6 text-right">
-                                <a href="/careers/"> View All </a> 
+                                <a href="/jobseeker-dashboard/dashboard-careers-archive"> View All </a> 
                            </div>
                         <div>  
                     </div>
-                    <div class="job-listings">
-                        <?php get_template_part('simple_job_board/archive-jobpost'); ?>    
-                    </div>  
+                    <div class="job-listings-wrap"> 
+                        <?php include('jobseeker-dashboard/dashboard-home-jobs.php') ?> 
+                    </div>
                 </div> 
             </section>
         </div>

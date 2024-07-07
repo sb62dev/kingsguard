@@ -35,8 +35,9 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php 
-if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) ) : ?>
+<?php  
+$current_url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) && strpos($current_url, '/jobseekers-dashboard/') === false ) : ?> 
     <div class="headerTopBar">
         <div class="sm_container">
             <div class="headerTopBarInner">
