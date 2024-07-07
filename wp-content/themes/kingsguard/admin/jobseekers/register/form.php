@@ -15,10 +15,7 @@ function jobseekers_register_form() {
         <div class="jobseekers_register_formWrap">
             <form class="jobseekers_register_form" id="jobseekers_register_form" method="POST">
                 <input type="hidden" name="action" id="action" value="jobseekers_register_form_save" />
-                <?php wp_nonce_field('jobseekers_register_form_save_action', 'jobseekers_register_form_save_nonce_field'); ?>
-                <div class="jobseek_register_header">
-                    <h2>Please Register to Apply</h2>
-                </div>
+                <?php wp_nonce_field('jobseekers_register_form_save_action', 'jobseekers_register_form_save_nonce_field'); ?> 
                 <div class="jobseek_register_wrap">
                     <div class="jobseek_loader" style="display: none;">Loading...</div>
                     <div class="jobseek_register_cmnError" style="display: none;"><div class="jobseek_register_cmnError_in"></div></div>

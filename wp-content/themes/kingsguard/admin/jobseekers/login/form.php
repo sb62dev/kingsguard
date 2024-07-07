@@ -13,10 +13,7 @@ function jobseekers_login_form() {
     ob_start(); ?>
     <form class="jobseekers_login_form" id="jobseekers_login_form" method="POST">
         <input type="hidden" name="action" id="action" value="jobseekers_login_form_save" />
-        <?php wp_nonce_field('jobseekers_login_form_save_action', 'jobseekers_login_form_save_nonce_field'); ?>
-        <div class="jobseek_login_header">
-            <h2>Please Login to Apply</h2>
-        </div>
+        <?php wp_nonce_field('jobseekers_login_form_save_action', 'jobseekers_login_form_save_nonce_field'); ?> 
         <div class="jobseek_login_wrap">
             <div class="jobseek_loader" style="display: none;">Loading...</div>
             <div class="jobseek_login_cmnError" style="display: none;"><div class="jobseek_login_cmnError_in"></div></div>

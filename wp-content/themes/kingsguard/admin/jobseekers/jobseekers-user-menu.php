@@ -14,7 +14,7 @@ function jobseekers_user_menu_shortcode() {
         $username = isset( $_COOKIE['jobseeker_username'] ) ? esc_html( $_COOKIE['jobseeker_username'] ) : '';
         if ( $username ) { 
             $user = $wpdb->get_row( $wpdb->prepare(
-                "SELECT username, email FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s",
+                "SELECT first_name, email FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s",
                 $username
             ));
     
@@ -27,7 +27,7 @@ function jobseekers_user_menu_shortcode() {
                             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/Profile.svg" alt="Profile Icon">
                         </div>
                         <div class="dashboardProfileName">
-                            <div class="dashboardProfileNm"><?php echo esc_html( $user->username ); ?></div>
+                            <div class="dashboardProfileNm"><?php echo esc_html( $user->first_name ); ?></div>
                             <div class="dashboardProfileEmail"><?php echo $email; ?></div>
                         </div>
                     </div>

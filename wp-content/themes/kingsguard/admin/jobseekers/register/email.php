@@ -20,11 +20,11 @@ function verify_jobseekers_email() {
                     array('email_verified' => 1, 'verification_token' => ''),
                     array('id' => $user->id)
                 );
-                wp_redirect(home_url('/register?email-verification-success'));
+                wp_redirect(home_url('/jobseekers-register?email-verification-success'));
                 exit;
             }
         }
-        wp_redirect(home_url('/register?email-verification-failed'));
+        wp_redirect(home_url('/jobseekers-register?email-verification-failed'));
         exit;
     }
 }

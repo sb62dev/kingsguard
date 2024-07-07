@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
                     if (res.success) {
                         $("html, body").animate({ scrollTop: 0 }, "slow");
                         $("#jobseekers_login_form")[0].reset();
-                        window.location.href = '/dashboard';
+                        window.location.href = '/jobseekers-dashboard';
                     } else { 
                         grecaptcha.reset(); 
                         $('.jobseek_login_cmnError').show().find('.jobseek_login_cmnError_in').html(res.data.error); 

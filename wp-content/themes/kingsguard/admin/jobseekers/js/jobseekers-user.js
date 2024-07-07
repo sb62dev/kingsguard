@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
             success: function(response) {
                 if (response.success) {
                     // Redirect or update UI as needed upon successful logout
-                    window.location.href = '/login';
+                    window.location.href = '/jobseekers-login';
                 } else {
                     // Handle error scenarios if needed
                     console.log('Logout error:', response.data.message);

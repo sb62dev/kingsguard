@@ -1,10 +1,10 @@
 <?php
 /**
- * Template Name: Dashboard
+ * Template Name: Jobseekers Dashboard
 **/
 
 if ( !isset($_COOKIE['jobseeker_logged_in']) || $_COOKIE['jobseeker_logged_in'] !== 'true' ) {
-    wp_redirect('/login');
+    wp_redirect('/jobseekers-login');
     exit;
 }
 
@@ -13,14 +13,74 @@ get_header();
 ?> 
 
 <div class="dashboardWrapper">
-    <?php include('dashboard-sidebar.php') ?> 
+    <?php include('jobseeker-dashboard/dashboard-sidebar.php') ?> 
     <div class="dashboardContent">
-        <?php include('dashboard-header.php') ?> 
+        <?php include('jobseeker-dashboard/dashboard-header.php') ?> 
         <div id="dashboard-content">
             <section class="careersPage pb100"> 
-                <div class="job-listings">
-                    <?php get_template_part('simple_job_board/archive-jobpost'); ?>    
-                </div>  
+                <div class="profileInfo-wrap">
+                    <?php 
+                        if ( isset( $_COOKIE['jobseeker_logged_in'] ) && $_COOKIE['jobseeker_logged_in'] === 'true' ) {
+                            global $wpdb;
+                            $username = isset( $_COOKIE['jobseeker_username'] ) ? esc_html( $_COOKIE['jobseeker_username'] ) : '';
+                            if ( $username ) { 
+                                $user = $wpdb->get_row( $wpdb->prepare(
+                                    "SELECT first_name, email FROM {$wpdb->prefix}custom_jobseekers WHERE username = %s",
+                                    $username
+                                ));
+                        
+                                if ( $user ) { 
+                                    ?>
+                                        <h1> Welcome <?php echo esc_html( $user->first_name ); ?>! </h1>
+                                    <?php
+                                } else {
+                                    ?>
+                                        <h1> Welcome! </h1>
+                                    <?php
+                                }
+                            } else {
+                                ?>
+                                    <h1> Welcome! </h1>
+                                <?php
+                            }
+                        } else { 
+                            ?>
+                                <h1> Welcome! </h1>
+                            <?php
+                        }
+                    ?> 
+                    <p> View all job postings and applications </p>
+                </div>
+                <div class="job-applications-wrap">
+                    <div class="job-applications-header">
+                        <div class="row">
+                           <div class="col-md-6">
+                                <h3> My Applications </h3>
+                           </div>
+                           <div class="col-md-6 text-right">
+                                <a href="javascript:void(0);"> View All </a> 
+                           </div>
+                        <div>  
+                    </div>
+                    <div class="job-listings">
+                        All the applications should be shown here 
+                    </div>  
+                </div> 
+                <div class="job-listings-wrap">
+                    <div class="job-listings-header">
+                        <div class="row">
+                           <div class="col-md-6">
+                            <h3> Jobs Available </h3>
+                           </div>
+                           <div class="col-md-6 text-right">
+                                <a href="/careers/"> View All </a> 
+                           </div>
+                        <div>  
+                    </div>
+                    <div class="job-listings">
+                        <?php get_template_part('simple_job_board/archive-jobpost'); ?>    
+                    </div>  
+                </div> 
             </section>
         </div>
     </div>
