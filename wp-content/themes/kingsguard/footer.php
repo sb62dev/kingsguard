@@ -13,7 +13,8 @@
 
 ?>
 <?php
-	if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) ) { 
+	$current_url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+	if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) && strpos($current_url, '/jobseekers-dashboard/') === false ) { 
 	$general_post = 'footer'; 
 	$footer_post = get_page_by_path($general_post, OBJECT, 'general_settings');
 	if ($footer_post) {
@@ -182,7 +183,8 @@
 <?php } } ?>
 
 <?php
-	if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) ) {  
+	$current_url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+	if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login' ) ) && strpos($current_url, '/jobseekers-dashboard/') === false ) {  
 	$general_post_name = 'footer'; 
 	$general_post = get_page_by_path($general_post_name, OBJECT, 'general_settings');
 

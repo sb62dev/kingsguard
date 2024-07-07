@@ -10,7 +10,7 @@
     <div class="dashboardOptions">
         <ul class="dashboardMenu">
             <li class="active">
-                <a href="#" class="dashboardListItem" data-view="dashboard">
+                <a href="/jobseekers-dashboard" class="dashboardListItem" data-view="dashboard">
                     <div class="dashboardListIcon">
                         <i class="fa fa-home" aria-hidden="true"></i>
                     </div>
@@ -20,13 +20,11 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="dashboardListItem" data-view="jobs">
+                <a href="/jobseekers-dashboard/careers" class="dashboardListItem" data-view="jobs">
                     <div class="dashboardListIcon">
                         <i class="fa fa-briefcase" aria-hidden="true"></i>
                     </div>
-                    <div class="dashboardListText">
-                        Jobs
-                    </div>
+                    <div class="dashboardListText"> Jobs </div>
                 </a> 
             </li>
             <li>
