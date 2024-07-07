@@ -28,7 +28,7 @@ if(strpos(esc_url(home_url('/')), '?lang=')){
         if ( ( NULL != filter_input( INPUT_GET, 'selected_category' ) || NULL != filter_input( INPUT_GET, 'selected_jobtype' ) || NULL != filter_input( INPUT_GET, 'selected_location' ) || filter_input( INPUT_GET, 'search_keywords' ) ) ) {
 
             if ( ( '-1' != filter_input( INPUT_GET, 'selected_category' ) || '-1' != filter_input( INPUT_GET, 'selected_jobtype' ) || '-1' != filter_input( INPUT_GET, 'selected_location' ) || filter_input( INPUT_GET, 'search_keywords' ) != '') ) {
-                echo '<p><a href="' . esc_url($action_page_url) . '" class="btn btn-primary">' . __( 'Clear Results', 'simple-job-board') . '</a></p>';
+                echo '<div class="clearFilterBtn"><a href="' . esc_url($action_page_url) . '" class="btn btn-primary">' . __( 'Clear Results', 'simple-job-board') . '</a></div>';
             }
         }   
         $view = get_option('job_board_listing_view');

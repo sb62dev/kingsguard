@@ -10,7 +10,7 @@ get_header();
 
 ?>
 
-<div class="bodyWrap">
+<div class="pageBody homeBody">
     <?php
         $home_banner_title = get_field('home_banner_title');
         if (isset($home_banner_title) && !empty($home_banner_title)) {
