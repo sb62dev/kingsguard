@@ -15,7 +15,7 @@ function jobseekers_login_form() {
         <input type="hidden" name="action" id="action" value="jobseekers_login_form_save" />
         <?php wp_nonce_field('jobseekers_login_form_save_action', 'jobseekers_login_form_save_nonce_field'); ?> 
         <div class="jobseek_login_wrap">
-            <div class="jobseek_loader" style="display: none;">Loading...</div>
+            <div class="jobseek_loader" style="display: none;"><div class="jobLoader"></div></div>
             <div class="jobseek_login_cmnError" style="display: none;"><div class="jobseek_login_cmnError_in"></div></div>
             <div class="jobseek_login_row">
                 <div class="jobseek_login_col"> 

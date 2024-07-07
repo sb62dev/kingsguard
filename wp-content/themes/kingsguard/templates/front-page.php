@@ -310,9 +310,9 @@ get_header();
     <?php } ?>-->
 
     
-    <?php if (have_rows('client_testimonials')) : ?>
+    <!-- <?php if (have_rows('client_testimonials_tabs')) : ?>
     <section>
-        <div class="testimonialsSec py200">
+        <div class="clientSec testimonialsSec py200">
             <div class="sm_container">
                 <div class="testimonialsInner">
                     <?php
@@ -323,66 +323,81 @@ get_header();
                         <h2 class="mb0 h2"> <?php echo $testimonials_title; ?> </h2>
                     </div>
                     <?php } ?>
-                    <div class="testimonials slider">
-                        <?php while (have_rows('client_testimonials')) : the_row(); ?>
-                            <div class="testimonial_slide" data-aos="flip-up" data-aos-duration="1000">
-                                <div class="testimonial_slide_box">
-                                    <div class="testimonial_slide_inner">
-                                        <?php
-                                            $star_rating = get_sub_field('star_rating'); 
-                                            $max_stars = 5; 
-
-                                        if ($star_rating) : ?>
-                                            <div class="ratings">
-                                                <?php
-                                                // Loop to display filled stars
-                                                for ($i = 1; $i <= $max_stars; $i++) {
-                                                    if ($i <= $star_rating) {
-                                                        echo '<i class="fa fa-star"></i>';
-                                                    } else {
-                                                        echo '<i class="fa fa-star-o" aria-hidden="true"></i>';
-                                                    }
-                                                }
-                                                ?>
-                                            </div>
-                                        <?php endif; ?>
-
+                    <div class="tabsHeadWrap">
+                        <ul class="nav nav-tabs tabsHead" role="tablist" data-aos="fade-up" data-aos-duration="1000" >
+                            <?php $countt = 0; while (have_rows('client_testimonials_tabs')) : the_row(); ?>
+                                <?php 
+                                    $client_tab_title = get_sub_field('client_tab_title');
+                                    if(isset($client_tab_title) && !empty($client_tab_title)){
+                                    $client_tab_value = get_sub_field('client_tab_value');
+                                ?> 
+                                <li class="nav-item">
+                                    <a class="nav-link <?php echo ($countt === 0) ? 'active' : ''; ?>" data-toggle="tab" href="#tabss-<?php echo $countt; ?>" role="tab"><h4><?php echo $client_tab_title; ?></h4><p><?php echo $client_tab_value; ?></p></a>
+                                </li>
+                                <?php } ?>
+                            <?php $countt++; endwhile; ?>
+                        </ul>
+                    </div>
+                    <div class="tab-content tabsBody" data-aos="fade-up" data-aos-duration="1000" >
+                        <?php $counterr = 0; while (have_rows('client_testimonials_tabs')) : the_row(); ?>
+                        <div class="tab-pane <?php echo ($counterr === 0) ? 'active' : ''; ?>" id="tabss-<?php echo $counterr; ?>" role="tabpanel">
+                            <div class="clientTabWrapper">
+                                <div class="row">
+                                    <div class="col-lg-12">
                                         <?php 
-                                            $testi_content = get_sub_field('testi_content');
-                                            if(isset($testi_content) && !empty($testi_content)){
+                                            $client_tab_desc = get_sub_field('client_tab_desc');
+                                            if(isset($client_tab_desc) && !empty($client_tab_desc)){
                                         ?> 
-                                        <div class="testimonialCont">
-                                            <?php echo $testi_content; ?>
-                                        </div>
-                                        <?php } ?>
-                                        <?php 
-                                            $testi_name = get_sub_field('testi_name');
-                                            if(isset($testi_name) && !empty($testi_name)){
-                                            $testi_profile = get_sub_field('testi_profile');
-                                        ?> 
+                                        <?php echo $client_tab_desc; ?>
                                         <?php } ?>   
-                                        <div class="testiClient">
-                                            <div class="testiClientName">
-                                                <h6><?php echo $testi_name; ?></h6>
-                                                <p><?php echo $testi_profile; ?></p>
-                                            </div>
-                                            <div class="quoteIcon">
-                                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/quoteIcon.svg" alt="quote"> 
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
+                                <?php if (have_rows('client_testimonials')) : ?>
+                                <div class="row">
+                                    <?php while (have_rows('client_testimonials')) : the_row(); ?>
+                                    <div class="col-lg-4">
+                                        <?php
+                                            $client_image = get_sub_field('client_image');
+                                            if (isset($client_image) && !empty($client_image)) {
+                                            $image_url = wp_get_attachment_image_src($client_image, 'full')[0];
+                                            $image_alt = get_post_meta($client_image, '_wp_attachment_image_alt', true);
+                                        ?>
+                                            <div class="ClientTabImg">
+                                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                            </div>
+                                        <?php } ?>
+                                        <?php 
+                                            $client_review = get_sub_field('client_review');
+                                            if(isset($client_review) && !empty($client_review)){
+                                        ?> 
+                                            <div class="clientTabReview">
+                                                <?php echo $client_review; ?>
+                                            </div>
+                                        <?php } ?>   
+                                        <?php 
+                                            $client_name = get_sub_field('client_name');
+                                            if(isset($client_name) && !empty($client_name)){
+                                        ?> 
+                                            <h3 class="h3"><?php echo $client_name; ?></h3>
+                                        <?php } ?>
+                                        <?php 
+                                            $client_location = get_sub_field('client_location');
+                                            if(isset($client_location) && !empty($client_location)){
+                                        ?> 
+                                            <p><?php echo $client_location; ?></p>
+                                        <?php } ?>
+                                    </div>
+                                    <?php endwhile; ?>
+                                </div>
+                                <?php endif; wp_reset_query(); ?>
                             </div>
-                        <?php endwhile; ?>
-                    </div>
-                    <div class="customArrows">
-                        <button class="prev-btn"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/leftArrow.png" alt="Left Arrow" > </button>
-                        <button class="next-btn"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/rightArrow.png" alt="Right Arrow" ></button>
+                        </div>
+                        <?php $counterr++; endwhile; ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <?php endif; wp_reset_query(); ?>
+    <?php endif; wp_reset_query(); ?> -->
 </div>
  <?php get_footer(); ?>
