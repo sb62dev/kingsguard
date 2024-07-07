@@ -18,10 +18,13 @@ if (have_posts()) :
                     <div id="dashboard-content" class="dashboard-main">
                         <div class="jobSingle-dashpost">  
                             <?php include('admin/jobseeker-dashboard/single-jobs-content.php') ?> 
+                            <div class="single_appliForm_wrap">
+                                <?php echo do_shortcode('[job_application_form]') ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         <?php else : ?>
             <div class="pageBody"> 
                 <div class="jobSingle-post">  

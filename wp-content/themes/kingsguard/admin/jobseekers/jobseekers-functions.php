@@ -10,6 +10,13 @@ function jobseeks_google_recaptcha($captcha_response) {
     return $result->success == true && !is_wp_error($result);
 }
 
+/* Function to get Jobseeker table info */
+function get_jobseeker_info($email) {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'jobseekers_users';
+    return $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE email = %s", $email), ARRAY_A);
+}
+
 // Include registration form
 require get_template_directory() . '/admin/jobseekers/jobseekers-table.php';
 
