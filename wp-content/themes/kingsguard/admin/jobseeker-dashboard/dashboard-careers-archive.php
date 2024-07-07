@@ -59,7 +59,7 @@
         </div>
         <?php endwhile; wp_reset_postdata(); else : ?>
         <div class="col-sm-12">
-            <div class="noJobsFound"><?php _e('No Jobs found.', 'text-domain'); ?></div>
+            <div class="noJobsFound">No Jobs Found!</div>
         </div>
         <?php endif; ?>
     </div>

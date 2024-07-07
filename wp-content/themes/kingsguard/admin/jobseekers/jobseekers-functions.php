@@ -19,6 +19,9 @@ require get_template_directory() . '/admin/jobseekers/register/jobseekers-regist
 // Include login form
 require get_template_directory() . '/admin/jobseekers/login/jobseekers-login.php';
 
+// Include application form
+require get_template_directory() . '/admin/jobseekers/applications/jobseekers-applications.php';
+
 // Include user list
 require get_template_directory() . '/admin/jobseekers/jobseekers-user-list.php';
 

@@ -21,14 +21,14 @@ function jobseekers_login_form() {
                 <div class="jobseek_login_col"> 
                     <div class="jobseek_login_inputWrap">
                         <label class="jobseek_register_label"> User Name* </label>
-                        <input type="text" id="jobseek_user" name="jobseek_user" placeholder="Username">
+                        <input type="text" class="inputField" id="jobseek_user" name="jobseek_user" placeholder="Username">
                         <div class="jobseek_error"></div>
                     </div>
                 </div>
                 <div class="jobseek_login_col">
                     <div class="jobseek_login_inputWrap">
                         <label class="jobseek_register_label"> Password* </label>
-                        <input type="password" id="jobseek_password" name="jobseek_password" placeholder="Password">
+                        <input type="password" class="inputField" id="jobseek_password" name="jobseek_password" placeholder="Password">
                         <div class="jobseek_error"></div>
                     </div>
                 </div>

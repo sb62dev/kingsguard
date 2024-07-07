@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li>
-                <a href="/jobseekers-dashboard/careers" class="dashboardListItem" data-view="jobs">
+                <a href="/jobseekers-careers/" class="dashboardListItem" data-view="jobs">
                     <div class="dashboardListIcon">
                         <i class="fa fa-briefcase" aria-hidden="true"></i>
                     </div>
@@ -28,11 +28,11 @@
                 </a> 
             </li>
             <li>
-                <a href="#" class="dashboardListItem" data-view="applications">
+                <a href="/jobseekers-applications/" class="dashboardListItem" data-view="applications">
                     <div class="dashboardListIcon">
                         <i class="fa fa-server" aria-hidden="true"></i>
                     </div>
-                    <div class="dashboardListText">
+                    <div class="dashboardListText"> 
                         Applications
                     </div>
                 </a>
