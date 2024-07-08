@@ -1120,6 +1120,9 @@ h3 .job-title {
     padding: 30px;
     border-bottom: 3px solid transparent;
 }
+.clientSec .tabsHead .nav-item .nav-link p {
+    margin: 0;
+}
 .clientSec .tabsHead .nav-item .nav-link:hover,
 .clientSec .tabsHead .nav-item .nav-link:focus {
     border-top: 0;
@@ -2665,6 +2668,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     outline: none;
     box-shadow: none;
 }
+.jobListingInnerWrapper,
 .jobListingWrapper,
 .noLicense_main,
 .singleJobcontent,
@@ -2675,6 +2679,9 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .whySecurityMatters  {
     position: relative;
     z-index: 1;
+}
+.jobListingWrapper .jobListGrid {
+    height: 100%;
 }
 .jobListingWrapper .jobListGrid .jobListGridInner {
     display: block;
@@ -2723,11 +2730,36 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .jobListingWrapper .jobListGrid .jobListGridInner .jobListDesc, .jobListDesc p, .jobListDesc ul li {
     font-size: 16px;
 }
-.jobListingWrapper .row {
+.jobListingWrapper .jobListingInnerWrapper .row {
     margin-bottom: -30px;
 }
-.jobListingWrapper .row > div {
+.jobListingWrapper .jobListingInnerWrapper .row > div {
     margin-bottom: 30px;
+}
+.jobListingWrapper .jobSearchForm {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.jobListingWrapper .jobSearchForm .btn-search.btn-style.gradientBtn {
+    width: 100%;
+    padding: 15px 30px !important;
+    height: 52px;
+    background: #0098FF;
+}
+.jobListingWrapper .jobSearchForm .btn-search.btn-style.gradientBtn:hover,
+.jobListingWrapper .jobSearchForm .btn-search.btn-style.gradientBtn:focus {
+    color: #0098ff !important;
+    background: #ffffff;
+    background-color: #ffffff !important;
+}
+.jobListingWrapper .noJobsFound {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.jobListingWrapper .noJobsFound h2 {
+    margin: 40px 0;
 }
 .singleJobcontent .applyBtn {
     display: flex;
@@ -3035,6 +3067,10 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
       box-shadow: 0em -2.6em 0em 0em rgba(0, 152, 255, 0.2), 1.8em -1.8em 0 0em rgba(0, 152, 255, 0.2), 2.5em 0em 0 0em rgba(0, 152, 255, 0.2), 1.75em 1.75em 0 0em rgba(0, 152, 255, 0.2), 0em 2.5em 0 0em rgba(0, 152, 255, 0.2), -1.8em 1.8em 0 0em rgba(0, 152, 255, 0.5), -2.6em 0em 0 0em rgba(0, 152, 255, 0.7), -1.8em -1.8em 0 0em #0098ff;
     }
   }
+.clientSec.testimonialsSec .testimonialsInner {
+    background-color: #133148;
+    border-radius: 20px;
+}
 .clientSec.testimonialsSec .testimonialsInner .tabsHeadWrap {
     text-align: center;
 }
@@ -3045,4 +3081,14 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .clientSec.testimonialsSec .testimonialsInner .tabsHeadWrap ul li {
     width: 33.333%;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsBody {
+    padding: 50px 40px 40px;
+    margin-top: 0;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsBody .clientTabDesc {
+    margin-bottom: 35px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link {
+    padding: 40px 30px;
 }

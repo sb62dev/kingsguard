@@ -1552,6 +1552,19 @@ input:-moz-placeholder {
 .singleBlogWrapper .singleBlogImage img {
     height: 300px !important;
 }
+.jobListingWrapper .jobSearchForm {
+    margin-bottom: 50px;
+}
+.jobListingWrapper .jobListGrid {
+    height: auto;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobInfo {
+    display: block;
+}
+.jobListingWrapper .jobListGrid .jobListGridInner .jobInfoInner + .jobInfoInner {
+    margin-left: 0;
+    margin-top: 10px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {

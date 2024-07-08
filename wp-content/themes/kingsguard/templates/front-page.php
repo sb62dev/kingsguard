@@ -342,52 +342,56 @@ get_header();
                         <?php $counterr = 0; while (have_rows('client_testimonials_tabs')) : the_row(); ?>
                         <div class="tab-pane <?php echo ($counterr === 0) ? 'active' : ''; ?>" id="tabss-<?php echo $counterr; ?>" role="tabpanel">
                             <div class="clientTabWrapper">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <?php 
-                                            $client_tab_desc = get_sub_field('client_tab_desc');
-                                            if(isset($client_tab_desc) && !empty($client_tab_desc)){
-                                        ?> 
-                                        <?php echo $client_tab_desc; ?>
-                                        <?php } ?>   
+                                <div class="clientTabDesc">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <?php 
+                                                $client_tab_desc = get_sub_field('client_tab_desc');
+                                                if(isset($client_tab_desc) && !empty($client_tab_desc)){
+                                            ?> 
+                                            <?php echo $client_tab_desc; ?>
+                                            <?php } ?>   
+                                        </div>
                                     </div>
                                 </div>
                                 <?php if (have_rows('client_testimonials')) : ?>
-                                <div class="row">
-                                    <?php while (have_rows('client_testimonials')) : the_row(); ?>
-                                    <div class="col-lg-4">
-                                        <?php
-                                            $client_image = get_sub_field('client_image');
-                                            if (isset($client_image) && !empty($client_image)) {
-                                            $image_url = wp_get_attachment_image_src($client_image, 'full')[0];
-                                            $image_alt = get_post_meta($client_image, '_wp_attachment_image_alt', true);
-                                        ?>
-                                            <div class="ClientTabImg">
-                                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                                            </div>
-                                        <?php } ?>
-                                        <?php 
-                                            $client_review = get_sub_field('client_review');
-                                            if(isset($client_review) && !empty($client_review)){
-                                        ?> 
-                                            <div class="clientTabReview">
-                                                <?php echo $client_review; ?>
-                                            </div>
-                                        <?php } ?>   
-                                        <?php 
-                                            $client_name = get_sub_field('client_name');
-                                            if(isset($client_name) && !empty($client_name)){
-                                        ?> 
-                                            <h3 class="h3"><?php echo $client_name; ?></h3>
-                                        <?php } ?>
-                                        <?php 
-                                            $client_location = get_sub_field('client_location');
-                                            if(isset($client_location) && !empty($client_location)){
-                                        ?> 
-                                            <p><?php echo $client_location; ?></p>
-                                        <?php } ?>
+                                <div class="clientTabReview">
+                                    <div class="row">
+                                        <?php while (have_rows('client_testimonials')) : the_row(); ?>
+                                        <div class="col-lg-4">
+                                            <?php
+                                                $client_image = get_sub_field('client_image');
+                                                if (isset($client_image) && !empty($client_image)) {
+                                                $image_url = wp_get_attachment_image_src($client_image, 'full')[0];
+                                                $image_alt = get_post_meta($client_image, '_wp_attachment_image_alt', true);
+                                            ?>
+                                                <div class="ClientTabImg">
+                                                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                                </div>
+                                            <?php } ?>
+                                            <?php 
+                                                $client_review = get_sub_field('client_review');
+                                                if(isset($client_review) && !empty($client_review)){
+                                            ?> 
+                                                <div class="clientTabReview">
+                                                    <?php echo $client_review; ?>
+                                                </div>
+                                            <?php } ?>   
+                                            <?php 
+                                                $client_name = get_sub_field('client_name');
+                                                if(isset($client_name) && !empty($client_name)){
+                                            ?> 
+                                                <h3 class="h3"><?php echo $client_name; ?></h3>
+                                            <?php } ?>
+                                            <?php 
+                                                $client_location = get_sub_field('client_location');
+                                                if(isset($client_location) && !empty($client_location)){
+                                            ?> 
+                                                <p><?php echo $client_location; ?></p>
+                                            <?php } ?>
+                                        </div>
+                                        <?php endwhile; ?>
                                     </div>
-                                    <?php endwhile; ?>
                                 </div>
                                 <?php endif; wp_reset_query(); ?>
                             </div>

@@ -265,86 +265,83 @@ jQuery(document).ready(function () {
   var video = document.getElementById('background-video');
   var playButton = document.getElementById('play-button');
 
-  if (video.paused || video.ended) {
-      playButton.classList.remove('playing');
-      playButton.classList.add('paused');
-  } else {
-      playButton.classList.remove('paused');
-      playButton.classList.add('playing');
-  }
+  if (video && playButton) {
+    if (video.paused || video.ended) {
+        playButton.classList.remove('playing');
+        playButton.classList.add('paused');
+    } else {
+        playButton.classList.remove('paused');
+        playButton.classList.add('playing');
+    }
 
-  playButton.addEventListener('click', function () {
-      if (video.paused || video.ended) {
-          video.play();
-          playButton.classList.remove('paused');
-          playButton.classList.add('playing');
-      } else {
-          video.pause();
-          playButton.classList.add('paused');
-          playButton.classList.remove('playing');
-      }
-  });
+    playButton.addEventListener('click', function () {
+        if (video.paused || video.ended) {
+            video.play();
+            playButton.classList.remove('paused');
+            playButton.classList.add('playing');
+        } else {
+            video.pause();
+            playButton.classList.add('paused');
+            playButton.classList.remove('playing');
+        }
+    });
 
-  video.addEventListener('play', function () {
-      playButton.classList.add('playing');
-      playButton.classList.remove('paused');
-  });
+    video.addEventListener('play', function () {
+        playButton.classList.add('playing');
+        playButton.classList.remove('paused');
+    });
 
-  video.addEventListener('pause', function () {
-      playButton.classList.remove('playing');
-      playButton.classList.add('paused');
-  });
+    video.addEventListener('pause', function () {
+        playButton.classList.remove('playing');
+        playButton.classList.add('paused');
+    });
 
-  video.addEventListener('ended', function () {
-      playButton.classList.add('paused');
-      playButton.classList.remove('playing');
-  });
-  
-});
+    video.addEventListener('ended', function () {
+        playButton.classList.add('paused');
+        playButton.classList.remove('playing');
+    });
+  };
 
-
-jQuery(document).ready(function () {
   var video2 = document.getElementById('background-video2');
   var playButton2 = document.getElementById('play-button2');
 
-  if (video2.paused || video2.ended) {
-      playButton2.classList.remove('playing2');
-      playButton2.classList.add('paused2');
-  } else {
-      playButton2.classList.remove('paused2');
-      playButton2.classList.add('playing2');
-  }
+  if (video2 && playButton2) {
+    if (video2.paused || video2.ended) {
+        playButton2.classList.remove('playing2');
+        playButton2.classList.add('paused2');
+    } else {
+        playButton2.classList.remove('paused2');
+        playButton2.classList.add('playing2');
+    }
 
-  playButton2.addEventListener('click', function () {
-      if (video2.paused || video2.ended) {
-          video2.play();
-          playButton2.classList.remove('paused2');
-          playButton2.classList.add('playing2');
-      } else {
-          video2.pause();
-          playButton2.classList.add('paused2');
-          playButton2.classList.remove('playing2');
-      }
-  });
+    playButton2.addEventListener('click', function () {
+        if (video2.paused || video2.ended) {
+            video2.play();
+            playButton2.classList.remove('paused2');
+            playButton2.classList.add('playing2');
+        } else {
+            video2.pause();
+            playButton2.classList.add('paused2');
+            playButton2.classList.remove('playing2');
+        }
+    });
 
-  video2.addEventListener('play2', function () {
-      playButton2.classList.add('playing2');
-      playButton2.classList.remove('paused2');
-  });
+    video2.addEventListener('play2', function () {
+        playButton2.classList.add('playing2');
+        playButton2.classList.remove('paused2');
+    });
 
-  video2.addEventListener('pause2', function () {
-      playButton2.classList.remove('playing2');
-      playButton2.classList.add('paused2');
-  });
+    video2.addEventListener('pause2', function () {
+        playButton2.classList.remove('playing2');
+        playButton2.classList.add('paused2');
+    });
 
-  video2.addEventListener('ended2', function () {
-      playButton2.classList.add('paused2');
-      playButton2.classList.remove('playing2');
-  });
+    video2.addEventListener('ended2', function () {
+        playButton2.classList.add('paused2');
+        playButton2.classList.remove('playing2');
+    });
+  };
 
-});
-
-jQuery(document).ready(function () {
   function handleSubMenuToggle() {
     if (jQuery(window).width() < 991) {
       jQuery('.sub-menu-toggle').off('click').on('click', function () {
@@ -364,70 +361,71 @@ jQuery(document).ready(function () {
   jQuery(window).resize(function () {
       handleSubMenuToggle();
   });
-});
 
-function smoothScrollTo(hash, offsetAdjustment = 90) {
-    if (hash !== "") {
-        var targetOffset = $(hash).offset().top;
-        var headerHeight = $('.main_header').outerHeight() || 0;
-        var offset = targetOffset - headerHeight - offsetAdjustment;
-        $('html, body').animate({
-            scrollTop: offset
-        }, {
-            duration: 1500,
-            complete: function () {
-                window.history.replaceState(null, null, hash);
-            }
-        });
-    }
-}
-document.addEventListener('DOMContentLoaded', function () {
+  function smoothScrollTo(hash, offsetAdjustment = 90) {
+      if (hash !== "") {
+          var targetOffset = $(hash).offset().top;
+          var headerHeight = $('.main_header').outerHeight() || 0;
+          var offset = targetOffset - headerHeight - offsetAdjustment;
+          $('html, body').animate({
+              scrollTop: offset
+          }, {
+              duration: 1500,
+              complete: function () {
+                  window.history.replaceState(null, null, hash);
+              }
+          });
+      }
+  }
+  
   const citySelect = document.querySelector('select[name="city"]');
   const serviceSelect = document.querySelector('select[name="service"]');
   const loader = document.getElementById('projectLoader');
 
-  // Add change event listeners to both selects
-  citySelect.addEventListener('change', function () {
-      const selectedCity = citySelect.value === 'all' ? '' : citySelect.value;
-      const selectedService = serviceSelect.value === 'all' ? '' : serviceSelect.value;
+  if (citySelect && serviceSelect && loader) {
+      citySelect.addEventListener('change', function () {
+          const selectedCity = citySelect.value === 'all' ? '' : citySelect.value;
+          const selectedService = serviceSelect.value === 'all' ? '' : serviceSelect.value;
 
-      showLoader();
-      fetchFilteredProjects(selectedCity, selectedService);
-  });
+          showLoader();
+          fetchFilteredProjects(selectedCity, selectedService);
+      });
 
-  serviceSelect.addEventListener('change', function () {
-      const selectedCity = citySelect.value === 'all' ? '' : citySelect.value;
-      const selectedService = serviceSelect.value === 'all' ? '' : serviceSelect.value;
+      serviceSelect.addEventListener('change', function () {
+          const selectedCity = citySelect.value === 'all' ? '' : citySelect.value;
+          const selectedService = serviceSelect.value === 'all' ? '' : serviceSelect.value;
 
-      showLoader();
-      fetchFilteredProjects(selectedCity, selectedService);
-  });
+          showLoader();
+          fetchFilteredProjects(selectedCity, selectedService);
+      });
 
-  function fetchFilteredProjects(city, service) {
-      const xhr = new XMLHttpRequest();
-      const data = new FormData();
-      data.append('action', 'filter_projects');
-      data.append('city', city);
-      data.append('service', service);
+      function fetchFilteredProjects(city, service) {
+          const xhr = new XMLHttpRequest();
+          const data = new FormData();
+          data.append('action', 'filter_projects');
+          data.append('city', city);
+          data.append('service', service);
 
-      xhr.open('POST', projectFilter.ajax_url, true);
-      xhr.onload = function () {
-          hideLoader();
+          xhr.open('POST', projectFilter.ajax_url, true);
+          xhr.onload = function () {
+              hideLoader();
+              if (xhr.status === 200) {
+                  const response = JSON.parse(xhr.responseText);
+                  const projectsContainer = document.querySelector('.projects_section_two .row');
+                  if (projectsContainer) {
+                      projectsContainer.innerHTML = response.data;
+                  }
+              }
+          };
+          xhr.send(data);
+      }
 
-          if (xhr.status === 200) {
-              const response = JSON.parse(xhr.responseText);
-              const projectsContainer = document.querySelector('.projects_section_two .row');
-              projectsContainer.innerHTML = response.data;
-          }
-      };
-      xhr.send(data);
-  }
+      function showLoader() {
+          loader.style.display = 'flex';
+      }
 
-  function showLoader() {
-      loader.style.display = 'flex';
-  }
-
-  function hideLoader() {
-      loader.style.display = 'none';
+      function hideLoader() {
+          loader.style.display = 'none';
+      }
   }
 });
