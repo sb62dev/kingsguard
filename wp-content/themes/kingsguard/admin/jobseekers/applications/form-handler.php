@@ -21,12 +21,27 @@ function handle_job_application_submission() {
         if (!empty($errors)) {
             wp_send_json_error($errors);
         } else { 
+            $firstname = sanitize_text_field($_POST['jobseek_application_fname']);
+            $lastname = sanitize_text_field($_POST['jobseek_application_lname']);
             $email = sanitize_email($_POST['jobseek_application_email']);
             $phone = sanitize_text_field($_POST['jobseek_application_phone']);
             $coverletter = sanitize_textarea_field($_POST['jobseek_application_coverletter']);
-            $job_id = intval($_POST['job_id']); 
+            $job_id = isset($_POST['job_id']) ? intval($_POST['job_id']) : null;
+            $job_title = isset($_POST['job_title']) ? sanitize_text_field($_POST['job_title']) : ''; 
 
             $email_exists = $wpdb->get_var($wpdb->prepare("SELECT email FROM {$table_name} WHERE email = %s", $email)); 
+
+            // Handle file upload (for resume)
+            $resume_url = '';
+            if (isset($_FILES['jobseek_application_resume']) && !empty($_FILES['jobseek_application_resume']['name'])) {
+                $uploadedfile = $_FILES['jobseek_application_resume'];
+                $upload_overrides = array('test_form' => false);
+                $movefile = wp_handle_upload($uploadedfile, $upload_overrides);
+                if ($movefile && !isset($movefile['error'])) {
+                    $resume_url = $movefile['url'];
+                }
+            }
+
 
             if($email_exists){ 
                 $current_applications = $wpdb->get_var($wpdb->prepare("SELECT job_applications FROM {$table_name} WHERE email = %s", $email));
@@ -47,6 +62,8 @@ function handle_job_application_submission() {
                     'phone' => $phone,
                     'coverletter' => $coverletter,
                     'job_id' => $job_id,
+                    'job_title' => $job_title,
+                    'resume_url' => $resume_url,
                 );
                 $job_applications[] = $new_application;
 
@@ -61,6 +78,8 @@ function handle_job_application_submission() {
                 );
 
                 if($result !== false) {
+                    send_applications_email($email, $firstname, $lastname); 
+                    send_admin_applications_email($firstname, $lastname, $job_title); 
                     $json_response = array('status' => 'success', "code" => 200, "message" => __("Application has been updated successfully.", 'jobseekers'));
                     wp_send_json_success($json_response);
                 } else {

@@ -39,6 +39,7 @@ function job_application_form() {
         <div class="jobseekers_application_formWrap">
             <form class="jobseekers_application_form" id="jobseekers_application_form" method="POST">
                 <input type="hidden" name="job_id" value="<?php echo get_the_ID(); ?>">
+                <input type="hidden" name="job_title" value="<?php echo get_the_title(); ?>">
                 <input type="hidden" name="action" id="action" value="jobseekers_application_form_save" />
                 <?php wp_nonce_field('jobseekers_application_form_save_action', 'jobseekers_application_form_save_nonce_field'); ?> 
                 <div class="jobseek_application_wrap">
