@@ -19,7 +19,7 @@ get_header();
             </div>
             <?php } ?>
 
-            <div class="jobSearchForm">
+            <div class="jobSearchForm" data-aos="fade-down" data-aos-duration="1000">
                 <form method="get" action="">
                     <div class="row">
                         <div class="col-md-12">
@@ -156,13 +156,35 @@ get_header();
                     <?php endwhile; wp_reset_postdata(); else : ?>
                         <div class="col-sm-12">
                             <div class="noJobsFound">
-                                <div class="noJobFoundImg">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/not-found.png" alt="No Found Image" />
+                                <?php
+                                    $not_found_image = get_field('not_found_image');
+                                    if (isset($not_found_image) && !empty($not_found_image)) {
+                                        $image_url = wp_get_attachment_image_src($not_found_image, 'full')[0];
+                                        $image_alt = get_post_meta($not_found_image, '_wp_attachment_image_alt', true);
+                                ?>
+                                <div class="noJobFoundImg" data-aos="fade-down" data-aos-duration="1000">
+                                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">        
                                 </div>
-                                <h2><?php _e('No Jobs found.', 'text-domain'); ?></h2>
-                                <a href="<?php echo esc_url('/jobs-main'); ?>" class="btn-style gradientBtn" aria-label="Click here to go to homepage" target="_self">
-                                    Back to Jobs Page
-                                </a>
+                                <?php } ?>
+                                <?php
+                                    $not_found_title = get_field('not_found_title');
+                                    if ($not_found_title) {
+                                ?>
+                                <div class="title" data-aos="fade-down" data-aos-duration="1000">
+                                    <h2><?php echo esc_html($not_found_title); ?></h2>
+                                </div>
+                                <?php } ?>
+                                <?php 
+                                    $not_found_button_label = get_field('not_found_button_label');
+                                    if(isset($not_found_button_label) && !empty($not_found_button_label)){
+                                    $not_found_button_link = get_field('not_found_button_link');
+                                    $not_found_button_target = get_field('not_found_button_target');
+                                    $not_found_button_aria_label = get_field('not_found_button_aria_label');
+                                ?> 
+                                <div class="btnWrap" data-aos="fade-down" data-aos-duration="1000">
+                                    <a href="<?php echo $not_found_button_link; ?>" class="btn-style gradientBtn" target="<?php echo $not_found_button_target; ?>" aria-label="<?php echo $not_found_button_aria_label; ?>"><?php echo $not_found_button_label; ?></a>
+                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                 <?php endif; ?>
