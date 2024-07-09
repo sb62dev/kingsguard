@@ -428,4 +428,9 @@ jQuery(document).ready(function () {
           loader.style.display = 'none';
       }
   }
+
+  jQuery('#jobseek_application_resume').on('change', function() {
+      var fileName = jQuery(this).val().split('\\').pop();
+      jQuery('#file-name').text(fileName || 'No file chosen');
+  });
 });

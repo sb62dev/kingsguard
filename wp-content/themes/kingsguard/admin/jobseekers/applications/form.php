@@ -67,16 +67,16 @@ function job_application_form() {
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>  
-                        <div class="jobseek_register_col col-md-6">
-                            <div class="jobseek_register_inputWrap">
-                                <label class="jobseek_register_label"> Phone Number* </label>
+                        <div class="jobseek_application_col col-md-6">
+                            <div class="jobseek_application_inputWrap">
+                                <label class="jobseek_application_label"> Phone Number* </label>
                                 <input type="text" class="inputField" id="jobseek_application_phone" name="jobseek_application_phone" placeholder="Phone Number*">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
-                        <div class="jobseek_register_col col-md-12">
-                            <div class="jobseek_register_inputWrap">
-                                <label class="jobseek_register_label"> Cover Letter </label>
+                        <div class="jobseek_application_col col-md-12">
+                            <div class="jobseek_application_inputWrap">
+                                <label class="jobseek_application_label"> Cover Letter </label>
                                 <textarea class="inputField" id="jobseek_application_coverletter" name="jobseek_application_coverletter" placeholder="Cover Letter"></textarea> 
                                 <div class="jobseek_error"></div>
                             </div>
@@ -86,12 +86,15 @@ function job_application_form() {
                                 <label class="jobseek_application_label"> Resume* </label>
                                 <div class="jobseek_application_resume_box">
                                     <div class="jobseek_application_resume_boxIn">
-                                        <div class="jobseek_application_resume_boxIn_img">
-                                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
-                                        </div>
-                                        <div class="jobseek_application_resume_boxIn_txt"> Upload Resume </div>
+                                        <label for="jobseek_application_resume">
+                                            <div class="jobseek_application_resume_boxIn_img">
+                                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
+                                            </div>
+                                            <div class="jobseek_application_resume_boxIn_txt"> Upload Resume </div>
+                                        </label>
                                     </div>
                                     <input type="file" id="jobseek_application_resume" name="jobseek_application_resume">
+                                    <div class="file-name" id="file-name">No file chosen</div>
                                 </div> 
                                 <div class="jobseek_error"></div>
                             </div>

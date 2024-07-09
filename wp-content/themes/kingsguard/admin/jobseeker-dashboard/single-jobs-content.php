@@ -1,5 +1,5 @@
 <div class="singleJobcontent">
-    <div class="singleJobTitle">
+    <div class="singleJobTitle" data-aos="fade-down" data-aos-duration="1000">
         <div class="row">
             <div class="col-md-9">
                 <h1><?php the_title(); ?></h1>
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="jobContent">
+    <div class="jobContent" data-aos="fade-down" data-aos-duration="1000">
         <div class="row">
             <div class="col-md-7">
                 <div class="jobContentInner">

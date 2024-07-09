@@ -73,7 +73,7 @@ get_header();
                 <div class="row">
                 <?php
                     $args = array(
-                        'post_type' => 'jobs',
+                        'post_type' => 'careers',
                         'posts_per_page' => -1,
                     );
     
@@ -172,17 +172,6 @@ get_header();
                                 ?>
                                 <div class="title" data-aos="fade-down" data-aos-duration="1000">
                                     <h2><?php echo esc_html($not_found_title); ?></h2>
-                                </div>
-                                <?php } ?>
-                                <?php 
-                                    $not_found_button_label = get_field('not_found_button_label');
-                                    if(isset($not_found_button_label) && !empty($not_found_button_label)){
-                                    $not_found_button_link = get_field('not_found_button_link');
-                                    $not_found_button_target = get_field('not_found_button_target');
-                                    $not_found_button_aria_label = get_field('not_found_button_aria_label');
-                                ?> 
-                                <div class="btnWrap" data-aos="fade-down" data-aos-duration="1000">
-                                    <a href="<?php echo $not_found_button_link; ?>" class="btn-style gradientBtn" target="<?php echo $not_found_button_target; ?>" aria-label="<?php echo $not_found_button_aria_label; ?>"><?php echo $not_found_button_label; ?></a>
                                 </div>
                                 <?php } ?>
                             </div>

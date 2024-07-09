@@ -1,4 +1,4 @@
-<section class="noLicense py100"> 
+<section class="noLicense py100" data-aos="fade-down" data-aos-duration="1000"> 
     <div class="sm_container">
         <div class="noLicense_main">
             <div class="noLicense_txt">

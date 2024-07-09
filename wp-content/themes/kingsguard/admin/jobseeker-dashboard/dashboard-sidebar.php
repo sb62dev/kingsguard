@@ -39,7 +39,5 @@
             </li>
         </ul>
     </div>
-    <div class="dashboardLogout">
-        <a href="javascript:void(0);" class="jobseek-logout-trigger"> Logout </a>
-    </div>
+    
 </div>
