@@ -56,9 +56,12 @@ jQuery(document).ready(function($) {
 
     $('#jobseekers_application_form').on('submit', function(e) {
         e.preventDefault(); // Prevent form submission
-        var formData = $(this).serialize() + '&jobseekers_application_form_save_nonce_field=' + jobseeks_application_ajax_object.nonce;
+        var formData = new FormData(this);
+        formData.append('jobseekers_application_form_save_nonce_field', jobseeks_application_ajax_object.nonce);
+        formData.append('action', 'handle_job_application_submission'); 
  
         var resume = $("#jobseek_application_resume"); 
+        var resume = $("#jobseek_application_resume")[0].files[0];
         var phone = $("#jobseek_application_phone"); 
         var captcha = $("#g-recaptcha-response");
         var response = grecaptcha.getResponse();
@@ -74,8 +77,8 @@ jQuery(document).ready(function($) {
         }
 
         // Resume validation
-        if ('' == resume.val().trim()) {
-            resume.next('.jobseek_error').html(resume_empty_err_msg).show();
+        if (!resume) {
+            $("#jobseek_application_resume").next('.jobseek_error').html(resume_empty_err_msg).show();
             go_ahead = false;
         } 
 
@@ -91,7 +94,9 @@ jQuery(document).ready(function($) {
             $.ajax({
                 type: 'POST',
                 url: jobseeks_application_ajax_object.ajax_url,
-                data: formData + '&action=handle_job_application_submission',
+                data: formData,
+                processData: false,
+                contentType: false,
                 beforeSend: function() {
                     $('.jobseek_loader').css('display', 'flex');
                 },
@@ -107,7 +112,7 @@ jQuery(document).ready(function($) {
                         grecaptcha.reset();
                         $('.jobseek_application_cmnError').show().find('.jobseek_application_cmnError_in').html(res.data.error); 
                     }
-                },
+                }, 
                 error: function(data) {
                     console.log(data);
                 }

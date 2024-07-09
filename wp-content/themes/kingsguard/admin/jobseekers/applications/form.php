@@ -37,32 +37,33 @@ function job_application_form() {
     ob_start(); ?>
     <div class="jobseekers_application_wrapper">
         <div class="jobseekers_application_formWrap">
-            <form class="jobseekers_application_form" id="jobseekers_application_form" method="POST">
+            <form class="jobseekers_application_form" id="jobseekers_application_form" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="job_id" value="<?php echo get_the_ID(); ?>">
+                <input type="hidden" name="job_title" value="<?php echo get_the_title(); ?>">
                 <input type="hidden" name="action" id="action" value="jobseekers_application_form_save" />
                 <?php wp_nonce_field('jobseekers_application_form_save_action', 'jobseekers_application_form_save_nonce_field'); ?> 
                 <div class="jobseek_application_wrap">
-                    <div class="jobseek_loader" style="display: none;">Loading...</div>
+                    <div class="jobseek_loader" style="display: none;"><div class="jobLoader"></div></div>
                     <div class="jobseek_application_cmnError" style="display: none;"><div class="jobseek_application_cmnError_in"></div></div>
                     <div class="jobseek_application_row row"> 
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> First Name* </label>
-                                <input type="text" class="inputField" id="jobseek_application_fname" name="jobseek_application_fname" value="<?php echo esc_attr( $user_info['fname'] ); ?>">
+                                <input type="text" class="inputField inputField_disabled" id="jobseek_application_fname" name="jobseek_application_fname" value="<?php echo esc_attr( $user_info['fname'] ); ?>" readonly>
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Last Name* </label>
-                                <input type="text" class="inputField" id="jobseek_application_lname" name="jobseek_application_lname" value="<?php echo esc_attr( $user_info['lname'] ); ?>">
+                                <input type="text" class="inputField inputField_disabled" id="jobseek_application_lname" name="jobseek_application_lname" value="<?php echo esc_attr( $user_info['lname'] ); ?>" readonly>
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Email Address* </label>
-                                <input type="text" class="inputField" id="jobseek_application_email" name="jobseek_application_email" value="<?php echo esc_attr( $user_info['email'] ); ?>">
+                                <input type="text" class="inputField inputField_disabled" id="jobseek_application_email" name="jobseek_application_email" value="<?php echo esc_attr( $user_info['email'] ); ?>" readonly>
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>  
@@ -83,7 +84,15 @@ function job_application_form() {
                         <div class="jobseek_application_col col-md-12">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Resume* </label>
-                                <input type="file" id="jobseek_application_resume" name="jobseek_application_resume">
+                                <div class="jobseek_application_resume_box">
+                                    <div class="jobseek_application_resume_boxIn">
+                                        <div class="jobseek_application_resume_boxIn_img">
+                                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
+                                        </div>
+                                        <div class="jobseek_application_resume_boxIn_txt"> Upload Resume </div>
+                                    </div>
+                                    <input type="file" id="jobseek_application_resume" name="jobseek_application_resume">
+                                </div> 
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>  
