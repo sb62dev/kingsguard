@@ -6,7 +6,11 @@
             </div>
             <div class="col-md-3">
                 <div class="applyBtn">
-                    <a href="javascript:void(0)" class="btn-style gradientBtn"> Apply Now </a>
+                    <?php if ( !isset($_COOKIE['jobseeker_logged_in']) || $_COOKIE['jobseeker_logged_in'] !== 'true' ) : ?>
+                        <a href="#" class="btn-style gradientBtn"> Apply Now </a>
+                    <?php else : ?>
+                        <a href="#applicationform" class="btn-style gradientBtn smoothScroll"> Apply Now </a>
+                    <?php endif; ?> 
                 </div>
             </div>
         </div>

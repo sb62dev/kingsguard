@@ -10,12 +10,17 @@ function jobseeks_google_recaptcha($captcha_response) {
     return $result->success == true && !is_wp_error($result);
 }
 
+function jobseekers_users_table(){
+    global $wpdb;
+    return $wpdb->prefix . 'jobseekers_users';
+}
+
 /* Function to get Jobseeker table info */
 function get_jobseeker_info($email) {
     global $wpdb;
-    $table_name = $wpdb->prefix . 'jobseekers_users';
+    $table_name = jobseekers_users_table();
     return $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE email = %s", $email), ARRAY_A);
-}
+} 
 
 // Include registration form
 require get_template_directory() . '/admin/jobseekers/jobseekers-table.php';
@@ -37,9 +42,9 @@ require get_template_directory() . '/admin/jobseekers/jobseekers-user-menu.php';
 
 // Add custom rewrite rules
 function custom_jobseekers_dashboard_rewrite_rules() {
-    add_rewrite_rule('^jobseekers-dashboard/([^/]+)/?$', 'index.php?post_type=jobs&name=$matches[1]', 'top');
+    add_rewrite_rule('^jobseekers-dashboard/([^/]+)/?$', 'index.php?post_type=careers&name=$matches[1]', 'top');
 }
-add_action('init', 'custom_jobseekers_dashboard_rewrite_rules');
+add_action('init', 'custom_jobseekers_dashboard_rewrite_rules'); 
 
 // Make sure WordPress recognizes the new query vars
 function add_custom_query_vars($vars) {
@@ -57,7 +62,7 @@ add_action('after_switch_theme', 'custom_flush_rewrite_rules');
 
 // Check if the user is logged in and redirect appropriately
 function custom_jobseekers_dashboard_template_redirect() {
-    if (is_singular('jobs')) {
+    if (is_singular('careers')) {
         global $wp_query;
 
         // Get the current post

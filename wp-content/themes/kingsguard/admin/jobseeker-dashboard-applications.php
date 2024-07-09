@@ -22,8 +22,10 @@ get_header();
                     <div class="dash_appli-listings-header">
                         <h1> My Applications </h1>
                     </div>
-                    <div class="dash_appli-listings-wrap"> 
-                        <?//php include('jobseeker-dashboard/dashboard-careers-archive.php') ?>   
+                    <div class="dash_appli-listings-wrap">  
+                        <div class="appli-listings">
+                            <?php echo do_shortcode('[user_submitted_jobs]') ?> 
+                        </div>   
                     </div>
                 </div> 
             </section>
