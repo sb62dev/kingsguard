@@ -16,10 +16,12 @@ if (have_posts()) :
                 <div class="dashboardContent">
                     <?php include('admin/jobseeker-dashboard/dashboard-header.php') ?>  
                     <div id="dashboard-content" class="dashboard-main">
-                        <div class="jobSingle-dashpost">  
-                            <?php include('admin/jobseeker-dashboard/single-jobs-content.php') ?> 
-                            <div class="single_appliForm_wrap" id="applicationform">
-                                <?php echo do_shortcode('[job_application_form]') ?>
+                        <div class="dashboardInner">
+                            <div class="jobSingle-dashpost">  
+                                <?php include('admin/jobseeker-dashboard/single-jobs-content.php') ?> 
+                                <div class="single_appliForm_wrap" id="applicationform">
+                                    <?php echo do_shortcode('[job_application_form]') ?>
+                                </div>
                             </div>
                         </div>
                     </div>

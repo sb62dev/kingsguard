@@ -2138,9 +2138,7 @@ h3 .job-title {
     width: 100%;
     padding-left: 300px;
 }
-.dashboard-main .careersPage,
-.dashboard-main .jobSingle-dashpost,
-.dashboard-main .dash_careersPage {
+.dashboard-main .dashboardInner {
     padding: 105px 50px 50px;
 }
 .dashboardContent .dashboardHead {
@@ -3082,6 +3080,10 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     padding: 20px 20px !important;
     text-align: center;
 }
+.jobseek_application_resume_box .jobseek_application_resume_boxIn_txt {
+    font-family: 'Gilroy-Bold';
+    margin-top: 10px;
+}
 .jobseek_application_resume_box input {
     opacity: 0;
     position: absolute;
@@ -3089,6 +3091,23 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .jobseek_application_resume_box label {
     cursor: pointer;
+}
+.job-applications-table {
+    width: 100%;
+}
+.job-applications-table thead {
+    background-color: #1b2a36;
+}
+.job-applications-table thead tr th {
+    padding: 20px 30px;
+    text-align: center;
+}
+.job-applications-table tbody tr td {
+    padding: 20px 20px;
+    text-align: center;
+}
+.job-applications-table tbody tr + tr {
+    border-top: 1px solid #404041;
 }
 .clientSec.testimonialsSec .testimonialsInner {
     background-color: #133148;
@@ -3144,6 +3163,20 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .dashboard-container .job-applications-wrap,
 .dashboard-container .job-listings-wrap {
     margin-top: 40px;
+}
+.dashboard-container .job-applications-wrap .job-applications-header .viewAllLink,
+.dashboard-container .job-listings-wrap .job-listings-header .viewAllLink {
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.dashboard-container .job-applications-wrap .job-applications-header .viewAllLink:hover,
+.dashboard-container .job-listings-wrap .job-listings-header .viewAllLink:hover,
+.dashboard-container .job-applications-wrap .job-applications-header .viewAllLink:focus,
+.dashboard-container .job-listings-wrap .job-listings-header .viewAllLink:focus {
+    color: #0098ff;
+    text-decoration: none;
 }
 .dashboardWrapper .dashboardHead .dashboardLogout a {
     color: #ffffff;

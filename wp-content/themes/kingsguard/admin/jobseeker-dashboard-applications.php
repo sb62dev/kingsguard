@@ -17,7 +17,7 @@ get_header();
     <div class="dashboardContent">
         <?php include('jobseeker-dashboard/dashboard-header.php') ?> 
         <div id="dashboard-content" class="dashboard-main">
-            <section class="dash_appliPage pb100">   
+            <section class="dash_appliPage dashboardInner pb100">   
                 <div class="dash_appli-listings-wrap">
                     <div class="dash_appli-listings-header">
                         <h1> My Applications </h1>

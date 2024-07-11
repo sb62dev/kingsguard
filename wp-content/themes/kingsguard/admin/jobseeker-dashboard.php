@@ -17,7 +17,7 @@ get_header();
     <div class="dashboardContent">
         <?php include('jobseeker-dashboard/dashboard-header.php') ?> 
         <div id="dashboard-content" class="dashboard-main">
-            <section class="careersPage pb100"> 
+            <section class="careersPage pb100 dashboardInner"> 
                 <div class="dashboard-container">
                     <div class="profileInfo-wrap">
                         <?php 
@@ -59,7 +59,7 @@ get_header();
                                     <h3> My Applications </h3>
                             </div>
                             <div class="col-md-6 text-right">
-                                    <a href="javascript:void(0);"> View All </a> 
+                                    <a href="javascript:void(0);" class="viewAllLink"> View All </a> 
                             </div>
                             </div>  
                         </div>
@@ -74,7 +74,7 @@ get_header();
                                     <h3> Jobs Available </h3>
                             </div> 
                             <div class="col-md-6 text-right">
-                                    <a href="/jobseekers-careers/"> View All </a> 
+                                    <a href="/jobseekers-careers/" class="viewAllLink"> View All </a> 
                             </div>
                             </div>  
                         </div>
