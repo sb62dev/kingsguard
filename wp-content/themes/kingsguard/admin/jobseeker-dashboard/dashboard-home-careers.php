@@ -2,7 +2,7 @@
     <div class="row">
         <?php
             $args = array(
-                'post_type' => 'jobs',
+                'post_type' => 'careers',
                 'posts_per_page' => 3,
                 'post_status' => 'publish', 
                 'orderby' => 'date', 
@@ -13,7 +13,7 @@
                 while ($job_query->have_posts()) : $job_query->the_post();
                 $location = get_field('location');
                 $job_title = get_the_title();
-                $job_link = get_permalink();
+                $job_link = get_permalink(); 
                 $job_types = wp_get_post_terms(get_the_ID(), 'jobs_job_types', array('fields' => 'names'));
                 $job_locations = wp_get_post_terms(get_the_ID(), 'jobs_job_locations', array('fields' => 'names'));
         ?>

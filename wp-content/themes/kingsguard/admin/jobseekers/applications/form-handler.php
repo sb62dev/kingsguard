@@ -1,9 +1,4 @@
-<?php
-
-function jobseekers_users_table(){
-    global $wpdb;
-    return $wpdb->prefix . 'jobseekers_users';
-}
+<?php 
 
 function handle_job_application_submission() {
     $errors = array(); 

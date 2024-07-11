@@ -31,4 +31,50 @@ function jobseekers_user_list() {
 
 add_shortcode('jobseekers_user_list', 'jobseekers_user_list');
 
+function show_user_submitted_jobs() {  
+    global $wpdb;
+    $table_name = jobseekers_users_table(); 
+   
+    if ( isset( $_COOKIE['jobseeker_logged_in'] ) && $_COOKIE['jobseeker_logged_in'] === 'true' ) {
+        $username = isset($_COOKIE['jobseeker_username']) ? sanitize_text_field($_COOKIE['jobseeker_username']) : ''; 
+
+        // Fetch job applications for the logged-in user
+        $user_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$table_name} WHERE username = %s", $username));
+
+        if (empty($user_data)) {
+            return '<p>You have not submitted any job applications.</p>';
+        }
+
+        $job_applications = unserialize($user_data->job_applications);
+
+        if (empty($job_applications)) {
+            return '<p>You have not submitted any job applications.</p>';
+        }
+
+        $output = '<h2>Your Submitted Job Applications</h2>';
+        $output .= '<table class="job-applications-table">';
+        $output .= '<thead><tr><th>Job Title</th><th>Job ID</th><th>Phone</th><th>Cover Letter</th><th>Resume</th></tr></thead>';
+        $output .= '<tbody>';
+
+        foreach ($job_applications as $application) {
+            $output .= '<tr>';
+            $output .= '<td>' . esc_html($application['job_title']) . '</td>';
+            $output .= '<td>' . esc_html($application['job_id']) . '</td>';
+            $output .= '<td>' . esc_html($application['phone']) . '</td>';
+            $output .= '<td>' . esc_html($application['coverletter']) . '</td>';
+            $output .= '<td><a href="' . esc_url(wp_upload_dir()['baseurl'] . '/jobseekers-assets/' . $application['resume_url']) . '" target="_blank">View Resume</a></td>';
+            $output .= '</tr>';
+        }
+
+        $output .= '</tbody>';
+        $output .= '</table>';
+
+        return $output; 
+    } else {
+        return '<p>Please log in to view your job applications.</p>';
+    } 
+} 
+
+add_shortcode('user_submitted_jobs', 'show_user_submitted_jobs'); 
+
 ?>

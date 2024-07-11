@@ -7,6 +7,6 @@ include('form.php');
 include('form-handler.php'); 
 
 // Email File
-include('email.php');
+include('email.php'); 
 
 ?>

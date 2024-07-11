@@ -2,7 +2,7 @@
     <div class="row">
         <?php
             $args = array(
-                'post_type' => 'jobs',
+                'post_type' => 'careers',
                 'posts_per_page' => -1,
                 'post_status' => 'publish', 
                 'orderby' => 'date', 

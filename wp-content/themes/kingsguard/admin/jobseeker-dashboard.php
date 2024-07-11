@@ -72,14 +72,14 @@ get_header();
                             <div class="row">
                             <div class="col-md-6">
                                     <h3> Jobs Available </h3>
-                            </div>
+                            </div> 
                             <div class="col-md-6 text-right">
-                                    <a href="/jobseeker-dashboard/dashboard-careers-archive"> View All </a> 
+                                    <a href="/jobseekers-careers/"> View All </a> 
                             </div>
                             </div>  
                         </div>
                         <div class="jobListingWrapper"> 
-                            <?php include('jobseeker-dashboard/dashboard-home-jobs.php') ?> 
+                            <?php include('jobseeker-dashboard/dashboard-home-careers.php') ?> 
                         </div>
                     </div> 
                 </div>
