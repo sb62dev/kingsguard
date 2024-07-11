@@ -9,8 +9,8 @@
     </div>
     <div class="dashboardOptions">
         <ul class="dashboardMenu">
-            <li class="active">
-                <a href="/jobseekers-dashboard" class="dashboardListItem" data-view="dashboard">
+            <li>
+                <a href="/jobseekers-dashboard/" class="dashboardListItem" data-view="dashboard">
                     <div class="dashboardListIcon">
                         <i class="fa fa-home" aria-hidden="true"></i>
                     </div>
