@@ -51,20 +51,31 @@ function show_user_submitted_jobs() {
             return '<p>You have not submitted any job applications.</p>';
         }
 
-        $output = '<h2>Your Submitted Job Applications</h2>';
-        $output .= '<table class="job-applications-table">';
-        $output .= '<thead><tr><th>Job Title</th><th>Job ID</th><th>Phone</th><th>Cover Letter</th><th>Resume</th></tr></thead>';
+        $output = '<table class="job-applications-table">'; 
+        $output .= '<thead><tr><th>Job ID</th><th>Job Title</th><th>Job Type</th><th>Job Location</th><th>Status</th></tr></thead>';
         $output .= '<tbody>';
 
         foreach ($job_applications as $application) {
-            $output .= '<tr>';
-            $output .= '<td>' . esc_html($application['job_title']) . '</td>';
-            $output .= '<td>' . esc_html($application['job_id']) . '</td>';
-            $output .= '<td>' . esc_html($application['phone']) . '</td>';
-            $output .= '<td>' . esc_html($application['coverletter']) . '</td>';
-            $output .= '<td><a href="' . esc_url(wp_upload_dir()['baseurl'] . '/jobseekers-assets/' . $application['resume_url']) . '" target="_blank">View Resume</a></td>';
-            $output .= '</tr>';
-        }
+            $job_id = intval($application['job_id']);
+            $job_title = esc_html($application['job_title']);  
+            $job_post = get_post($job_id);
+
+            if ($job_post) { 
+                $job_types = wp_get_post_terms($job_id, 'jobs_job_types', array('fields' => 'names'));
+                $job_locations = wp_get_post_terms($job_id, 'jobs_job_locations', array('fields' => 'names'));
+
+                $job_types_list = !empty($job_types) ? esc_html(implode(', ', $job_types)) : 'N/A';
+                $job_locations_list = !empty($job_locations) ? esc_html(implode(', ', $job_locations)) : 'N/A';
+
+                $output .= '<tr>';
+                $output .= '<td>' . esc_html($job_id) . '</td>';
+                $output .= '<td>' . $job_title . '</td>';
+                $output .= '<td>' . $job_types_list . '</td>';
+                $output .= '<td>' . $job_locations_list . '</td>'; 
+                $output .= '<td><span class="status-btn-style">Applied</span></td>';
+                $output .= '</tr>';
+            }
+        }  
 
         $output .= '</tbody>';
         $output .= '</table>';

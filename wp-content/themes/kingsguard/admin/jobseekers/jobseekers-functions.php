@@ -37,6 +37,9 @@ require get_template_directory() . '/admin/jobseekers/applications/jobseekers-ap
 // Include user list
 require get_template_directory() . '/admin/jobseekers/jobseekers-user-list.php';
 
+// Include user admin page
+require get_template_directory() . '/admin/jobseekers/jobseekers-user-admin-page.php';
+
 // Include Menu
 require get_template_directory() . '/admin/jobseekers/jobseekers-user-menu.php';
 

@@ -35,7 +35,8 @@ function create_jobseekers_table() {
     ) $charset_collate;";
 
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
+    dbDelta($sql); 
+
 }
 
 add_action('after_setup_theme', 'create_jobseekers_table');
