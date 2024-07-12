@@ -63,16 +63,16 @@ function show_user_submitted_jobs() {
             if ($job_post) { 
                 $job_types = wp_get_post_terms($job_id, 'jobs_job_types', array('fields' => 'names'));
                 $job_locations = wp_get_post_terms($job_id, 'jobs_job_locations', array('fields' => 'names'));
-
                 $job_types_list = !empty($job_types) ? esc_html(implode(', ', $job_types)) : 'N/A';
                 $job_locations_list = !empty($job_locations) ? esc_html(implode(', ', $job_locations)) : 'N/A';
+                $status = isset($application['status']) ? esc_html($application['status']) : 'N/A';
 
                 $output .= '<tr>';
                 $output .= '<td>' . esc_html($job_id) . '</td>';
                 $output .= '<td>' . $job_title . '</td>';
                 $output .= '<td>' . $job_types_list . '</td>';
                 $output .= '<td>' . $job_locations_list . '</td>'; 
-                $output .= '<td><span class="status-btn-style">Applied</span></td>';
+                $output .= '<td><span class="status-btn-style">' . $status . '</span></td>'; 
                 $output .= '</tr>';
             }
         }  
