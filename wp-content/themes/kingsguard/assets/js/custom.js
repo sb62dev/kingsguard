@@ -433,4 +433,11 @@ jQuery(document).ready(function () {
       var fileName = jQuery(this).val().split('\\').pop();
       jQuery('#file-name').text(fileName || 'No file chosen');
   });
+ 
+  var currentUrl = window.location.pathname;
+  jQuery('.dashboardMenu a').each(function() {
+      if (jQuery(this).attr('href') === currentUrl) {
+        jQuery(this).addClass('active');
+      }
+  });
 });
