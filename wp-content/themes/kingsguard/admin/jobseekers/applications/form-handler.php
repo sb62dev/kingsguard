@@ -85,6 +85,7 @@ function handle_job_application_submission() {
                     'job_id' => $job_id,
                     'job_title' => $job_title,
                     'resume_url' => $resume_filename,
+                    'status' => 'New',
                 );
                 $job_applications[] = $new_application;
 
