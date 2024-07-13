@@ -897,7 +897,7 @@ button.modal_close {
 }
 button.modal_close span {
     font-size: 30px;
-    top: -3px !important;
+    top: 0 !important;
     position: relative;
 }
 button.modal_close:hover,
@@ -3145,6 +3145,12 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .clientSec.testimonialsSec .testimonialsInner .tabsHeadWrap ul li {
     width: 33.333%;
 }
+.clientSec.testimonialsSec .tabsHead .nav-item .nav-link {
+    border-bottom: 3px solid #0f2a3e;
+}
+.clientSec.testimonialsSec .tabsHead .nav-item .nav-link.active {
+    border-bottom: 3px solid #ffffff;
+}
 .clientSec.testimonialsSec .testimonialsInner .tabsBody {
     padding: 50px 40px 40px;
     margin-top: 0;
@@ -3154,6 +3160,94 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link {
     padding: 40px 30px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner {
+    background-color: #1e1e20;
+    border: 0;
+    border-radius: 10px;
+    height: 100%;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a,
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a * {
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a:hover *,
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a:focus *{
+    color: #ffffff;
+    text-decoration: none;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg {
+    position: relative;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientPlayBtnWrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn {
+    background-color: #0394f7bf;
+    padding: 30px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn i {
+    font-size: 12px;
+    transform: translate3d(-4px, 0, 0);
+    transition: transform .85s cubic-bezier(.475,.425,0,.995);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn:hover i {
+    transform: translate3d(40px,0,0);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn i.after {
+    transform: translate3d(-70px, 0, 0);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn:hover i.after {
+    transform: translate3d(5px,0,0);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont {
+    padding: 30px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientTabReview p {
+    font-size: 16px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientName {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientLoc {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-family: 'Gilroy-Light';
+    font-weight: 400;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link p {
+    font-size: 24px;
+    font-family: 'Gilroy-Bold';
 }
 .single_appliForm_wrap {
     margin-top: 80px;
