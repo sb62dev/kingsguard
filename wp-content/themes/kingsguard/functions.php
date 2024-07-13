@@ -563,11 +563,14 @@ require_once get_template_directory() . '/admin/custom-user-role-functions.php';
 // Custom Login Resiter Form.
 require_once get_template_directory() . '/admin/jobseekers/jobseekers-functions.php';
 
+// Custom Contact Form.
+require_once get_template_directory() . '/admin/contact/contact.php';
+
 /**
  * Enqueues scripts for the customizer preview.
  *
  * @since Twenty Twenty-One 1.0
- *
+ *  
  * @return void
  */
 function twentytwentyone_customize_preview_init() {
