@@ -759,6 +759,7 @@ function custom_admin_styles() {
         wp_enqueue_style('custom-admin-fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
         wp_enqueue_style('custom-admin-styles', get_template_directory_uri() . '/admin/dashboard-style.css');
     }
+	wp_enqueue_style('custom-admin-styles', get_template_directory_uri() . '/admin/dashboard-common-style.css');
 }
 add_action('admin_enqueue_scripts', 'custom_admin_styles');
 
@@ -767,7 +768,8 @@ function enqueue_custom_admin_scripts() {
     if (in_array('editor', (array) $user->roles)) {
         wp_enqueue_script('custom-admin-scripts', get_template_directory_uri() . '/admin/dashboard-custom.js', array('jquery'), null, true);
     }
-}
+	wp_enqueue_script('common-admin-scripts', get_template_directory_uri() . '/admin/dashboard-common.js', array('jquery'), null, true);
+} 
 add_action('admin_enqueue_scripts', 'enqueue_custom_admin_scripts');  
 
 function enqueue_wpforms_custom_scripts() {
