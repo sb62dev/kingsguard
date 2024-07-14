@@ -311,7 +311,8 @@
     .selectField,
     .wpforms-field-medium,
     .multipleSelect .selectBox,
-    .form-control {
+    .form-control,
+    .kg_contact_multi_services .selectBox {
         font-size: 16px !important;
     }
     .fetured_card_text2 h3 {
@@ -608,6 +609,13 @@ h3 .job-title {
 }
 .clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont {
     padding: 20px;
+}
+.kg_contact_wrapper .kg_contact_thankWrap,
+.jobseekers_application_formWrap .jobseekers_application_thankWrap {
+    padding: 80px;
+}
+.kg_contact_wrapper .kg_contact_thankWrap .backHome {
+    margin-top: 60px;
 }
 } 
 
@@ -914,7 +922,8 @@ input:-moz-placeholder {
 .selectField,
 .wpforms-field-medium,
 .multipleSelect .selectBox,
-.form-control {
+.form-control,
+.kg_contact_multi_services .selectBox {
     font-size: 14px !important;
 }
 .fetured_card_text2 h3 {
@@ -972,6 +981,17 @@ input:-moz-placeholder {
 }
 .clientSec.testimonialsSec .testimonialsInner .tabsBody {
     padding: 40px 30px 20px;
+}
+.kg_contact_wrapper .kg_contact_thankWrap,
+.jobseekers_application_formWrap .jobseekers_application_thankWrap {
+    padding: 60px;
+}
+.kg_contact_wrapper .kg_contact_thankWrap .backHome {
+    margin-top: 40px;
+}
+.registerWrapper .registerInner h2,
+.jobseekers_application_formWrap .jobseekers_application_thankWrap h2 {
+    font-size: 30px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1445,7 +1465,8 @@ input:-moz-placeholder {
 .selectField,
 .wpforms-field-medium,
 .multipleSelect .selectBox,
-.form-control {
+.form-control,
+.kg_contact_multi_services .selectBox {
     font-size: 12px !important;
 }
 .fetured_card_text2 h3 {
@@ -1638,6 +1659,50 @@ button.modal_close {
 button.modal_close span {
     top: -2px !important;
 }
+.kg_contact_wrapper .kg_contact_thankWrap,
+.jobseekers_application_formWrap .jobseekers_application_thankWrap {
+    padding: 40px;
+}
+.kg_contact_wrapper .kg_contact_thankWrap .backHome {
+    margin-top: 30px;
+}
+.inputField, .selectField, .wpforms-field-medium, .multipleSelect .selectBox, .form-control, .kg_contact_multi_services .selectBox {
+    min-height: 40px !important;
+}
+.registerWrapper {
+    padding: 40px 0;
+    min-height: auto;
+}
+.registerWrapper .registerInner h2,
+.jobseekers_application_formWrap .jobseekers_application_thankWrap h2 {
+    font-size: 24px;
+}
+.registerWrapper .registerInner .jobseek_register_captcha_Wrap iframe,
+.registerWrapper .registerInner .jobseek_login_captcha_Wrap iframe,
+.kg_contact_wrapper .kg_contact_form .kg_contact_captcha_Wrap iframe {
+    transform: scale(0.8) translate(-30px, 0px);
+    -webkit-transform: scale(0.8) translate(-30px, 0px);
+    -o-transform: scale(0.8) translate(-30px, 0px);
+}
+.registerWrapper .registerInner .jobseekers_register_thankWrap {
+    padding: 40px;
+    margin-top: 50px;
+}
+.jobseekers_register_thankWrap h4,
+.jobseekers_register_wrapper .jobseekers_register_email_verify_success h4,
+.jobseekers_register_wrapper .jobseekers_register_email_verify_failure h4 {
+    font-size: 18px;
+}
+.registerWrapper .registerInner .jobseekers_register_thankWrap p {
+    font-size: 14px;
+}
+.registerWrapper .jobseek_login_btmWrap p, .registerWrapper .jobseek_register_btmWrap p {
+    font-size: 14px;
+}
+.kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error, .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error {
+    font-size: 14px;
+}
+
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -1651,6 +1716,17 @@ button.modal_close span {
     }
     .modal-dialog {
         max-width: 280px !important;
+    }
+    .kg_contact_wrapper .kg_contact_thankWrap,
+    .jobseekers_application_formWrap .jobseekers_application_thankWrap {
+        padding: 25px;
+    }
+    .kg_contact_wrapper .kg_contact_thankWrap .backHome {
+        margin-top: 20px;
+    }
+    .registerWrapper .registerInner .jobseekers_register_thankWrap {
+        padding: 24px;
+        margin-top: 40px;
     }
 }
 @media screen and ( max-width: 413px ) { 

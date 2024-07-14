@@ -755,6 +755,15 @@ select.form-control {
 .form-control:focus {
     border: 2px solid #ffffff !important;
 }
+.inputField.inputField_disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: #2f4455 !important;
+}
+.inputField.inputField_disabled:hover,
+.inputField.inputField_disabled:focus {
+    border: 2px solid #8D8D99 !important;
+}
 .multipleSelect .wpforms-field-medium {
     padding: 0 !important;
 }
@@ -2910,8 +2919,8 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .registerWrapper .registerInner .jobseekers_register_thankWrap {
     text-align: center;
-    background: #1a2935;
-    border: 1px solid #31495c;
+    background: #0e5e95;
+    border: 1px solid #0e5e95;
     margin: 0;
     border-radius: 8px;
     padding: 60px;
@@ -3130,7 +3139,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .job-applications-table {
     width: 100%;
-    box-shadow: 0px 10px 25px #0000004f;
+    box-shadow: 0px 0px 10px #0000004f;
 }
 .job-applications-table thead {
     background-color: #1b2a36;
@@ -3285,12 +3294,15 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     font-size: 24px;
     font-family: 'Gilroy-Bold';
 }
-.single_appliForm_wrap {
+.single_appliForm_wrap .jobseekers_application_form {
     margin-top: 80px;
     padding: 50px;
     border-radius: 10px;
     background: #1a29354a;
     border: 1px solid #0098ff1c;
+}
+.single_appliForm_wrap .jobseekers_application_thankWrap {
+    margin-top: 80px;
 }
 .single_appliForm_wrap h3 {
     font-size: 36px !important;
@@ -3446,4 +3458,22 @@ input[type=checkbox], input[type=radio] {
 }
 .kg_contact_multi_services .contact_error {
     bottom: -28px;
+}
+.kg_contact_wrapper .kg_contact_thankWrap,
+.jobseekers_application_formWrap .jobseekers_application_thankWrap {
+    background-color: #0e5e95;
+    padding: 100px;
+    text-align: center;
+    border-radius: 20px;
+    border: 0;
+}
+.kg_contact_wrapper .kg_contact_thankWrap h2,
+.jobseekers_application_formWrap .jobseekers_application_thankWrap h2 {
+    margin-bottom: 20px;
+}
+.kg_contact_wrapper .kg_contact_thankWrap .backHome {
+    margin-top: 80px;
+}
+.jobseekers_application_formWrap .jobseekers_application_thankWrap h2 {
+    font-size: 36px;
 }
