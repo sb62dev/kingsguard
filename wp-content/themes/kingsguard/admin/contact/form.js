@@ -50,7 +50,7 @@ var captcha_empty_err_msg = "Captcha is required.";
 var email_invalid_err_msg = "Email format is invalid.";
 var phone_invalid_err_msg = "Phone number format is invalid.";
 var title_invalid_length_err_msg = "Maximum characters limit is 100.";
-var name_invalid_length_err_msg = "Maximum characters limit is 80.";
+var name_invalid_length_err_msg = "Maximum characters limit is 50.";
 
 function form_id_scroll(id) {
 	if (id != '') {
@@ -88,12 +88,12 @@ jQuery(document).ready(function($) {
             name.next('.contact_error').html(name_empty_err_msg).show(); 
             scrollId = scrollId == '' ? name : scrollId;
             go_ahead = false;
-        } else if (name.val().length > 80) {
+        } else if (name.val().length > 50) {
             name.next('.contact_error').html(name_invalid_length_err_msg).show();
             scrollId = scrollId == '' ? name : scrollId;
             go_ahead = false;
         } else {
-            title.next('.contact_error').html('').hide();
+            name.next('.contact_error').html('').hide();
         }
 
         // Title validation
