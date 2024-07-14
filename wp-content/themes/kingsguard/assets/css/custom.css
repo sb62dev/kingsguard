@@ -894,6 +894,7 @@ button.modal_close {
     top: -20px;
     border: 0;
     border-radius: 40px;
+    cursor: pointer;
 }
 button.modal_close span {
     font-size: 30px;
@@ -2857,7 +2858,15 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     max-width: 57px;
 }
 .registerWrapper .registerInner {
-    max-width: 640px;
+    max-width: 580px;
+    margin: 0 auto;
+}
+.registerWrapper.loginWrapper  .registerInner {
+    max-width: 500px;
+}
+.registerWrapper .registerInner .jobseekers_register_email_verify_success,
+.registerWrapper .registerInner .jobseekers_register_email_verify_failure {
+    max-width: 450px;
     margin: 0 auto;
 }
 .registerWrapper .registerInner h2 {
@@ -2895,17 +2904,44 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     font-family: 'Gilroy-Medium';
     font-size: 16px;
 }
+.registerWrapper .jobseek_login_inputWrap .btn-style,
+.registerWrapper .jobseek_register_inputWrap .btn-style {
+    width: 100%;
+}
 .registerWrapper .registerInner .jobseekers_register_thankWrap {
     text-align: center;
     background: #1a2935;
     border: 1px solid #31495c;
     margin: 0;
     border-radius: 8px;
-    padding: 20px;
+    padding: 60px;
+    margin-top: 60px;
+}
+.registerWrapper .registerInner .jobseekers_register_thankWrap p {
+    font-size: 16px;
 }
 .registerWrapper .registerInner .jobseekers_register_wrapper .jobseekers_register_email_verify_failure,
 .registerWrapper .registerInner .jobseekers_register_wrapper .jobseekers_register_email_verify_success {
     text-align: center;
+}
+.registerWrapper .jobseek_login_btmWrap p,
+.registerWrapper .jobseek_register_btmWrap p {
+    font-size: 16px;
+    text-align: center;
+}
+.registerWrapper .jobseek_login_btmWrap p a,
+.registerWrapper .jobseek_register_btmWrap p a {
+    color: #0098FF;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.registerWrapper .jobseek_login_btmWrap p a:hover,
+.registerWrapper .jobseek_login_btmWrap p a:focus,
+.registerWrapper .jobseek_register_btmWrap p a:hover,
+.registerWrapper .jobseek_register_btmWrap p a:focus {
+    color: #5ab9f8;
+    text-decoration: none;
 }
 .jobseek_loader {
     position: fixed;

@@ -589,6 +589,26 @@ h3 .job-title {
 .singleBlogWrapper .singleBlogImage img {
     height: 600px !important;
 }
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link {
+    padding: 30px 20px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link h4 {
+    font-size: 18px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link p {
+    font-size: 22px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn {
+    padding: 20px;
+    width: 64px;
+    height: 64px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientName {
+    font-size: 18px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont {
+    padding: 20px;
+}
 } 
 
  
@@ -936,6 +956,22 @@ input:-moz-placeholder {
 }
 .singleBlogWrapper .singleBlogImage img {
     height: 500px !important;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner {
+    margin-bottom: 30px;
+    height: auto;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link {
+    padding: 20px 15px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link h4 {
+    font-size: 16px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link p {
+    font-size: 20px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsBody {
+    padding: 40px 30px 20px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1565,6 +1601,43 @@ input:-moz-placeholder {
     margin-left: 0;
     margin-top: 10px;
 }
+.clientSec.testimonialsSec .testimonialsInner .tabsHeadWrap .tabsHead .nav-item + .nav-item {
+    margin-left: 0;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link {
+    padding: 15px 10px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link h4 {
+    font-size: 14px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link p {
+    font-size: 18px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsBody {
+    padding: 30px 20px 10px;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsBody .clientTabDesc {
+    margin-bottom: 20px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientName {
+    font-size: 16px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientLoc {
+    font-size: 12px;
+}
+.modal-dialog {
+    max-width: 360px !important;
+    margin: 0 auto;
+}
+button.modal_close {
+    right: -17px;
+    width: 34px !important;
+    height: 34px !important;
+    top: -17px;
+}
+button.modal_close span {
+    top: -2px !important;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -1575,6 +1648,9 @@ input:-moz-placeholder {
     .projectInfoWrap .projectInfo.projectInfoBorder {
         margin-top: 25px;
         padding-top: 25px;
+    }
+    .modal-dialog {
+        max-width: 280px !important;
     }
 }
 @media screen and ( max-width: 413px ) { 
