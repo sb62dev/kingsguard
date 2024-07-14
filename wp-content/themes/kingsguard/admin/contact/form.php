@@ -18,7 +18,7 @@ function contact_form() {
                 <input type="hidden" name="action" id="action" value="kg_contact_form_save" />
                 <?php wp_nonce_field('contact_form_save_action', 'contact_form_save_nonce_field'); ?> 
                 <div class="kg_contact_wrap">
-                    <div class="kg_loader" style="display: none;"><div class="jobLoader"></div></div>
+                    <div class="jobseek_loader" style="display: none;"><div class="jobLoader"></div></div>
                     <div class="kg_contact_cmnError" style="display: none;"><div class="kg_contact_cmnError_in"></div></div>
                     <div class="kg_contact_row row"> 
                         <div class="kg_contact_col col-md-6">
@@ -52,7 +52,7 @@ function contact_form() {
                         <div class="kg_contact_col col-md-12">
                             <div class="kg_contact_inputWrap kg_contact_selectWrap kg_contact_multi_services">
                                 <label class="kg_contact_label"> Select Service<sup>*</sup> </label>
-                                <select id="kg_contact_services" nname="kg_contact_services[]" class="selectFieldl" multiple>
+                                <select id="kg_contact_services" name="kg_contact_services" class="selectFieldl" multiple>
                                     <option value="" class="placeholder" disabled="">Select</option>
                                     <option value="Security Guard">Security Guard</option>
                                     <option value="Portable Surveillance System">Portable Surveillance System</option>
@@ -166,7 +166,7 @@ function contact_form() {
                             </div>
                         </div>  
                         <div class="kg_contact_col col-md-12">
-                            <div class="kg_contact_captcha_Wrap">
+                            <div class="kg_contact_captcha_Wrap" id="g-recaptcha-response-wrap">
                                 <div class="g-recaptcha" data-callback="kg_contact_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                                 <div class="contact_error"></div>
                             </div>
@@ -179,7 +179,7 @@ function contact_form() {
                     </div>
                 </div>
             </form>
-            <div class="kg_contact_thankWrap">
+            <div class="kg_contact_thankWrap" id="kg_contact_thankWrap">
                 <h2>Confirmation</h2>
                 <p>Thanks for contacting us! We will be in touch with you shortly.</p>
                 <div class="backHome"><a class="btn-style" href="/">Back to Home</a></div>

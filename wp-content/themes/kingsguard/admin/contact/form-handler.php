@@ -20,8 +20,8 @@ function handle_contact_form() {
             $title = sanitize_text_field($_POST['kg_contact_title']);
             $phone = sanitize_text_field($_POST['kg_contact_phone']); 
             $services_data = isset($_POST['selected_services']) ? sanitize_text_field($_POST['selected_services']) : ''; 
-            $security_services = isset($_POST['kg_contact_security_services']) ? implode(',', $_POST['kg_contact_security_services']) : '';
-            $parking_services = isset($_POST['kg_contact_parking_services']) ? implode(',', $_POST['kg_contact_parking_services']) : '';
+            $security_services = isset($_POST['kg_contact_security_services']) ? implode(', ', $_POST['kg_contact_security_services']) : '';
+            $parking_services = isset($_POST['kg_contact_parking_services']) ? implode(', ', $_POST['kg_contact_parking_services']) : '';
             $site_types = sanitize_text_field($_POST['kg_contact_site_types']);
             $length_cover = sanitize_text_field($_POST['kg_contact_length_cover']);
             $add_info = sanitize_textarea_field($_POST['kg_contact_add_info']);
