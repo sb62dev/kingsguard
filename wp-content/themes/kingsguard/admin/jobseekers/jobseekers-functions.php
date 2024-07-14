@@ -22,6 +22,47 @@ function get_jobseeker_info($email) {
     return $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE email = %s", $email), ARRAY_A);
 } 
 
+// Pagination funciton for admin
+function common_pagination($current_page, $per_page, $total_pages, $base_url) {
+    $pagination_html = '<div class="customPagi"><div class="tablenav-pages"><span class="displaying-num">' . ($per_page) . ' items</span>';
+    $pagination_html .= '<span class="pagination-links">';
+
+    $big = 999999999; // need an unlikely integer
+    $page_links = paginate_links(array(
+        'base' => str_replace($big, '%#%', esc_url($base_url . '&paged=%#%')),
+        'format' => '?paged=%#%',
+        'current' => max(1, $current_page),
+        'total' => $total_pages,
+        'prev_text' => __('«'),
+        'next_text' => __('»'),
+        'type' => 'array',
+    ));
+
+    if ($page_links) {
+        if ($current_page > 1) {
+            $pagination_html .= '<a class="first-page button" href="' . esc_url($base_url . '&paged=1') . '"><span class="screen-reader-text">First page</span><span aria-hidden="true">«</span></a>';
+            $pagination_html .= '<a class="prev-page button" href="' . esc_url($base_url . '&paged=' . ($current_page - 1)) . '"><span class="screen-reader-text">Previous page</span><span aria-hidden="true">‹</span></a>';
+        } else {
+            $pagination_html .= '<span class="tablenav-pages-navspan button disabled" aria-hidden="true">«</span>';
+            $pagination_html .= '<span class="tablenav-pages-navspan button disabled" aria-hidden="true">‹</span>';
+        }
+
+        $pagination_html .= '<span class="screen-reader-text">Current Page</span><span id="table-paging" class="paging-input"><span class="tablenav-paging-text">' . $current_page . ' of <span class="total-pages">' . $total_pages . '</span></span></span>';
+
+        if ($current_page < $total_pages) {
+            $pagination_html .= '<a class="next-page button" href="' . esc_url($base_url . '&paged=' . ($current_page + 1)) . '"><span class="screen-reader-text">Next page</span><span aria-hidden="true">›</span></a>';
+            $pagination_html .= '<a class="last-page button" href="' . esc_url($base_url . '&paged=' . $total_pages) . '"><span class="screen-reader-text">Last page</span><span aria-hidden="true">»</span></a>';
+        } else {
+            $pagination_html .= '<span class="tablenav-pages-navspan button disabled" aria-hidden="true">›</span>';
+            $pagination_html .= '<span class="tablenav-pages-navspan button disabled" aria-hidden="true">»</span>';
+        }
+    }
+
+    $pagination_html .= '</span></div></div>';
+
+    return $pagination_html;
+} 
+
 // Include registration form
 require get_template_directory() . '/admin/jobseekers/jobseekers-table.php';
 
@@ -92,6 +133,5 @@ function custom_jobseekers_dashboard_template_redirect() {
     }
 }
 add_action('template_redirect', 'custom_jobseekers_dashboard_template_redirect');
-
 
 ?>

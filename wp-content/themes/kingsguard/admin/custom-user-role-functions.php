@@ -69,4 +69,5 @@ function remove_wpforms_submenus_for_edituser_role() {
 
 add_action('admin_menu', 'modify_wpforms_menu_for_edituser_role', 999);
 add_action('admin_menu', 'remove_wpforms_submenus_for_edituser_role', 999);
+
 ?>

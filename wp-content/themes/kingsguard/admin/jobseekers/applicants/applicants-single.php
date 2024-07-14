@@ -39,6 +39,16 @@ function view_jobseeker_page() {
     }
 
     $job_applications = unserialize($user->job_applications) ?: [];
+    $applications_per_page = 2;
+    $total_applications = count($job_applications);
+    $total_pages = ceil($total_applications / $applications_per_page); 
+
+    // Determine the current page
+    $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
+    $offset = ($current_page - 1) * $applications_per_page;
+
+    // Limit job applications for the current page
+    $paged_job_applications = array_slice($job_applications, $offset, $applications_per_page);
 
     echo '<div class="wrap">';
     echo '<div class="userWrap">';
@@ -53,16 +63,17 @@ function view_jobseeker_page() {
     echo '</div>';
     echo '</div>';
 
-    if (!empty($job_applications)) {
+    if (!empty($paged_job_applications)) {
         echo '<h3>Job Applications</h3>';
         echo '<table class="widefat fixed" cellspacing="0">';
-        echo '<thead><tr><th style="width: 25px">ID</th><th>Job Title</th><th>Job Location</th><th>Status</th><th>Resume</th><th>Action</th></tr></thead>';
+        echo '<thead><tr><th style="width: 25px">ID</th><th>Job Title</th><th>Job Location</th><th>Status</th><th>Resume</th><th>Date/time</th><th>Action</th></tr></thead>';
         echo '<tbody>';
 
-        $counter = 1;
-        foreach ($job_applications as $index => $application) {
+        $counter = 1 + $offset;
+        foreach ($paged_job_applications as $index => $application) {
             $job_id = isset($application['job_id']) ? $application['job_id'] : 'N/A'; 
             $job_title = isset($application['job_title']) ? $application['job_title'] : 'N/A';
+            $job_date = isset($application['submission_date']) ? $application['submission_date'] : 'N/A';
 
             $job_location = 'N/A';
             if ($job_id !== 'N/A') {
@@ -86,6 +97,7 @@ function view_jobseeker_page() {
                 echo 'N/A';
             }
             echo '</td>'; 
+            echo '<td>' . esc_html($job_date) . '</td>';
             echo '<td>';
             echo '<button type="button" class="button open-modal" data-index="' . esc_attr($index) . '" data-status="' . esc_attr(isset($application['status']) ? $application['status'] : '') . '">Update Status</button>';
             echo '</td>';
@@ -94,6 +106,8 @@ function view_jobseeker_page() {
         }
 
         echo '</tbody></table>';
+
+        echo common_pagination($current_page, $total_applications, $total_pages, admin_url('admin.php?page=view-jobseeker&user_id=' . $user_id));
     } else {
         echo '<p>No job applications found for this user.</p>';
     }
