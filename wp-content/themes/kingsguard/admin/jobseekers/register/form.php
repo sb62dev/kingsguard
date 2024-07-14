@@ -63,7 +63,7 @@ function jobseekers_register_form() {
                             </div>
                         </div>
                         <div class="jobseek_register_col col-md-12">
-                            <div class="jobseek_register_captcha_Wrap" id="g-recaptcha-response-wrap">
+                            <div class="jobseek_register_captcha_Wrap">
                                 <div class="g-recaptcha" data-callback="jobseek_register_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                                 <div class="jobseek_error"></div>
                             </div>
@@ -71,11 +71,6 @@ function jobseekers_register_form() {
                         <div class="jobseek_register_col col-md-12">
                             <div class="jobseek_register_inputWrap">
                                 <button type="submit" name="submit" class="btn-style gradientBtn">Register</button>
-                            </div>
-                        </div>
-                        <div class="jobseek_login_col col-md-12">
-                            <div class="jobseek_register_btmWrap">
-                                <p class="mb-0">Already have an account yet? <a href="/jobseekers-login/">Login</a></p>
                             </div>
                         </div>
                     </div>

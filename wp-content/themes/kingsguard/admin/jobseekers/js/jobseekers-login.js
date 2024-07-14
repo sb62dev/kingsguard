@@ -1,3 +1,43 @@
+var pattern = {
+	"email": /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+	"phone": /^((\+\d{1,3}(-|.| )?\(?\d\)?(-| |.)?\d{1,5})|(\(?\d{2,6}\)?))(-|.| )?(\d{3,4})(-|.| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/,
+	"fname": /^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\-]+$/,
+	"lname": /^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\-]+$/,
+	"email_emoji": /\p{Extended_Pictographic}/ug,
+	'nospace': /^\S*$/,
+};
+
+function validate_input(input_type, input_val) {
+	var match = '';
+	switch (input_type) {
+		case "email":
+			match = pattern.email;
+			break;
+		case "phone":
+			match = pattern.phone;
+			break;
+		case "fname":
+			match = pattern.fname;
+			break;
+		case "nospace":
+			match = pattern.nospace;
+			break;
+		case "lname":
+			match = pattern.lname;
+			break; 
+		case "email_emoji":
+			match = pattern.email_emoji;
+			break;
+
+	}
+	var check = match.test(input_val);
+	if (check) {
+		return true;
+	} else {
+		return false;
+	}
+}
+  
 var user_empty_err_msg = "Username or Email is required."; 
 var password_empty_err_msg = "Password is required."; 
 var captcha_empty_err_msg = "Captcha is required.";
@@ -5,7 +45,7 @@ var captcha_empty_err_msg = "Captcha is required.";
 function form_id_scroll(id) {
 	if (id != '') {
 		jQuery('html, body').animate({
-			scrollTop: jQuery(id).offset().top - 170
+			scrollTop: jQuery(id).offset().top - 100
 		}, 500);
 	}
 }
@@ -15,7 +55,6 @@ jQuery(document).ready(function($) {
     $('#jobseekers_login_form').on('submit', function(e) {
         e.preventDefault();
  
-        var scrollId = '';
         var user = $("#jobseek_user");
         var password = $("#jobseek_password");
         var captcha = $("#g-recaptcha-response");
@@ -27,25 +66,18 @@ jQuery(document).ready(function($) {
         // User or email validation
         if ('' == user.val().trim()) {
             user.next('.jobseek_error').html(user_empty_err_msg).show();
-            scrollId = scrollId == '' ? user : scrollId;
             go_ahead = false;
-        } else {
-            user.next('.jobseek_error').html('').hide();
-        } 
+        }
 
         // Password validation
         if ('' == password.val().trim()) {
             password.next('.jobseek_error').html(password_empty_err_msg).show();
-            scrollId = scrollId == '' ? password : scrollId;
             go_ahead = false;
-        } else {
-            password.next('.jobseek_error').html('').hide();
         }
 
         // Captcha validation
         if (response.length == 0) {
             captcha.closest('.jobseek_login_captcha_Wrap').find('.jobseek_error').html(captcha_empty_err_msg).show(); 
-            scrollId = scrollId == '' ? "#g-recaptcha-response-wrap" : scrollId;
             go_ahead = false;
         } else {
             captcha.closest('.jobseek_login_captcha_Wrap').find('.jobseek_error').hide();  
@@ -62,8 +94,10 @@ jQuery(document).ready(function($) {
                 },
                 success: function(res) {
                     console.log("Server Response: ", res);
-                    $('.jobseek_loader').hide(); 
-                    if (res.success) { 
+                    $('.jobseek_loader').hide();
+                    
+                    if (res.success) {
+                        $("html, body").animate({ scrollTop: 0 }, "slow");
                         $("#jobseekers_login_form")[0].reset();
                         window.location.href = '/jobseekers-dashboard';
                     } else { 
@@ -75,8 +109,6 @@ jQuery(document).ready(function($) {
                     console.log(data);
                 }
             });
-        } else {
-            form_id_scroll(scrollId);
         }
     }); 
     

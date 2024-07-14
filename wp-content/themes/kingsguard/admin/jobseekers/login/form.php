@@ -33,7 +33,7 @@ function jobseekers_login_form() {
                     </div>
                 </div>
                 <div class="jobseek_login_col">
-                    <div class="jobseek_login_captcha_Wrap" id="g-recaptcha-response-wrap">
+                    <div class="jobseek_login_captcha_Wrap">
                         <div class="g-recaptcha" data-callback="jobseek_login_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                         <div class="jobseek_error"></div>
                     </div>
@@ -41,11 +41,6 @@ function jobseekers_login_form() {
                 <div class="jobseek_login_col">
                     <div class="jobseek_login_inputWrap">
                         <button type="submit" name="login" class="btn-style gradientBtn">Login</button>
-                    </div>
-                </div>
-                <div class="jobseek_login_col">
-                    <div class="jobseek_login_btmWrap">
-                        <p class="mb-0">Don't have an account yet? <a href="/jobseekers-register/">Register</a></p>
                     </div>
                 </div>
             </div>

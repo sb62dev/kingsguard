@@ -82,7 +82,7 @@ function job_application_form() {
                             </div>
                         </div>
                         <div class="jobseek_application_col col-md-12">
-                            <div class="jobseek_application_inputWrap" id="resumeBoxwrap">
+                            <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Resume* </label>
                                 <div class="jobseek_application_resume_box">
                                     <div class="jobseek_application_resume_boxIn">
@@ -100,7 +100,7 @@ function job_application_form() {
                             </div>
                         </div>  
                         <div class="jobseek_application_col col-md-12">
-                            <div class="jobseek_application_captcha_Wrap" id="g-recaptcha-response-wrap">
+                            <div class="jobseek_application_captcha_Wrap">
                                 <div class="g-recaptcha" data-callback="jobseek_application_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                                 <div class="jobseek_error"></div>
                             </div>
@@ -113,7 +113,7 @@ function job_application_form() {
                     </div>
                 </div>
             </form>
-            <div class="jobseekers_application_thankWrap" id="jobseekers_application_thankWrap">
+            <div class="jobseekers_application_thankWrap">
                 <h2> Thank you for apply the job!  </h2>
                 <p> Please check the job application status. </p>
             </div>

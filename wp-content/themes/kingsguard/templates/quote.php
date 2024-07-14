@@ -29,10 +29,17 @@ get_header();
     <section class="quoteWrapper py100">
         <div class="sm_container">
             <div class="quoteInnerWrapper">
+                <?php echo do_shortcode('[wpforms id="750" title="false"]'); ?>
+            </div>
+        </div>
+    </section>
+    <section class="quoteWrapper py100">
+        <div class="sm_container">
+            <div class="quoteInnerWrapper">
                 <?php echo do_shortcode('[contact_form]'); ?>
             </div>
         </div>
-    </section> 
+    </section>
 </div>
 
 <?php get_footer(); ?>

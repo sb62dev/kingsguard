@@ -246,18 +246,18 @@ jQuery(document).ready(function () {
 
     }).scroll();
 
-    jQuery('#exampleModal').on('shown.bs.modal', function () {
-        // Autoplay the video when the modal is shown
-        var videoFrame = document.getElementById('videoFrame');
-        var videoSrc = videoFrame.src;
-        videoFrame.src = videoSrc + '&autoplay=1';
-    });
+    // jQuery('#exampleModal').on('shown.bs.modal', function () {
+    //     // Autoplay the video when the modal is shown
+    //     var videoFrame = document.getElementById('videoFrame');
+    //     var videoSrc = videoFrame.src;
+    //     videoFrame.src = videoSrc + '&autoplay=1';
+    // });
 
-    jQuery('#exampleModal').on('hidden.bs.modal', function () {
-        // Pause the video when the modal is closed
-        var videoFrame = document.getElementById('videoFrame');
-        videoFrame.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-    });
+    // jQuery('#exampleModal').on('hidden.bs.modal', function () {
+    //     // Pause the video when the modal is closed
+    //     var videoFrame = document.getElementById('videoFrame');
+    //     videoFrame.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    // });
 
 }); 
 
@@ -439,5 +439,15 @@ jQuery(document).ready(function () {
       if (jQuery(this).attr('href') === currentUrl) {
         jQuery(this).addClass('active');
       }
+  });
+  jQuery('#projectVideo').on('show.bs.modal', function(event) {
+      var button = jQuery(event.relatedTarget); // Button that triggered the modal
+      var videoUrl = button.data('video'); // Extract info from data-* attributes
+      var modal = jQuery(this);
+      modal.find('#videoFrame').attr('src', videoUrl);
+  });
+
+  jQuery('#projectVideo').on('hidden.bs.modal', function() {
+    jQuery('#videoFrame').attr('src', ''); // Remove the video source when the modal is closed
   });
 });

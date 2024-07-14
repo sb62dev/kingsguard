@@ -897,7 +897,7 @@ button.modal_close {
 }
 button.modal_close span {
     font-size: 30px;
-    top: -3px !important;
+    top: 0 !important;
     position: relative;
 }
 button.modal_close:hover,
@@ -3145,6 +3145,12 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .clientSec.testimonialsSec .testimonialsInner .tabsHeadWrap ul li {
     width: 33.333%;
 }
+.clientSec.testimonialsSec .tabsHead .nav-item .nav-link {
+    border-bottom: 3px solid #0f2a3e;
+}
+.clientSec.testimonialsSec .tabsHead .nav-item .nav-link.active {
+    border-bottom: 3px solid #ffffff;
+}
 .clientSec.testimonialsSec .testimonialsInner .tabsBody {
     padding: 50px 40px 40px;
     margin-top: 0;
@@ -3154,6 +3160,94 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link {
     padding: 40px 30px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner {
+    background-color: #1e1e20;
+    border: 0;
+    border-radius: 10px;
+    height: 100%;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a,
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a * {
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a:hover *,
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner a:focus *{
+    color: #ffffff;
+    text-decoration: none;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg {
+    position: relative;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientPlayBtnWrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn {
+    background-color: #0394f7bf;
+    padding: 30px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn i {
+    font-size: 12px;
+    transform: translate3d(-4px, 0, 0);
+    transition: transform .85s cubic-bezier(.475,.425,0,.995);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn:hover i {
+    transform: translate3d(40px,0,0);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn i.after {
+    transform: translate3d(-70px, 0, 0);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn:hover i.after {
+    transform: translate3d(5px,0,0);
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont {
+    padding: 30px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientTabReview p {
+    font-size: 16px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientName {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientReviewCont .clientLoc {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-family: 'Gilroy-Light';
+    font-weight: 400;
+}
+.clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link p {
+    font-size: 24px;
+    font-family: 'Gilroy-Bold';
 }
 .single_appliForm_wrap {
     margin-top: 80px;
@@ -3213,4 +3307,107 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .dashboardWrapper .dashboardHead .dashboardLogout a .logoutIcon {
     margin-right: 10px;
+}
+.kg_contact_col {
+    padding: 0 15px !important;
+    margin-bottom: 60px !important;
+}
+.kg_contact_multi_services .selectFieldl {
+    opacity: 0;
+    height: 0px !important;
+    visibility: hidden;
+    min-height: 0 !important;
+    border: 0 !important;
+}
+.kg_contact_multi_services .selectBox {
+    width: 100% !important;
+    border: 2px solid #8D8D99 !important;
+    border-radius: 10px !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    font-family: 'Gilroy-Light' !important;
+    font-size: 18px !important;
+    padding: 12px 20px !important;
+    -webkit-transition: all 0.3s linear !important;
+    -o-transition: all 0.3s linear !important;
+    transition: all 0.3s linear !important;
+    height: auto;
+    min-height: 52px !important;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+}
+.kg_contact_multi_services .options {
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    right: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    color: #000;
+    padding: 0 15px;
+}
+.kg_contact_multi_services .options.open {
+    display: block;
+}
+.kg_contact_multi_services .selectBox .selectedItem {
+    background-color: #1b2a36;
+    border: 1px solid #414148;
+    border-radius: 4px;
+    margin: 2px;
+    padding: 2px 6px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.kg_contact_multi_services .selectBox .selectedItem .close {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 10px;
+}
+.kg_contact_multi_services .selectBox .placeholder {
+    color: #888;
+}
+input[type=checkbox], input[type=radio] {
+    width: 16px;
+    height: 16px;
+    margin: 0px 10px 0 0;
+    position: relative;
+    top: 2px;
+}
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label span {
+    color: #d63637;
+    font-weight: normal;
+    font-size: 14px;
+}
+.kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error, .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error {
+    color: #d63637;
+    margin-top: 15px;
+    padding-left: 20px;
+    display: none;
+    position: relative;
+    font-family: 'Gilroy-Medium';
+    font-size: 16px;
+    position: absolute !important;
+}
+.kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error::before, .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error::before {
+    content: "\f06a";
+    position: absolute;
+    font-family: 'FontAwesome';
+    left: 0;
+    top: auto;
+}
+.kg_contact_inputWrap.kg_contact_selectWrap.kg_contact_multi_services {
+    position: relative;
+}
+.kg_contact_multi_services .contact_error {
+    bottom: -28px;
 }

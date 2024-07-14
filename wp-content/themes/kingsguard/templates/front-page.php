@@ -310,7 +310,7 @@ get_header();
     <?php } ?>-->
 
     
-    <!-- <?php if (have_rows('client_testimonials_tabs')) : ?>
+    <?php if (have_rows('client_testimonials_tabs')) : ?>
     <section>
         <div class="clientSec testimonialsSec py200">
             <div class="sm_container">
@@ -355,45 +355,106 @@ get_header();
                                     </div>
                                 </div>
                                 <?php if (have_rows('client_testimonials')) : ?>
-                                <div class="clientTabReview">
-                                    <div class="row">
-                                        <?php while (have_rows('client_testimonials')) : the_row(); ?>
-                                        <div class="col-lg-4">
-                                            <?php
-                                                $client_image = get_sub_field('client_image');
-                                                if (isset($client_image) && !empty($client_image)) {
-                                                $image_url = wp_get_attachment_image_src($client_image, 'full')[0];
-                                                $image_alt = get_post_meta($client_image, '_wp_attachment_image_alt', true);
-                                            ?>
-                                                <div class="ClientTabImg">
-                                                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                    <div class="clientTabReview">
+                                        <div class="row">
+                                            <?php while (have_rows('client_testimonials')) : the_row(); ?>
+                                                <div class="col-lg-4">
+                                                    <?php 
+                                                        $client_video_link = get_sub_field('client_video_link');
+                                                        if (isset($client_video_link) && !empty($client_video_link)) {
+                                                    ?>
+                                                    <div class="clientReviewInner">
+                                                        <?php
+                                                            $client_image = get_sub_field('client_image');
+                                                            if (isset($client_image) && !empty($client_image)) {
+                                                                $image_url = wp_get_attachment_image_src($client_image, 'full')[0];
+                                                                $image_alt = get_post_meta($client_image, '_wp_attachment_image_alt', true);
+                                                        ?>
+                                                            <div class="clientTabImg">
+                                                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                                                <?php 
+                                                                    $client_video_link = get_sub_field('client_video_link');
+                                                                    if (isset($client_video_link) && !empty($client_video_link)) {
+                                                                ?>
+                                                                <div class="clientPlayBtnWrap">
+                                                                    <a href="#projectVideo" class="playBtn" data-toggle="modal" data-video="<?php echo esc_url($client_video_link); ?>" aria-label="Click here to open Video">
+                                                                <i class="fa fa-play after"></i>
+                                                                        <i class="fa fa-play"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <?php } ?>
+                                                            </div>
+                                                        <?php } ?>
+                                                        <div class="clientReviewCont">
+                                                            <?php 
+                                                                $client_review = get_sub_field('client_review');
+                                                                if (isset($client_review) && !empty($client_review)) {
+                                                            ?> 
+                                                                <div class="clientTabReview">
+                                                                    <?php echo $client_review; ?>
+                                                                </div>
+                                                            <?php } ?>
+                                                            <?php 
+                                                                $client_name = get_sub_field('client_name');
+                                                                if (isset($client_name) && !empty($client_name)) {
+                                                            ?> 
+                                                                <h3 class="clientName"><?php echo $client_name; ?></h3>
+                                                            <?php } ?>
+                                                            <?php 
+                                                                $client_location = get_sub_field('client_location');
+                                                                if (isset($client_location) && !empty($client_location)) {
+                                                            ?> 
+                                                                <p class="clientLoc"><?php echo $client_location; ?></p>
+                                                            <?php } ?>
+                                                        </div> 
+                                                    </div>
+                                                    <?php } else { ?>
+                                                        <div class="clientReviewInner">
+                                                            <?php 
+                                                                $client_project_link = get_sub_field('client_project_link');
+                                                            ?> 
+                                                            <a href="<?php echo esc_url($client_project_link); ?>" target="_self" aria-label="Click here to go to project page">
+                                                                <?php
+                                                                    $client_image = get_sub_field('client_image');
+                                                                    if (isset($client_image) && !empty($client_image)) {
+                                                                        $image_url = wp_get_attachment_image_src($client_image, 'full')[0];
+                                                                        $image_alt = get_post_meta($client_image, '_wp_attachment_image_alt', true);
+                                                                ?>
+                                                                    <div class="clientTabImg">
+                                                                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                                                    </div>
+                                                                <?php } ?>
+                                                                <div class="clientReviewCont">
+                                                                    <?php 
+                                                                        $client_review = get_sub_field('client_review');
+                                                                        if (isset($client_review) && !empty($client_review)) {
+                                                                    ?> 
+                                                                        <div class="clientTabReview">
+                                                                            <?php echo $client_review; ?>
+                                                                        </div>
+                                                                    <?php } ?>   
+                                                                    <?php 
+                                                                        $client_name = get_sub_field('client_name');
+                                                                        if (isset($client_name) && !empty($client_name)) {
+                                                                    ?> 
+                                                                        <h3 class="clientName"><?php echo $client_name; ?></h3>
+                                                                    <?php } ?>
+                                                                    <?php 
+                                                                        $client_location = get_sub_field('client_location');
+                                                                        if (isset($client_location) && !empty($client_location)) {
+                                                                    ?> 
+                                                                        <p class="clientLoc"><?php echo $client_location; ?></p>
+                                                                    <?php } ?>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    <?php } ?>
                                                 </div>
-                                            <?php } ?>
-                                            <?php 
-                                                $client_review = get_sub_field('client_review');
-                                                if(isset($client_review) && !empty($client_review)){
-                                            ?> 
-                                                <div class="clientTabReview">
-                                                    <?php echo $client_review; ?>
-                                                </div>
-                                            <?php } ?>   
-                                            <?php 
-                                                $client_name = get_sub_field('client_name');
-                                                if(isset($client_name) && !empty($client_name)){
-                                            ?> 
-                                                <h3 class="h3"><?php echo $client_name; ?></h3>
-                                            <?php } ?>
-                                            <?php 
-                                                $client_location = get_sub_field('client_location');
-                                                if(isset($client_location) && !empty($client_location)){
-                                            ?> 
-                                                <p><?php echo $client_location; ?></p>
-                                            <?php } ?>
+                                            <?php endwhile; ?>
                                         </div>
-                                        <?php endwhile; ?>
                                     </div>
-                                </div>
                                 <?php endif; wp_reset_query(); ?>
+
                             </div>
                         </div>
                         <?php $counterr++; endwhile; ?>
@@ -402,6 +463,6 @@ get_header();
             </div>
         </div>
     </section>
-    <?php endif; wp_reset_query(); ?> -->
+    <?php endif; wp_reset_query(); ?>
 </div>
  <?php get_footer(); ?>

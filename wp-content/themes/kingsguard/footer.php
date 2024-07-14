@@ -224,12 +224,7 @@
 </script>
 <?php wp_footer(); ?>
 
-<?php
-	$page = get_page_by_path('home');
-	$video_url = get_field('video_url', $page->ID);
-	if (isset($video_url) && !empty($video_url)) {
-?>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="projectVideo" tabindex="-1" role="dialog" aria-labelledby="projectVideoLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
 		<button type="button" class="modal_close" data-dismiss="modal" aria-label="Close">
@@ -239,6 +234,5 @@
     </div>
   </div>
 </div>
-<?php } ?>
 </body>
 </html>
