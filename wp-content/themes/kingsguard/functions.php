@@ -566,6 +566,9 @@ require_once get_template_directory() . '/admin/jobseekers/jobseekers-functions.
 // Custom Contact Form.
 require_once get_template_directory() . '/admin/contact/contact.php';
 
+// Custom Contact Form Admin
+require_once get_template_directory() . '/admin/contact/admin/contact-admin-page.php';
+
 /**
  * Enqueues scripts for the customizer preview.
  *
