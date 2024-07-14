@@ -76,16 +76,22 @@ function jobseekers_register_form() {
                     </div>
                 </div>
             </form>
-            <div class="jobseekers_register_thankWrap">
-                <h2> Thank you for registering!  </h2>
+            <div class="jobseekers_register_thankWrap" id="jobseekers_register_thankWrap">
+                <h4> Thank you for registering!  </h4>
                 <p> An email verification link has been sent to your email address. Please check your inbox to complete the registration process. </p>
             </div>
         </div> 
         <div class="jobseekers_register_email_verify_success">
-            <h2> Email verified successfully. Please click <a href="/signin"> here </a> for login. </h2>
+            <h4> Email verified successfully. Please click below to login. </h4>
+            <div class="btnWrap">
+                <a href="/jobseekers-login/" class="btn-style gradientBtn"> Login </a>
+            </div>
         </div>
         <div class="jobseekers_register_email_verify_failure">
-            <h2> Email verification link is incorrect or already verified. Please click <a href="/signin"> here </a> for login. </h2>
+            <h4> Email verification link is incorrect or already verified. </h4>
+            <div class="btnWrap">
+                <a href="/" class="btn-style gradientBtn"> Back to Home </a>
+            </div>
         </div>
     </div>
     <script src='https://www.google.com/recaptcha/api.js'></script>

@@ -24,7 +24,7 @@ get_header();
                     </div>
                     <div class="dash_appli-listings-wrap">  
                         <div class="appli-listings">
-                            <?php echo do_shortcode('[user_submitted_jobs]') ?> 
+                            <?php echo do_shortcode('[user_submitted_jobs count="-1"]') ?> 
                         </div>   
                     </div>
                 </div> 

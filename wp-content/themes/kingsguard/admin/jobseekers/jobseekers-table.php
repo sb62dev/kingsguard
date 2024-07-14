@@ -31,6 +31,7 @@ function create_jobseekers_table() {
         email_verified tinyint(1) DEFAULT 0,
         verification_token varchar(255) DEFAULT '',
         job_applications longtext DEFAULT NULL,
+        submission_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY  (id)
     ) $charset_collate;";
 
