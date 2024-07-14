@@ -27,6 +27,11 @@ function create_contact_form_table() {
 
 add_action('after_setup_theme', 'create_contact_form_table');
 
+function contact_users_table(){
+    global $wpdb;
+    return $wpdb->prefix . 'contact_form_users';
+}
+
 // Register Form File
 include('form.php');
 
