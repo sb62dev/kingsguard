@@ -3421,9 +3421,6 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     color: #ffffff;
     font-size: 10px;
 }
-.kg_contact_multi_services .selectBox .placeholder {
-    color: #888;
-}
 input[type=checkbox], input[type=radio] {
     width: 16px;
     height: 16px;
@@ -3431,10 +3428,12 @@ input[type=checkbox], input[type=radio] {
     position: relative;
     top: 2px;
 }
-.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label span {
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label sup {
     color: #d63637;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 24px;
+    top: 0px;
+    margin-left: 2px;
 }
 .kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error, .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error {
     color: #d63637;

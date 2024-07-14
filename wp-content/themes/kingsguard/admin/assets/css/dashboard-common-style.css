@@ -44,3 +44,53 @@
     justify-content: flex-end;
     gap: 15px;
 }
+.statusModal_container {
+    background-color: #1b2a36;
+    border-radius: 10px;
+    padding: 50px;
+}
+.statusModal_container .statusModal_close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+}
+.statusModal_container .statusModal_close .statusModalClose {
+    background-color: #0098ff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0;
+    outline: none;
+}
+.statusModal_container .statusModal_close .statusModalClose:hover,
+.statusModal_container .statusModal_close .statusModalClose:focus {
+    text-decoration: none;
+    outline: none;
+}
+.statusModal_container .statusModal_close .statusModalClose::before {
+    content: "\f00d";
+    position: absolute;
+    font-size: 14px;
+    font-family: 'FontAwesome';
+}
+.statusModal_container .statusModal_heading h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 40px !important;
+    text-align: center;
+}
+.statusModal_container #statusForm label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+.statusModal_container #modal_status {
+    min-height: 36px;
+    min-width: 200px;
+    margin-right: 10px;
+    padding-left: 20px;
+}

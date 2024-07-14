@@ -32,7 +32,22 @@ a:focus,
     box-shadow: none;
 }
 #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    width: 250px;
     background-color: #1b2a36;
+}
+#wpcontent, #wpfooter {
+    margin-left: 250px;
+    padding: 40px 50px;
+}
+.wrap {
+    margin: 0;
+}
+#adminmenu .wp-submenu-head, #adminmenu a.menu-top {
+    font-size: 16px;
+}
+#adminmenu .wp-submenu a,
+#collapse-button .collapse-button-icon, #collapse-button .collapse-button-label {
+    font-size: 14px;
 }
 #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
     background-color: #18354a;
