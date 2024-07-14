@@ -217,12 +217,12 @@ jQuery(document).ready(function($) {
                 },
                 success: function(res) {
                     $('.jobseek_loader').hide(); 
-                    if (res.success) {
-                        form_id_scroll("#kg_contact_thankWrap"); 
+                    if (res.success) { 
                         $("#kg_contact_form")[0].reset();
                         services.val('');
                         $('.kg_contact_form').hide();
                         $('.kg_contact_thankWrap').show();
+                        form_id_scroll("#kg_contact_thankWrap"); 
                     } else {
                         grecaptcha.reset();
                         $('.kg_contact_cmnError').show().find('.kg_contact_cmnError_in').html(res.data.error); 

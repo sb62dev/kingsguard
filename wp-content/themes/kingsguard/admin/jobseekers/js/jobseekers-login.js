@@ -62,10 +62,8 @@ jQuery(document).ready(function($) {
                 },
                 success: function(res) {
                     console.log("Server Response: ", res);
-                    $('.jobseek_loader').hide();
-                    
-                    if (res.success) {
-                        $("html, body").animate({ scrollTop: 0 }, "slow");
+                    $('.jobseek_loader').hide(); 
+                    if (res.success) { 
                         $("#jobseekers_login_form")[0].reset();
                         window.location.href = '/jobseekers-dashboard';
                     } else { 

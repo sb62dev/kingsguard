@@ -234,11 +234,11 @@ jQuery(document).ready(function($) {
                 success: function(res) {
                     $('.jobseek_loader').hide();
                     
-                    if (res.success) {
-                        $("html, body").animate({ scrollTop: 0 }, "slow");
+                    if (res.success) { 
                         $("#jobseekers_register_form")[0].reset();
                         $('.jobseekers_register_form').hide();
                         $('.jobseekers_register_thankWrap').show();
+                        form_id_scroll("#jobseekers_register_thankWrap");
                     } else {
                         grecaptcha.reset();
                         $('.jobseek_register_cmnError').show().find('.jobseek_register_cmnError_in').html(res.data.error); 

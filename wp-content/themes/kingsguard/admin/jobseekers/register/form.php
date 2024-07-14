@@ -81,7 +81,7 @@ function jobseekers_register_form() {
                     </div>
                 </div>
             </form>
-            <div class="jobseekers_register_thankWrap">
+            <div class="jobseekers_register_thankWrap" id="jobseekers_register_thankWrap">
                 <h2> Thank you for registering!  </h2>
                 <p> An email verification link has been sent to your email address. Please check your inbox to complete the registration process. </p>
             </div>
