@@ -3,7 +3,16 @@
 function jobseekers_admin_page() {
     global $wpdb;
     $table_name = jobseekers_users_table();
-    $users = $wpdb->get_results("SELECT * FROM {$table_name}");
+    $users_per_page = 10;
+    $total_users = $wpdb->get_var("SELECT COUNT(*) FROM {$table_name}");
+    $total_pages = ceil($total_users / $users_per_page); 
+
+    // Determine the current page
+    $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
+    $offset = ($current_page - 1) * $users_per_page;
+
+    // Retrieve users for the current page
+    $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$table_name} LIMIT %d OFFSET %d", $users_per_page, $offset));
 
     // Handle bulk delete action
     if (isset($_POST['bulk_delete'])) {
@@ -24,7 +33,7 @@ function jobseekers_admin_page() {
     echo '<thead><tr><th style="width: 50px"><input type="checkbox" id="select-all">ID</th><th style="width: 90px">Applicant ID</th><th>Name</th><th>Email</th><th>Job Count</th><th>Date/time</th><th>Action</th></tr></thead>';
     echo '<tbody>';
 
-    $counter = 1;
+    $counter = 1 + $offset;
     foreach ($users as $user) {
         $job_applications = unserialize($user->job_applications);
         $job_count = is_array($job_applications) ? count($job_applications) : 0;
@@ -40,7 +49,10 @@ function jobseekers_admin_page() {
         $counter++; 
     } 
 
-    echo '</tbody></table>'; 
+    echo '</tbody></table>';  
+
+    echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=jobseekers-job-applications'));
+
     echo '</form></div>';
 
     // JavaScript to handle "select all" functionality
@@ -52,7 +64,6 @@ function jobseekers_admin_page() {
         }
     });
     </script>';
-
 } 
 
 ?>

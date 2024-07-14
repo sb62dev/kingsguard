@@ -180,7 +180,7 @@ function contact_form() {
                 </div>
             </form>
             <div class="kg_contact_thankWrap" id="kg_contact_thankWrap">
-                <h2>Confirmation</h2>
+                <h2 class="h2">Confirmation</h2>
                 <p>Thanks for contacting us! We will be in touch with you shortly.</p>
                 <div class="backHome"><a class="btn-style" href="/">Back to Home</a></div>
             </div>
