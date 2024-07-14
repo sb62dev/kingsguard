@@ -39,7 +39,7 @@ function view_jobseeker_page() {
     }
 
     $job_applications = unserialize($user->job_applications) ?: [];
-    $applications_per_page = 2;
+    $applications_per_page = 10;
     $total_applications = count($job_applications);
     $total_pages = ceil($total_applications / $applications_per_page); 
 

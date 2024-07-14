@@ -114,7 +114,7 @@ function job_application_form() {
                 </div>
             </form>
             <div class="jobseekers_application_thankWrap" id="jobseekers_application_thankWrap">
-                <h2> Thank you for apply the job!  </h2>
+                <h2 class="h2"> Thank you for apply the job!  </h2>
                 <p> Please check the job application status. </p>
             </div>
         </div>  

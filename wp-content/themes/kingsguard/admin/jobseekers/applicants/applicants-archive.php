@@ -3,7 +3,7 @@
 function jobseekers_admin_page() {
     global $wpdb;
     $table_name = jobseekers_users_table();
-    $users_per_page = 5;
+    $users_per_page = 10;
     $total_users = $wpdb->get_var("SELECT COUNT(*) FROM {$table_name}");
     $total_pages = ceil($total_users / $users_per_page); 
 
