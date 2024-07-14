@@ -38,17 +38,18 @@ function validate_input(input_type, input_val) {
 	}
 }
 
-var phone_empty_err_msg = "Phone number is required.";
-var resume_empty_err_msg = "Resume is required."; 
-var captcha_empty_err_msg = "Captcha is required.";
-
 function form_id_scroll(id) {
 	if (id != '') {
 		jQuery('html, body').animate({
-			scrollTop: jQuery(id).offset().top - 100
+			scrollTop: jQuery(id).offset().top - 170
 		}, 500);
 	}
 } 
+
+var phone_empty_err_msg = "Phone number is required.";
+var phone_invalid_err_msg = "Phone number format is invalid.(10 digit number)";
+var resume_empty_err_msg = "Resume is required."; 
+var captcha_empty_err_msg = "Captcha is required.";
 
 jQuery(document).ready(function($) {
 
@@ -60,31 +61,47 @@ jQuery(document).ready(function($) {
         formData.append('jobseekers_application_form_save_nonce_field', jobseeks_application_ajax_object.nonce);
         formData.append('action', 'handle_job_application_submission'); 
  
-        var resume = $("#jobseek_application_resume"); 
-        var resume = $("#jobseek_application_resume")[0].files[0];
+        var scrollId = '';
+        var resumeID = $("#jobseek_application_resume"); 
+        var resume = resumeID[0].files[0];
         var phone = $("#jobseek_application_phone"); 
         var captcha = $("#g-recaptcha-response");
         var response = grecaptcha.getResponse();
         var go_ahead = true;
 
         // Clear previous errors
-        $('.jobseek_error').html('');
+        $('.jobseek_error').html(''); 
 
         // Phone validation
         if ('' == phone.val().trim()) {
             phone.next('.jobseek_error').html(phone_empty_err_msg).show();
-            go_ahead = false; 
-        }
+            scrollId = scrollId == '' ? phone : scrollId;
+            go_ahead = false;
+        } else if (!validate_input('phone', phone.val().trim())) {
+            phone.next('.jobseek_error').html(phone_invalid_err_msg).show();
+            scrollId = scrollId == '' ? phone : scrollId;
+            go_ahead = false;
+        } else if (phone.val().length < 10 || phone.val().length > 10) {
+            phone.next('.jobseek_error').html(phone_invalid_err_msg).show();
+            scrollId = scrollId == '' ? phone : scrollId;
+            go_ahead = false;
+        } else {
+            phone.next('.jobseek_error').html('').hide();
+        } 
 
         // Resume validation
         if (!resume) {
-            $("#jobseek_application_resume").next('.jobseek_error').html(resume_empty_err_msg).show();
+            $("#resumeBoxwrap").find('.jobseek_error').html(resume_empty_err_msg).show();
+            scrollId = scrollId == '' ? resume : scrollId;
             go_ahead = false;
-        } 
+        } else {
+            $("#resumeBoxwrap").find('.jobseek_error').html('').hide();
+        }
 
         // Captcha validation
         if (response.length == 0) {
             captcha.closest('.jobseek_application_captcha_Wrap').find('.jobseek_error').html(captcha_empty_err_msg).show();
+            scrollId = scrollId == '' ? "#g-recaptcha-response-wrap" : scrollId;
             go_ahead = false;
         } else {
             captcha.closest('.jobseek_application_captcha_Wrap').find('.jobseek_error').hide();
@@ -101,13 +118,12 @@ jQuery(document).ready(function($) {
                     $('.jobseek_loader').css('display', 'flex');
                 },
                 success: function(res) {
-                    $('.jobseek_loader').hide();
-                    
-                    if (res.success) {
-                        $("html, body").animate({ scrollTop: 0 }, "slow");
+                    $('.jobseek_loader').hide(); 
+                    if (res.success) { 
                         $("#jobseekers_application_form")[0].reset();
                         $('.jobseekers_application_form').hide();
                         $('.jobseekers_application_thankWrap').show();
+                        form_id_scroll("#jobseekers_application_thankWrap");
                     } else {
                         grecaptcha.reset();
                         $('.jobseek_application_cmnError').show().find('.jobseek_application_cmnError_in').html(res.data.error); 
@@ -117,7 +133,10 @@ jQuery(document).ready(function($) {
                     console.log(data);
                 }
             });
+        } else {
+            form_id_scroll(scrollId);
         }
+
     }); 
 
 });

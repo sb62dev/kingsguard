@@ -1,7 +1,7 @@
 <?php  
 
-// Function to create email html for applicant rejected status
-function generate_applicant_rejected_email_html($firstname, $lastname, $Job_title) {
+// Function to create email html
+function generate_contact_user_email_html($name) {
     ob_start();
     ?>
     <html>
@@ -31,25 +31,21 @@ function generate_applicant_rejected_email_html($firstname, $lastname, $Job_titl
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Job Application </td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Thank You for Reaching Out! </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 25px;" height="25"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear {{first_name}} {{last_name}}, </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear {{name}}, </td>
                                                                                 </tr>
-                                                                                <tr><td style="height: 10px;" height="10"></td></tr> 
+                                                                                <tr><td style="height: 15px;" height="15"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you for taking the time to consider Kingsguard. Our hiring team reviewed your application and we’d like to inform you that we are not able to advance you to the next round for the {{job_title}} position at this time. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> We appreciate your enquiry and have received your request. Our team will review your message and get back to you as soon as possible. </td>
                                                                                 </tr> 
-                                                                                <tr><td style="height: 10px;" height="10"></td></tr> 
+                                                                                <tr><td style="height: 15px;" height="15"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> We encourage you to apply again in the future, if you find an open role at our company that suits you. </td>
-                                                                                </tr> 
-                                                                                <tr><td style="height: 10px;" height="10"></td></tr> 
-                                                                                <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you again for applying to Kingsguard and we wish you all the best in your job search. </td>
-                                                                                </tr> 
-                                                                                <tr><td style="height: 35px;" height="35"></td></tr>   
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you for your patience and understanding. </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 35px;" height="35"></td></tr>  
                                                                                 <tr>
                                                                                     <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
                                                                                 </tr>
@@ -97,8 +93,8 @@ function generate_applicant_rejected_email_html($firstname, $lastname, $Job_titl
     return ob_get_clean();
 }
 
-// Function to create email html for applicant approved status
-function generate_applicant_approved_email_html($firstname, $lastname, $job_title) {
+// Function to create admin html
+function generate_contact_admin_email_html($name,$email,$title,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo) {
     ob_start();
     ?>
     <html>
@@ -128,21 +124,58 @@ function generate_applicant_approved_email_html($firstname, $lastname, $job_titl
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Job Application </td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Customer Enquiry Form </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 25px;" height="25"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear {{first_name}} {{last_name}}, </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear Admin, </td>
                                                                                 </tr>
-                                                                                <tr><td style="height: 10px;" height="10"></td></tr> 
+                                                                                <tr><td style="height: 15px;" height="15"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you for taking the time to consider Kingsguard. Our hiring team reviewed your application and we are pleased to inform you that you have advanced to the next round for the {{job_title}} position. </td>
-                                                                                </tr>  
-                                                                                <tr><td style="height: 10px;" height="10"></td></tr> 
-                                                                                <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you again for applying to Kingsguard. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> New enquiry form submitted, here are the customer enquiry form fields: </td>
                                                                                 </tr> 
-                                                                                <tr><td style="height: 35px;" height="35"></td></tr>   
+                                                                                <tr><td style="height: 15px;" height="15"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Name: </strong> {{name}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Email: </strong> {{email}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Title: </strong> {{title}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Phone: </strong> {{phone}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Service: </strong> {{service}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Parking Enforcement Service: </strong> {{parkingservice}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Security Systems Service: </strong> {{securityservice}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr> 
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Type of Site: </strong> {{sitetype}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Length of Cover: </strong> {{lengthcover}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Additional Information: </strong> {{addinfo}} </td>
+                                                                                </tr>
+                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
+                                                                                <tr><td style="height: 35px;" height="35"></td></tr>  
                                                                                 <tr>
                                                                                     <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
                                                                                 </tr>
@@ -190,30 +223,36 @@ function generate_applicant_approved_email_html($firstname, $lastname, $job_titl
     return ob_get_clean();
 }
 
-// Function to send email to applicant rejected status
-function send_applicant_rejected_email($email, $firstname, $lastname, $job_title) {
-    $subject = 'Your Job Application Status!';
-    $message = generate_applicant_rejected_email_html($firstname, $lastname, $job_title);
+// Function to send email to user with replaced placeholders
+function send_contact_user_email($email, $name) {
+    $subject = 'Quote Form!';
+    $message = generate_contact_user_email_html($name);
 
     // Replace placeholders with actual values 
-    $message = str_replace('{{first_name}}', $firstname, $message);
-    $message = str_replace('{{last_name}}', $lastname, $message);
-    $message = str_replace('{{job_title}}', $job_title, $message);
+    $message = str_replace('{{name}}', $name, $message); 
     $headers = array('Content-Type: text/html; charset=UTF-8');
     wp_mail($email, $subject, $message, $headers);
 }
 
-// Function to send email to applicant approved status
-function send_applicant_approved_email($email, $firstname, $lastname, $job_title) {
-    $subject = 'Your Job Application Status!'; 
-    $message = generate_applicant_approved_email_html($firstname, $lastname, $job_title);
+// Function to send email to admin with replaced placeholders
+function send_contact_admin_email($name,$email,$title,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo) {
+    $subject = 'Quote Form!';
+    $adminemail= 'sb62dev@gmail.com';
+    $message = generate_contact_admin_email_html($name,$email,$title,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo);
 
     // Replace placeholders with actual values 
-    $message = str_replace('{{first_name}}', $firstname, $message);
-    $message = str_replace('{{last_name}}', $lastname, $message);
-    $message = str_replace('{{job_title}}', $job_title, $message);
+    $message = str_replace('{{name}}', $name, $message); 
+    $message = str_replace('{{email}}', $email, $message); 
+    $message = str_replace('{{title}}', $title, $message); 
+    $message = str_replace('{{phone}}', $phone, $message); 
+    $message = str_replace('{{service}}', $service, $message); 
+    $message = str_replace('{{parkingservice}}', $parkingservice, $message); 
+    $message = str_replace('{{securityservice}}', $securityservice, $message); 
+    $message = str_replace('{{sitetype}}', $sitetype, $message); 
+    $message = str_replace('{{lengthcover}}', $lengthcover, $message); 
+    $message = str_replace('{{addinfo}}', $addinfo, $message); 
     $headers = array('Content-Type: text/html; charset=UTF-8');
-    wp_mail($email, $subject, $message, $headers);
+    wp_mail($adminemail, $subject, $message, $headers);
 }
 
 ?>

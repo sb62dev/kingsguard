@@ -17,25 +17,36 @@ function handle_jobseekers_login() {
         } else {
             global $wpdb;
             $username = sanitize_text_field($_POST['jobseek_user']);
-            $password = $_POST['jobseek_password']; 
-            $query = $wpdb->prepare(
-                "SELECT * FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
-                $username
-            );  
-            $user = $wpdb->get_row($query);  
-            if ($user && wp_check_password($password, $user->password, $user->id)) {
-                // Set cookie for logged-in user
-                $cookie_name = 'jobseeker_logged_in';
-                $cookie_value = 'true';
-                $expiry = time() + 3600 * 24 * 7; // Expiry in 1 week (adjust as needed)
-                setcookie($cookie_name, $cookie_value, $expiry, '/'); // '/' makes it accessible across the entire domain
+            $password = $_POST['jobseek_password'];  
 
-                $cookie_username = 'jobseeker_username';
-                setcookie($cookie_username, $username, $expiry, '/');  
-                wp_send_json_success(array('message' => 'Login successful.'));
-            } else { 
-                wp_send_json_error(array('error' => 'Invalid username or password.'));
-            }
+            $query = $wpdb->prepare(
+                "SELECT * FROM {$wpdb->prefix}jobseekers_users WHERE username = %s OR email = %s",
+                $username,
+                $username
+            );
+
+            $user = $wpdb->get_row($query); 
+            
+            if ($user) {
+                if ($user->email_verified == 0) {
+                    wp_send_json_error(array('error' => 'Email not verified yet.'));
+                } else {
+                    if (wp_check_password($password, $user->password, $user->id)) {
+                        $cookie_name = 'jobseeker_logged_in';
+                        $cookie_value = 'true';
+                        $expiry = time() + 3600 * 24 * 1;
+                        setcookie($cookie_name, $cookie_value, $expiry, '/'); 
+                        $cookie_username = 'jobseeker_username';
+                        setcookie($cookie_username, $user->username, $expiry, '/'); 
+                        wp_send_json_success(array('message' => 'Login successful.'));
+                    } else {
+                        wp_send_json_error(array('error' => 'Invalid username or password.'));
+                    }
+                }
+            } else {
+                wp_send_json_error(array('error' => 'User or Email does not exist.'));
+            } 
+
         }
     } else {
         wp_send_json_error(array('error' => 'Nonce verification failed.'));
