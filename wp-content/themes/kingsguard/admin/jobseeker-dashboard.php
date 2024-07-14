@@ -64,7 +64,9 @@ get_header();
                             </div>  
                         </div>
                         <div class="job-listings">
-                            All the applications should be shown here 
+                            <div class="appli-listings">
+                                <?php echo do_shortcode('[user_submitted_jobs count="1"]') ?> 
+                            </div>   
                         </div>  
                     </div> 
                     <div class="job-listings-wrap">

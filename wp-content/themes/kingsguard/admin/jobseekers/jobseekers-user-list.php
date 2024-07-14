@@ -1,40 +1,12 @@
-<?php   
+<?php    
 
-function jobseekers_user_list() {
-    global $wpdb;
-    $users = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}jobseekers_users");
-
-    ob_start(); ?>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Role</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user) : ?>
-            <tr>
-                <td><?php echo $user->id; ?></td>
-                <td><?php echo $user->username; ?></td>
-                <td><?php echo $user->email; ?></td>
-                <td><?php echo $user->role; ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <?php
-    return ob_get_clean();
-}
-
-add_shortcode('jobseekers_user_list', 'jobseekers_user_list');
-
-function show_user_submitted_jobs() {  
+function show_user_submitted_jobs($atts) {  
     global $wpdb;
     $table_name = jobseekers_users_table(); 
-   
+
+    $atts = shortcode_atts(array('count' => -1), $atts, 'user_submitted_jobs');
+    $count = intval($atts['count']);
+
     if ( isset( $_COOKIE['jobseeker_logged_in'] ) && $_COOKIE['jobseeker_logged_in'] === 'true' ) {
         $username = isset($_COOKIE['jobseeker_username']) ? sanitize_text_field($_COOKIE['jobseeker_username']) : ''; 
 
@@ -49,6 +21,10 @@ function show_user_submitted_jobs() {
 
         if (empty($job_applications)) {
             return '<p>You have not submitted any job applications.</p>';
+        }
+
+        if ($count > 0) {
+            $job_applications = array_slice($job_applications, 0, $count);
         }
 
         $output = '<table class="job-applications-table">'; 
