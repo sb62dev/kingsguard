@@ -78,6 +78,8 @@ function handle_job_application_submission() {
                     } 
                 }
 
+                $datetime = new DateTime('now', new DateTimeZone('America/Toronto'));
+
                 // Add the new application data
                 $new_application = array(
                     'phone' => $phone,
@@ -86,6 +88,7 @@ function handle_job_application_submission() {
                     'job_title' => $job_title,
                     'resume_url' => $resume_filename,
                     'status' => 'Applied',
+                    'submission_date' => $datetime->format('Y-m-d H:i:s'),
                 );
                 $job_applications[] = $new_application;
 

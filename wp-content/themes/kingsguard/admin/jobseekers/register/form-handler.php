@@ -39,6 +39,9 @@ function handle_jobseekers_registration() {
             if ($user_exists) {
                 wp_send_json_error(array('error' => 'Username or email already exists!'));
             } else {
+
+                $datetime = new DateTime('now', new DateTimeZone('America/Toronto'));
+
                 // Insert new user
                 $wpdb->insert(
                     $wpdb->prefix . 'jobseekers_users',
@@ -50,13 +53,14 @@ function handle_jobseekers_registration() {
                         'last_name' => $lastname,
                         'role' => 'jobseeker',
                         'verification_token' => $verification_token,
+                        'submission_date' => $datetime->format('Y-m-d H:i:s'),
                     )
                 );
 
                 $verification_link = add_query_arg(array(
                     'verify' => $verification_token,
                     'email' => $email
-                ), home_url('/regsiter')); 
+                ), home_url('/jobseekers-register'));  
 
                 send_verification_email($email, $firstname, $lastname, $verification_link); 
 

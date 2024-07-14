@@ -32,7 +32,7 @@ get_header();
                             
                                     if ( $user ) { 
                                         ?>
-                                            <h1> Welcome <?php echo esc_html( $user->first_name ); ?>! </h1>
+                                            <h1> Welcome <span><?php echo esc_html( $user->first_name ); ?>!</span> </h1>
                                         <?php
                                     } else {
                                         ?>
@@ -59,13 +59,13 @@ get_header();
                                     <h3> My Applications </h3>
                             </div>
                             <div class="col-md-6 text-right">
-                                    <a href="javascript:void(0);" class="viewAllLink"> View All </a> 
+                                    <a href="/jobseekers-applications/" class="viewAllLink"> View All </a> 
                             </div>
                             </div>  
                         </div>
                         <div class="job-listings">
                             <div class="appli-listings">
-                                <?php echo do_shortcode('[user_submitted_jobs count="1"]') ?> 
+                                <?php echo do_shortcode('[user_submitted_jobs count="3"]') ?> 
                             </div>   
                         </div>  
                     </div> 

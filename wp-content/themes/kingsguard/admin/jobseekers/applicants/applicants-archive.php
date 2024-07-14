@@ -21,7 +21,7 @@ function jobseekers_admin_page() {
     echo '<form method="post" action="">';
     echo '<input type="submit" name="bulk_delete" value="Delete Selected" class="button button-danger" onclick="return confirm(\'Are you sure you want to delete the selected users?\');">';
     echo '<table class="widefat fixed" cellspacing="0">';
-    echo '<thead><tr><th><input type="checkbox" id="select-all">ID</th><th>Applicant ID</th><th>Name</th><th>Email</th><th>Job Count</th><th>Action</th></tr></thead>';
+    echo '<thead><tr><th style="width: 50px"><input type="checkbox" id="select-all">ID</th><th style="width: 90px">Applicant ID</th><th>Name</th><th>Email</th><th>Job Count</th><th>Date/time</th><th>Action</th></tr></thead>';
     echo '<tbody>';
 
     $counter = 1;
@@ -34,6 +34,7 @@ function jobseekers_admin_page() {
         echo '<td>' . esc_html($user->first_name) . ' ' . esc_html($user->last_name) . '</td>';
         echo '<td>' . esc_html($user->email) . '</td>';
         echo '<td>' . esc_html($job_count) . '</td>';
+        echo '<td>' . esc_html($user->submission_date) . '</td>';
         echo '<td><a href="' . admin_url('admin.php?page=view-jobseeker&user_id=' . $user->id) . '" class="button button-primary">View Details</a></td>';
         echo '</tr>';
         $counter++; 

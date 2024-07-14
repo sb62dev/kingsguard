@@ -35,6 +35,9 @@ function handle_contact_form() {
             if ($email_exists) {
                 wp_send_json_error(array('error' => 'Email already exists!'));
             } else {
+
+                $datetime = new DateTime('now', new DateTimeZone('America/Toronto'));
+
                 // Insert new user
                 $wpdb->insert(
                     $wpdb->prefix . 'contact_form_users',
@@ -49,8 +52,9 @@ function handle_contact_form() {
                         'contact_site_types' => $site_types,
                         'contact_length_cover' => $length_cover,
                         'contact_add_info' => $add_info,
+                        'submission_date' => $datetime->format('Y-m-d H:i:s'),
                     ),
-                    array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+                    array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
                 ); 
 
                 send_contact_user_email($email, $name);  
