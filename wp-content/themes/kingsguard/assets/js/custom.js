@@ -21,6 +21,7 @@ jQuery(document).ready(function () {
           }
       ]
     });
+
     jQuery(".prev-btn").click(function () {
       jQuery(".testimonials").slick("slickPrev");
     });
@@ -259,9 +260,6 @@ jQuery(document).ready(function () {
     //     videoFrame.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
     // });
 
-}); 
-
-jQuery(document).ready(function () {
   var video = document.getElementById('background-video');
   var playButton = document.getElementById('play-button');
 
@@ -451,3 +449,4 @@ jQuery(document).ready(function () {
     jQuery('#videoFrame').attr('src', ''); // Remove the video source when the modal is closed
   });
 });
+

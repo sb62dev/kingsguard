@@ -617,6 +617,12 @@ h3 .job-title {
 .kg_contact_wrapper .kg_contact_thankWrap .backHome {
     margin-top: 60px;
 }
+.clientLogoSlide, .clientLogoSlide .clientLogoSlideInner {
+    height: 100px;
+}
+.clientLogoSlide .clientLogoSlideInner img {
+    max-height: 70px;
+}
 } 
 
  
@@ -992,6 +998,12 @@ input:-moz-placeholder {
 .registerWrapper .registerInner h2,
 .jobseekers_application_formWrap .jobseekers_application_thankWrap h2 {
     font-size: 30px;
+}
+.clientLogoSlide, .clientLogoSlide .clientLogoSlideInner {
+    height: 75px;
+}
+.clientLogoSlide .clientLogoSlideInner img {
+    max-height: 55px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1702,7 +1714,15 @@ button.modal_close span {
 .kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error, .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error {
     font-size: 14px;
 }
-
+.clientLogoSlide, .clientLogoSlide .clientLogoSlideInner {
+    height: 50px;
+}
+.clientLogoSlide .clientLogoSlideInner img {
+    max-height: 40px;
+}
+.clientSec.testimonialsSec {
+    padding-bottom: 70px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -1727,6 +1747,9 @@ button.modal_close span {
     .registerWrapper .registerInner .jobseekers_register_thankWrap {
         padding: 24px;
         margin-top: 40px;
+    }
+    .clientLogoSlide .clientLogoSlideInner img {
+        max-height: 35px;
     }
 }
 @media screen and ( max-width: 413px ) { 

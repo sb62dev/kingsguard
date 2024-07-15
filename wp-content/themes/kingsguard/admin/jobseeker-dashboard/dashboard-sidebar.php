@@ -39,5 +39,18 @@
             </li>
         </ul>
     </div>
-    
+    <div class="dashboardCollapse">
+        <button type="button" class="dashboardCollapseBtn">
+            <span class="dashboardCollapseIcon"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+            <span class="dashboardCollapseCont">Collapse menu</span>
+        </button>
+    </div>
 </div>
+
+<script>
+jQuery(document).ready(function () {
+    jQuery(document).on("click", ".dashboardCollapseBtn", function() {
+        jQuery(".dashboardSidebar").toggleClass("collapsed");
+    });
+});
+</script>
