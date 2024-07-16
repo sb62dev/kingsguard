@@ -545,10 +545,15 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
     font-size: 24px;
 }
 .userWrap_info .userWrapBoxWrap {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 .userWrap_info .userInfobox {
-    width: 33.3333%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
     text-align: center;
 }
 .userWrapBoxWrap .userInfobox + .userInfobox {
@@ -572,4 +577,76 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
     font-family: 'Gilroy-Bold';
     margin: 0 !important;
     margin-top: 5px !important;
+}
+#adminmenu li.my-custom-logo {
+    margin-bottom: 15px !important;
+    width: 100%;
+    overflow: hidden;
+    max-height: 70px;
+    text-align: center;
+}
+#adminmenu li.my-custom-logo a {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+#adminmenu li.my-custom-logo a img {
+    max-width: 57px;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.folded #adminmenu li.my-custom-logo a img {
+    max-width: 24px;
+}
+.userWrap_info > .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+}
+.userWrap_info > .row > div {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-bottom: 20px;
+}
+.userWrap_info .applicantIcon i {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 12px;
+    width: 100%;
+    color: #0098ff;
+}
+.userWrap_info h6 {
+    font-size: 12px;
+    color: #ffffff !important;
+    font-family: 'Gilroy-Light';
+    margin: 0 0 5px !important;
+}
+.userWrap_info .applicantData {
+    font-size: 16px;
+    font-family: 'Gilroy-Bold';
+    margin: 0 !important;
+}
+
+@media screen and (max-width: 767px) {
+    .userWrap_info > .row > div {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .userWrap_info .userInfobox {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .userWrapBoxWrap .userInfobox + .userInfobox {
+        border-left: 0;
+    }
+    .comment-ays, .feature-filter, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat, table.wp-list-table.widefat.striped.wpforms-table-list.table-view-list.has-few-columns {
+        width: 700px;
+        overflow-x: scroll;
+    }
 }
