@@ -24,11 +24,11 @@ function view_quote_page() {
     echo '<div class="row">'; 
 
     // Name
-    if (isset($user->contact_name) && !empty($user->contact_name)) {
+    if (isset($user->contact_fname) && !empty($user->contact_fname)) {
         echo '<div class="col-xl-4 col-md-6 col-sm-4">';
         echo '<div class="applicantIcon"><i class="fa fa-id-card" aria-hidden="true"></i></div>';
         echo '<h6>Name:</h6>';
-        echo '<p class="applicantData">' . esc_html($user->contact_name) . '</p>';
+        echo '<p class="applicantData">' . esc_html($user->contact_fname) . ' ' . esc_html($user->contact_lname) . '</p>';
         echo '</div>';
     }
 

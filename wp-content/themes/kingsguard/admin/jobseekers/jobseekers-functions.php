@@ -63,6 +63,45 @@ function common_pagination($current_page, $per_page, $total_pages, $base_url) {
     return $pagination_html;
 } 
 
+// Function to add Subscribler to mailchimp
+function add_subscriber_to_mailchimp($email, $first_name = '', $last_name = '', $phone = '', $form_type = '') {
+    $api_key = '522af8c11c035b07eb15ff0439453850-us17';
+    $list_id = 'a67ed4fae6';
+
+    $data_center = substr($api_key, strpos($api_key, '-') + 1);
+    $url = 'https://' . $data_center . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members/';
+
+    $data = [
+        'email_address' => $email,
+        'status'        => 'subscribed',
+        'merge_fields'  => [
+            'FNAME' => $first_name,
+            'LNAME' => $last_name,
+            'PHONE' => $phone,
+            'TYPE' => $form_type
+        ]
+    ];
+
+    $json_data = json_encode($data);
+
+    $response = wp_remote_post($url, [
+        'method'    => 'POST',
+        'headers'   => [
+            'Authorization' => 'apikey ' . $api_key,
+            'Content-Type'  => 'application/json'
+        ],
+        'body'      => $json_data
+    ]);
+
+    if (is_wp_error($response)) {
+        // Handle error
+        error_log('Mailchimp API error: ' . $response->get_error_message());
+    } else {
+        // Handle success
+        error_log('Subscriber added to Mailchimp.');
+    }
+}
+
 // Include registration form
 require get_template_directory() . '/admin/jobseekers/jobseekers-table.php';
 

@@ -8,7 +8,8 @@ function create_contact_form_table() {
     $sql = "CREATE TABLE $table_name (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         email varchar(100) NOT NULL,
-        contact_name varchar(100) DEFAULT '',
+        contact_fname varchar(100) DEFAULT '',
+        contact_lname varchar(100) DEFAULT '',
         contact_title varchar(255) DEFAULT '',
         phone_number varchar(20) DEFAULT '',  
         contact_services varchar(255) DEFAULT '', 

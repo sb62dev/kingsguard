@@ -16,7 +16,8 @@ function handle_contact_form() {
         } else { 
             global $wpdb; 
             $email = sanitize_email($_POST['kg_contact_email']); 
-            $name = sanitize_text_field($_POST['kg_contact_name']);  
+            $fname = sanitize_text_field($_POST['kg_contact_fname']);  
+            $lname = sanitize_text_field($_POST['kg_contact_lname']);  
             $title = sanitize_text_field($_POST['kg_contact_title']);
             $phone = sanitize_text_field($_POST['kg_contact_phone']); 
             $services_data = isset($_POST['selected_services']) ? sanitize_text_field($_POST['selected_services']) : ''; 
@@ -43,7 +44,8 @@ function handle_contact_form() {
                     $wpdb->prefix . 'contact_form_users',
                     array( 
                         'email' => $email, 
-                        'contact_name' => $name,  
+                        'contact_fname' => $fname,  
+                        'contact_lname' => $lname,
                         'contact_title' => $title,  
                         'phone_number' => $phone,   
                         'contact_services' => $services_data,
@@ -57,8 +59,11 @@ function handle_contact_form() {
                     array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
                 ); 
 
+                $name = $fname . ' ' . $lname; 
+                $form_type = 'Quote';
                 send_contact_user_email($email, $name);  
                 send_contact_admin_email($name,$email,$title,$phone,$services_data,$parking_services,$security_services,$site_types,$length_cover,$add_info);
+                add_subscriber_to_mailchimp($email, $fname, $lname, $phone, $form_type);
 
                 wp_send_json_success(array(
                     'message' => 'Submitted successful!'
