@@ -56,9 +56,9 @@ function view_jobseeker_page() {
     echo '<div class="userWrap_info">';
     echo '<h2>Applicant Details</h2>';
     echo '<div class="userWrapBoxWrap">';
-    echo '<div class="userInfobox"><div class="userInfoboxIcon"><i class="fa fa-id-card" aria-hidden="true"></i></div><div class="userInfoCont"><div class="userInfobox_lft"><strong>Name</strong></div><div class="userInfobox_rght">' . esc_html($user->first_name) . ' ' . esc_html($user->last_name) . '</div></div></div>';
-    echo '<div class="userInfobox"><div class="userInfoboxIcon"><i class="fa fa-user" aria-hidden="true"></i></div><div class="userInfoCont"><div class="userInfobox_lft"><strong>UserName</strong></div><div class="userInfobox_rght">' . esc_html($user->username) . '</div></div></div>';
-    echo '<div class="userInfobox"><div class="userInfoboxIcon"><i class="fa fa-envelope" aria-hidden="true"></i></div><div class="userInfoCont"><div class="userInfobox_lft"><strong>Email</strong></div><div class="userInfobox_rght">' . esc_html($user->email) . '</div></div></div>'; 
+    echo '<div class="userInfobox"><div class="userInfoboxInner"><div class="userInfoboxIcon"><i class="fa fa-id-card" aria-hidden="true"></i></div><div class="userInfoCont"><div class="userInfobox_lft"><strong>Name</strong></div><div class="userInfobox_rght">' . esc_html($user->first_name) . ' ' . esc_html($user->last_name) . '</div></div></div></div>';
+    echo '<div class="userInfobox"><div class="userInfoboxInner"><div class="userInfoboxIcon"><i class="fa fa-user" aria-hidden="true"></i></div><div class="userInfoCont"><div class="userInfobox_lft"><strong>UserName</strong></div><div class="userInfobox_rght">' . esc_html($user->username) . '</div></div></div></div>';
+    echo '<div class="userInfobox"><div class="userInfoboxInner"><div class="userInfoboxIcon"><i class="fa fa-envelope" aria-hidden="true"></i></div><div class="userInfoCont"><div class="userInfobox_lft"><strong>Email</strong></div><div class="userInfobox_rght">' . esc_html($user->email) . '</div></div></div></div>'; 
     echo '</div>'; 
     echo '</div>';
     echo '</div>';
