@@ -37,7 +37,7 @@ function contact_admin_page() {
     foreach ($users as $user) { 
         echo '<tr>';
         echo '<td><input type="checkbox" name="user_ids[]" value="' . esc_attr($user->id) . '">' . esc_html($counter) . '</td>'; 
-        echo '<td>' . esc_html($user->contact_name) . '</td>';
+        echo '<td>' . esc_html($user->contact_fname) . ' ' . esc_html($user->contact_lname) . '</td>';
         echo '<td>' . esc_html($user->email) . '</td>';
         echo '<td>' . esc_html($user->phone_number) . '</td>';
         echo '<td>' . esc_html($user->submission_date) . '</td>';

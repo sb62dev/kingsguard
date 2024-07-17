@@ -38,7 +38,11 @@ function validate_input(input_type, input_val) {
 	}
 }
 
-var name_empty_err_msg = "Name is required.";
+var fname_empty_err_msg = "First name is required.";
+var lname_empty_err_msg = "Last name is required.";
+var name_max_length_err_msg = "Maximum characters limit is 30."; 
+var name_invalid_err_msg = "Name format is invalid."; 
+var name_nospace_err_msg = "Space is not allowed."; 
 var title_empty_err_msg = "Title is required."; 
 var email_empty_err_msg = "Email is required.";
 var phone_empty_err_msg = "Phone Number is required.";
@@ -49,8 +53,7 @@ var sitetype_err_msg = "Type of Site is required.";
 var captcha_empty_err_msg = "Captcha is required.";
 var email_invalid_err_msg = "Email format is invalid.";
 var phone_invalid_err_msg = "Phone number format is invalid.";
-var title_invalid_length_err_msg = "Maximum characters limit is 100.";
-var name_invalid_length_err_msg = "Maximum characters limit is 50.";
+var title_invalid_length_err_msg = "Maximum characters limit is 100."; 
 
 function form_id_scroll(id) {
 	if (id != '') {
@@ -68,7 +71,8 @@ jQuery(document).ready(function($) {
         var formData = $(this).serialize() + '&contact_form_save_nonce_field=' + kg_contact_ajax_object.nonce;
  
         var scrollId = '';
-        var name = $("#kg_contact_name");
+        var fname = $("#kg_contact_fname");
+        var lname = $("#kg_contact_lname");
         var title = $("#kg_contact_title");
         var email = $("#kg_contact_email");
         var phone = $("#kg_contact_phone");
@@ -81,19 +85,48 @@ jQuery(document).ready(function($) {
         var go_ahead = true;
 
         // Clear previous errors
-        $('.contact_error').html('');
+        $('.contact_error').html(''); 
 
-        // Name validation
-        if ('' == name.val().trim()) {
-            name.next('.contact_error').html(name_empty_err_msg).show(); 
-            scrollId = scrollId == '' ? name : scrollId;
+        // First name validation
+        if ('' == fname.val().trim()) {
+            fname.next('.contact_error').html(fname_empty_err_msg).show();
+            scrollId = scrollId == '' ? fname : scrollId;
             go_ahead = false;
-        } else if (name.val().length > 50) {
-            name.next('.contact_error').html(name_invalid_length_err_msg).show();
-            scrollId = scrollId == '' ? name : scrollId;
+        } else if (fname.val().length > 30) {
+            fname.next('.contact_error').html(name_max_length_err_msg).show();
+            scrollId = scrollId == '' ? fname : scrollId;
+            go_ahead = false;
+        } else if (!validate_input('fname', fname.val().trim())) {
+            fname.next('.contact_error').html(name_invalid_err_msg).show();
+            scrollId = scrollId == '' ? fname : scrollId;
+            go_ahead = false;
+        } else if (!validate_input('nospace', fname.val())) {
+            fname.next('.contact_error').html(name_nospace_err_msg).show();
+            scrollId = scrollId == '' ? fname : scrollId;
             go_ahead = false;
         } else {
-            name.next('.contact_error').html('').hide();
+            fname.next('.contact_error').html('').hide();
+        }
+
+        // Last name validation
+        if ('' == lname.val().trim()) {
+            lname.next('.contact_error').html(lname_empty_err_msg).show();
+            scrollId = scrollId == '' ? lname : scrollId;
+            go_ahead = false;
+        } else if (lname.val().length > 30) {
+            lname.next('.contact_error').html(name_max_length_err_msg).show();
+            scrollId = scrollId == '' ? lname : scrollId;
+            go_ahead = false;
+        } else if (!validate_input('fname', lname.val().trim())) {
+            lname.next('.contact_error').html(name_invalid_err_msg).show();
+            scrollId = scrollId == '' ? lname : scrollId;
+            go_ahead = false;
+        } else if (!validate_input('nospace', lname.val())) {
+            lname.next('.contact_error').html(name_nospace_err_msg).show();
+            scrollId = scrollId == '' ? lname : scrollId;
+            go_ahead = false;
+        } else {
+            lname.next('.contact_error').html('').hide();
         }
 
         // Title validation
@@ -340,7 +373,7 @@ function kg_contact_recaptchaCallback() {
     jQuery('.kg_contact_captcha_Wrap').find('.contact_error').hide();
 }
 
-jQuery(document).on("focus", "#kg_contact_name, #kg_contact_title, #kg_contact_email, #kg_contact_phone", function () {
+jQuery(document).on("focus", "#kg_contact_fname, #kg_contact_lname, #kg_contact_title, #kg_contact_email, #kg_contact_phone", function () {
 	jQuery(this).next('.contact_error').hide();
 });
 

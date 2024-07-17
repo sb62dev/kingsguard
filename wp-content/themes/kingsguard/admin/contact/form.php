@@ -23,12 +23,19 @@ function contact_form() {
                     <div class="kg_contact_row row"> 
                         <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap">
-                                <label class="kg_contact_label"> Name<sup>*</sup></label>
-                                <input type="text" class="inputField" id="kg_contact_name" name="kg_contact_name" placeholder="Your Name">
+                                <label class="kg_contact_label"> First Name<sup>*</sup></label>
+                                <input type="text" class="inputField" id="kg_contact_fname" name="kg_contact_fname" placeholder="Your First Name">
                                 <div class="contact_error"></div>
                             </div>
                         </div>
                         <div class="kg_contact_col col-md-6">
+                            <div class="kg_contact_inputWrap">
+                                <label class="kg_contact_label"> Last Name<sup>*</sup></label>
+                                <input type="text" class="inputField" id="kg_contact_lname" name="kg_contact_lname" placeholder="Your Last Name">
+                                <div class="contact_error"></div>
+                            </div>
+                        </div>
+                        <div class="kg_contact_col col-md-12">
                             <div class="kg_contact_inputWrap">
                                 <label class="kg_contact_label"> Title<sup>*</sup> </label>
                                 <input type="text" class="inputField" id="kg_contact_title" name="kg_contact_title" placeholder="Your Title">
