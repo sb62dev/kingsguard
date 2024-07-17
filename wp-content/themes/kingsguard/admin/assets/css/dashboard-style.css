@@ -551,12 +551,12 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
     flex-wrap: wrap;
 }
 .userWrap_info .userInfobox {
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
     text-align: center;
 }
-.userWrapBoxWrap .userInfobox + .userInfobox {
+.userWrapBoxWrap .userInfobox + .userInfobox .userInfoboxInner {
     border-left: 1px solid #0098ff;
 }
 .userWrap_info .userInfobox .userInfoboxIcon {
@@ -642,7 +642,7 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
         flex: 0 0 100%;
         max-width: 100%;
     }
-    .userWrapBoxWrap .userInfobox + .userInfobox {
+    .userWrapBoxWrap .userInfobox + .userInfobox .userInfoboxInner {
         border-left: 0;
     }
     .comment-ays, .feature-filter, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat, table.wp-list-table.widefat.striped.wpforms-table-list.table-view-list.has-few-columns {
