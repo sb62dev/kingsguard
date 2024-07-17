@@ -2154,6 +2154,10 @@ h3 .job-title {
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
+.dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileImg img {
+    border: 2px solid #0098FF;
+    border-radius: 50px;
+}
 .dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileName {
     color: #fff;
     margin-left: 8px;
@@ -2230,6 +2234,12 @@ h3 .job-title {
 .dashboardContent {
     width: 100%;
     padding-left: 300px;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.sidebar_collapsed .dashboardContent {
+    padding-left: 100px;
 }
 .dashboard-main .dashboardInner {
     padding: 105px 50px 50px;
@@ -3558,4 +3568,22 @@ input[type=checkbox], input[type=radio] {
 }
 .jobseekers_application_formWrap .jobseekers_application_thankWrap h2 {
     font-size: 36px;
+}
+.singleJobTitle .h2 {
+    text-align: left;
+}
+.kg_contact_wrapper .kg_contact_formWrap .kg_contact_cmnError {
+    margin-bottom: 25px;
+}
+.kg_contact_wrapper .kg_contact_formWrap .kg_contact_cmnError .kg_contact_cmnError_in {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 6px;
+    font-family: 'Gilroy-Medium';
+    font-size: 16px;
+}
+.appli-listings {
+    overflow-x: scroll;
 }

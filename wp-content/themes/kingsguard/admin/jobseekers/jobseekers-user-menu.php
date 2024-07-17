@@ -24,7 +24,7 @@ function jobseekers_user_menu_shortcode() {
                 <div class="dashboardProfile">
                     <div class="dashboardProfileCont">
                         <div class="dashboardProfileImg">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/Profile.svg" alt="Profile Icon">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/user.png" alt="Profile Icon">
                         </div>
                         <div class="dashboardProfileName">
                             <div class="dashboardProfileNm"><?php echo esc_html( $user->first_name ); ?></div>

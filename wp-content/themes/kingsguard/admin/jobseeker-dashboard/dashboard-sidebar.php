@@ -51,6 +51,7 @@
 jQuery(document).ready(function () {
     jQuery(document).on("click", ".dashboardCollapseBtn", function() {
         jQuery(".dashboardSidebar").toggleClass("collapsed");
+        jQuery("body").toggleClass("sidebar_collapsed");
     });
 });
 </script>

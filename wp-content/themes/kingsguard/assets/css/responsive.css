@@ -1723,6 +1723,9 @@ button.modal_close span {
 .clientSec.testimonialsSec {
     padding-bottom: 70px;
 }
+.singleJobcontent .applyBtn {
+    justify-content: flex-start;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
