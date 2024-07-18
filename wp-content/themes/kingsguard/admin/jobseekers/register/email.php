@@ -5,8 +5,8 @@ function verify_jobseekers_email() {
     if (isset($_GET['verify']) && isset($_GET['email'])) {
         global $wpdb;
 
-        $verification_token = sanitize_text_field($_GET['verify']);
-        $email = sanitize_email($_GET['email']);
+        $verification_token = sanitize_text_field($_GET['verify']);  
+        $email = sanitize_email(rawurldecode($_GET['email']));  
 
         if (!empty($verification_token) && !empty($email)) {
             $user = $wpdb->get_row($wpdb->prepare(
@@ -36,11 +36,36 @@ function generate_email_html($firstname, $lastname, $verification_link) {
     ob_start();
     ?>
     <html>
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <style type="text/css"> 
+                table {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                }  
+                a {
+                    border: 0 !important;
+                    outline: 0 !important;
+                    box-shadow: none !important;
+                } 
+                @media(min-width: 500px) {
+                    .space_left_right {
+                        padding: 50px !important;
+                    }  
+                    .ls_space_left_right {
+                        padding: 30px !important;
+                    }
+                } 
+            </style>
+        </head>
         <body>
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" style="height:100%;margin:0;padding:50px 50px;width:100%">
+                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
@@ -52,7 +77,7 @@ function generate_email_html($firstname, $lastname, $verification_link) {
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td valign="top" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;color: #555555;">
+                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
@@ -75,7 +100,7 @@ function generate_email_html($firstname, $lastname, $verification_link) {
                                                                                 <tr><td style="height: 20px;" height="20"></td></tr> 
                                                                                 <tr>
                                                                                     <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> 
-                                                                                        <a href="{{verification_link}}" style="display: inline-block; padding: 10px 20px; background-color: #0098FF; color: #ffffff; text-decoration: none; border-radius: 5px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;">Verify Email Address </a> 
+                                                                                        <a href="{{verification_link}}" style="display: inline-block; padding: 10px 20px; background-color: #0098FF; color: #ffffff; text-decoration: none; border-radius: 5px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;">Verify Email Address</a> 
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>  
@@ -97,27 +122,7 @@ function generate_email_html($firstname, $lastname, $verification_link) {
                                                 </tbody>
                                             </table>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td valign="top" style="background-color:#e9eaec;border-top:0;border-bottom:0;padding-top:12px;padding-bottom:12px">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign="top">
-                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td valign="top" style="padding-top:9px;padding-right:18px;padding-bottom:9px;padding-left:18px;word-break:break-word;color:#aaa;font-family:Helvetica;font-size:12px;line-height:150%;text-align:center">
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
+                                    </tr> 
                                 </tbody>
                             </table>
                         </td>

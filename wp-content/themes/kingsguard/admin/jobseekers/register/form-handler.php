@@ -58,9 +58,9 @@ function handle_jobseekers_registration() {
                 );
 
                 $verification_link = add_query_arg(array(
-                    'verify' => $verification_token,
-                    'email' => $email
-                ), home_url('/regsiter'));  
+                    'verify' => urlencode($verification_token),
+                    'email' => urlencode($email)
+                ), home_url('/jobseekers-register'));  
 
                 send_verification_email($email, $firstname, $lastname, $verification_link); 
 
