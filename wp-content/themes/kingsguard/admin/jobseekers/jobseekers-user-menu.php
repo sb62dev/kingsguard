@@ -31,11 +31,11 @@ function jobseekers_user_menu_shortcode() {
                             <div class="dashboardProfileEmail"><?php echo $email; ?></div>
                         </div>
                     </div>
-                    <div class="dashboardProfileArrow">
+                    <!-- <div class="dashboardProfileArrow">
                         <a href="#" class="dashboardProfileBtn">
                             <i class="fa fa-angle-right" aria-hidden="true"></i>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <?php
             } else {

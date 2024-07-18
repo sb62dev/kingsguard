@@ -20,7 +20,7 @@ get_header();
             <section class="dash_careersPage dashboardInner pb100">   
                 <div class="dash_job-listings-wrap">
                     <div class="dash_job-listings-header">
-                        <h1> Jobs Available </h1>
+                        <h1 class="h2"> Jobs Available </h1>
                     </div>
                     <div class="jobListingWrapper"> 
                         <?php include('jobseeker-dashboard/dashboard-careers-archive.php') ?>  

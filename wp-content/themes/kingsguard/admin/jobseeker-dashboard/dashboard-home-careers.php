@@ -17,7 +17,7 @@
                 $job_types = wp_get_post_terms(get_the_ID(), 'jobs_job_types', array('fields' => 'names'));
                 $job_locations = wp_get_post_terms(get_the_ID(), 'jobs_job_locations', array('fields' => 'names'));
         ?>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12"  data-aos="fade-down" data-aos-duration="1000" >
+        <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12"  data-aos="fade-down" data-aos-duration="1000" >
             <div class="jobListGrid">
                 <a class="jobListGridInner" href="<?php echo esc_url($job_link); ?>" target="_self" aria-label="Click here to go to Job detail page">
                     <h4><?php echo esc_html($job_title); ?></h4>

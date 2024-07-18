@@ -1005,6 +1005,12 @@ input:-moz-placeholder {
 .clientLogoSlide .clientLogoSlideInner img {
     max-height: 55px;
 }
+.appli-listings {
+    overflow-x: scroll;
+}
+.h3 {
+    font-size: 24px;
+}
 } 
 @media screen and ( max-width: 767px ){
 p {
@@ -1725,6 +1731,84 @@ button.modal_close span {
 }
 .singleJobcontent .applyBtn {
     justify-content: flex-start;
+}
+.dashboard-main .h2 {
+    font-size: 26px;
+}
+.job-applications-wrap .text-right, .job-listings-wrap .text-right {
+    text-align: left !important;
+    margin-bottom: 20px;
+}
+.dashboard-main .dashboardInner {
+    padding: 80px 30px 30px;
+}
+.dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileImg {
+    width: 25px;
+}
+.dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileName {
+    width: calc(100% - 25px);
+}
+.dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileName .dashboardProfileNm {
+    font-size: 14px;
+}
+.dashboardSidebar .dashboardProfile .dashboardProfileArrow .dashboardProfileBtn {
+    font-size: 20px;
+}
+.dashboardSidebar .dashboardProfile {
+    padding: 10px 10px;
+    margin-top: 22px;
+}
+.dashboardSidebar {
+    width: 220px;
+    padding: 25px 15px 60px 15px;
+}
+.dashboardContent {
+    padding-left: 220px;
+}
+.dashboardSidebar .dashboardLogo img {
+    max-width: 47px;
+}
+.dashboardSidebar .dashboardCollapse {
+    padding: 15px 15px;
+    width: 220px;
+}
+.job-applications-table thead tr th {
+    padding: 15px 15px;
+}
+.job-applications-table tbody tr td {
+    padding: 12px 15px;
+}
+.dashboardSidebar .dashboardCollapse .dashboardCollapseBtn span.dashboardCollapseIcon {
+    width: 15px;
+    height: 15px;
+}
+.dashboardSidebar .dashboardCollapse .dashboardCollapseBtn span.dashboardCollapseIcon i {
+    font-size: 14px;
+}
+.dashboardSidebar .dashboardCollapse .dashboardCollapseBtn {
+    font-size: 13px;
+}
+.dashboardSidebar .dashboardOptions ul li .dashboardListItem {
+    padding: 6px 10px;
+}
+.dashboardSidebar .dashboardOptions ul li .dashboardListIcon {
+    font-size: 14px;
+    width: 14px;
+}
+.dashboardSidebar .dashboardOptions ul li .dashboardListIcon i {
+    font-size: 14px;
+}
+.dashboardSidebar .dashboardOptions ul li .dashboardListText {
+    width: calc(100% - 14px);
+}
+.dashboardWrapper .dashboardHead .dashboardLogout a {
+    font-size: 16px;
+}
+.dashboardWrapper .dashboardHead .dashboardLogout a .logoutIcon {
+    margin-right: 8px;
+}
+.dashboardContent .dashboardHead {
+    padding: 15px 15px 15px 220px;
 }
 }
 @media only screen and (max-width: 600px) {

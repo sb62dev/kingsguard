@@ -20,7 +20,7 @@ get_header();
             <section class="dash_appliPage dashboardInner pb100">   
                 <div class="dash_appli-listings-wrap">
                     <div class="dash_appli-listings-header">
-                        <h1> My Applications </h1>
+                        <h1 class="h2"> My Applications </h1>
                     </div>
                     <div class="dash_appli-listings-wrap">  
                         <div class="appli-listings">
