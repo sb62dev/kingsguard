@@ -3572,6 +3572,7 @@ input[type=checkbox], input[type=radio] {
 }
 .jobseekers_application_formWrap .jobseekers_application_thankWrap h2 {
     font-size: 36px;
+    text-align: center;
 }
 .singleJobTitle .h2 {
     text-align: left;
