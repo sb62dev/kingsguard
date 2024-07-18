@@ -64,9 +64,8 @@ function common_pagination($current_page, $per_page, $total_pages, $base_url) {
 } 
 
 // Function to add Subscribler to mailchimp
-function add_subscriber_to_mailchimp($email, $first_name = '', $last_name = '', $phone = '', $form_type = '') {
-    $api_key = '522af8c11c035b07eb15ff0439453850-us17';
-    $list_id = 'a67ed4fae6';
+function add_subscriber_to_mailchimp($list_id = '', $email, $first_name = '', $last_name = '', $phone = '', $form_type = '') { 
+    $api_key = MAILCHIMP_API_KEY; 
 
     $data_center = substr($api_key, strpos($api_key, '-') + 1);
     $url = 'https://' . $data_center . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members/';

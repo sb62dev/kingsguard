@@ -27,6 +27,10 @@ function handle_contact_form() {
             $length_cover = sanitize_text_field($_POST['kg_contact_length_cover']);
             $add_info = sanitize_textarea_field($_POST['kg_contact_add_info']);
 
+            $name = $fname . ' ' . $lname; 
+            $form_type = 'Quote';
+            $list_id = MAILCHIMP_QUOTE_LIST_KEY;
+
             // Check if the user already exists
             $email_exists = $wpdb->get_var($wpdb->prepare(
                 "SELECT COUNT(*) FROM {$wpdb->prefix}contact_form_users WHERE email = %s",
@@ -57,13 +61,11 @@ function handle_contact_form() {
                         'submission_date' => $datetime->format('Y-m-d H:i:s'),
                     ),
                     array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
-                ); 
+                );  
 
-                $name = $fname . ' ' . $lname; 
-                $form_type = 'Quote';
                 send_contact_user_email($email, $name);  
                 send_contact_admin_email($name,$email,$title,$phone,$services_data,$parking_services,$security_services,$site_types,$length_cover,$add_info);
-                add_subscriber_to_mailchimp($email, $fname, $lname, $phone, $form_type);
+                add_subscriber_to_mailchimp($list_id, $email, $fname, $lname, $phone, $form_type);
 
                 wp_send_json_success(array(
                     'message' => 'Submitted successful!'
