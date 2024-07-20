@@ -630,7 +630,20 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
     font-family: 'Gilroy-Bold';
     margin: 0 !important;
 }
-
+.quicklinks li#wp-admin-bar-site-name {
+    display: none;
+}
+#future-posts li:nth-child(odd), #published-posts li:nth-child(odd) {
+    background-color: #1b2a36;
+}
+#future-posts li, #published-posts li {
+    color: #ffffff;
+}
+@media screen and (max-width: 960px) {
+    #adminmenu li.my-custom-logo a img {
+        max-width: 30px;
+    }
+}
 @media screen and (max-width: 767px) {
     .userWrap_info > .row > div {
         -ms-flex: 0 0 100%;
