@@ -139,6 +139,11 @@ jQuery(document).ready(function($) {
 
     }); 
 
+    $('#jobseek_application_resume').on('change', function() {
+        var fileName = $(this).val().split('\\').pop();
+        $('#file-name').text(fileName || 'No file chosen');
+    });
+
 });
 
 function jobseek_application_recaptchaCallback() {
