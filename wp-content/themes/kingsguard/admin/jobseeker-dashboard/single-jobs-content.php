@@ -9,7 +9,7 @@
                     <?php if ( !isset($_COOKIE['jobseeker_logged_in']) || $_COOKIE['jobseeker_logged_in'] !== 'true' ) : ?>
                         <a href="#" class="btn-style gradientBtn"> Apply Now </a>
                     <?php else : ?>
-                        <a href="#applicationform" class="btn-style gradientBtn smoothScroll"> Apply Now </a>
+                        <a href="#applicationform" class="btn-style gradientBtn smoth-scroll-link"> Apply Now </a>
                     <?php endif; ?> 
                 </div>
             </div>
@@ -172,3 +172,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    jQuery(document).ready(function () {
+        jQuery(".smoth-scroll-link").on('click', function (event) { 
+            if (this.hash !== "") { 
+                event.preventDefault(); 
+                var hash = this.hash; 
+                jQuery('html, body').animate({
+                    scrollTop: jQuery(hash).offset().top
+                }, 800, function () { 
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
