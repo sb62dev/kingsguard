@@ -8,6 +8,10 @@ function job_application_form() {
         'nonce' => wp_create_nonce('jobseekers_application_form_save_action')
     ));
 
+    // Enqueue jQuery UI CSS
+    wp_enqueue_style('custom-datepicker-style', get_template_directory_uri() . '/admin/assets/css/datepicker.css');
+    wp_enqueue_script('custom-datepicker-script', get_template_directory_uri() . '/admin/assets/css/datepicker.js', array('jquery', 'jquery-ui-datepicker'), null, true);
+
     $site_key = GOOGLE_RECAPTCHA_SITE_KEY;
 
     $user_info = array(
@@ -70,10 +74,10 @@ function job_application_form() {
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Phone Number* </label>
-                                <input type="text" class="inputField" id="jobseek_application_phone" name="jobseek_application_phone" placeholder="Phone Number*">
+                                <input type="text" class="inputField numberonly" id="jobseek_application_phone" name="jobseek_application_phone" placeholder="Phone Number*">
                                 <div class="jobseek_error"></div>
                             </div>
-                        </div>
+                        </div> 
                         <div class="jobseek_application_col col-md-12">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Cover Letter </label>
@@ -93,8 +97,96 @@ function job_application_form() {
                                             <div class="jobseek_application_resume_boxIn_txt"> Upload Resume </div>
                                         </label>
                                     </div>
-                                    <input type="file" id="jobseek_application_resume" name="jobseek_application_resume">
-                                    <div class="file-name" id="file-name">No file chosen</div>
+                                    <input type="file" class="jobseek_file_input" id="jobseek_application_resume" name="jobseek_application_resume">
+                                    <div class="file-name" id="resume-file-name">No file chosen</div>
+                                </div> 
+                                <div class="jobseek_error"></div>
+                            </div>
+                        </div>   
+                        <div class="jobseek_application_col col-md-6">
+                            <div class="jobseek_application_inputWrap">
+                                <label class="jobseek_application_label"> Security Guard License* </label>
+                                <input type="text" class="inputField numberonly" id="jobseek_application_license" name="jobseek_application_license" placeholder="Security Guard License*">
+                                <div class="jobseek_error"></div>
+                            </div>
+                        </div>
+                        <div class="jobseek_application_col col-md-6">
+                            <div class="jobseek_application_inputWrap">
+                                <label class="jobseek_application_label"> Expiry Date* </label>
+                                <div class="cmn_inputIcon cmn_inputIcon_date">
+                                    <input type="text" class="inputField" id="jobseek_application_date" name="jobseek_application_date" placeholder="Expiry Date*">
+                                </div> 
+                                <div class="jobseek_error"></div>
+                            </div>
+                        </div>
+                        <div class="jobseek_application_col col-md-6">
+                            <div class="jobseek_application_inputWrap" id="licenseBoxwrap">
+                                <label class="jobseek_application_label"> License* </label>
+                                <div class="jobseek_application_resume_box">
+                                    <div class="jobseek_application_resume_boxIn">
+                                        <label for="jobseek_application_licnese_copy">
+                                            <div class="jobseek_application_resume_boxIn_img">
+                                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
+                                            </div>
+                                            <div class="jobseek_application_resume_boxIn_txt"> Upload License* </div>
+                                        </label>
+                                    </div>
+                                    <input type="file" class="jobseek_file_input" id="jobseek_application_licnese_copy" name="jobseek_application_licnese_copy">
+                                    <div class="file-name" id="license-file-name">No file chosen</div>
+                                </div> 
+                                <div class="jobseek_error"></div>
+                            </div>
+                        </div>   
+                        <div class="jobseek_application_col col-md-6">
+                            <div class="jobseek_application_inputWrap" id="cprBoxwrap">
+                                <label class="jobseek_application_label"> CPR and First Aid* </label>
+                                <div class="jobseek_application_resume_box">
+                                    <div class="jobseek_application_resume_boxIn">
+                                        <label for="jobseek_application_cpr_copy">
+                                            <div class="jobseek_application_resume_boxIn_img">
+                                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
+                                            </div>
+                                            <div class="jobseek_application_resume_boxIn_txt"> Upload CPR and First Aid* </div>
+                                        </label>
+                                    </div>
+                                    <input type="file" class="jobseek_file_input" id="jobseek_application_cpr_copy" name="jobseek_application_cpr_copy">
+                                    <div class="file-name" id="cpr-file-name">No file chosen</div>
+                                </div> 
+                                <div class="jobseek_error"></div>
+                            </div>
+                        </div>  
+                        <div class="jobseek_application_col col-md-6">
+                            <div class="jobseek_application_inputWrap" id="smartserveBoxwrap">
+                                <label class="jobseek_application_label"> Smart Serve License </label>
+                                <div class="jobseek_application_resume_box">
+                                    <div class="jobseek_application_resume_boxIn">
+                                        <label for="jobseek_application_smartserve_copy">
+                                            <div class="jobseek_application_resume_boxIn_img">
+                                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
+                                            </div>
+                                            <div class="jobseek_application_resume_boxIn_txt"> Upload Smart Serve License </div>
+                                        </label>
+                                    </div>
+                                    <input type="file" class="jobseek_file_input" id="jobseek_application_smartserve_copy" name="jobseek_application_smartserve_copy">
+                                    <div class="file-name" id="smartserver-file-name">No file chosen</div>
+                                </div> 
+                                <div class="jobseek_error"></div>
+                            </div>
+                        </div>  
+                        <div class="jobseek_application_col col-md-6">
+                            <div class="jobseek_application_inputWrap" id="forceBoxwrap">
+                                <label class="jobseek_application_label"> Use of Force Training Certification </label>
+                                <div class="jobseek_application_resume_box">
+                                    <div class="jobseek_application_resume_boxIn">
+                                        <label for="jobseek_application_force_training_copy">
+                                            <div class="jobseek_application_resume_boxIn_img">
+                                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
+                                            </div>
+                                            <div class="jobseek_application_resume_boxIn_txt"> Upload Use of Force Training Certification </div>
+                                        </label>
+                                    </div>
+                                    <input type="file" class="jobseek_file_input" id="jobseek_application_force_training_copy" name="jobseek_application_force_training_copy">
+                                    <div class="file-name" id="force-training-file-name">No file chosen</div>
                                 </div> 
                                 <div class="jobseek_error"></div>
                             </div>
