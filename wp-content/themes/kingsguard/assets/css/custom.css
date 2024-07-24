@@ -777,7 +777,7 @@ select.form-control {
     padding: 0 !important;
 }
 option {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 .inputField:hover, 
 .inputField:focus {
@@ -2055,17 +2055,14 @@ h3 .job-title {
     background-color: #1b2a36;
     width: 300px;
     height: 100%;
-    padding: 35px 20px 60px 20px;
+    padding: 56px 20px 60px 20px;
     position: fixed;
-    z-index: 3;
+    z-index: 2;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
     background-color: #1b2a36;
     overflow-x: scroll;
-}
-.dashboardSidebar.collapsed {
-    width: 100px;
 }
 .dashboardSidebar .dashboardCollapse {
     position: fixed;
@@ -2237,21 +2234,12 @@ h3 .job-title {
     opacity: 1;
     transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), margin 0.3s, color 0.3s;
 }
-.dashboardSidebar.collapsed .dashboardCollapse .dashboardCollapseBtn .dashboardCollapseCont,
-.dashboardSidebar.collapsed .dashboardProfile .dashboardProfileCont .dashboardProfileName,
-.dashboardSidebar.collapsed .dashboardOptions ul li .dashboardListText {
-    display: none;
-    opacity: 0;
-}
 .dashboardContent {
     width: 100%;
     padding-left: 300px;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
-}
-.sidebar_collapsed .dashboardContent {
-    padding-left: 100px;
 }
 .dashboard-main .dashboardInner {
     padding: 105px 50px 50px;
@@ -2265,7 +2253,10 @@ h3 .job-title {
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
+}
+.dashboardContent .dashboardHead .dashboardHamburger {
+    display: none;
 }
 .dashboardContent .dashboardNotifications .dashboardNotificationBtn,
 .dashboardContent .dashboardNotifications .dashboardNotificationBtn:hover,
@@ -2950,9 +2941,6 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .singleJobcontent .jobContent .jobContentInner ol li strong {
     font-family: 'Gilroy-Bold';
 }
-.singleJobcontent .singleJobTitle {
-    margin-bottom: 50px;
-}
 .registerWrapper {
     background-image: url('../images/patternBg.svg');
     background-position: center bottom;
@@ -3628,4 +3616,15 @@ input[type=checkbox], input[type=radio] {
     right: 20px;
     top: 14px;
     z-index: -1;
+}
+.dashboardWrapper .dashboardHead .dashboardHamburger a {
+    font-size: 20px;
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.dashboardWrapper .dashboardHead .dashboardHamburger a:hover,
+.dashboardWrapper .dashboardHead .dashboardHamburger a:focus {
+    color: #ffffff;
 }

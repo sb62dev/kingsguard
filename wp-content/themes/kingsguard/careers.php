@@ -28,7 +28,7 @@ get_header();
                                 <input type="text" class="inputField" value="<?php echo isset($_GET['search_keywords']) ? esc_attr($_GET['search_keywords']) : ''; ?>" placeholder="Keywords" id="keywords" name="search_keywords">
                             </div>
                         </div>
-                        <div class="col-md-5 col-xs-12">
+                        <div class="col-md-5 col-sm-4 col-xs-12">
                             <div class="form-group">
                                 <select name="selected_jobtype" id="jobtype" class="selectField">
                                     <option value="-1">Job Type</option>
@@ -45,7 +45,7 @@ get_header();
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-5 col-xs-12">
+                        <div class="col-md-5 col-sm-4 col-xs-12">
                             <div class="form-group">
                                 <select name="selected_location" id="location" class="selectField">
                                     <option value="-1">Location</option>
@@ -62,7 +62,7 @@ get_header();
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-2 col-xs-12">
+                        <div class="col-md-2 col-sm-4 col-xs-12">
                             <input class="btn-search btn btn-style gradientBtn" value="Search" type="submit">
                         </div>
                     </div>

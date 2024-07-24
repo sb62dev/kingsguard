@@ -1,10 +1,10 @@
 <div class="singleJobcontent">
     <div class="singleJobTitle" data-aos="fade-down" data-aos-duration="1000">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9 col-sm-8">
                 <h1 class="h2"><?php the_title(); ?></h1>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="applyBtn">
                     <?php if ( !isset($_COOKIE['jobseeker_logged_in']) || $_COOKIE['jobseeker_logged_in'] !== 'true' ) : ?>
                         <a href="#" class="btn-style gradientBtn"> Apply Now </a>
@@ -30,7 +30,7 @@
                     ?>
                     <div class="row">
                         <?php if (!empty($job_types)) : ?>
-                            <div class="col-xl-4 col-md-6 col-sm-4">
+                            <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                                 <div class="jobInfoInner">
                                     <div class="jobInfoIcon">
                                         <i class="fa fa-briefcase" aria-hidden="true"></i>
@@ -43,7 +43,7 @@
                             </div>
                         <?php endif; ?>
                         <?php if (!empty($job_locations)) : ?>
-                            <div class="col-xl-4 col-md-6 col-sm-4">
+                            <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                                 <div class="jobInfoInner">
                                     <div class="jobInfoIcon">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <div class="col-xl-4 col-md-6 col-sm-4">
+                        <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                             <div class="jobInfoInner">
                                 <div class="jobInfoIcon">
                                     <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
@@ -74,7 +74,7 @@
                             $jobs_company = get_field('jobs_company');
                             if ($jobs_company) {
                         ?>
-                        <div class="col-xl-4 col-md-6 col-sm-4">
+                        <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                             <div class="jobInfoInner">
                                 <div class="jobInfoIcon">
                                     <i class="fa fa-building" aria-hidden="true"></i>
@@ -90,7 +90,7 @@
                             $job_expire_in = get_field('job_expire_in');
                             if ($job_expire_in) {
                         ?>
-                        <div class="col-xl-4 col-md-6 col-sm-4">
+                        <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                             <div class="jobInfoInner">
                                 <div class="jobInfoIcon">
                                     <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -106,7 +106,7 @@
                             $job_level = get_field('job_level');
                             if ($job_level) {
                         ?>
-                        <div class="col-xl-4 col-md-6 col-sm-4">
+                        <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                             <div class="jobInfoInner">
                                 <div class="jobInfoIcon">
                                     <i class="fa fa-database" aria-hidden="true"></i>
@@ -122,7 +122,7 @@
                             $experience = get_field('experience');
                             if ($experience) {
                         ?>
-                        <div class="col-xl-4 col-md-6 col-sm-4">
+                        <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                             <div class="jobInfoInner">
                                 <div class="jobInfoIcon">
                                     <i class="fa fa-pie-chart" aria-hidden="true"></i>
@@ -138,7 +138,7 @@
                             $jobs_education = get_field('jobs_education');
                             if ($jobs_education) {
                         ?>
-                        <div class="col-xl-4 col-md-6 col-sm-4">
+                        <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                             <div class="jobInfoInner">
                                 <div class="jobInfoIcon">
                                     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -154,7 +154,7 @@
                             $jobs_salary = get_field('jobs_salary');
                             if ($jobs_salary) {
                         ?>
-                        <div class="col-xl-4 col-md-6 col-sm-4">
+                        <div class="col-xl-4 col-md-6 col-sm-4 col-6">
                             <div class="jobInfoInner">
                                 <div class="jobInfoIcon">
                                     <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
