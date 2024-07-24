@@ -4,7 +4,8 @@ var pattern = {
 	"fname": /^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\-]+$/,
 	"lname": /^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\-]+$/,
 	"email_emoji": /\p{Extended_Pictographic}/ug,
-	'nospace': /^\S*$/,
+	"nospace": /^\S*$/,
+    "numeric": /^[0-9]*$/
 };
 
 function validate_input(input_type, input_val) {
@@ -28,6 +29,9 @@ function validate_input(input_type, input_val) {
 		case "email_emoji":
 			match = pattern.email_emoji;
 			break;
+        case "numeric":
+            match = pattern.numeric;
+            break;
 
 	}
 	var check = match.test(input_val);
@@ -46,10 +50,45 @@ function form_id_scroll(id) {
 	}
 } 
 
+function isNumeric(value) {
+    return /^-?\d+$/.test(value);
+}
+
+var allowedExtensions = ["png", "PNG", "jpg", "jpeg", "pdf", "doc", "docx"];
+var maxFileSize = 1 * 1024 * 1024; 
+
+function validate_file(file) {
+    var fileExtension = file.name.split('.').pop().toLowerCase();
+    var isValidExtension = allowedExtensions.includes(fileExtension);
+    var isValidSize = file.size <= maxFileSize;
+    if (!isValidExtension) {
+        return { valid: false, message: "Invalid file format. Allowed formats are: " + allowedExtensions.join(', ') };
+    }
+    if (!isValidSize) {
+        return { valid: false, message: "File size exceeds the maximum limit of 1 MB." };
+    }
+    return { valid: true, message: "" };
+}
+
+function hideErrorOnFocus(selector) {
+    $(document).on("focus", selector, function () {
+        $(this).closest('.jobseek_application_inputWrap').find('.jobseek_error').hide();
+    });
+}
+
 var phone_empty_err_msg = "Phone number is required.";
 var phone_invalid_err_msg = "Phone number format is invalid.(10 digit number)";
 var resume_empty_err_msg = "Resume is required."; 
+var license_empty_err_msg = "License is required.";
+var cpr_empty_err_msg = "CPR and First Aid is required.";
+var license_max_length_err_msg = "Maximum characters limit is 8."; 
+var license_min_length_err_msg = "Minimum characters limit is 7."; 
+var numeric_err_msg = "Only numeric values are allowed."; 
+var license_copy_empty_err_msg = "License copy is required.";  
+var expiry_date_empty_err_msg = "Date field is required.";
 var captcha_empty_err_msg = "Captcha is required.";
+var file_invalid_err_msg = "Invalid file format. Only pdf, doc, docx are allowed.";
+var file_size_err_msg = "File size should not exceed 5 MB.";
 
 jQuery(document).ready(function($) {
 
@@ -61,10 +100,15 @@ jQuery(document).ready(function($) {
         formData.append('jobseekers_application_form_save_nonce_field', jobseeks_application_ajax_object.nonce);
         formData.append('action', 'handle_job_application_submission'); 
  
-        var scrollId = '';
-        var resumeID = $("#jobseek_application_resume"); 
-        var resume = resumeID[0].files[0];
+        var scrollId = ''; 
+        var resume = $("#jobseek_application_resume")[0].files[0];
         var phone = $("#jobseek_application_phone"); 
+        var license = $("#jobseek_application_license");  
+        var expiryDate = $("#jobseek_application_date");  
+        var licenseCopy = $("#jobseek_application_licnese_copy")[0].files[0];
+        var cprCopy = $("#jobseek_application_cpr_copy")[0].files[0];
+        var smartserveCopy = $("#jobseek_application_smartserve_copy")[0].files[0];
+        var forceTrainingCopy = $("#jobseek_application_force_training_copy")[0].files[0];
         var captcha = $("#g-recaptcha-response");
         var response = grecaptcha.getResponse();
         var go_ahead = true;
@@ -85,6 +129,10 @@ jQuery(document).ready(function($) {
             phone.next('.jobseek_error').html(phone_invalid_err_msg).show();
             scrollId = scrollId == '' ? phone : scrollId;
             go_ahead = false;
+        } else if (!validate_input('numeric', phone.val().trim())) {
+            phone.next('.jobseek_error').html(numeric_err_msg).show();
+            scrollId = scrollId == '' ? phone : scrollId;
+            go_ahead = false;
         } else {
             phone.next('.jobseek_error').html('').hide();
         } 
@@ -95,7 +143,100 @@ jQuery(document).ready(function($) {
             scrollId = scrollId == '' ? resume : scrollId;
             go_ahead = false;
         } else {
-            $("#resumeBoxwrap").find('.jobseek_error').html('').hide();
+            var fileCopyValidation = validate_file(resume);
+            if (!fileCopyValidation.valid) {
+                $("#resumeBoxwrap").find('.jobseek_error').html(fileCopyValidation.message).show();
+                scrollId = scrollId == '' ? resume : scrollId;
+                go_ahead = false;
+            } else {
+                $("#resumeBoxwrap").find('.jobseek_error').html('').hide();
+            }
+        }
+
+        // License validation
+        if ('' == license.val().trim()) {
+            license.next('.jobseek_error').html(license_empty_err_msg).show();
+            scrollId = scrollId == '' ? license : scrollId;
+            go_ahead = false;
+        } else if (license.val().length <= 6 ) {
+            license.next('.jobseek_error').html(license_min_length_err_msg).show();
+            scrollId = scrollId == '' ? license : scrollId;
+            go_ahead = false;
+        } else if (license.val().length > 8) {
+            license.next('.jobseek_error').html(license_max_length_err_msg).show();
+            scrollId = scrollId == '' ? license : scrollId;
+            go_ahead = false;
+        } else if (!validate_input('numeric', license.val().trim())) {
+            license.next('.jobseek_error').html(numeric_err_msg).show();
+            scrollId = scrollId == '' ? license : scrollId;
+            go_ahead = false;
+        } else {
+            license.next('.jobseek_error').html('').hide();
+        } 
+
+        // Date validation
+        if ('' == expiryDate.val().trim()) {
+            expiryDate.parent('.cmn_inputIcon_date').next('.jobseek_error').html(expiry_date_empty_err_msg).show();
+            scrollId = scrollId == '' ? expiryDate : scrollId;
+            go_ahead = false;
+        } else {
+            license.next('.jobseek_error').html('').hide();
+        } 
+
+        // License Copy validation
+        if (!licenseCopy) {
+            $("#licenseBoxwrap").find('.jobseek_error').html(license_copy_empty_err_msg).show();
+            scrollId = scrollId == '' ? licenseCopy : scrollId;
+            go_ahead = false;
+        } else {
+            var fileCopyValidation = validate_file(licenseCopy);
+            if (!fileCopyValidation.valid) {
+                $("#licenseBoxwrap").find('.jobseek_error').html(fileCopyValidation.message).show();
+                scrollId = scrollId == '' ? licenseCopy : scrollId;
+                go_ahead = false;
+            } else {
+                $("#licenseBoxwrap").find('.jobseek_error').html('').hide();
+            }
+        }
+
+        // CPR and First Aid validation
+        if (!cprCopy) {
+            $("#cprBoxwrap").find('.jobseek_error').html(cpr_empty_err_msg).show();
+            scrollId = scrollId == '' ? cprCopy : scrollId;
+            go_ahead = false;
+        } else {
+            var fileCopyValidation = validate_file(cprCopy);
+            if (!fileCopyValidation.valid) {
+                $("#cprBoxwrap").find('.jobseek_error').html(fileCopyValidation.message).show();
+                scrollId = scrollId == '' ? cprCopy : scrollId;
+                go_ahead = false;
+            } else {
+                $("#cprBoxwrap").find('.jobseek_error').html('').hide();
+            }
+        }
+
+        // Smart Serve License validation 
+        if (smartserveCopy) {
+            var fileCopyValidation = validate_file(smartserveCopy);
+            if (!fileCopyValidation.valid) {
+                $("#smartserveBoxwrap").find('.jobseek_error').html(fileCopyValidation.message).show();
+                scrollId = scrollId == '' ? smartserveCopy : scrollId;
+                go_ahead = false;
+            } else {
+                $("#smartserveBoxwrap").find('.jobseek_error').html('').hide();
+            } 
+        }
+
+        // Force Training License validation 
+        if (forceTrainingCopy) {
+            var fileCopyValidation = validate_file(forceTrainingCopy);
+            if (!fileCopyValidation.valid) {
+                $("#forceBoxwrap").find('.jobseek_error').html(fileCopyValidation.message).show();
+                scrollId = scrollId == '' ? smartserveCopy : scrollId;
+                go_ahead = false;
+            } else {
+                $("#forceBoxwrap").find('.jobseek_error').html('').hide();
+            } 
         }
 
         // Captcha validation
@@ -137,19 +278,39 @@ jQuery(document).ready(function($) {
             form_id_scroll(scrollId);
         }
 
-    }); 
+    });  
 
-    $('#jobseek_application_resume').on('change', function() {
+    $('.jobseek_file_input').on('change', function() {
         var fileName = $(this).val().split('\\').pop();
-        $('#file-name').text(fileName || 'No file chosen');
+        $(this).next('.file-name').text(fileName || 'No file chosen'); 
     });
+
+    $("#jobseek_application_date").datepicker({
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true, 
+        changeYear: true, 
+        yearRange: '2023:2100', 
+        minDate: 0  
+    });
+
+    hideErrorOnFocus("#jobseek_application_phone");
+    hideErrorOnFocus("#jobseek_application_license");
+    hideErrorOnFocus("#jobseek_application_resume");
+    hideErrorOnFocus("#jobseek_application_licnese_copy");
+    hideErrorOnFocus("#jobseek_application_cpr_copy");
+    hideErrorOnFocus("#jobseek_application_smartserve_copy");
+    hideErrorOnFocus("#jobseek_application_force_training_copy");
+    hideErrorOnFocus("#jobseek_application_date");
 
 });
 
 function jobseek_application_recaptchaCallback() {
     jQuery('.jobseek_application_captcha_Wrap').find('.jobseek_error').hide();
-}
+}        
 
-jQuery(document).on("focus", "#jobseek_application_resume, #jobseek_application_phone", function () {
-	jQuery(this).next('.jobseek_error').hide();
-}); 
+jQuery(document).on('keyup paste', '.numberonly', function(event) {
+    var v = this.value;
+    if (!isNumeric(v) && v !== '') {
+        this.value = this.value.slice(0, -1);
+    }
+});
