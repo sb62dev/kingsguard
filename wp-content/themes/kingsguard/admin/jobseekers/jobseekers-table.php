@@ -32,6 +32,7 @@ function create_jobseekers_table() {
         verification_token varchar(255) DEFAULT '',
         reset_key varchar(255) DEFAULT NULL,
         reset_requested_at datetime DEFAULT NULL,
+        user_info longtext DEFAULT NULL,
         job_applications longtext DEFAULT NULL,
         submission_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY  (id)

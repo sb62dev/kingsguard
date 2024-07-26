@@ -10,7 +10,7 @@ function job_application_form() {
 
     // Enqueue jQuery UI CSS
     wp_enqueue_style('custom-datepicker-style', get_template_directory_uri() . '/admin/assets/css/datepicker.css');
-    wp_enqueue_script('custom-datepicker-script', get_template_directory_uri() . '/admin/assets/css/datepicker.js', array('jquery', 'jquery-ui-datepicker'), null, true);
+    wp_enqueue_script('custom-datepicker-script', get_template_directory_uri() . '/admin/assets/js/datepicker.js', array('jquery', 'jquery-ui-datepicker'), null, true);
 
     $site_key = GOOGLE_RECAPTCHA_SITE_KEY;
 

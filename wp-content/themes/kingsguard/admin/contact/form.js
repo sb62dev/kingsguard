@@ -1,243 +1,207 @@
-var pattern = {
-	"email": /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-	"phone": /^((\+\d{1,3}(-|.| )?\(?\d\)?(-| |.)?\d{1,5})|(\(?\d{2,6}\)?))(-|.| )?(\d{3,4})(-|.| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/,
-	"fname": /^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\-]+$/,
-	"lname": /^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\-]+$/,
-	"email_emoji": /\p{Extended_Pictographic}/ug,
-	'nospace': /^\S*$/,
-}; 
-
-function validate_input(input_type, input_val) {
-	var match = '';
-	switch (input_type) {
-		case "email":
-			match = pattern.email;
-			break;
-		case "phone":
-			match = pattern.phone;
-			break;
-		case "fname":
-			match = pattern.fname;
-			break;
-		case "nospace":
-			match = pattern.nospace;
-			break;
-		case "lname":
-			match = pattern.lname;
-			break; 
-		case "email_emoji":
-			match = pattern.email_emoji;
-			break;
-
-	}
-	var check = match.test(input_val);
-	if (check) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-var fname_empty_err_msg = "First name is required.";
-var lname_empty_err_msg = "Last name is required.";
-var name_max_length_err_msg = "Maximum characters limit is 30."; 
-var name_invalid_err_msg = "Name format is invalid."; 
-var name_nospace_err_msg = "Space is not allowed."; 
-var title_empty_err_msg = "Title is required."; 
-var email_empty_err_msg = "Email is required.";
-var phone_empty_err_msg = "Phone Number is required.";
+ 
+var contact_error = ".contact_error";
+var contact_loader = ".jobseek_loader";
+var contact_captcha_wrap = ".kg_contact_captcha_Wrap";   
+var title_empty_err_msg = "Title is required.";   
 var service_err_msg = "Select Service is required.";
 var parking_service_err_msg = "Parking Enforcement is required.";
 var security_service_err_msg = "Security Systems is required.";
-var sitetype_err_msg = "Type of Site is required.";
-var captcha_empty_err_msg = "Captcha is required.";
-var email_invalid_err_msg = "Email format is invalid.";
-var phone_invalid_err_msg = "Phone number format is invalid.";
-var title_invalid_length_err_msg = "Maximum characters limit is 100."; 
-
-function form_id_scroll(id) {
-	if (id != '') {
-		jQuery('html, body').animate({
-			scrollTop: jQuery(id).offset().top - 170
-		}, 500);
-	}
-} 
+var sitetype_err_msg = "Type of Site is required.";   
 
 jQuery(document).ready(function($) {  
 
+    var formId = "#kg_contact_form";
+    var fnameId = "#kg_contact_fname";
+    var lnameId = "#kg_contact_lname"; 
+    var titleId = "#kg_contact_title"; 
+    var emailId = "#kg_contact_email"; 
+    var phoneId = "#kg_contact_phone";  
+    var servicesId = "#selected_services"; 
+    var servicesSelectId = "#kg_contact_services"; 
+    var sitetypesId = "#kg_contact_site_types";   
+    var captchaId = "#g-recaptcha-response"; 
+    var captchaWrapId = "#g-recaptcha-response-wrap"; 
+    var parkingColId = "#kg_contact_parking_service_col"; 
+    var securityColId = "#kg_contact_security_service_col";  
+    var thankWrapColClass = ".kg_contact_thankWrap";  
+    var multiServicesClass = ".kg_contact_multi_services";
+
+    $(thankWrapColClass).hide();   
+    $(parkingColId).hide();   
+    $(securityColId).hide();   
+
     // Form Submission
-    $('#kg_contact_form').on('submit', function(e) {
+    $(formId).on('submit', function(e) {
         e.preventDefault(); // Prevent form submission
         var formData = $(this).serialize() + '&contact_form_save_nonce_field=' + kg_contact_ajax_object.nonce;
  
         var scrollId = '';
-        var fname = $("#kg_contact_fname");
-        var lname = $("#kg_contact_lname");
-        var title = $("#kg_contact_title");
-        var email = $("#kg_contact_email");
-        var phone = $("#kg_contact_phone");
-        var services = $("#selected_services");
-        var servicesSelect = $("#kg_contact_services"); 
-        var sitetypes = $("#kg_contact_site_types");  
-        var add_info = $("#kg_contact_add_info");
-        var captcha = $("#g-recaptcha-response");
+        var fname = $(fnameId);
+        var lname = $(lnameId);
+        var title = $(titleId);
+        var email = $(emailId);
+        var phone = $(phoneId);
+        var services = $(servicesId);
+        var servicesSelect = $(servicesSelectId); 
+        var sitetypes = $(sitetypesId);   
+        var captcha = $(captchaId);
         var response = grecaptcha.getResponse();
         var go_ahead = true;
 
         // Clear previous errors
-        $('.contact_error').html(''); 
+        $(contact_error).html(''); 
 
         // First name validation
         if ('' == fname.val().trim()) {
-            fname.next('.contact_error').html(fname_empty_err_msg).show();
+            fname.next(contact_error).html(fname_empty_err_msg).show();
             scrollId = scrollId == '' ? fname : scrollId;
             go_ahead = false;
         } else if (fname.val().length > 30) {
-            fname.next('.contact_error').html(name_max_length_err_msg).show();
+            fname.next(contact_error).html(max_30_length_err_msg).show();
             scrollId = scrollId == '' ? fname : scrollId;
             go_ahead = false;
         } else if (!validate_input('fname', fname.val().trim())) {
-            fname.next('.contact_error').html(name_invalid_err_msg).show();
+            fname.next(contact_error).html(name_invalid_err_msg).show();
             scrollId = scrollId == '' ? fname : scrollId;
             go_ahead = false;
         } else if (!validate_input('nospace', fname.val())) {
-            fname.next('.contact_error').html(name_nospace_err_msg).show();
+            fname.next(contact_error).html(nospace_err_msg).show();
             scrollId = scrollId == '' ? fname : scrollId;
             go_ahead = false;
         } else {
-            fname.next('.contact_error').html('').hide();
+            fname.next(contact_error).html('').hide();
         }
 
         // Last name validation
         if ('' == lname.val().trim()) {
-            lname.next('.contact_error').html(lname_empty_err_msg).show();
+            lname.next(contact_error).html(lname_empty_err_msg).show();
             scrollId = scrollId == '' ? lname : scrollId;
             go_ahead = false;
         } else if (lname.val().length > 30) {
-            lname.next('.contact_error').html(name_max_length_err_msg).show();
+            lname.next(contact_error).html(max_30_length_err_msg).show();
             scrollId = scrollId == '' ? lname : scrollId;
             go_ahead = false;
         } else if (!validate_input('fname', lname.val().trim())) {
-            lname.next('.contact_error').html(name_invalid_err_msg).show();
+            lname.next(contact_error).html(name_invalid_err_msg).show();
             scrollId = scrollId == '' ? lname : scrollId;
             go_ahead = false;
         } else if (!validate_input('nospace', lname.val())) {
-            lname.next('.contact_error').html(name_nospace_err_msg).show();
+            lname.next(contact_error).html(nospace_err_msg).show();
             scrollId = scrollId == '' ? lname : scrollId;
             go_ahead = false;
         } else {
-            lname.next('.contact_error').html('').hide();
+            lname.next(contact_error).html('').hide();
         }
 
         // Title validation
         if ('' == title.val().trim()) {
-            title.next('.contact_error').html(title_empty_err_msg).show();
+            title.next(contact_error).html(title_empty_err_msg).show();
             go_ahead = false;
         } else if (title.val().length > 100) {
-            title.next('.contact_error').html(title_invalid_length_err_msg).show();
+            title.next(contact_error).html(max_100_length_err_msg).show();
             scrollId = scrollId == '' ? title : scrollId;
             go_ahead = false;
         } else {
-            title.next('.contact_error').html('').hide();
+            title.next(contact_error).html('').hide();
         }
 
         // Email validation
         if ('' == email.val().trim()) {
-            email.next('.contact_error').html(email_empty_err_msg).show();
+            email.next(contact_error).html(email_empty_err_msg).show();
             scrollId = scrollId == '' ? email : scrollId;
             go_ahead = false;
         } else if (!validate_input('email', email.val().trim())) {
-            email.next('.contact_error').html(email_invalid_err_msg).show();
+            email.next(contact_error).html(email_invalid_err_msg).show();
             scrollId = scrollId == '' ? email : scrollId;
             go_ahead = false;
         } else if (!validate_input('nospace', email.val().trim())) {
-            email.next('.contact_error').html(email_invalid_err_msg).show();
+            email.next(contact_error).html(email_invalid_err_msg).show();
             scrollId = scrollId == '' ? email : scrollId;
             go_ahead = false;
         } else {
-            email.next('.contact_error').html('').hide();
+            email.next(contact_error).html('').hide();
         }
 
         // Phone validation
         if ('' == phone.val().trim()) {
-            phone.next('.contact_error').html(phone_empty_err_msg).show();
+            phone.next(contact_error).html(phone_empty_err_msg).show();
             scrollId = scrollId == '' ? phone : scrollId;
             go_ahead = false;
         } else if (!validate_input('phone', phone.val().trim())) {
-            phone.next('.contact_error').html(phone_invalid_err_msg).show();
+            phone.next(contact_error).html(phone_invalid_err_msg).show();
             scrollId = scrollId == '' ? phone : scrollId;
             go_ahead = false;
         } else if (phone.val().length < 10 || phone.val().length > 10) {
-            phone.next('.contact_error').html(phone_invalid_err_msg).show();
+            phone.next(contact_error).html(phone_invalid_err_msg).show();
             scrollId = scrollId == '' ? phone : scrollId;
             go_ahead = false;
         } else {
-            phone.next('.contact_error').html('').hide();
+            phone.next(contact_error).html('').hide();
         }
 
         // Services validation
         if ('' == services.val().trim()) { 
-            servicesSelect.next('.contact_error').html(service_err_msg).show();
+            servicesSelect.next(contact_error).html(service_err_msg).show();
             scrollId = scrollId == '' ? servicesSelect : scrollId;
             go_ahead = false;
         } else {
-            servicesSelect.next('.contact_error').html('').hide();
+            servicesSelect.next(contact_error).html('').hide();
         }
 
         // Conditional validation for parkingServices
-        if ($('#kg_contact_parking_service_col').is(':visible')) {
+        if ($(parkingColId).is(':visible')) {
             var parkingChecked = false;
-            $('#kg_contact_parking_service_col input[type="checkbox"]').each(function() {
+            $(parkingColId + ' input[type="checkbox"]').each(function() {
                 if ($(this).is(':checked')) {
                     parkingChecked = true;
                 }
             });
             if (!parkingChecked) {
-                $('#kg_contact_parking_service_col .contact_error').html(parking_service_err_msg).show();
-                scrollId = scrollId == '' ? "#kg_contact_parking_service_col" : scrollId;
+                $(parkingColId + contact_error).html(parking_service_err_msg).show();
+                scrollId = scrollId == '' ? parkingColId : scrollId;
                 go_ahead = false;
             } else {
-                $('#kg_contact_parking_service_col .contact_error').hide();
+                $(parkingColId + contact_error).hide();
             }
         } else {
-            $('#kg_contact_parking_service_col .contact_error').hide();
+            $(parkingColId + contact_error).hide();
         }
 
         // Conditional validation for securityServices
-        if ($('#kg_contact_security_service_col').is(':visible')) {
+        if ($(securityColId).is(':visible')) {
             var securityChecked = false;
-            $('#kg_contact_security_service_col input[type="checkbox"]').each(function() {
+            $(securityColId + ' input[type="checkbox"]').each(function() {
                 if ($(this).is(':checked')) {
                     securityChecked = true;
                 }
             });
             if (!securityChecked) {
-                $('#kg_contact_security_service_col .contact_error').html(security_service_err_msg).show();
-                scrollId = scrollId == '' ? "#kg_contact_security_service_col" : scrollId;
+                $(securityColId + contact_error).html(security_service_err_msg).show();
+                scrollId = scrollId == '' ? securityColId : scrollId;
                 go_ahead = false;
             } else {
-                $('#kg_contact_security_service_col .contact_error').hide();
+                $(securityColId + contact_error).hide();
             }
         } else {
-            $('#kg_contact_security_service_col .contact_error').hide();
+            $(securityColId + contact_error).hide();
         }
 
         // Site types validation
         if (sitetypes.val() === null || sitetypes.val() === '') {
-            sitetypes.next('.contact_error').html(sitetype_err_msg).show();
+            sitetypes.next(contact_error).html(sitetype_err_msg).show();
             scrollId = scrollId == '' ? sitetypes : scrollId;
             go_ahead = false;
         } else {
-            sitetypes.next('.contact_error').html('').hide();
+            sitetypes.next(contact_error).html('').hide();
         }
 
         // Captcha validation
         if (response.length == 0) {
-            captcha.closest('.kg_contact_captcha_Wrap').find('.contact_error').html(captcha_empty_err_msg).show();
-            scrollId = scrollId == '' ? "#g-recaptcha-response-wrap" : scrollId;
+            captcha.closest(contact_captcha_wrap).find(contact_error).html(captcha_empty_err_msg).show();
+            scrollId = scrollId == '' ? captchaWrapId : scrollId;
             go_ahead = false;
         } else {
-            captcha.closest('.kg_contact_captcha_Wrap').find('.contact_error').hide(); 
+            captcha.closest(contact_captcha_wrap).find(contact_error).hide(); 
         }   
 
         if (go_ahead) {
@@ -246,16 +210,16 @@ jQuery(document).ready(function($) {
                 url: kg_contact_ajax_object.ajax_url,
                 data: formData + '&action=handle_contact_form',
                 beforeSend: function() {
-                    $('.jobseek_loader').css('display', 'flex');
+                    $(contact_loader).css('display', 'flex');
                 },
                 success: function(res) {
-                    $('.jobseek_loader').hide(); 
+                    $(contact_loader).hide(); 
                     if (res.success) { 
-                        $("#kg_contact_form")[0].reset();
+                        $(formId)[0].reset();
                         services.val('');
-                        $('.kg_contact_form').hide();
-                        $('.kg_contact_thankWrap').show();
-                        form_id_scroll("#kg_contact_thankWrap"); 
+                        $(formId).hide();
+                        $(thankWrapColClass).show();
+                        form_id_scroll(thankWrapColClass); 
                     } else {
                         grecaptcha.reset();
                         $('.kg_contact_cmnError').show().find('.kg_contact_cmnError_in').html(res.data.error); 
@@ -268,12 +232,10 @@ jQuery(document).ready(function($) {
         } else {
             form_id_scroll(scrollId);
         }
-    }); 
-
-    $('.kg_contact_thankWrap, #kg_contact_parking_service_col, #kg_contact_security_service_col').hide();   
+    });  
 
     // Event listener for change in select field
-    $('.kg_contact_multi_services').each(function() {
+    $(multiServicesClass).each(function() {
         var $multiselect = $(this);
         var $selectElement = $multiselect.find('select');
         var $placeholder = $selectElement.find('.placeholder');
@@ -323,64 +285,64 @@ jQuery(document).ready(function($) {
     });
 
     // Event listener for change in select field
-    $('#kg_contact_services').on('change', function() { 
-        $("#kg_contact_services").next('.contact_error').hide();
+    $(servicesSelectId).on('change', function() { 
+        $(servicesSelectId).next(contact_error).hide();
 
         var selectedValues = $(this).find('option:selected').map(function() {
             return $(this).val();
         }).get();  
 
-        $('#selected_services').val(selectedValues.join(', '));
+        $(servicesId).val(selectedValues.join(', '));
 
         // Show the conditional fields based on the selected values
         selectedValues.forEach(function(value) {
             if (value === 'Parking Enforcement') {
-                $('#kg_contact_parking_service_col').show();
+                $(parkingColId).show();
             }
             if (value === 'Security Systems') {
-                $('#kg_contact_security_service_col').show();
+                $(securityColId).show();
             }
         });  
 
         // Hide fields if the corresponding service is not selected
         if (!selectedValues.includes('Parking Enforcement')) {
-            $('#kg_contact_parking_service_col').hide();
-            $('#kg_contact_parking_service_col input[type="checkbox"]').prop('checked', false);
+            $(parkingColId).hide();
+            $(parkingColId + ' input[type="checkbox"]').prop('checked', false);
         }
         if (!selectedValues.includes('Security Systems')) {
-            $('#kg_contact_security_service_col').hide();
-            $('#kg_contact_security_service_col input[type="checkbox"]').prop('checked', false);
+            $(securityColId).hide();
+            $(securityColId + ' input[type="checkbox"]').prop('checked', false);
         }
 
     });
 
     // Checkbox change event listener to hide error messages
-    $('#kg_contact_parking_service_col input[type="checkbox"]').on('change', function() {
+    $(parkingColId + ' input[type="checkbox"]').on('change', function() {
         if ($(this).is(':checked')) {
-            $('#kg_contact_parking_service_col .contact_error').hide();
+            $(parkingColId + contact_error).hide();
         }
     });
 
-    $('#kg_contact_security_service_col input[type="checkbox"]').on('change', function() {
+    $(securityColId + ' input[type="checkbox"]').on('change', function() {
         if ($(this).is(':checked')) {
-            $('#kg_contact_security_service_col .contact_error').hide();
+            $(securityColId + contact_error).hide();
         }
     });
+
+    // Hide errors on focus
+    hideErrorOnFocus(fnameId);
+    hideErrorOnFocus(lnameId); 
+    hideErrorOnFocus(titleId); 
+    hideErrorOnFocus(emailId); 
+    hideErrorOnFocus(phoneId);
+    
+    // Clean inputs on focus paste 
+    cleanInputField(fnameId, namePattern); 
+    cleanInputField(lnameId, namePattern);  
+    cleanInputField(emailId, emailPattern, true);   
 
 });
 
 function kg_contact_recaptchaCallback() {
-    jQuery('.kg_contact_captcha_Wrap').find('.contact_error').hide();
-}
-
-jQuery(document).on("focus", "#kg_contact_fname, #kg_contact_lname, #kg_contact_title, #kg_contact_email, #kg_contact_phone", function () {
-	jQuery(this).next('.contact_error').hide();
-});
-
-jQuery(document).on('paste keyup input', '#kg_contact_email', function (e) {
-	window.setTimeout(function () {
-		var withoutSpaces = jQuery.trim(jQuery("#kg_contact_email").val());
-		withoutSpaces = withoutSpaces.replace(/\s+/g, '');
-		jQuery("#kg_contact_email").val(withoutSpaces);
-	}, 1);
-});    
+    jQuery(contact_captcha_wrap).find(contact_error).hide();
+}  

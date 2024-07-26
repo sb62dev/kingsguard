@@ -21,7 +21,7 @@ function jobseekers_user_menu_shortcode() {
             if ( $user ) {
                 $email = esc_html( $user->email );
                 ?>
-                <div class="dashboardProfile">
+                <a href="/jobseekers-user-profile/" class="dashboardProfile">
                     <div class="dashboardProfileCont">
                         <div class="dashboardProfileImg">
                             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/user.png" alt="Profile Icon">
@@ -30,13 +30,8 @@ function jobseekers_user_menu_shortcode() {
                             <div class="dashboardProfileNm"><?php echo esc_html( $user->first_name ); ?></div>
                             <div class="dashboardProfileEmail"><?php echo $email; ?></div>
                         </div>
-                    </div>
-                    <!-- <div class="dashboardProfileArrow">
-                        <a href="#" class="dashboardProfileBtn">
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        </a>
-                    </div> -->
-                </div>
+                    </div> 
+                </a>
                 <?php
             } else {
                 echo 'User not found.';

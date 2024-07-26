@@ -29,7 +29,9 @@ jQuery(document).ready(function () {
     jQuery(".next-btn").click(function () {
       jQuery(".testimonials").slick("slickNext");
     });
+
     jQuery(".prev-btn").addClass("slick-disabled");
+
     jQuery(".testimonials").on("afterChange", function () {
           if (jQuery(".slick-prev").hasClass("slick-disabled")) {
               jQuery(".prev-btn").addClass("slick-disabled");
@@ -164,6 +166,7 @@ jQuery(document).ready(function () {
         speed: 1000,
         autoplaySpeed: 3000,
     });
+
     jQuery(".prev-btn").click(function () {
       jQuery(".whyChooseSlider").slick("slickPrev");
     });
@@ -171,7 +174,9 @@ jQuery(document).ready(function () {
     jQuery(".next-btn").click(function () {
       jQuery(".whyChooseSlider").slick("slickNext");
     });
+
     jQuery(".prev-btn").addClass("slick-disabled");
+
     jQuery(".whyChooseSlider").on("afterChange", function () {
           if (jQuery(".slick-prev").hasClass("slick-disabled")) {
               jQuery(".prev-btn").addClass("slick-disabled");
@@ -433,11 +438,13 @@ jQuery(document).ready(function () {
   });
  
   var currentUrl = window.location.pathname;
+
   jQuery('.dashboardMenu a').each(function() {
       if (jQuery(this).attr('href') === currentUrl) {
         jQuery(this).addClass('active');
       }
   });
+
   jQuery('#projectVideo').on('show.bs.modal', function(event) {
       var button = jQuery(event.relatedTarget); // Button that triggered the modal
       var videoUrl = button.data('video'); // Extract info from data-* attributes
@@ -448,5 +455,22 @@ jQuery(document).ready(function () {
   jQuery('#projectVideo').on('hidden.bs.modal', function() {
     jQuery('#videoFrame').attr('src', ''); // Remove the video source when the modal is closed
   });
+
+  function getCookie(name) {
+	var value = "; " + document.cookie;
+	var parts = value.split("; " + name + "=");
+	if (parts.length === 2) return parts.pop().split(";").shift();
+	return null;
+  }
+
+  if (getCookie('jobseeker_logged_in') === 'true') {
+		var username = getCookie('jobseeker_username');
+		if (username) {
+			var profileImage = '<img src="/wp-content/themes/kingsguard/assets/images/user.png" alt="Profile Icon">';
+			jQuery('.jobseek_login_link').addClass('loggedIn');
+			jQuery('.jobseek_login_link a').html(profileImage + ' ' + username);
+		}
+  }
+
 });
 

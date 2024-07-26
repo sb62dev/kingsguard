@@ -1,5 +1,8 @@
 <?php    
 
+/* Function to add common JS for Jobseekers */
+wp_enqueue_script('custom-jobseekers-common-script', get_template_directory_uri() . '/admin/jobseekers/js/jobseekers-common.js', array('jquery'), null, true);
+
 /* Function to access google recaptcha response */
 function jobseeks_google_recaptcha($captcha_response) {
     $secret_key = GOOGLE_RECAPTCHA_SECRET_KEY;
@@ -101,6 +104,42 @@ function add_subscriber_to_mailchimp($list_id = '', $email, $first_name = '', $l
     }
 }
 
+// Function to handle file upload
+function handle_file_upload($file_field_name, $custom_dir, $prefix) {
+    if (isset($_FILES[$file_field_name]) && !empty($_FILES[$file_field_name]['name'])) {
+        $uploadedfile = $_FILES[$file_field_name];
+        
+        // Ensure the custom directory exists
+        if (!file_exists($custom_dir)) {
+            wp_mkdir_p($custom_dir);
+        }
+
+        // Generate a unique filename based on prefix and original file extension
+        $file_extension = pathinfo($uploadedfile['name'], PATHINFO_EXTENSION);
+        $unique_filename = "{$prefix}.{$file_extension}";
+
+        // Set the upload overrides
+        $upload_overrides = array('test_form' => false, 'unique_filename_callback' => null);
+        $movefile = wp_handle_upload($uploadedfile, $upload_overrides);
+
+        if ($movefile && !isset($movefile['error'])) {
+            // Move the file to the custom directory
+            $new_file_path = $custom_dir . '/' . $unique_filename;
+            if (rename($movefile['file'], $new_file_path)) { 
+                return array(
+                    'filename' => $unique_filename,  // Filename only
+                    'url' => $upload_dir['baseurl'] . '/jobseekers-assets/' . $unique_filename  // Full URL
+                );
+            } else {
+                return array('error' => 'Failed to move the uploaded file.');
+            }
+        } else {
+            return array('error' => 'Failed to upload the file.');
+        }
+    }
+    return array('filename' => '', 'url' => '');
+}
+
 // Include Table
 require get_template_directory() . '/admin/jobseekers/jobseekers-table.php';
 
@@ -124,6 +163,9 @@ require get_template_directory() . '/admin/jobseekers/applicants/jobseekers-user
 
 // Include Menu
 require get_template_directory() . '/admin/jobseekers/jobseekers-user-menu.php';
+
+// Include user profile
+require get_template_directory() . '/admin/jobseekers/profile/profile.php';
 
 // Add custom rewrite rules
 function custom_jobseekers_dashboard_rewrite_rules() {

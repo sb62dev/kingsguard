@@ -1,39 +1,4 @@
-<?php 
-
-function handle_file_upload($file_field_name, $custom_dir, $prefix) {
-    if (isset($_FILES[$file_field_name]) && !empty($_FILES[$file_field_name]['name'])) {
-        $uploadedfile = $_FILES[$file_field_name];
-        
-        // Ensure the custom directory exists
-        if (!file_exists($custom_dir)) {
-            wp_mkdir_p($custom_dir);
-        }
-
-        // Generate a unique filename based on prefix and original file extension
-        $file_extension = pathinfo($uploadedfile['name'], PATHINFO_EXTENSION);
-        $unique_filename = "{$prefix}.{$file_extension}";
-
-        // Set the upload overrides
-        $upload_overrides = array('test_form' => false, 'unique_filename_callback' => null);
-        $movefile = wp_handle_upload($uploadedfile, $upload_overrides);
-
-        if ($movefile && !isset($movefile['error'])) {
-            // Move the file to the custom directory
-            $new_file_path = $custom_dir . '/' . $unique_filename;
-            if (rename($movefile['file'], $new_file_path)) { 
-                return array(
-                    'filename' => $unique_filename,  // Filename only
-                    'url' => $upload_dir['baseurl'] . '/jobseekers-assets/' . $unique_filename  // Full URL
-                );
-            } else {
-                return array('error' => 'Failed to move the uploaded file.');
-            }
-        } else {
-            return array('error' => 'Failed to upload the file.');
-        }
-    }
-    return array('filename' => '', 'url' => '');
-}
+<?php  
 
 function handle_job_application_submission() {
     $errors = array(); 

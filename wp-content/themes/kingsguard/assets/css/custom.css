@@ -2125,6 +2125,7 @@ h3 .job-title {
     box-shadow: 0px 2px 10px 0px #00000026;
     margin-top: 32px;
     border-radius: 6px;
+    text-decoration: none !important;
 }
 .dashboardSidebar.collapsed .dashboardProfile {
     padding: 8px 10px;
@@ -3627,4 +3628,20 @@ input[type=checkbox], input[type=radio] {
 .dashboardWrapper .dashboardHead .dashboardHamburger a:hover,
 .dashboardWrapper .dashboardHead .dashboardHamburger a:focus {
     color: #ffffff;
+}
+.jobseek_login_forgot_passwordLink {
+    text-align: right;
+    margin-top: 8px;
+}
+.jobseek_login_forgot_passwordLink a {
+    font-size: 12px;
+    color: #0098FF;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.main_nav_top ul .jobseek_login_link a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
 }
