@@ -101,7 +101,7 @@ function add_subscriber_to_mailchimp($list_id = '', $email, $first_name = '', $l
     }
 }
 
-// Include registration form
+// Include Table
 require get_template_directory() . '/admin/jobseekers/jobseekers-table.php';
 
 // Include registration form
@@ -112,6 +112,9 @@ require get_template_directory() . '/admin/jobseekers/login/jobseekers-login.php
 
 // Include application form
 require get_template_directory() . '/admin/jobseekers/applications/jobseekers-applications.php';
+
+// Include forgot form
+require get_template_directory() . '/admin/jobseekers/forgot/forgot.php';
 
 // Include user list
 require get_template_directory() . '/admin/jobseekers/jobseekers-user-list.php';
