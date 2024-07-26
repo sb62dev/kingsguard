@@ -30,6 +30,9 @@ function jobseekers_login_form() {
                         <label class="jobseek_register_label"> Password* </label>
                         <input type="password" class="inputField" id="jobseek_password" name="jobseek_password" placeholder="Password">
                         <div class="jobseek_error"></div>
+                        <div class="jobseek_login_forgot_passwordLink">
+                            <a href="/jobseekers-forgot-password/"> Forgot Passowrd? </a>
+                        </div>
                     </div>
                 </div>
                 <div class="jobseek_login_col">

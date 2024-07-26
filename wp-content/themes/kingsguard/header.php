@@ -35,7 +35,7 @@
 
 <?php  
 $current_url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
-if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login', 'jobseekers-careers', 'jobseekers-applications' ) ) && strpos($current_url, '/jobseekers-dashboard/') === false ) : ?> 
+if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login', 'jobseekers-careers', 'jobseekers-applications', 'jobseekers-reset-password', 'jobseekers-forgot-password' ) ) && strpos($current_url, '/jobseekers-dashboard/') === false ) : ?> 
     <div class="headerTopBar">
         <div class="sm_container">
             <div class="headerTopBarInner">
