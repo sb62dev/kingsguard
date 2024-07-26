@@ -697,14 +697,14 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
     -webkit-box-shadow: none !important;
-    background-color: transparent !important;
+    background-color: #1e1e20 !important;
     outline: none !important;
     box-shadow: none !important;
     background-image: none !important;
 }
 input:-internal-autofill-selected {
     -webkit-box-shadow: none !important;
-    background-color: transparent !important;
+    background-color: #1e1e20 !important;
     outline: none !important;
     box-shadow: none !important;
     background-image: none !important;
@@ -715,9 +715,9 @@ input:-internal-autofill-selected {
 .multipleSelect .selectBox,
 .form-control {
     width: 100% !important;
-    border: 2px solid #8D8D99 !important;
+    border: 1px solid #8D8D99 !important;
     border-radius: 10px !important;
-    background-color: transparent !important;
+    background-color: #1e1e20 !important;
     color: #ffffff !important;
     font-family: 'Gilroy-Light' !important; 
     font-size: 18px !important; 
@@ -756,22 +756,28 @@ select.form-control {
 .wpforms-field-medium:focus,
 .multipleSelect .selectBox:focus,
 .form-control:focus {
-    border: 2px solid #ffffff !important;
+    border: 1px solid #ffffff !important;
 }
-.inputField.inputField_disabled {
+.single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap input, 
+.single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap select, 
+.single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap textarea, 
+.single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap .jobseek_application_resume_box {
+    background-color: transparent !important;
+}
+.single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap input.inputField.inputField_disabled {
     cursor: not-allowed;
     opacity: 0.6;
     background-color: #2f4455 !important;
 }
 .inputField.inputField_disabled:hover,
 .inputField.inputField_disabled:focus {
-    border: 2px solid #8D8D99 !important;
+    border: 1px solid #8D8D99 !important;
 }
 .multipleSelect .wpforms-field-medium {
     padding: 0 !important;
 }
 option {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 .inputField:hover, 
 .inputField:focus {
@@ -2042,22 +2048,21 @@ h3 .job-title {
 /**dashboard**/
 .dashboardWrapper {
     display: flex;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 .dashboardSidebar {
     background-color: #1b2a36;
     width: 300px;
     height: 100%;
-    padding: 35px 20px 60px 20px;
+    padding: 56px 20px 60px 20px;
     position: fixed;
-    z-index: 3;
+    z-index: 2;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
     background-color: #1b2a36;
     overflow-x: scroll;
-}
-.dashboardSidebar.collapsed {
-    width: 100px;
 }
 .dashboardSidebar .dashboardCollapse {
     position: fixed;
@@ -2229,21 +2234,12 @@ h3 .job-title {
     opacity: 1;
     transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), margin 0.3s, color 0.3s;
 }
-.dashboardSidebar.collapsed .dashboardCollapse .dashboardCollapseBtn .dashboardCollapseCont,
-.dashboardSidebar.collapsed .dashboardProfile .dashboardProfileCont .dashboardProfileName,
-.dashboardSidebar.collapsed .dashboardOptions ul li .dashboardListText {
-    display: none;
-    opacity: 0;
-}
 .dashboardContent {
     width: 100%;
     padding-left: 300px;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
-}
-.sidebar_collapsed .dashboardContent {
-    padding-left: 100px;
 }
 .dashboard-main .dashboardInner {
     padding: 105px 50px 50px;
@@ -2257,7 +2253,10 @@ h3 .job-title {
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
+}
+.dashboardContent .dashboardHead .dashboardHamburger {
+    display: none;
 }
 .dashboardContent .dashboardNotifications .dashboardNotificationBtn,
 .dashboardContent .dashboardNotifications .dashboardNotificationBtn:hover,
@@ -2310,7 +2309,7 @@ h3 .job-title {
     color: #ffffff;
 }
 .dashboardContent .dashboardHead .dashboardSearchBox .searchGroup input {
-    background-color: transparent;
+    background-color: #1e1e20;
     width: calc(100% - 22px);
     border: 0;
     font-size: 14px; 
@@ -2593,7 +2592,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .sjb-page .sjb-detail .list-data .v2 .jobpost-form .file {
     background: transparent;
-    border: 2px solid #8D8D99;
+    border: 1px solid #8D8D99;
     border-radius: 10px;
     box-shadow: none;
     padding: 12px 20px;
@@ -2942,9 +2941,6 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .singleJobcontent .jobContent .jobContentInner ol li strong {
     font-family: 'Gilroy-Bold';
 }
-.singleJobcontent .singleJobTitle {
-    margin-bottom: 50px;
-}
 .registerWrapper {
     background-image: url('../images/patternBg.svg');
     background-position: center bottom;
@@ -3213,14 +3209,15 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .jobseek_application_resume_box {
     width: 100% !important;
-    border: 2px solid #8D8D99 !important;
+    border: 1px solid #8D8D99 !important;
     border-radius: 10px !important;
-    background-color: transparent !important;
+    background-color: #1e1e20 !important;
     color: #ffffff !important;
     font-family: 'Gilroy-Light' !important;
     font-size: 18px !important;
     padding: 20px 20px !important;
     text-align: center;
+    position: relative;
 }
 .jobseek_application_resume_box .jobseek_application_resume_boxIn_txt {
     font-family: 'Gilroy-Bold';
@@ -3229,7 +3226,14 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .jobseek_application_resume_box input {
     opacity: 0;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 .jobseek_application_resume_box label {
     cursor: pointer;
@@ -3466,9 +3470,9 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .kg_contact_multi_services .selectBox {
     width: 100% !important;
-    border: 2px solid #8D8D99 !important;
+    border: 1px solid #8D8D99 !important;
     border-radius: 10px !important;
-    background-color: transparent !important;
+    background-color: #1e1e20 !important;
     color: #ffffff !important;
     font-family: 'Gilroy-Light' !important;
     font-size: 18px !important;
@@ -3596,4 +3600,31 @@ input[type=checkbox], input[type=radio] {
 }
 .dashboard-main .h3 {
     margin-bottom: 20px;
+}
+.cmn_inputIcon.cmn_inputIcon_date {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+.cmn_inputIcon.cmn_inputIcon_date input {
+    cursor: pointer;
+}
+.cmn_inputIcon.cmn_inputIcon_date::before {
+    content: "\f073";
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    z-index: -1;
+}
+.dashboardWrapper .dashboardHead .dashboardHamburger a {
+    font-size: 20px;
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.dashboardWrapper .dashboardHead .dashboardHamburger a:hover,
+.dashboardWrapper .dashboardHead .dashboardHamburger a:focus {
+    color: #ffffff;
 }

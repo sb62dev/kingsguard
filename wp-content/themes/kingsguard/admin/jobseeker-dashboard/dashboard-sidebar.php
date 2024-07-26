@@ -53,5 +53,11 @@ jQuery(document).ready(function () {
         jQuery(".dashboardSidebar").toggleClass("collapsed");
         jQuery("body").toggleClass("sidebar_collapsed");
     });
+    var currentUrl = window.location.pathname;
+    jQuery('.dashboardMenu a').each(function() {
+        if (jQuery(this).attr('href') === currentUrl) {
+            jQuery(this).addClass('active');
+        }
+    });
 });
 </script>

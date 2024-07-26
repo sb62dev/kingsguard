@@ -13,6 +13,9 @@
             <span class="dashboardNotificationDot"></span>
         </a>
     </div> -->
+    <div class="dashboardHamburger">
+        <a href="javascript:void(0);" class="dashboardCollapseBtn"> <span class="hamburgerIcon"><i class="fa fa-bars" aria-hidden="true"></i></span></a>
+    </div>
     <div class="dashboardLogout">
         <a href="javascript:void(0);" class="jobseek-logout-trigger"> <span class="logoutIcon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a>
     </div>

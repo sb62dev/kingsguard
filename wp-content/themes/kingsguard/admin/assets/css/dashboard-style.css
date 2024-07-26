@@ -35,6 +35,9 @@ a:focus,
     width: 250px;
     background-color: #1b2a36;
 }
+#wpfooter {
+    display: none !important;
+}
 #wpcontent, #wpfooter {
     margin-left: 250px;
     padding: 40px 50px;
