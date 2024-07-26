@@ -34,17 +34,25 @@ $user = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}jobseekers_u
                         </div>  
                     </div>
                     <div class="dash_profilePage-formWrapper"> 
-                        <?php if ($user) { ?>
+                        <?php if ($user) { 
+                            $user_info = maybe_unserialize($user->user_info); 
+                            $profile_pic = isset($user_info['profile_pic']) ? esc_html($user_info['profile_pic']) : '';
+                            if (!empty($profile_pic)) {
+                                $upload_dir = wp_upload_dir();
+                                $custom_upload_dir = $upload_dir['baseurl'] . '/jobseekers-assets';
+                                $profile_pic = $custom_upload_dir . '/' . ltrim($profile_pic, '/');
+                            }
+                        ?>
                             <div class="profileInfo">
                                 <div class="row">
-                                    <?php if (isset($user->profile_pic) && !empty($user->profile_pic)) { ?>
+                                    <?php if (isset($profile_pic) && !empty($profile_pic)) { ?>
                                         <div class="col-md-4">
                                             <div class="prfile_lbl"> Picture: </div>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="prfile_cntInfo_img"> 
                                                 <div class="prfile_cntInfo_imgIn"> 
-                                                    <img src="<?php echo esc_attr($user->profile_pic); ?>" alt="Profile Pic">
+                                                    <img src="<?php echo esc_attr($profile_pic); ?>" alt="Profile Pic">
                                                 </div>
                                             </div>
                                         </div>
@@ -71,6 +79,30 @@ $user = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}jobseekers_u
                                         </div>
                                         <div class="col-md-8">
                                         <div class="prfile_cntInfo"> <?php echo esc_attr($user->username); ?></div>
+                                        </div>
+                                    <?php } ?> 
+                                    <?php if (isset($user_info['phone']) && !empty($user_info['phone'])) { ?>
+                                        <div class="col-md-4">
+                                            <div class="prfile_lbl"> Phone Number: </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="prfile_cntInfo"> <?php echo esc_attr($user_info['phone']); ?></div>
+                                        </div>
+                                    <?php } ?> 
+                                    <?php if (isset($user_info['license']) && !empty($user_info['license'])) { ?>
+                                        <div class="col-md-4">
+                                            <div class="prfile_lbl"> Security Guard License: </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="prfile_cntInfo"> <?php echo esc_attr($user_info['license']); ?></div>
+                                        </div>
+                                    <?php } ?> 
+                                    <?php if (isset($user_info['license_expiry_date']) && !empty($user_info['license_expiry_date'])) { ?>
+                                        <div class="col-md-4">
+                                            <div class="prfile_lbl"> Security Guard License Expiry Date: </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="prfile_cntInfo"> <?php echo esc_attr($user_info['license_expiry_date']); ?></div>
                                         </div>
                                     <?php } ?> 
                                 </div>

@@ -14,17 +14,28 @@ function jobseekers_user_menu_shortcode() {
         $username = isset( $_COOKIE['jobseeker_username'] ) ? esc_html( $_COOKIE['jobseeker_username'] ) : '';
         if ( $username ) { 
             $user = $wpdb->get_row( $wpdb->prepare(
-                "SELECT first_name, email FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
+                "SELECT first_name, email, user_info FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
                 $username
             ));
     
             if ( $user ) {
-                $email = esc_html( $user->email );
+                    $email = esc_html( $user->email );
+                    $user_info = maybe_unserialize($user->user_info); 
+                    $profile_pic = isset($user_info['profile_pic']) ? esc_html($user_info['profile_pic']) : '';
+    
+                    // Set default profile picture if not set
+                    if (!empty($profile_pic)) {
+                        $upload_dir = wp_upload_dir();
+                        $custom_upload_dir = $upload_dir['baseurl'] . '/jobseekers-assets';
+                        $profile_pic = $custom_upload_dir . '/' . ltrim($profile_pic, '/');
+                    } else {
+                        $profile_pic = get_template_directory_uri() . '/assets/images/user.png';
+                    }
                 ?>
                 <a href="/jobseekers-user-profile/" class="dashboardProfile">
                     <div class="dashboardProfileCont">
-                        <div class="dashboardProfileImg">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/user.png" alt="Profile Icon">
+                        <div class="dashboardProfileImg">  
+                            <img src="<?php echo esc_html( $profile_pic ); ?>" alt="Profile Icon">
                         </div>
                         <div class="dashboardProfileName">
                             <div class="dashboardProfileNm"><?php echo esc_html( $user->first_name ); ?></div>

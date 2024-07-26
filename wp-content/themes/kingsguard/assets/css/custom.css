@@ -2326,6 +2326,14 @@ h3 .job-title {
     font-size: 24px;
     width: 22px;
 }
+.prfile_cntInfo_img .prfile_cntInfo_imgIn img {
+    width: 130px;
+    height: 130px;
+    border-radius: 300px;
+}
+.profileInfo [class*='col-'] {
+    margin-bottom: 20px;
+}
 .quoteInnerWrapper {
     max-width: 800px;
     margin: 0 auto;

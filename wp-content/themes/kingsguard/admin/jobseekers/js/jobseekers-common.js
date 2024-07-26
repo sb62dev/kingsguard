@@ -29,7 +29,7 @@ var min_7_length_err_msg = "Minimum characters limit is 7.";
 
 var namePattern = /[^a-zA-Z ]/g;
 var passPattern = /[^a-zA-Z0-9 ]/g;
-var emailPattern = /[^a-zA-Z0-9@._-]/g; 
+var emailPattern = /[^a-zA-Z0-9@._+-]/g;; 
 
 var errorClass = ".jobseek_error"; 
 var loaderClass = ".jobseek_loader";
@@ -132,12 +132,14 @@ function cleanInputField(selector, allowedCharsRegex, removeSpaces = true, delay
             jQuery(selector).val(inputValue);
         }, delay);
     });
-}
+} 
 
-// Hide errors on focus
 function hideErrorOnFocus(selector) {
     $(document).on("focus", selector, function () {
-        $(this).closest('.jobseek_application_inputWrap').find('.jobseek_error').hide();
+        var $this = $(this);
+        var $classWrapers = '.jobseek_application_inputWrap, .kg_contact_inputWrap, .jobseek_reset_password_inputWrap, .jobseek_forgot_password_inputWrap, .jobseek_login_inputWrap, .jobseek_profile_inputWrap, .jobseek_register_inputWrap';
+        var $inputWrap = $this.closest($classWrapers); 
+        $inputWrap.find('.jobseek_error, .contact_error').hide();
     });
 }
 
