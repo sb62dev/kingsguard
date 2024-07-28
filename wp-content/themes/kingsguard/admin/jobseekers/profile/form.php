@@ -47,6 +47,16 @@ function jobseekers_profile_form() {
             }
         }
     }
+
+    $profile_pic = !empty($user_info['profile_pic']) ? esc_attr($user_info['profile_pic']) : '';
+
+    if (!empty($profile_pic)) {
+        $upload_dir = wp_upload_dir();
+        $custom_upload_dir = $upload_dir['baseurl'] . '/jobseekers-assets';
+        $profile_pic = $custom_upload_dir . '/' . ltrim($profile_pic, '/');
+    } else {
+        $profile_pic = get_template_directory_uri() . '/assets/images/user.png';
+    }
     
     ob_start(); ?>
     <div class="jobseekers_profile_wrapper">
@@ -59,23 +69,18 @@ function jobseekers_profile_form() {
                     <div class="jobseek_loader" style="display: none;"><div class="jobLoader"></div></div>
                     <div class="jobseek_profile_cmnError" style="display: none;"><div class="jobseek_profile_cmnError_in"></div></div>
                     <div class="jobseek_profile_row row"> 
-                        <div class="jobseek_profile_col col-md-12">
-                            <div class="jobseek_application_inputWrap" id="prfilePicBoxWrap">
-                                <label class="jobseek_application_label"> Profile Pic </label>
-                                <div class="jobseek_application_resume_box">
-                                    <div class="jobseek_application_resume_boxIn">
-                                        <label for="jobseek_application_licnese_copy">
-                                            <div class="jobseek_application_resume_boxIn_img">
-                                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/resume_icon.svg" alt="Resume Icon">
-                                            </div>
-                                            <div class="jobseek_application_resume_boxIn_txt"> Upload Profile Pic </div>
-                                        </label>
+                        <div class="jobseek_profile_col col-md-12"> 
+                            <div class="jobseek_profile_picMainwrap"> 
+                                <label class="jobseek_profile_label"> Profile Pic </label>
+                                <div class="jobseek_application_profilepic_wrap"> 
+                                    <div class="jobseek_application_profilepic_wrap_img">
+                                        <img class="profile-pic-preview" src="<?php echo esc_url($profile_pic); ?>" alt="Profile Pic" style="<?php echo empty($profile_pic) ? 'display:none;' : ''; ?>">
+                                        <a href="javascript:void(0);" class="edit-profile-pic-link"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     </div>
-                                    <input type="file" class="jobseek_file_input" id="jobseek_profile_pic_copy" name="jobseek_profile_pic_copy">
-                                    <div class="file-name">No file chosen</div>
+                                    <input type="file" class="jobseek_file_input" id="jobseek_profile_pic_copy" name="jobseek_profile_pic_copy"> 
                                 </div> 
                                 <div class="jobseek_error"></div>
-                            </div>
+                            </div>   
                         </div>   
                         <div class="jobseek_profile_col col-md-6">
                             <div class="jobseek_profile_inputWrap">
