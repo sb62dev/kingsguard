@@ -352,7 +352,7 @@ header.Sticky-fixed .logo .logotxt {
     padding: 10px 0;
     text-align: left;
     font-family: 'Gilroy-Light';
-    text-transform: inherit;
+    text-transform: capitalize;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
@@ -1778,6 +1778,7 @@ h3 .job-title {
     padding: 30px;
     border-radius: 12px;
     text-align: center;
+    height: 100%;
 }
 .contact_card_body_div .contactCardIcon {
     margin-bottom: 15px;
@@ -1925,7 +1926,45 @@ h3 .job-title {
     line-height: 29.77px;
     letter-spacing: -1.1266067028045654px;    
 }
-.load_more_btn{
+.projects_section_two .projectOverlayDes {
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo {
+    margin-top: 20px;
+    display: flex;
+    width: 100% !important;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .85s cubic-bezier(.475,.425,0,.995),opacity .85s cubic-bezier(.475,.425,0,.995);
+}
+.projects_section_two .projectCardLink:hover .projectMoreInfo {
+    max-height: 124px;
+    opacity: 1;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner {
+    width: 33.333%;
+    text-align: center;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner + .projectMoreInfoInner {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #fff;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner h6 {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner p {
+    font-size: 14px !important;
+    letter-spacing: 0.2px !important;
+    line-height: 1.2 !important;
+}
+.load_more_btn {
     margin-top: 50px;
     text-align: center;
 }

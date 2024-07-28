@@ -52,8 +52,9 @@ jQuery(document).ready(function () {
         slidesToShow: 6,
         slidesToScroll: 1,
         dots: false,
-        speed: 1000,
-        autoplaySpeed: 3000,
+        speed: 2500,
+        autoplaySpeed: 0,
+        cssEase: 'linear',
         responsive: [
             {
               breakpoint: 1441,

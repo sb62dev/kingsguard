@@ -104,22 +104,57 @@ get_header();
                         }
 
                         if ($count == 0) {
-                            $column_classes = 'col-lg-4 col-md-5 col-sm-12';
+                            $column_classes = 'col-lg-4 col-md-6 col-sm-12';
                         } elseif ($count == 1) {
-                            $column_classes = 'col-lg-8 col-md-7 col-sm-12';
+                            $column_classes = 'col-lg-8 col-md-6 col-sm-12';
                         } else {
                             $column_classes = 'col-lg-4 col-md-6 col-sm-12';
                         }
                 ?>
                 <div class="<?php echo $column_classes; ?>" data-aos="fade-down" data-aos-duration="1000" data-city="<?php echo esc_attr($project_city_names_str); ?>" data-service="<?php echo esc_attr($project_service_names_str); ?>">
                     <div class="projects_sec2_small_card_body">
-                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($project_title); ?>">
-                        <div class="project_overlay">
-                            <div class="<?php echo $count == 1 ? 'project_bigcard_text' : 'project_card_text'; ?>">
-                                <a href="<?php echo esc_url($project_link); ?>"><?php echo esc_html($project_title); ?></a>
-                                <p><?php echo esc_html($location); ?></p>
+                        <a href="<?php echo esc_url($project_link); ?>" class="projectCardLink">
+                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($project_title); ?>">
+                            <div class="project_overlay">
+                                <div class="projectOverlayDes">
+                                    <div class="<?php echo $count == 1 ? 'project_bigcard_text' : 'project_card_text'; ?>">
+                                        <h4><?php echo esc_html($project_title); ?></h4>
+                                        <p><?php echo esc_html($location); ?></p>
+                                    </div>
+                                    <div class="projectMoreInfo">
+                                        <?php 
+                                            $project_client = get_field('project_client');
+                                            if(isset($project_client) && !empty($project_client)){ 
+                                        ?>
+                                        <div class="projectMoreInfoInner">
+                                            <h6>Client</h6>
+                                            <p><?php echo $project_client; ?> </p>
+                                        </div>
+                                        <?php } ?>
+                                        <?php 
+                                            $project_cities = get_the_terms(get_the_ID(), 'cities');
+                                            if($project_cities && !is_wp_error($project_cities)) { 
+                                                $project_city_names = wp_list_pluck($project_cities, 'name');
+                                        ?>
+                                        <div class="projectMoreInfoInner">
+                                            <h6>City</h6>
+                                            <p><?php echo implode(', ', $project_city_names); ?> </p>
+                                        </div>
+                                        <?php } ?>
+                                        <?php 
+                                            $project_services = get_the_terms(get_the_ID(), 'service-types');
+                                            if($project_services && !is_wp_error($project_services)) { 
+                                                $project_service_names = wp_list_pluck($project_services, 'name');
+                                        ?>
+                                        <div class="projectMoreInfoInner">
+                                            <h6>Service Type</h6>
+                                            <p><?php echo implode(', ', $project_service_names); ?> </p>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <?php $count++; endwhile; wp_reset_postdata(); else : ?>
