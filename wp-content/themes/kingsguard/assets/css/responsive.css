@@ -1,6 +1,13 @@
 /*   Responsive Css  */  
 
 @media screen and (min-width: 768px){
+    .dashboardSidebar.collapsed .dashboardProfile {
+        justify-content: center;
+    }
+    .dashboardSidebar.collapsed .dashboardProfile .dashboardProfileCont .dashboardProfileImg img {
+        width: 30px;
+        height: 30px;
+    }
     .dashboardSidebar.collapsed .dashboardCollapse .dashboardCollapseBtn .dashboardCollapseCont,
     .dashboardSidebar.collapsed .dashboardProfile .dashboardProfileCont .dashboardProfileName,
     .dashboardSidebar.collapsed .dashboardOptions ul li .dashboardListText {
@@ -1021,6 +1028,14 @@ input:-moz-placeholder {
 .h3 {
     font-size: 24px;
 }
+.fixdNav-mid .website_nav2 li.jobseek_login_link a > img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid #aeafb0;
+    object-fit: cover;
+    margin-right: 4px;
+}
 } 
 @media screen and ( max-width: 767px ){
 p {
@@ -1334,7 +1349,7 @@ div#collapsibleNavbar {
 }
 .joinUsSecOuter.getStartedSec {
     padding-bottom: 70px;
-    padding-top: 0;
+    padding-top: 30px;
 }
 .joinUsSecOuter.getStartedSec::before {
     top: auto;
@@ -1768,6 +1783,10 @@ button.modal_close span {
 .dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileName .dashboardProfileNm {
     font-size: 14px;
 }
+.dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileImg img {
+    width: 20px;
+    height: 20px;
+}
 .dashboardSidebar .dashboardProfile .dashboardProfileArrow .dashboardProfileBtn {
     font-size: 20px;
 }
@@ -1888,11 +1907,19 @@ button.modal_close span {
     .clientLogoSlide .clientLogoSlideInner img {
         max-height: 35px;
     }
-    .singleJobcontent .singleJobTitle {
-        margin-bottom: 50px;
-    }
     .singleJobTitle .h2 {
         margin-bottom: 20px;
+    }
+    .projectInfoWrap .projectInfo.projectInfoBorder {
+        margin-top: 0;
+        padding-top: 0;
+        border: 0;
+    }
+    .projectInfoBlockWrap  {
+        margin-bottom: 20px;
+    }
+    .projectDetailCont.py100 {
+        padding-top: 40px;
     }
 }
 @media screen and ( max-width: 413px ) { 
