@@ -1,7 +1,10 @@
 <?php    
 
 /* Function to add common JS for Jobseekers */
-wp_enqueue_script('custom-jobseekers-common-script', get_template_directory_uri() . '/admin/jobseekers/js/jobseekers-common.js', array('jquery'), null, true);
+function enqueue_custom_jobseekers_scripts() {
+    wp_enqueue_script('custom-jobseekers-common-script', get_template_directory_uri() . '/admin/jobseekers/js/jobseekers-common.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_jobseekers_scripts');
 
 /* Function to access google recaptcha response */
 function jobseeks_google_recaptcha($captcha_response) {
@@ -107,11 +110,11 @@ function sendDataToZohoLeads($data) {
     $payload = json_encode(array(
         'data' => array(
             array(
-                'Lead_Source' => isset($data['Lead_Source']) ? $data['Lead_Source'] : 'Website',
-                'Last_Name' => isset($data['last_name']) ? $data['last_name'] : 'Doe22',
-                'First_Name' => isset($data['first_name']) ? $data['first_name'] : 'John',
-                'Email' => isset($data['Emaemailil']) ? $data['email'] : 'john.doe@example.com',
-                // Add more fields as necessary
+                'Lead_Source' => isset($data['lead_source']) ? $data['lead_source'] : 'Website',
+                'Email' => isset($data['email']) ? $data['email'] : '', 
+                'First_Name' => isset($data['first_name']) ? $data['first_name'] : '',
+                'Last_Name' => isset($data['last_name']) ? $data['last_name'] : '', 
+                'Phone' => isset($data['phone_number']) ? $data['phone_number'] : '',    
             )
         )
     ));

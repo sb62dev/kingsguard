@@ -65,9 +65,11 @@ function handle_contact_form() {
 
                 // Usage example
                 $userData = array(
+                    'lead_source' => 'Quote',
                     'email' => $email,
                     'first_name' => $fname,
-                    'last_name' => $lname
+                    'last_name' => $lname,
+                    'phone_number' => $phone,   
                 ); 
 
                 send_contact_user_email($email, $name);  
