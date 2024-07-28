@@ -668,16 +668,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	}
 endif;
 
-require get_template_directory() . '/custom/custom-post-type.php'; 
-
-function enqueue_project_filter_script() {
-    wp_enqueue_script('project-filter', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), null, true);
-    
-    wp_localize_script('project-filter', 'projectFilter', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-    ));
-}
-add_action('wp_enqueue_scripts', 'enqueue_project_filter_script');
+require get_template_directory() . '/custom/custom-post-type.php';  
 
 function filter_projects_ajax_handler() {
     $city = isset($_POST['city']) ? sanitize_text_field($_POST['city']) : '';

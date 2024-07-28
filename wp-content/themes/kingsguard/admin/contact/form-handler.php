@@ -63,9 +63,16 @@ function handle_contact_form() {
                     array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
                 );  
 
+                // Usage example
+                $userData = array(
+                    'email' => $email,
+                    'first_name' => $fname,
+                    'last_name' => $lname
+                ); 
+
                 send_contact_user_email($email, $name);  
                 send_contact_admin_email($name,$email,$title,$phone,$services_data,$parking_services,$security_services,$site_types,$length_cover,$add_info);
-                add_subscriber_to_mailchimp($list_id, $email, $fname, $lname, $phone, $form_type);
+                sendDataToZohoLeads($userData);
 
                 wp_send_json_success(array(
                     'message' => 'Submitted successful!'

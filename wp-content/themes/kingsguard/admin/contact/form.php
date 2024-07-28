@@ -52,7 +52,7 @@ function contact_form() {
                         <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap">
                                 <label class="kg_contact_label"> Phone Number<sup>*</sup> </label>
-                                <input type="text" class="inputField" id="kg_contact_phone" name="kg_contact_phone" placeholder="Your Phone">
+                                <input type="text" class="inputField numberonly" id="kg_contact_phone" name="kg_contact_phone" placeholder="Your Phone">
                                 <div class="contact_error"></div>
                             </div>
                         </div>  
