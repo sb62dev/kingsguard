@@ -2167,6 +2167,9 @@ h3 .job-title {
 .dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileImg img {
     border: 2px solid #0098FF;
     border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
 }
 .dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileName {
     color: #fff;
@@ -2989,7 +2992,10 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .registerWrapper .registerInner .jobseek_register_inputWrap,
 .registerWrapper .registerInner .jobseek_login_inputWrap,
 .registerWrapper .registerInner .jobseek_login_captcha_Wrap,
-.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_cmnError {
+.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_cmnError,
+.registerWrapper .registerInner .jobseek_forgot_password_inputWrap, 
+.registerWrapper .registerInner .jobseek_forgot_password_captcha_Wrap,
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_captcha_Wrap {
     margin-bottom: 25px;
 }
 .registerWrapper .registerInner label.jobseek_register_label {
@@ -2999,7 +3005,9 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     margin-bottom: 10px;
 }
 .registerWrapper .registerInner .jobseek_error,
-.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_error {
+.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_error,
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_captcha_Wrap .jobseek_error,
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_application_inputWrap .jobseek_error {
     margin-top: 10px;
     color: #ff0000;
     font-size: 14px;
@@ -3016,7 +3024,8 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     font-size: 16px;
 }
 .registerWrapper .jobseek_login_inputWrap .btn-style,
-.registerWrapper .jobseek_register_inputWrap .btn-style {
+.registerWrapper .jobseek_register_inputWrap .btn-style,
+.registerWrapper .jobseek_forgot_password_inputWrap .btn-style {
     width: 100%;
 }
 .registerWrapper .registerInner .jobseekers_register_thankWrap {
@@ -3036,12 +3045,14 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     text-align: center;
 }
 .registerWrapper .jobseek_login_btmWrap p,
-.registerWrapper .jobseek_register_btmWrap p {
-    font-size: 16px;
+.registerWrapper .jobseek_register_btmWrap p,
+.registerWrapper .jobseek_forgot_password_btmWrap > a {
+    font-size: 14px;
     text-align: center;
 }
 .registerWrapper .jobseek_login_btmWrap p a,
-.registerWrapper .jobseek_register_btmWrap p a {
+.registerWrapper .jobseek_register_btmWrap p a,
+.registerWrapper .jobseek_forgot_password_btmWrap > a {
     color: #0098FF;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
@@ -3050,7 +3061,9 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .registerWrapper .jobseek_login_btmWrap p a:hover,
 .registerWrapper .jobseek_login_btmWrap p a:focus,
 .registerWrapper .jobseek_register_btmWrap p a:hover,
-.registerWrapper .jobseek_register_btmWrap p a:focus {
+.registerWrapper .jobseek_register_btmWrap p a:focus,
+.registerWrapper .jobseek_forgot_password_btmWrap > a:hover,
+.registerWrapper .jobseek_forgot_password_btmWrap > a:focus {
     color: #5ab9f8;
     text-decoration: none;
 }
@@ -3538,7 +3551,8 @@ input[type=checkbox], input[type=radio] {
     position: relative;
     top: 2px;
 }
-.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label sup {
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label sup,
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_inputWrap .jobseek_profile_label sup {
     color: #d63637;
     font-weight: normal;
     font-size: 24px;
@@ -3652,4 +3666,15 @@ input[type=checkbox], input[type=radio] {
     width: 24px;
     height: 24px;
     margin-right: 4px;
+}
+.jobseek_application_inputWrap, .jobseek_profile_inputWrap {
+    margin-bottom: 30px !important;
+}
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_check_input {
+    position: relative;
+    padding-left: 30px;
+}
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_check_input input[type=checkbox] {
+    position: absolute;
+    left: 0;
 }

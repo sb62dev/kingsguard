@@ -1708,7 +1708,9 @@ button.modal_close span {
 .registerWrapper .registerInner .jobseek_register_captcha_Wrap iframe,
 .registerWrapper .registerInner .jobseek_login_captcha_Wrap iframe,
 .kg_contact_wrapper .kg_contact_form .kg_contact_captcha_Wrap iframe,
-.jobseek_application_wrap .jobseek_application_col .jobseek_application_captcha_Wrap iframe {
+.jobseek_application_wrap .jobseek_application_col .jobseek_application_captcha_Wrap iframe,
+.registerWrapper .registerInner .jobseek_forgot_password_captcha_Wrap iframe,
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_captcha_Wrap iframe {
     transform: scale(0.8) translate(-30px, 0px);
     -webkit-transform: scale(0.8) translate(-30px, 0px);
     -o-transform: scale(0.8) translate(-30px, 0px);

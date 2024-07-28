@@ -79,14 +79,14 @@ function jobseekers_profile_form() {
                         </div>   
                         <div class="jobseek_profile_col col-md-6">
                             <div class="jobseek_profile_inputWrap">
-                                <label class="jobseek_profile_label"> Your First Name* </label>
+                                <label class="jobseek_profile_label"> Your First Name <sup>*</sup> </label>
                                 <input type="text" class="inputField" id="jobseek_profile_fname" name="jobseek_profile_fname" value="<?php echo esc_attr( $user_info['fname'] ); ?>">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_profile_col col-md-6">
                             <div class="jobseek_profile_inputWrap">
-                                <label class="jobseek_profile_label"> Your Last Name* </label>
+                                <label class="jobseek_profile_label"> Your Last Name <sup>*</sup> </label>
                                 <input type="text" class="inputField" id="jobseek_profile_lname" name="jobseek_profile_lname" value="<?php echo esc_attr( $user_info['lname'] ); ?>">
                                 <div class="jobseek_error"></div> 
                             </div>
@@ -115,21 +115,21 @@ function jobseekers_profile_form() {
                             </div>
                         </div> 
                         <div class="jobseek_profile_col col-md-12">
-                            <div class="jobseek_profile_inputWrap">
+                            <div class="jobseek_profile_inputWrap jobseek_check_input">
                                 <input type="checkbox" id="jobseek_profile_toggle_password" name="jobseek_profile_toggle_password">
                                 <label for="jobseek_profile_toggle_password">Do you want to change your password?</label>
                             </div>
                         </div>
                         <div class="jobseek_profile_col col-md-6 jobseek_profile_password_col">
                             <div class="jobseek_profile_inputWrap">
-                                <label class="jobseek_profile_label"> Your Password* </label>
+                                <label class="jobseek_profile_label"> Your Password <sup>*</sup> </label>
                                 <input type="password" class="inputField" id="jobseek_profile_password" name="jobseek_profile_password" placeholder="Password*">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
                         <div class="jobseek_profile_col col-md-6 jobseek_profile_password_col">
                             <div class="jobseek_profile_inputWrap">
-                                <label class="jobseek_profile_label"> Confirm Password* </label>
+                                <label class="jobseek_profile_label"> Confirm Password <sup>*</sup> </label>
                                 <input type="password" class="inputField" id="jobseek_profile_confirm_password" name="jobseek_profile_confirm_password" placeholder="Confirm Password*">
                                 <div class="jobseek_error"></div>
                             </div>
