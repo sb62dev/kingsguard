@@ -17,7 +17,10 @@ function job_application_form() {
     $user_info = array(
         'fname' => '',
         'lname' => '',
-        'email' => ''
+        'email' => '',
+        'phone' => '',
+        'license' => '',
+        'expiry_date' => '',
     );
 
     if ( isset($_COOKIE['jobseeker_logged_in']) && $_COOKIE['jobseeker_logged_in'] === 'true' ) {
@@ -25,7 +28,7 @@ function job_application_form() {
         $username = isset($_COOKIE['jobseeker_username']) ? esc_html($_COOKIE['jobseeker_username']) : '';
         if ( $username ) {
             $user = $wpdb->get_row($wpdb->prepare(
-                "SELECT first_name, last_name, email FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
+                "SELECT * FROM {$wpdb->prefix}jobseekers_users WHERE username = %s",
                 $username
             ));
             if ($user) {
@@ -34,6 +37,12 @@ function job_application_form() {
                     'lname' => $user->last_name,
                     'email' => $user->email
                 );
+
+                $user_info_data = maybe_unserialize($user->user_info);
+
+                if (is_array($user_info_data)) {
+                    $user_info = array_merge($user_info, $user_info_data);
+                } 
             }
         }
     }
@@ -74,7 +83,7 @@ function job_application_form() {
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Phone Number* </label>
-                                <input type="text" class="inputField numberonly" id="jobseek_application_phone" name="jobseek_application_phone" placeholder="Phone Number*">
+                                <input type="text" class="inputField numberonly" id="jobseek_application_phone" name="jobseek_application_phone" value="<?php echo esc_attr( $user_info['phone'] ); ?>">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div> 
@@ -106,7 +115,7 @@ function job_application_form() {
                         <div class="jobseek_application_col col-md-6">
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Security Guard License* </label>
-                                <input type="text" class="inputField numberonly" id="jobseek_application_license" name="jobseek_application_license" placeholder="Security Guard License*">
+                                <input type="text" class="inputField numberonly" id="jobseek_application_license" name="jobseek_application_license" value="<?php echo esc_attr( $user_info['license'] ); ?>">
                                 <div class="jobseek_error"></div>
                             </div>
                         </div>
@@ -114,7 +123,7 @@ function job_application_form() {
                             <div class="jobseek_application_inputWrap">
                                 <label class="jobseek_application_label"> Expiry Date* </label>
                                 <div class="cmn_inputIcon cmn_inputIcon_date">
-                                    <input type="text" class="inputField" id="jobseek_application_date" name="jobseek_application_date" placeholder="Expiry Date*">
+                                    <input type="text" class="inputField" id="jobseek_application_date" name="jobseek_application_date" value="<?php echo esc_attr( $user_info['license_expiry_date'] ); ?>">
                                 </div> 
                                 <div class="jobseek_error"></div>
                             </div>
