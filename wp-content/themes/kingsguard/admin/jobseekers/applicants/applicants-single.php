@@ -98,9 +98,7 @@ function view_jobseeker_page() {
             }
             echo '</td>'; 
             echo '<td>' . esc_html($job_date) . '</td>';
-            echo '<td>';
-            echo '<button type="button" class="button open-modal" data-index="' . esc_attr($index) . '" data-status="' . esc_attr(isset($application['status']) ? $application['status'] : '') . '">Update Status</button>';
-            echo '</td>';
+            echo '<td><a href="' . admin_url('admin.php?page=jobseekers-detailed&user_id=' . $user_id . '&application_index=' . $index) . '" class="button button-primary">View Details</a></td>'; 
             echo '</tr>';
             $counter++; 
         }

@@ -18,6 +18,14 @@ function jobseekers_admin_menu() {
         'view-jobseeker',
         'view_jobseeker_page'
     );
+    add_submenu_page(
+        null,
+        'Detailed Application',
+        'Detailed Application',
+        'read',
+        'jobseekers-detailed',
+        'jobseekers_detailed_page'
+    );
 }
 
 add_action('admin_menu', 'jobseekers_admin_menu');
@@ -27,6 +35,9 @@ include('applicants-archive.php');
 
 // Applicants Single File
 include('applicants-single.php'); 
+
+// Applicants Single Application File
+include('applicants-single-jobdata.php'); 
 
 // Applicants Email File
 include('applicants-email.php'); 
