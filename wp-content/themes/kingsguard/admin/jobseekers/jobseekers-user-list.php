@@ -31,6 +31,14 @@ function show_user_submitted_jobs($atts) {
         $output .= '<thead><tr><th>Job ID</th><th>Job Title</th><th>Job Type</th><th>Job Location</th><th>Status</th></tr></thead>';
         $output .= '<tbody>';
 
+        // Status to class mapping
+        $status_class_mapping = array(
+            'Applied' => 'status-applied',
+            'Being Reviewed' => 'status-being-reviewed',
+            'Rejected' => 'status-rejected',
+            'Approved' => 'status-approved'
+        );
+
         foreach ($job_applications as $application) {
             $job_id = intval($application['job_id']);
             $job_title = esc_html($application['job_title']);  
@@ -42,13 +50,14 @@ function show_user_submitted_jobs($atts) {
                 $job_types_list = !empty($job_types) ? esc_html(implode(', ', $job_types)) : 'N/A';
                 $job_locations_list = !empty($job_locations) ? esc_html(implode(', ', $job_locations)) : 'N/A';
                 $status = isset($application['status']) ? esc_html($application['status']) : 'N/A';
-
+                // Determine the CSS class based on status
+                $status_class = isset($status_class_mapping[$status]) ? $status_class_mapping[$status] : ' '; 
                 $output .= '<tr>';
                 $output .= '<td>' . esc_html($job_id) . '</td>';
                 $output .= '<td>' . $job_title . '</td>';
                 $output .= '<td>' . $job_types_list . '</td>';
                 $output .= '<td>' . $job_locations_list . '</td>'; 
-                $output .= '<td><span class="status-btn-style">' . $status . '</span></td>'; 
+                $output .= '<td><span class="status-btn-style ' . esc_attr($status_class) . '">' . $status . '</span></td>'; 
                 $output .= '</tr>';
             }
         }  
