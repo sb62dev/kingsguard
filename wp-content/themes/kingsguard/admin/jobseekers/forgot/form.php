@@ -36,14 +36,9 @@ function jobseekers_forgot_password_form() {
                             <button type="submit" name="submit" class="btn-style gradientBtn">Reset Password</button>
                         </div>
                     </div>
-                    <div class="jobseek_login_col col-6">
-                        <div class="jobseek_forgot_password_btmWrap">
-                            <a href="/jobseekers-register/">Register</a>
-                        </div>
-                    </div>
-                    <div class="jobseek_login_col col-6 text-right">
-                        <div class="jobseek_forgot_password_btmWrap">
-                            <a href="/jobseekers-register/">Login</a> 
+                    <div class="jobseek_login_col col-12">
+                        <div class="jobseek_forgot_password_btmWrap text-center">
+                            <a href="/jobseekers-login/">Back to Login</a> 
                         </div>
                     </div>
                 </div>
@@ -100,14 +95,9 @@ function jobseekers_reset_password_form() {
                             <button type="submit" name="submit" class="btn-style gradientBtn">Reset Password</button>
                         </div>
                     </div>
-                    <div class="jobseek_login_col col-6">
-                        <div class="jobseek_forgot_password_btmWrap">
-                            <a href="/jobseekers-register/">Register</a>
-                        </div>
-                    </div>
-                    <div class="jobseek_login_col col-6 text-right">
-                        <div class="jobseek_forgot_password_btmWrap">
-                            <a href="/jobseekers-register/">Login</a> 
+                    <div class="jobseek_login_col col-12">
+                        <div class="jobseek_forgot_password_btmWrap text-center">
+                            <a href="/jobseekers-login/">Back to Login</a> 
                         </div>
                     </div>
                 </div>
@@ -115,6 +105,9 @@ function jobseekers_reset_password_form() {
         </form> 
         <div class="jobseekers_reset_password_thankWrap" id="jobseekers_reset_password_thankWrap"> 
             <p> Password is reset successfully. Go to login page for login. </p>
+            <div class="jobseek_forgot_password_btmWrap text-center">
+                <a href="/jobseekers-login/">Login</a> 
+            </div>
         </div> 
     </div>
     <?php

@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 
         // User or email validation
         if ('' == user.val().trim()) {
-            user.next(errorClass).html(user_empty_err_msg).show();
+            user.next(errorClass).html(email_empty_err_msg).show();
             scrollId = scrollId == '' ? user : scrollId;
             go_ahead = false;
         } else {
