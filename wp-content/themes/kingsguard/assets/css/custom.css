@@ -3334,6 +3334,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
     border-radius: 40px;
     color: #0098FF;
     display: inline-block;
+    min-width: 150px;
 }
 .job-applications-table  .status-btn-style.status-rejected {
     border-color: #F14336;
@@ -3785,4 +3786,30 @@ input[type=checkbox], input[type=radio] {
 }
 .dash_profilePage .profileInfo {
     max-width: 600px;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated {
+    background: #1a2935;
+    border: 1px solid #0098ff;
+    margin: 0;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated .job_profile_update_success_icon span {
+    border: 3px solid #0098ff;
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: #0098ff;
+    font-size: 24px;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated .job_profile_update_success_icon {
+    margin-bottom: 20px;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated h4 {
+    margin-bottom: 0;
 }
