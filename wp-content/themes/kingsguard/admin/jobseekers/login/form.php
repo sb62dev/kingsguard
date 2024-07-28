@@ -20,8 +20,8 @@ function jobseekers_login_form() {
             <div class="jobseek_login_row">
                 <div class="jobseek_login_col"> 
                     <div class="jobseek_login_inputWrap">
-                        <label class="jobseek_register_label"> User Name* </label>
-                        <input type="text" class="inputField" id="jobseek_user" name="jobseek_user" placeholder="Username">
+                        <label class="jobseek_register_label"> Email* </label>
+                        <input type="text" class="inputField" id="jobseek_user" name="jobseek_user" placeholder="Email">
                         <div class="jobseek_error"></div>
                     </div>
                 </div>

@@ -15,8 +15,17 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Gilroy-SemiBold';
 }
-a{
-    color: inherit;
+a {
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #0098FF;
+    text-decoration: none;
 }
 header, footer, main{ 
     display: block;
@@ -476,6 +485,16 @@ header.Sticky-fixed .logo .logotxt {
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
+}
+.main_nav_top ul li.jobseek_login_link a {
+    text-transform: capitalize;
+}
+.main_nav_top ul li.jobseek_login_link a > img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid #aeafb0;
+    object-fit: cover;
 }
 /* .main-navigation ul.website_nav > li.menu-item-has-children:hover .sub-menu {
     opacity: 1;
@@ -2330,9 +2349,13 @@ h3 .job-title {
     width: 22px;
 }
 .prfile_cntInfo_img .prfile_cntInfo_imgIn img {
-    width: 130px;
-    height: 130px;
-    border-radius: 300px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+.profileInfo .prfile_lbl {
+    font-family: 'Gilroy-Medium';
 }
 .profileInfo [class*='col-'] {
     margin-bottom: 20px;
@@ -2995,7 +3018,9 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_cmnError,
 .registerWrapper .registerInner .jobseek_forgot_password_inputWrap, 
 .registerWrapper .registerInner .jobseek_forgot_password_captcha_Wrap,
-.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_captcha_Wrap {
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_captcha_Wrap,
+.registerWrapper .jobseekers_forgot_password_formWrap .jobseekers_reset_password_form .jobseek_reset_password_inputWrap,
+.registerWrapper .registerInner .jobseek_reset_password_cmnError {
     margin-bottom: 25px;
 }
 .registerWrapper .registerInner label.jobseek_register_label {
@@ -3014,7 +3039,8 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .registerWrapper .registerInner .jobseek_register_cmnError_in,
 .registerWrapper .registerInner .jobseek_login_cmnError_in,
-.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_cmnError_in {
+.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_cmnError_in,
+.registerWrapper .jobseek_reset_password_cmnError .jobseek_reset_password_cmnError_in {
     background-color: #ff0000;
     color: #ffffff;
     padding: 10px 20px;
@@ -3025,7 +3051,8 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .registerWrapper .jobseek_login_inputWrap .btn-style,
 .registerWrapper .jobseek_register_inputWrap .btn-style,
-.registerWrapper .jobseek_forgot_password_inputWrap .btn-style {
+.registerWrapper .jobseek_forgot_password_inputWrap .btn-style,
+.registerWrapper .jobseek_reset_password_inputWrap .btn-style {
     width: 100%;
 }
 .registerWrapper .registerInner .jobseekers_register_thankWrap {
@@ -3677,4 +3704,7 @@ input[type=checkbox], input[type=radio] {
 .jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_check_input input[type=checkbox] {
     position: absolute;
     left: 0;
+}
+.dash_profilePage .profileInfo {
+    max-width: 600px;
 }

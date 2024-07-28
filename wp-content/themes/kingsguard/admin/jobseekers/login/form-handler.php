@@ -40,11 +40,11 @@ function handle_jobseekers_login() {
                         setcookie($cookie_username, $user->username, $expiry, '/'); 
                         wp_send_json_success(array('message' => 'Login successful.'));
                     } else {
-                        wp_send_json_error(array('error' => 'Invalid username or password.'));
+                        wp_send_json_error(array('error' => 'Invalid email or password.'));
                     }
                 }
             } else {
-                wp_send_json_error(array('error' => 'User or Email does not exist.'));
+                wp_send_json_error(array('error' => 'Email does not exist.'));
             } 
 
         }
