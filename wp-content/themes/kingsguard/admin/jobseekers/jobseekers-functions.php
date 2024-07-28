@@ -64,46 +64,7 @@ function common_pagination($current_page, $per_page, $total_pages, $base_url) {
     $pagination_html .= '</span></div></div>';
 
     return $pagination_html;
-}  
-
-// function getAccessToken() {
-//     $url = 'https://accounts.zoho.eu/oauth/v2/token';
-//     $data = array(
-//         'grant_type' => 'refresh_token',
-//         'client_id' => ZOHO_CLIENT_ID,
-//         'client_secret' => ZOHO_CLIENT_SECRET,
-//         'refresh_token' => ZOHO_REFRESH_TOKEN
-//     );
-
-//     $ch = curl_init($url);
-//     curl_setopt($ch, CURLOPT_POST, true);
-//     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//     $response = curl_exec($ch);
-
-//     if (curl_errno($ch)) {
-//         echo 'cURL error: ' . curl_error($ch);
-//         curl_close($ch);
-//         return null;
-//     }
-
-//     curl_close($ch);
-//     $response_data = json_decode($response, true); 
-
-//     if (isset($response_data['access_token'])) { 
-//         return $response_data['access_token'];
-//     } else {
-//         if (isset($response_data['error'])) {
-//             echo 'Error: ' . $response_data['error'];
-//             if (isset($response_data['error_description'])) {
-//                 echo ' - ' . $response_data['error_description'];
-//             }
-//         } else {
-//             echo 'Unknown error occurred.';
-//         }
-//         return null;
-//     }
-// }   
+}   
 
 function getZohoAccessToken() {  
     $payload = array(
@@ -173,51 +134,7 @@ function sendDataToZohoLeads($data) {
     }
 
     return $response;
-}
-
-// function sendDataToZohoCampaigns($data) {
-//     $access_token = getAccessToken();
-//     if (!$access_token) {
-//         echo 'Failed to retrieve access token. Cannot proceed with sending data.';
-//         return;
-//     }
-
-//     $url = 'https://contacts.zoho.eu/api/v1/accounts/self/contacts?source=ZMail';
-//     $postData = array(
-//         'contacts' => array(
-//             array(
-//                 'first_name' => $data['first_name'],
-//                 'last_name' => $data['last_name'],
-//                 'emails' => array(
-//                     array('is_primary' => true, 'email_id' => $data['email']),
-//                     // You can add more email addresses if available in $data
-//                 ), 
-//             )
-//         )
-//     );
-
-//     $headers = array(
-//         "Authorization: Zoho-oauthtoken $access_token",
-//         "Content-Type: application/json"
-//     );
-
-//     $ch = curl_init($url);
-//     curl_setopt($ch, CURLOPT_POST, true);
-//     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
-//     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//     $response = curl_exec($ch);
-//     curl_close($ch);
-
-//     $response_data = json_decode($response, true);
-//     if (isset($response_data['message']) && $response_data['message'] == 'success') {
-//         echo 'Data successfully sent to Zoho Contacts.';
-//     } else {
-//         // Handle error
-//         echo 'Error: ' . json_encode($response_data);
-//     }
-
-// }
+} 
 
 // Function to handle file upload
 function handle_file_upload($file_field_name, $custom_dir, $prefix) {
