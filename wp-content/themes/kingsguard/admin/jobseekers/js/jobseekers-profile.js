@@ -12,10 +12,12 @@ jQuery(document).ready(function($) {
     var captchaId = "#g-recaptcha-response"; 
     var passwordToggleId = "#jobseek_profile_toggle_password"; 
     var thankWrapId = "#jobseekers_profile_thankWrap";  
-    var prfileWrapId = "#prfilePicBoxWrap";  
+    var prfileWrapClass = ".jobseek_profile_picMainwrap";  
     var passwordColClass = ".jobseek_profile_password_col"; 
     var thankWrapColClass = ".jobseekers_profile_thankWrap"; 
     var captchaWrapClass = ".jobseek_profile_captcha_Wrap";
+    var $fileInput = $(profilePicId);
+    var $imgPreview = $('.profile-pic-preview'); 
  
     $(thankWrapId).hide();  
     $(passwordColClass).hide();  
@@ -107,11 +109,11 @@ jQuery(document).ready(function($) {
         if (profilePic) {
             var fileCopyValidation = validate_profilepic_file(profilePic);
             if (!fileCopyValidation.valid) {
-                $(prfileWrapId).find(errorClass).html(fileCopyValidation.message).show();
+                $(prfileWrapClass).find(errorClass).html(fileCopyValidation.message).show();
                 scrollId = scrollId == '' ? profilePic : scrollId;
                 go_ahead = false;
             } else {
-                $(prfileWrapId).find(errorClass).html('').hide();
+                $(prfileWrapClass).find(errorClass).html('').hide();
             } 
         } 
 
@@ -217,7 +219,24 @@ jQuery(document).ready(function($) {
         } else {
             form_id_scroll(scrollId);
         }
-    }); 
+    });  
+
+    if ($fileInput.length) {
+        $fileInput.on('change', function(event) {
+            var file = event.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $imgPreview.attr('src', e.target.result);
+                    $imgPreview.show(); 
+                };
+                reader.readAsDataURL(file);
+            } else {
+                $imgPreview.attr('src', '');
+                $imgPreview.hide(); 
+            }
+        });
+    }
 
     // Toogle Password
     $(passwordToggleId).on('change', function() {
