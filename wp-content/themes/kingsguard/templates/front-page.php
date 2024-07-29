@@ -342,18 +342,18 @@ get_header();
                         <?php $counterr = 0; while (have_rows('client_testimonials_tabs')) : the_row(); ?>
                         <div class="tab-pane <?php echo ($counterr === 0) ? 'active' : ''; ?>" id="tabss-<?php echo $counterr; ?>" role="tabpanel">
                             <div class="clientTabWrapper">
+                                <?php 
+                                    $client_tab_desc = get_sub_field('client_tab_desc');
+                                    if(isset($client_tab_desc) && !empty($client_tab_desc)){
+                                ?> 
                                 <div class="clientTabDesc">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <?php 
-                                                $client_tab_desc = get_sub_field('client_tab_desc');
-                                                if(isset($client_tab_desc) && !empty($client_tab_desc)){
-                                            ?> 
                                             <?php echo $client_tab_desc; ?>
-                                            <?php } ?>   
                                         </div>
                                     </div>
                                 </div>
+                                <?php } ?>   
                                 <?php if (have_rows('client_testimonials')) : ?>
                                     <div class="clientTabReview">
                                         <div class="row">

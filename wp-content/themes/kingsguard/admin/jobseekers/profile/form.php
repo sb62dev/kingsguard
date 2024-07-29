@@ -153,7 +153,12 @@ function jobseekers_profile_form() {
                     </div>
                 </div>
             </form>
-            <div class="jobseekers_profile_thankWrap" id="jobseekers_profile_thankWrap">
+            <div class="jobseekers_profile_thankWrap profilePicUpdated" id="jobseekers_profile_thankWrap">
+                <div class="job_profile_update_success_icon">
+                    <span>
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </span>
+                </div>
                 <h4> Profile updated successfully.  </h4> 
             </div>
         </div>  

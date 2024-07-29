@@ -19,7 +19,7 @@ get_header();
             </div>
             <?php } ?>
 
-            <div class="jobSearchForm" data-aos="fade-down" data-aos-duration="1000">
+            <!-- <div class="jobSearchForm" data-aos="fade-down" data-aos-duration="1000">
                 <form method="get" action="">
                     <div class="row">
                         <div class="col-md-12">
@@ -67,7 +67,7 @@ get_header();
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> -->
 
             <div class="jobListingInnerWrapper">
                 <div class="row">

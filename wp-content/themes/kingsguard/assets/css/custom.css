@@ -352,7 +352,7 @@ header.Sticky-fixed .logo .logotxt {
     padding: 10px 0;
     text-align: left;
     font-family: 'Gilroy-Light';
-    text-transform: inherit;
+    text-transform: capitalize;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
@@ -495,6 +495,7 @@ header.Sticky-fixed .logo .logotxt {
     border-radius: 30px;
     border: 2px solid #aeafb0;
     object-fit: cover;
+    margin-right: 4px;
 }
 /* .main-navigation ul.website_nav > li.menu-item-has-children:hover .sub-menu {
     opacity: 1;
@@ -780,7 +781,10 @@ select.form-control {
 .single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap input, 
 .single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap select, 
 .single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap textarea, 
-.single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap .jobseek_application_resume_box {
+.single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap .jobseek_application_resume_box,
+.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_col .jobseek_profile_inputWrap input,
+.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_col .jobseek_profile_inputWrap .jobseek_application_resume_box,
+.jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_application_col .jobseek_profile_inputWrap .textarea {
     background-color: transparent !important;
 }
 .single_appliForm_wrap .jobseek_application_row .jobseek_application_col .jobseek_application_inputWrap input.inputField.inputField_disabled {
@@ -1156,6 +1160,9 @@ h3 .job-title {
     background-color: transparent;
     color: #ffffff;
     padding: 30px;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
     border-bottom: 3px solid transparent;
 }
 .clientSec .tabsHead .nav-item .nav-link p {
@@ -1163,16 +1170,20 @@ h3 .job-title {
 }
 .clientSec .tabsHead .nav-item .nav-link:hover,
 .clientSec .tabsHead .nav-item .nav-link:focus {
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
+    outline: none;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
 }
 .clientSec .tabsHead .nav-item .nav-link.active {
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
     border-bottom: 3px solid #ffffff;
     font-family: 'Gilroy-SemiBold';
+}
+.clientSec .tabsHead .nav-item .nav-link:focus-visible {
+    outline: none;
 }
 .clientSlider .clientLogoSlide {
     margin: 0 35px;
@@ -1767,6 +1778,7 @@ h3 .job-title {
     padding: 30px;
     border-radius: 12px;
     text-align: center;
+    height: 100%;
 }
 .contact_card_body_div .contactCardIcon {
     margin-bottom: 15px;
@@ -1914,7 +1926,45 @@ h3 .job-title {
     line-height: 29.77px;
     letter-spacing: -1.1266067028045654px;    
 }
-.load_more_btn{
+.projects_section_two .projectOverlayDes {
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo {
+    margin-top: 20px;
+    display: flex;
+    width: 100% !important;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .85s cubic-bezier(.475,.425,0,.995),opacity .85s cubic-bezier(.475,.425,0,.995);
+}
+.projects_section_two .projectCardLink:hover .projectMoreInfo {
+    max-height: 124px;
+    opacity: 1;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner {
+    width: 33.333%;
+    text-align: center;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner + .projectMoreInfoInner {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #fff;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner h6 {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+.projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner p {
+    font-size: 14px !important;
+    letter-spacing: 0.2px !important;
+    line-height: 1.2 !important;
+}
+.load_more_btn {
     margin-top: 50px;
     text-align: center;
 }
@@ -2189,6 +2239,9 @@ h3 .job-title {
     width: 45px;
     height: 45px;
     object-fit: cover;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
 }
 .dashboardSidebar .dashboardProfile .dashboardProfileCont .dashboardProfileName {
     color: #fff;
@@ -3032,7 +3085,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .registerWrapper .registerInner .jobseek_error,
 .jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_error,
 .jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_captcha_Wrap .jobseek_error,
-.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_application_inputWrap .jobseek_error {
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_picMainwrap .jobseek_error {
     margin-top: 10px;
     color: #ff0000;
     font-size: 14px;
@@ -3093,6 +3146,12 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .registerWrapper .jobseek_forgot_password_btmWrap > a:focus {
     color: #5ab9f8;
     text-decoration: none;
+}
+.registerWrapper .jobseekers_forgot_password_thankWrap p {
+    text-align: center;
+}
+.registerWrapper .jobseekers_reset_password_thankWrap .backToLogin {
+    margin-top: 30px;
 }
 .jobseek_loader {
     position: fixed;
@@ -3308,22 +3367,28 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .job-applications-table .status-btn-style {
     border: 2px solid #0098FF;
     background-color: #1b2a36;
-    padding: 12px 40px;
+    padding: 12px 25px;
     font-size: 12px;
     font-family: 'Gilroy-SemiBold';
     border-radius: 40px;
     color: #0098FF;
     display: inline-block;
+    min-width: 150px;
 }
-.job-applications-table .status-btn-style.reviewed {
+.job-applications-table  .status-btn-style.status-rejected {
+    border-color: #F14336;
+    color: #F14336;
+    background-color: #382525;
+}
+.job-applications-table .status-btn-style.status-approved {
     border: 2px solid #28b446;
     background-color: #1f2d24;
     color: #28b446;
 }
-.job-applications-table .status-btn-style.closed {
-    border: 2px solid #f14336;
-    background-color: #332222;
-    color: #f14336;
+.job-applications-table .status-btn-style.status-being-reviewed {
+    border: 2px solid #fff700;
+    background-color: #474631;
+    color: #fff700;
 }
 .clientSec.testimonialsSec .testimonialsInner {
     background-color: #133148;
@@ -3479,7 +3544,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 }
 .dashboard-container .job-applications-wrap .job-applications-header .viewAllLink,
 .dashboard-container .job-listings-wrap .job-listings-header .viewAllLink {
-    color: #ffffff;
+    color: #0098ff;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
@@ -3488,8 +3553,19 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .dashboard-container .job-listings-wrap .job-listings-header .viewAllLink:hover,
 .dashboard-container .job-applications-wrap .job-applications-header .viewAllLink:focus,
 .dashboard-container .job-listings-wrap .job-listings-header .viewAllLink:focus {
-    color: #0098ff;
+    color: #5ab9f8;
     text-decoration: none;
+}
+.viewAllLink {
+    color: #0098ff;
+    font-size: 14px;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.viewAllLink:hover,
+.viewAllLink:focus {
+    color: #5ab9f8;
 }
 .dashboardWrapper .dashboardHead .dashboardLogout a {
     color: #ffffff;
@@ -3628,8 +3704,12 @@ input[type=checkbox], input[type=radio] {
     font-size: 36px;
     text-align: center;
 }
+.singleJobcontent .singleJobTitle {
+    margin-bottom: 30px;
+}
 .singleJobTitle .h2 {
     text-align: left;
+    margin-bottom: 20px;
 }
 .kg_contact_wrapper .kg_contact_formWrap .kg_contact_cmnError {
     margin-bottom: 25px;
@@ -3689,13 +3769,51 @@ input[type=checkbox], input[type=radio] {
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
-.main_nav_top ul .jobseek_login_link a img {
+.jobseek_application_inputWrap, .jobseek_profile_inputWrap, .jobseek_profile_picMainwrap {
+    margin-bottom: 30px !important;
+}
+.jobseekers_profile_wrapper .jobseek_application_profilepic_wrap {
+    position: relative;
+    max-width: 100px;
+}
+.jobseekers_profile_wrapper .jobseek_application_profilepic_wrap .jobseek_file_input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: 0;
     width: 24px;
     height: 24px;
-    margin-right: 4px;
+    cursor: pointer;
 }
-.jobseek_application_inputWrap, .jobseek_profile_inputWrap {
-    margin-bottom: 30px !important;
+.jobseekers_profile_wrapper .jobseek_application_profilepic_wrap .jobseek_application_profilepic_wrap_img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.jobseekers_profile_wrapper .jobseek_application_profilepic_wrap .jobseek_application_profilepic_wrap_img img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+.jobseekers_profile_wrapper .jobseek_application_profilepic_wrap .jobseek_application_profilepic_wrap_img .edit-profile-pic-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #0098FF;
+    background-color: #ffffff;
+    padding: 4px;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 .jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_check_input {
     position: relative;
@@ -3707,4 +3825,30 @@ input[type=checkbox], input[type=radio] {
 }
 .dash_profilePage .profileInfo {
     max-width: 600px;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated {
+    background: #1a2935;
+    border: 1px solid #0098ff;
+    margin: 0;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated .job_profile_update_success_icon span {
+    border: 3px solid #0098ff;
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: #0098ff;
+    font-size: 24px;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated .job_profile_update_success_icon {
+    margin-bottom: 20px;
+}
+.jobseekers_profile_thankWrap.profilePicUpdated h4 {
+    margin-bottom: 0;
 }

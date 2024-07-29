@@ -32,7 +32,7 @@ get_header();
                                 $project_client = get_field('project_client');
                                 if(isset($project_client) && !empty($project_client)){ 
                             ?>
-                            <div class="col-lg-4 col-md-6 col-sm-6 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
+                            <div class="col-lg-4 col-md-4 col-sm-4 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
                                 <div class="projectInfoBlock">
                                     <h5>Client</h5>      
                                     <p><?php echo $project_client; ?> </p>                    
@@ -44,7 +44,7 @@ get_header();
                                 if($project_cities && !is_wp_error($project_cities)) { 
                                     $project_city_names = wp_list_pluck($project_cities, 'name');
                             ?>
-                            <div class="col-lg-4 col-md-6 col-sm-6 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
+                            <div class="col-lg-4 col-md-4 col-sm-4 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
                                 <div class="projectInfoBlock">
                                     <h5>City</h5>      
                                     <p><?php echo implode(', ', $project_city_names); ?> </p>                    
@@ -57,7 +57,7 @@ get_header();
                                 if($project_services && !is_wp_error($project_services)) { 
                                     $project_service_names = wp_list_pluck($project_services, 'name');
                             ?>
-                            <div class="col-lg-4 col-md-6 col-sm-6 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
+                            <div class="col-lg-4 col-md-4 col-sm-4 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
                                 <div class="projectInfoBlock">
                                     <h5>Service Type</h5>      
                                     <p><?php echo implode(', ', $project_service_names); ?> </p>                    
@@ -72,7 +72,7 @@ get_header();
                                 $project_service_period = get_field('project_service_period');
                                 if(isset($project_service_period) && !empty($project_service_period)){ 
                             ?>
-                            <div class="col-lg-4 col-md-6 col-sm-6 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
+                            <div class="col-lg-4 col-md-4 col-sm-4 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
                                 <div class="projectInfoBlock">
                                     <h5>Service Period</h5>      
                                     <p><?php echo $project_service_period; ?> </p>                    
@@ -83,7 +83,7 @@ get_header();
                                 $project_value = get_field('project_value');
                                 if(isset($project_value) && !empty($project_value)){ 
                             ?>
-                            <div class="col-lg-4 col-md-6 col-sm-6 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
+                            <div class="col-lg-4 col-md-4 col-sm-4 projectInfoBlockWrap" data-aos="fade-down" data-aos-duration="1000">
                                 <div class="projectInfoBlock">
                                     <h5>Project Value</h5>      
                                     <p><?php echo $project_value; ?> </p>                    

@@ -139,8 +139,8 @@ get_header();
                 </div>
                 <div class="whyChooseSliderWrap">
                     <div class="whyChooseSlider slider">
+                        <?php while (have_rows('why_choose_kingsguard')) : the_row(); ?>
                         <div class="whyChooseSlide">
-                            <?php while (have_rows('why_choose_kingsguard')) : the_row(); ?>
                             <?php 
                                 $why_choose_title = get_sub_field('why_choose_title');
                                 if(isset($why_choose_title) && !empty($why_choose_title)){
@@ -173,8 +173,8 @@ get_header();
                                     </div>
                                 </div>
                             <?php } ?>
-                            <?php endwhile; ?>
                         </div>
+                        <?php endwhile; ?>
                     </div>
                     <div class="customArrows">
                         <button class="prev-btn"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/leftArrow.png" alt="Left Arrow" > </button>
