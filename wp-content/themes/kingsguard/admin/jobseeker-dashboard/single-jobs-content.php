@@ -7,7 +7,7 @@
             <div class="col-md-3 col-sm-4">
                 <div class="applyBtn">
                     <?php if ( !isset($_COOKIE['jobseeker_logged_in']) || $_COOKIE['jobseeker_logged_in'] !== 'true' ) : ?>
-                        <a href="#" class="btn-style gradientBtn"> Apply Now </a>
+                        <a href="/jobseekers-login/" class="btn-style gradientBtn"> Apply Now </a>
                     <?php else : ?>
                         <a href="#applicationform" class="btn-style gradientBtn smoth-scroll-link"> Apply Now </a>
                     <?php endif; ?> 

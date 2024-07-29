@@ -202,6 +202,10 @@ require get_template_directory() . '/admin/jobseekers/jobseekers-user-menu.php';
 // Include user profile
 require get_template_directory() . '/admin/jobseekers/profile/profile.php';
 
+// Include newsletter
+require get_template_directory() . '/admin/jobseekers/newsletter/newsletter.php';
+
+
 // Add custom rewrite rules
 function custom_jobseekers_dashboard_rewrite_rules() {
     add_rewrite_rule('^jobseekers-dashboard/([^/]+)/?$', 'index.php?post_type=careers&name=$matches[1]', 'top');

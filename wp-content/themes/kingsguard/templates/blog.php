@@ -100,11 +100,8 @@ get_header();
                 <div class="joinUsSec">
                     <div class="joinUsInner text-center">
                         <h2 class="mb0 h2"> <?php echo $stay_informed_title; ?> </h2>
-                        <?php echo $stay_informed_description; ?>
-                        <form class="getstarted_input_main">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit" class="btn-style gradientBtn">Subscribe</button>
-                        </form>
+                        <?php echo $stay_informed_description; ?> 
+                        <?php echo do_shortcode('[kg_newsletter_form]') ?> 
                     </div>
                 </div>
             </div>

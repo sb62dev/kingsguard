@@ -1581,6 +1581,24 @@ h3 .job-title {
 #play-button2 img {
     height: 30px;
 }
+.kg_newsletter_thankWrap {
+    background: #095c96;
+    padding: 45px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.kg_newsletter_thankWrap h4 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+.kg_newsletter_thankWrap p {
+    font-size: 16px;
+    margin: 0;
+}
+.kg_newsletter_form {
+    max-width: 600px;
+    margin: auto;
+}
 .getstarted_input_main{
     position: relative;
     width: 100%;
@@ -3661,8 +3679,19 @@ input[type=checkbox], input[type=radio] {
     font-size: 24px;
     top: 0px;
     margin-left: 2px;
+} 
+.getstarted_input_main .jobseek_error {
+    color: #ff8282;
+    margin-top: 15px;
+    padding-left: 20px;
+    display: none;
+    position: relative;
+    font-family: 'Gilroy-Medium';
+    font-size: 16px;
+    text-align: left;
 }
-.kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error, .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error {
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_captcha_Wrap .contact_error, 
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error {
     color: #d63637;
     margin-top: 15px;
     padding-left: 20px;
@@ -3672,7 +3701,9 @@ input[type=checkbox], input[type=radio] {
     font-size: 16px;
     position: absolute !important;
 }
-.kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error::before, .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error::before {
+.getstarted_input_main .jobseek_error::before,
+.kg_contact_wrapper .kg_contact_wrap  .kg_contact_captcha_Wrap .contact_error::before, 
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  .contact_error::before {
     content: "\f06a";
     position: absolute;
     font-family: 'FontAwesome';
@@ -3714,7 +3745,8 @@ input[type=checkbox], input[type=radio] {
 .kg_contact_wrapper .kg_contact_formWrap .kg_contact_cmnError {
     margin-bottom: 25px;
 }
-.kg_contact_wrapper .kg_contact_formWrap .kg_contact_cmnError .kg_contact_cmnError_in {
+.kg_contact_wrapper .kg_contact_formWrap .kg_contact_cmnError .kg_contact_cmnError_in, 
+.kg_newsletter_form .kg_newsletter_cmnError .kg_newsletter_cmnError_in {
     background-color: #ff0000;
     color: #ffffff;
     padding: 10px 20px;
@@ -3722,6 +3754,10 @@ input[type=checkbox], input[type=radio] {
     border-radius: 6px;
     font-family: 'Gilroy-Medium';
     font-size: 16px;
+}
+.kg_newsletter_form .kg_newsletter_cmnError .kg_newsletter_cmnError_in {
+    text-align: left;
+    margin-bottom: 15px;
 }
 .dashboard-main .h2 {
     text-align: left;

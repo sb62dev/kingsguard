@@ -76,4 +76,47 @@ function handle_jobseekers_registration() {
 add_action('wp_ajax_handle_jobseekers_registration', 'handle_jobseekers_registration');
 add_action('wp_ajax_nopriv_handle_jobseekers_registration', 'handle_jobseekers_registration');  
 
+// Function to verify email
+function verify_jobseekers_email() {
+    if (isset($_GET['verify']) && isset($_GET['email'])) {
+        global $wpdb;
+
+        $verification_token = sanitize_text_field($_GET['verify']);  
+        $email = sanitize_email(rawurldecode($_GET['email']));  
+
+        if (!empty($verification_token) && !empty($email)) {
+            $user = $wpdb->get_row($wpdb->prepare(
+                "SELECT * FROM {$wpdb->prefix}jobseekers_users WHERE email = %s AND verification_token = %s",
+                $email, $verification_token
+            ));
+
+            if ($user) {
+                $wpdb->update(
+                    $wpdb->prefix . 'jobseekers_users',
+                    array('email_verified' => 1, 'verification_token' => ''),
+                    array('id' => $user->id)
+                ); 
+
+                // Usage example
+                $zoho_data = array(
+                    'lead_source' => 'Register Jobseekers',
+                    'email' => $user->email,
+                    'first_name' =>  $user->first_name,
+                    'last_name' => $user->last_name, 
+                ); 
+
+                // Send data to Zoho Leads
+                $zoho_response = sendDataToZohoLeads($zoho_data);
+
+                wp_redirect(home_url('/jobseekers-register?email-verification-success'));
+                exit;
+            }
+        }
+        wp_redirect(home_url('/jobseekers-register?email-verification-failed'));
+        exit;
+    }
+}
+
+add_action('template_redirect', 'verify_jobseekers_email'); 
+
 ?>
