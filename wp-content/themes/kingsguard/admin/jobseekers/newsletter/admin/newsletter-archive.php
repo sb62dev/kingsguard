@@ -15,7 +15,7 @@ function newsletter_admin_page() {
     $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$table_name} LIMIT %d OFFSET %d", $users_per_page, $offset));
 
     // Handle bulk delete action
-    if (isset($_POST['bulk_delete'])) {
+    if (isset($_POST['bulk_delete']) && check_admin_referer('bulk_delete_nonce')) {
         if (isset($_POST['user_ids']) && !empty($_POST['user_ids'])) {
             $user_ids = array_map('intval', $_POST['user_ids']);
             foreach ($user_ids as $user_id) {
@@ -28,9 +28,10 @@ function newsletter_admin_page() {
     echo '<div class="wrap">';
     echo '<h1>Newsletter Entries</h1>';
     echo '<form method="post" action="">';
+    wp_nonce_field('bulk_delete_nonce');
     echo '<input type="submit" name="bulk_delete" value="Delete Selected" class="button button-danger" onclick="return confirm(\'Are you sure you want to delete the selected users?\');">';
     echo '<table class="widefat fixed" cellspacing="0">';
-    echo '<thead><tr><th style="width: 50px"><input type="checkbox" id="select-all">ID</th><<th>Email</th><th>Date/time</th></tr></thead>';
+    echo '<thead><tr><th><input type="checkbox" id="select-all"> ID</th><th>Email</th><th>Date/Time</th></tr></thead>';
     echo '<tbody>';
 
     $counter = 1 + $offset;

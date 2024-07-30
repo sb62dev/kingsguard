@@ -22,6 +22,7 @@ function remove_menus_for_edituser_role() {
     if (in_array('editor', (array) $user->roles)) {
         remove_menu_page('tools.php');      // Tools
         remove_menu_page('edit-comments.php'); // Comments
+        remove_menu_page('profile.php');
     }
 }
 add_action('admin_menu', 'remove_menus_for_edituser_role', 999);
@@ -29,45 +30,28 @@ add_action('admin_menu', 'remove_menus_for_edituser_role', 999);
 function remove_admin_bar_items_for_editsuser_role() {
     // Get current user
     $user = wp_get_current_user();
-    
-    // Check if the current user has the 'kingsuser_role' role
+     
     if (in_array('editor', (array) $user->roles)) {
         global $wp_admin_bar;
         $wp_admin_bar->remove_menu('comments');   // Comments
-        $wp_admin_bar->remove_menu('new-content'); // New (from New Content)
+        $wp_admin_bar->remove_menu('new-content'); // New (from New Content) 
+        $wp_admin_bar->remove_menu('edit-profile'); // Remove the profile link
+        $wp_admin_bar->remove_menu('user-info'); // Remove the user info menu
     }
 }
-add_action('wp_before_admin_bar_render', 'remove_admin_bar_items_for_editsuser_role');
+add_action('wp_before_admin_bar_render', 'remove_admin_bar_items_for_editsuser_role');  
 
-function modify_wpforms_menu_for_edituser_role() {
+function redirect_editor_from_profile_page() {
+    // Get current user
     $user = wp_get_current_user();
-    if (in_array('editor', (array) $user->roles)) {
-        global $submenu;
-
-        // Change the main WPForms menu name to 'Form Entries'
-        foreach ($submenu as $key => $item) {
-            foreach ($item as $index => $subitem) {
-                if ($subitem[2] === 'wpforms-overview') {
-                    $submenu[$key][$index][0] = 'Form Entries';
-                }
-            }
-        }
+    
+    // Check if the current user has the 'editor' role and is trying to access profile.php
+    global $pagenow;
+    if (in_array('editor', (array) $user->roles) && $pagenow === 'profile.php') {
+        wp_redirect(admin_url());
+        exit;
     }
 }
-
-function remove_wpforms_submenus_for_edituser_role() {
-    $user = wp_get_current_user();
-
-    if (in_array('editor', (array) $user->roles)) {
-        remove_submenu_page('wpforms-overview', 'wpforms-overview'); // Overview
-        remove_submenu_page('wpforms-overview', 'wpforms-templates'); // Templates
-        remove_submenu_page('wpforms-overview', 'wpforms-tools'); // Tools
-        remove_submenu_page('wpforms-overview', 'wpforms-about'); // About
-        remove_submenu_page('wpforms-overview', 'wpforms-builder'); // Main
-    }
-}
-
-add_action('admin_menu', 'modify_wpforms_menu_for_edituser_role', 999);
-add_action('admin_menu', 'remove_wpforms_submenus_for_edituser_role', 999);
+add_action('admin_init', 'redirect_editor_from_profile_page'); 
 
 ?>
