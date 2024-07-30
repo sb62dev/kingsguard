@@ -15,7 +15,7 @@ function render_kg_newsletter_form() {
         <form class="kg_newsletter_form" id="kg_newsletter_form" method="POST">
             <input type="hidden" name="action" id="action" value="kg_newsletter_form_save" />
             <?php wp_nonce_field('kg_newsletter_form_save_action', 'kg_newsletter_form_save_nonce_field'); ?>  
-            <input type="hidden" name="form_start_time" value="<?php echo time(); ?>">
+            <input type="hidden" name="kg_newsletter_start_time" value="<?php echo time(); ?>">
             <input type="text" name="kg_newsletter_honeypot" style="display:none;">
             <div class="jobseek_loader" style="display: none;"><div class="jobLoader"></div></div>
             <div class="kg_newsletter_cmnError" style="display: none;"><div class="kg_newsletter_cmnError_in"></div></div> 

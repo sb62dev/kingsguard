@@ -5,6 +5,9 @@ function handle_newsletter_form() {
 
     if (isset($_POST['kg_newsletter_form_save_nonce_field']) && wp_verify_nonce(sanitize_text_field($_POST['kg_newsletter_form_save_nonce_field']), 'kg_newsletter_form_save_action')) {
 
+        if (!empty($_POST['kg_newsletter_honeypot']) || (time() - (int)$_POST['kg_newsletter_start_time']) < 5) {
+            wp_send_json_error(array('error' => 'There is something wrong with form submission.'));
+        } 
         if (!empty($errors)) {
             wp_send_json_error($errors);
         } else {
