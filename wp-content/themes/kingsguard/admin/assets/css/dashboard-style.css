@@ -584,9 +584,14 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
 #adminmenu li.my-custom-logo {
     margin-bottom: 15px !important;
     width: 100%;
-    overflow: hidden;
-    max-height: 70px;
+    overflow: hidden; 
     text-align: center;
+}
+#adminmenu li.my-custom-logo .custom-logo_btmUser {
+    font-size: 13px;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 8px;
 }
 #adminmenu li.my-custom-logo a {
     display: block;
@@ -641,6 +646,34 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
 }
 #future-posts li, #published-posts li {
     color: #ffffff;
+}
+ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-item {
+    display: none;
+}
+ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper {
+    position: static !important;
+    display: block;
+    box-shadow: none !important;
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+}
+ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul {
+    margin: 0;
+    padding: 0 !important;
+}
+
+ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li {
+    margin: 0 !important;
+    padding: 10px 30px 10px 0!important;
+}
+ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab-item {
+    display: block !important;
+    min-width: auto;
+    color: #fff;
+    line-height: 1;
+    padding: 0;
+    height: auto !important;
 }
 @media screen and (max-width: 960px) {
     #adminmenu li.my-custom-logo a img {

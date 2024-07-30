@@ -52,6 +52,6 @@ function redirect_editor_from_profile_page() {
         exit;
     }
 }
-add_action('admin_init', 'redirect_editor_from_profile_page'); 
+add_action('admin_init', 'redirect_editor_from_profile_page');   
 
 ?>

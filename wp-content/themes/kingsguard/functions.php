@@ -767,6 +767,9 @@ function enqueue_custom_admin_scripts() {
     $user = wp_get_current_user();
     if (in_array('editor', (array) $user->roles)) {
         wp_enqueue_script('custom-admin-scripts', get_template_directory_uri() . '/admin/assets/js/dashboard-custom.js', array('jquery'), null, true);
+		wp_localize_script('custom-admin-scripts', 'AdminData', array(
+			'editorusername' => wp_get_current_user()->display_name,
+		));
     }
 	wp_enqueue_script('common-admin-common-scripts', get_template_directory_uri() . '/admin/assets/js/dashboard-common.js', array('jquery'), null, true);
 } 
