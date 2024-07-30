@@ -21,6 +21,11 @@ function jobseekers_users_table(){
     return $wpdb->prefix . 'jobseekers_users';
 }
 
+function newsletter_users_table(){
+    global $wpdb;
+    return $wpdb->prefix . 'newsletter_users';
+}
+
 /* Function to get Jobseeker table info */
 function get_jobseeker_info($email) {
     global $wpdb;

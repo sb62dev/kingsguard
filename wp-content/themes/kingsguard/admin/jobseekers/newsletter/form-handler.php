@@ -1,6 +1,8 @@
 <?php
 
 function handle_newsletter_form() {
+    global $wpdb; 
+    $table_name = newsletter_users_table(); 
     $errors = array();
 
     if (isset($_POST['kg_newsletter_form_save_nonce_field']) && wp_verify_nonce(sanitize_text_field($_POST['kg_newsletter_form_save_nonce_field']), 'kg_newsletter_form_save_action')) {
@@ -10,14 +12,13 @@ function handle_newsletter_form() {
         } 
         if (!empty($errors)) {
             wp_send_json_error($errors);
-        } else {
+        } else { 
 
-            global $wpdb; 
             $email = sanitize_email($_POST['kg_newsletter_email']);  
 
             // Check if the Email already exists
             $email_exists = $wpdb->get_var($wpdb->prepare(
-                "SELECT COUNT(*) FROM {$wpdb->prefix}newsletter_users WHERE email = %s",
+                "SELECT COUNT(*) FROM {$table_name} WHERE email = %s",
                 $email
             ));
 
@@ -29,7 +30,7 @@ function handle_newsletter_form() {
 
                 // Insert new user
                 $wpdb->insert(
-                    $wpdb->prefix . 'newsletter_users',
+                    $table_name, 
                     array( 
                         'email' => $email,   
                         'submission_date' => $datetime->format('Y-m-d H:i:s'),
