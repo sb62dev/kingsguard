@@ -11,7 +11,24 @@ get_header();
 ?>
 
 <div class="pageBody homeBody">
-    <?php
+    <?php if (have_rows('home_img_slider')) : ?>
+    <div class="homeBannerSlider slider mb-0">
+        <?php while (have_rows('home_img_slider')) : the_row(); ?>
+        <?php
+            $home_banner_image = get_sub_field('home_banner_image');
+            if (isset($home_banner_image) && !empty($home_banner_image)) {
+                $image_url = wp_get_attachment_image_src($home_banner_image, 'full')[0];
+                $image_alt = get_post_meta($home_banner_image, '_wp_attachment_image_alt', true);
+        ?>
+            <div class="homeBannerSlide">
+                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+            </div>
+        <?php } ?>
+        <?php endwhile; ?>
+    </div>
+    <?php endif; wp_reset_query(); ?> 
+
+    <!-- <?php
         $home_banner_title = get_field('home_banner_title');
         if (isset($home_banner_title) && !empty($home_banner_title)) {
         $home_banner_description = get_field('home_banner_description');
@@ -48,7 +65,7 @@ get_header();
             </div>
         </div>
     </section>
-    <?php } ?>
+    <?php } ?> -->
 
     <?php if (have_rows('client_logos')) : ?>
     <section>

@@ -204,4 +204,26 @@ if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers
             </div>
         </div>
     </header>
+    <!-- <div class="desktopSubMenuWrap">
+        <div class="sm_container">
+            <div class="desktopSubMenuInner">
+                <div class="submenuSelector">
+                    <ul class="leftSubmenus">
+                        <li>
+                            <a class="submenuBtn">Industries</a> 
+                        </li>
+                        <li>
+                            <a class="submenuBtn">Use Cases</a> 
+                        </li>
+                        <li>
+                            <a class="submenuBtn">Team</a> 
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subMenuOptions">
+                </div>
+            </div>
+        </div>
+    </div> -->
 <?php endif; ?>
