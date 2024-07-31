@@ -1,4 +1,89 @@
 jQuery(document).ready(function () {
+   // Hide the submenu on page load
+   jQuery('.desktopSubMenuWrap').hide();
+
+   // Function to show the submenu with a transition
+   function showSubmenu(submenuClass) {
+      //  console.log('Showing submenu:', submenuClass);
+       jQuery('.desktopSubMenuWrap .subMenuOptions > div').stop().slideUp(500);
+        
+       // Show the specific submenu
+       jQuery('.desktopSubMenuWrap .' + submenuClass).stop().slideDown(500);
+       
+       // Ensure the parent wrapper is visible and has the show class
+       jQuery('.desktopSubMenuWrap').slideDown(500).addClass('show');
+  
+   }
+
+   // Event handlers for hovering on the main menu items
+   jQuery('.website_nav .menu-item-services').hover(
+       function () {
+           showSubmenu('serviceSubmenu');
+       },
+       function () {
+           // Do nothing when hovering out of the main menu item
+       }
+   );
+
+   jQuery('.website_nav .menu-item-industries').hover(
+       function () {
+           showSubmenu('industrySubmenu');
+       },
+       function () {
+           // Do nothing when hovering out of the main menu item
+       }
+   );
+
+   // Optionally, hide the submenu when the mouse leaves the submenu area
+   jQuery('.desktopSubMenuWrap').hover(
+       function () {
+           // Do nothing when hovering over the submenu
+       },
+       function () {
+           // Hide the submenu when the mouse leaves the submenu area
+           jQuery(this).stop().slideUp(500).removeClass('show');
+       }
+   );
+  
+  // jQuery('.desktopSubMenuWrap').hide();
+
+  // // Function to show the submenu with a transition
+  // function showSubmenu(submenuClass) {
+  //   jQuery('.desktopSubMenuWrap').stop().slideUp(300).removeClass('show');
+  //   jQuery('.' + submenuClass).closest('.desktopSubMenuWrap').stop().slideDown(300).addClass('show');
+  // }
+
+  // // Event handlers for hovering on the main menu items
+  // jQuery('.website_nav .menu-item-services').hover(
+  //     function () {
+  //         showSubmenu('serviceSubmenu');
+  //     },
+  //     function () {
+  //         // Do nothing when hovering out of the main menu item
+  //     }
+  // );
+
+  // jQuery('.website_nav .menu-item-industries').hover(
+  //     function () {
+  //         showSubmenu('industrySubmenu');
+  //     },
+  //     function () {
+  //         // Do nothing when hovering out of the main menu item
+  //     }
+  // );
+
+  // // Optionally, hide the submenu when the mouse leaves the submenu area
+  // jQuery('.desktopSubMenuWrap').hover(
+  //     function () {
+  //         // Do nothing when hovering over the submenu
+  //     },
+  //     function () {
+  //         // Hide the submenu when the mouse leaves the submenu area
+  //         jQuery(this).stop().slideUp(300).removeClass('show');
+  //     }
+  // );
+
+
   jQuery('.homeBannerSlider').on('init', function(event, slick) {
       slick.$dots.addClass('vertical-dots');
     });

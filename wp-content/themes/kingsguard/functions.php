@@ -68,6 +68,8 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 			array(
 				'primary' => esc_html__( 'Primary menu', 'twentytwentyone' ),
 				'header'  => esc_html__( 'header menu 2', 'twentytwentyone' ),
+				'submenu1'  => esc_html__( 'Sub menu 1', 'twentytwentyone' ),
+				'submenu2'  => esc_html__( 'Sub menu 2', 'twentytwentyone' ),
 				'secondary'  => esc_html__( 'Secondary menu', 'twentytwentyone' ),
 				'footer'  => esc_html__( 'footer menu 2', 'twentytwentyone' ),
 			)
