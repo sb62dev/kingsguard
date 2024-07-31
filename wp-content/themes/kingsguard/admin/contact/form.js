@@ -1,4 +1,3 @@
- 
 var contact_error = ".contact_error";
 var contact_loader = ".jobseek_loader";
 var contact_captcha_wrap = ".kg_contact_captcha_Wrap";   
@@ -7,6 +6,8 @@ var service_err_msg = "Select Service is required.";
 var parking_service_err_msg = "Parking Enforcement is required.";
 var security_service_err_msg = "Security Systems is required.";
 var sitetype_err_msg = "Type of Site is required.";   
+var restrictedDomains = ['@yahoo.com', '@yahoo.ca', '@gmail.com', '@hotmail.com'];
+var restrictedEmailErrMsg = "Email domain is not allowed. Please use your work email address instead.";
 
 jQuery(document).ready(function($) {  
 
@@ -15,16 +16,15 @@ jQuery(document).ready(function($) {
     var lnameId = "#kg_contact_lname"; 
     var titleId = "#kg_contact_title"; 
     var emailId = "#kg_contact_email"; 
-    var phoneId = "#kg_contact_phone";  
-    var servicesId = "#selected_services"; 
-    var servicesSelectId = "#kg_contact_services"; 
+    var phoneId = "#kg_contact_phone";   
+    var servicesCheckboxList = 'input[name="kg_contact_services_list[]"]';
     var sitetypesId = "#kg_contact_site_types";   
     var captchaId = "#g-recaptcha-response"; 
     var captchaWrapId = "#g-recaptcha-response-wrap"; 
+    var servicesColId = "#kg_contact_services_col";
     var parkingColId = "#kg_contact_parking_service_col"; 
-    var securityColId = "#kg_contact_security_service_col";  
-    var thankWrapColClass = ".kg_contact_thankWrap";  
-    var multiServicesClass = ".kg_contact_multi_services";
+    var securityColId = "#kg_contact_security_service_col";   
+    var thankWrapColClass = ".kg_contact_thankWrap";   
 
     $(thankWrapColClass).hide();   
     $(parkingColId).hide();   
@@ -40,9 +40,7 @@ jQuery(document).ready(function($) {
         var lname = $(lnameId);
         var title = $(titleId);
         var email = $(emailId);
-        var phone = $(phoneId);
-        var services = $(servicesId);
-        var servicesSelect = $(servicesSelectId); 
+        var phone = $(phoneId); 
         var sitetypes = $(sitetypesId);   
         var captcha = $(captchaId);
         var response = grecaptcha.getResponse();
@@ -118,6 +116,10 @@ jQuery(document).ready(function($) {
             email.next(contact_error).html(email_invalid_err_msg).show();
             scrollId = scrollId == '' ? email : scrollId;
             go_ahead = false;
+        } else if (isRestrictedDomain(email.val())) {
+            email.next(contact_error).html(restrictedEmailErrMsg).show();
+            scrollId = scrollId == '' ? email : scrollId;
+            go_ahead = false;
         } else {
             email.next(contact_error).html('').hide();
         }
@@ -137,15 +139,21 @@ jQuery(document).ready(function($) {
             go_ahead = false;
         } else {
             phone.next(contact_error).html('').hide();
-        }
+        } 
 
-        // Services validation
-        if ('' == services.val().trim()) { 
-            servicesSelect.next(contact_error).html(service_err_msg).show();
-            scrollId = scrollId == '' ? servicesSelect : scrollId;
+        // Services validation  
+        var serviceListChecked = false;
+        $(servicesColId + ' input[type="checkbox"]').each(function() {
+            if ($(this).is(':checked')) {
+                serviceListChecked = true;
+            }
+        });
+        if (!serviceListChecked) {
+            $(servicesColId).find(contact_error).html(service_err_msg).show();
+            scrollId = scrollId == '' ? servicesColId : scrollId;
             go_ahead = false;
         } else {
-            servicesSelect.next(contact_error).html('').hide();
+            $(servicesColId).find(contact_error).html('').hide();
         }
 
         // Conditional validation for parkingServices
@@ -157,33 +165,33 @@ jQuery(document).ready(function($) {
                 }
             });
             if (!parkingChecked) {
-                $(parkingColId + contact_error).html(parking_service_err_msg).show();
+                $(parkingColId).find(contact_error).html(parking_service_err_msg).show();
                 scrollId = scrollId == '' ? parkingColId : scrollId;
                 go_ahead = false;
             } else {
-                $(parkingColId + contact_error).hide();
+                $(parkingColId).find(contact_error).html('').hide();
             }
         } else {
             $(parkingColId + contact_error).hide();
         }
 
         // Conditional validation for securityServices
-        if ($(securityColId).is(':visible')) {
+        if ($(securityColId).is(':visible')) { 
             var securityChecked = false;
-            $(securityColId + ' input[type="checkbox"]').each(function() {
-                if ($(this).is(':checked')) {
+            $(securityColId + ' input[type="checkbox"]').each(function() { 
+                if ($(this).is(':checked')) { 
                     securityChecked = true;
                 }
             });
-            if (!securityChecked) {
-                $(securityColId + contact_error).html(security_service_err_msg).show();
+            if (!securityChecked) { 
+                $(securityColId).find(contact_error).html(security_service_err_msg).show();
                 scrollId = scrollId == '' ? securityColId : scrollId;
                 go_ahead = false;
             } else {
-                $(securityColId + contact_error).hide();
+                $(securityColId).find(contact_error).html('').hide();
             }
         } else {
-            $(securityColId + contact_error).hide();
+            $(securityColId).find(contact_error).html('').hide();
         }
 
         // Site types validation
@@ -215,12 +223,13 @@ jQuery(document).ready(function($) {
                 success: function(res) {
                     $(contact_loader).hide(); 
                     if (res.success) { 
-                        $(formId)[0].reset();
-                        services.val('');
+                        $('body').addClass('quote_thankBody'); 
+                        $(formId)[0].reset(); 
                         $(formId).hide();
                         $(thankWrapColClass).show();
                         form_id_scroll(thankWrapColClass); 
                     } else {
+                        $('body').removeClass('quote_thankBody'); 
                         grecaptcha.reset();
                         $('.kg_contact_cmnError').show().find('.kg_contact_cmnError_in').html(res.data.error); 
                     }
@@ -232,67 +241,12 @@ jQuery(document).ready(function($) {
         } else {
             form_id_scroll(scrollId);
         }
-    });  
+    });    
 
-    // Event listener for change in select field
-    $(multiServicesClass).each(function() {
-        var $multiselect = $(this);
-        var $selectElement = $multiselect.find('select');
-        var $placeholder = $selectElement.find('.placeholder');
-        var $options = $selectElement.find('option').slice(1);
-        var $selectBox = $('<div class="selectBox"><span class="placeholder">' + $placeholder.text() + '</span></div>');
-        var $optionsContainer = $('<div class="options"></div>');
-
-        $options.each(function() {
-            var $option = $(this);
-            var $optionDiv = $('<div>' + $option.text() + '</div>');
-            $optionDiv.on('click', function() {
-                if (!$option.data('added')) {
-                    var $selectedItem = $('<div class="selectedItem">' + $option.text() + '<span class="close">x</span></div>');
-                    
-                    $selectedItem.find('.close').on('click', function() {
-                        $selectedItem.remove();
-                        $option.prop('selected', false).removeData('added').removeAttr('data-select');;
-                        
-                        if ($selectBox.find('.selectedItem').length === 0) {
-                            $selectBox.find('.placeholder').css('display', 'block');
-                        }
-
-                        $selectElement.trigger('change');
-                    });
-
-                    $selectBox.find('.placeholder').css('display', 'none');
-                    $selectBox.prepend($selectedItem);
-                    $option.data('added', true).prop('selected', true).attr('data-select', 'true');;
-                    $selectElement.trigger('change');
-                }
-            });
-
-            $optionsContainer.append($optionDiv);
-        });
-
-        $selectBox.on('click', function() {
-            $optionsContainer.toggleClass('open');
-        });
-
-        $(document).on('click', function(event) {
-            if (!$multiselect.is(event.target) && !$(event.target).closest($multiselect).length) {
-                $optionsContainer.removeClass('open');
-            }
-        });
-
-        $multiselect.append($selectBox).append($optionsContainer);
-    });
-
-    // Event listener for change in select field
-    $(servicesSelectId).on('change', function() { 
-        $(servicesSelectId).next(contact_error).hide();
-
-        var selectedValues = $(this).find('option:selected').map(function() {
+    function updateCheckboxVisibility() {
+        var selectedValues = $(servicesCheckboxList +':checked').map(function() {
             return $(this).val();
         }).get();  
-
-        $(servicesId).val(selectedValues.join(', '));
 
         // Show the conditional fields based on the selected values
         selectedValues.forEach(function(value) {
@@ -313,19 +267,28 @@ jQuery(document).ready(function($) {
             $(securityColId).hide();
             $(securityColId + ' input[type="checkbox"]').prop('checked', false);
         }
+    } 
 
+    $(servicesCheckboxList).change(function() {
+        updateCheckboxVisibility();
+    }); 
+
+    // Checkbox change event listener to hide error messages 
+    $(servicesColId + ' input[type="checkbox"]').on('change', function() {
+        if ($(this).is(':checked')) { 
+            $(servicesColId).find(contact_error).html('').hide();
+        }
     });
 
-    // Checkbox change event listener to hide error messages
     $(parkingColId + ' input[type="checkbox"]').on('change', function() {
-        if ($(this).is(':checked')) {
-            $(parkingColId + contact_error).hide();
+        if ($(this).is(':checked')) { 
+            $(parkingColId).find(contact_error).html('').hide();
         }
     });
 
     $(securityColId + ' input[type="checkbox"]').on('change', function() {
         if ($(this).is(':checked')) {
-            $(securityColId + contact_error).hide();
+            $(securityColId).find(contact_error).html('').hide(); 
         }
     });
 
@@ -346,3 +309,8 @@ jQuery(document).ready(function($) {
 function kg_contact_recaptchaCallback() {
     jQuery(contact_captcha_wrap).find(contact_error).hide();
 }  
+
+function isRestrictedDomain(email) {
+    var domain = email.substring(email.lastIndexOf("@"));
+    return restrictedDomains.includes(domain.toLowerCase());
+}

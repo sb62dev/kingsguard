@@ -14,7 +14,6 @@ function contact_form() {
     <div class="kg_contact_wrapper">
         <div class="kg_contact_formWrap">
             <form class="kg_contact_form" id="kg_contact_form" method="POST">
-                <input type="hidden" id="selected_services" name="selected_services" value="">
                 <input type="hidden" name="action" id="action" value="kg_contact_form_save" />
                 <?php wp_nonce_field('contact_form_save_action', 'contact_form_save_nonce_field'); ?> 
                 <div class="kg_contact_wrap">
@@ -56,20 +55,36 @@ function contact_form() {
                                 <div class="contact_error"></div>
                             </div>
                         </div>  
-                        <div class="kg_contact_col col-md-12">
-                            <div class="kg_contact_inputWrap kg_contact_selectWrap kg_contact_multi_services">
-                                <label class="kg_contact_label"> Select Service<sup>*</sup> </label>
-                                <select id="kg_contact_services" name="kg_contact_services" class="selectFieldl" multiple>
-                                    <option value="" class="placeholder" disabled="">Select</option>
-                                    <option value="Security Guard">Security Guard</option>
-                                    <option value="Portable Surveillance System">Portable Surveillance System</option>
-                                    <option value="Mobile Patrol">Mobile Patrol</option>
-                                    <option value="Parking Enforcement">Parking Enforcement</option>
-                                    <option value="Security Systems">Security Systems</option>
-                                </select>
-                                <div class="contact_error"></div>
+                        <div class="kg_contact_col col-md-12" id="kg_contact_services_col">
+                            <div class="kg_contact_inputWrap kg_contact_checkWrap"> 
+                                <fieldset>
+                                    <legend class="kg_contact_label">Select Service<sup>*</sup></legend>
+                                    <ul class="kg_contact_checkbox_list">
+                                        <li>
+                                            <input type="checkbox" id="kg_contact_services1" name="kg_contact_services_list[]" value="Security Guard">
+                                            <label for="kg_contact_services1">Security Guard</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="kg_contact_services2" name="kg_contact_services_list[]" value="Portable Surveillance System">
+                                            <label for="kg_contact_services2">Portable Surveillance System</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="kg_contact_services3" name="kg_contact_services_list[]" value="Mobile Patrol">
+                                            <label for="kg_contact_services3">Mobile Patrol</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="kg_contact_services4" name="kg_contact_services_list[]" value="Parking Enforcement">
+                                            <label for="kg_contact_services4">Parking Enforcement</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="kg_contact_services5" name="kg_contact_services_list[]" value="Security Systems">
+                                            <label for="kg_contact_services5">Security Systems</label>
+                                        </li>
+                                    </ul>
+                                    <div class="contact_error"></div>
+                                </fieldset> 
                             </div>
-                        </div>  
+                        </div>   
                         <div class="kg_contact_col col-md-12" id="kg_contact_parking_service_col">
                             <div class="kg_contact_inputWrap kg_contact_checkWrap"> 
                                 <fieldset>
