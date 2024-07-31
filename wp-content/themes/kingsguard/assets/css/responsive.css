@@ -391,6 +391,9 @@
     .projects_section_two .noProjectFound {
         font-size: 26px;
     }
+    .homeBannerSlider .slick-dots {
+        left: 50px;
+    }
 }
 
 @media screen and ( max-width: 1199px ){
@@ -639,6 +642,9 @@ h3 .job-title {
 }
 .clientLogoSlide .clientLogoSlideInner img {
     max-height: 70px;
+}
+.homeBannerSlider .slick-dots {
+    left: 20px;
 }
 } 
 
@@ -1035,6 +1041,17 @@ input:-moz-placeholder {
     border: 2px solid #aeafb0;
     object-fit: cover;
     margin-right: 4px;
+}
+.homeBannerSlider .slick-dots {
+    left: 15px;
+}
+.homeBannerSlider .slick-dots li {
+    margin: 10px 0;
+}
+.homeBannerSlider .slick-dots li.countdown {
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1878,6 +1895,9 @@ button.modal_close span {
 .jobseek_application_resume_box {
     font-size: 16px !important;
     padding: 15px 15px !important;
+}
+.homeBannerSlider .slick-dots li {
+    margin: 8px 0;
 }
 }
 @media only screen and (max-width: 600px) {
