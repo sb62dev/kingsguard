@@ -1,30 +1,20 @@
 jQuery(document).ready(function () {
   jQuery('.desktopSubMenuWrap').hide();
-
-  // Function to show the submenu with a transition
   function showSubmenu(submenuClass) {
-      // console.log('Showing submenu:', submenuClass);
       jQuery('.desktopSubMenuWrap .subMenuOptions > div').stop().slideUp(500);
-
-      // Show the specific submenu
       jQuery('.desktopSubMenuWrap .' + submenuClass).stop().slideDown(500);
-
-      // Ensure the parent wrapper is visible and has the show class
       jQuery('.desktopSubMenuWrap').slideDown(500).addClass('show');
   }
 
-  // Function to hide the submenu
   function hideSubmenu() {
     jQuery('.desktopSubMenuWrap').stop().slideUp(500).removeClass('show');
   }
 
-  // Event handlers for hovering on the main menu items
   jQuery('.website_nav .menu-item-services').hover(
       function () {
           showSubmenu('serviceSubmenu');
       },
       function () {
-          // Do nothing when hovering out of the main menu item
       }
   );
 
@@ -33,27 +23,21 @@ jQuery(document).ready(function () {
           showSubmenu('industrySubmenu');
       },
       function () {
-          // Do nothing when hovering out of the main menu item
       }
   );
 
-  // Event handler for hovering on menu items that don't have a submenu
   jQuery('.website_nav .menu-item').not('.menu-item-services, .menu-item-industries').hover(
       function () {
           hideSubmenu();
       },
       function () {
-          // Do nothing when hovering out of the main menu item
       }
   );
 
-  // Optionally, hide the submenu when the mouse leaves the submenu area
   jQuery('.desktopSubMenuWrap').hover(
       function () {
-          // Do nothing when hovering over the submenu
       },
       function () {
-          // Hide the submenu when the mouse leaves the submenu area
           hideSubmenu();
       }
   );
