@@ -181,7 +181,7 @@ if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers
                                             <?php  
                                                 wp_nav_menu(
                                                     array(
-                                                        'theme_location' => 'primary',
+                                                        'theme_location' => 'mobile-menu',
                                                         'menu_class'     => 'website_nav'
                                                     )
                                                 );
@@ -204,7 +204,7 @@ if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers
             </div>
         </div>
     </header>
-    <!-- <div class="desktopSubMenuWrap">
+    <div class="desktopSubMenuWrap">
         <div class="desktopSubMenuWrapInner">
             <div class="sm_container">
                 <div class="desktopSubMenuInner">
@@ -233,5 +233,5 @@ if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 <?php endif; ?>

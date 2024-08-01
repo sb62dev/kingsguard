@@ -415,7 +415,9 @@ header.Sticky-fixed .logo .logotxt {
     display: none;
 }
 .main-navigation .main_nav_top ul li .sub-menu-toggle,
-.mobMenus .website_nav li .sub-menu-toggle {
+.mobMenus .website_nav li .sub-menu-toggle,
+.main-navigation .main_nav_top ul li.menu-item-services,
+.main-navigation .main_nav_top ul li.menu-item-industries {
     background-image: url('../images/down-arrow.svg');
     background-repeat: no-repeat;
     background-position: center right;
@@ -423,6 +425,10 @@ header.Sticky-fixed .logo .logotxt {
     padding: 10px;
     position: relative;
     top: 1px;
+}
+.main-navigation .main_nav_top ul li.menu-item-services,
+.main-navigation .main_nav_top ul li.menu-item-industries {
+    padding: 0 20px 0 0;
 }
 .main-navigation .menu-header-menu-2-container ul > li:last-child {
     margin-top: 7px;
@@ -634,18 +640,7 @@ header.Sticky-fixed .logo .logotxt {
     top: 120px;
     padding-bottom: 30px;
     padding-top: 40px;
-}
-.desktopSubMenuWrap.show {
-    display: block;
-}
-.desktopSubMenuWrap .desktopSubMenuWrapInner {
-    height: 0;
-    -webkit-transition: height 0.3s linear;
-    -o-transition: height 0.3s linear;
-    transition: height 0.3s linear;
-}
-.desktopSubMenuWrap.show .desktopSubMenuWrapInner {
-    height: 123px;
+    height: 190px;
 }
 .desktopSubMenuWrap .subMenuWrap {
     display: flex;
@@ -676,12 +671,6 @@ header.Sticky-fixed .logo .logotxt {
 .desktopSubMenuWrap .subMenuWrap li a:focus {
     color: #ffffff;
     background-color: #151518;
-}
-.desktopSubMenuWrap .subMenuWrap .serviceSubmenu,
-.desktopSubMenuWrap .subMenuWrap .industrySubmenu {
-    -webkit-transition: height 0.3s linear;
-    -o-transition: height 0.3s linear;
-    transition: height 0.3s linear;
 }
 /****NEETU***/
 .sm_container {

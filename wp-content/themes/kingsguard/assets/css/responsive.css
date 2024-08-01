@@ -649,6 +649,13 @@ h3 .job-title {
 .homeBannerSlider .slick-dots {
     left: 20px;
 }
+.desktopSubMenuWrap {
+    height: 167px;
+}
+.desktopSubMenuWrap .subMenuWrap li a {
+    padding: 10px;
+    font-size: 14px;
+}
 } 
 
  
