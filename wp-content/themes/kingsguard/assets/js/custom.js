@@ -1,4 +1,47 @@
 jQuery(document).ready(function () {
+  jQuery('.desktopSubMenuWrap').hide();
+  function showSubmenu(submenuClass) {
+      jQuery('.desktopSubMenuWrap .subMenuOptions > div').stop().slideUp(500);
+      jQuery('.desktopSubMenuWrap .' + submenuClass).stop().slideDown(500);
+      jQuery('.desktopSubMenuWrap').slideDown(500).addClass('show');
+  }
+
+  function hideSubmenu() {
+    jQuery('.desktopSubMenuWrap').stop().slideUp(500).removeClass('show');
+  }
+
+  jQuery('.website_nav .menu-item-services').hover(
+      function () {
+          showSubmenu('serviceSubmenu');
+      },
+      function () {
+      }
+  );
+
+  jQuery('.website_nav .menu-item-industries').hover(
+      function () {
+          showSubmenu('industrySubmenu');
+      },
+      function () {
+      }
+  );
+
+  jQuery('.website_nav .menu-item').not('.menu-item-services, .menu-item-industries').hover(
+      function () {
+          hideSubmenu();
+      },
+      function () {
+      }
+  );
+
+  jQuery('.desktopSubMenuWrap').hover(
+      function () {
+      },
+      function () {
+          hideSubmenu();
+      }
+  );
+
   jQuery('.homeBannerSlider').on('init', function(event, slick) {
       slick.$dots.addClass('vertical-dots');
     });

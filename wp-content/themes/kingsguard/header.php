@@ -181,7 +181,7 @@ if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers
                                             <?php  
                                                 wp_nav_menu(
                                                     array(
-                                                        'theme_location' => 'primary',
+                                                        'theme_location' => 'mobile-menu',
                                                         'menu_class'     => 'website_nav'
                                                     )
                                                 );
@@ -204,26 +204,34 @@ if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers
             </div>
         </div>
     </header>
-    <!-- <div class="desktopSubMenuWrap">
-        <div class="sm_container">
-            <div class="desktopSubMenuInner">
-                <div class="submenuSelector">
-                    <ul class="leftSubmenus">
-                        <li>
-                            <a class="submenuBtn">Industries</a> 
-                        </li>
-                        <li>
-                            <a class="submenuBtn">Use Cases</a> 
-                        </li>
-                        <li>
-                            <a class="submenuBtn">Team</a> 
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="subMenuOptions">
+    <div class="desktopSubMenuWrap">
+        <div class="desktopSubMenuWrapInner">
+            <div class="sm_container">
+                <div class="desktopSubMenuInner">
+                    <div class="subMenuOptions">
+                        <div class="serviceSubmenu">
+                            <?php  
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'submenu1',
+                                        'menu_class'     => 'subMenuWrap'
+                                    )
+                                );
+                            ?>
+                        </div>
+                        <div class="industrySubmenu">
+                            <?php  
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'submenu2',
+                                        'menu_class'     => 'subMenuWrap'
+                                    )
+                                );
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 <?php endif; ?>

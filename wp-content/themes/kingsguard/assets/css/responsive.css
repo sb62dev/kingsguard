@@ -204,6 +204,9 @@
     body {
         font-size: 16px;
     }
+    .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label {
+        font-size: 16px;
+    }
     .aboutUsSec .accordion .card .card-header .h3 {
         font-size: 30px;
         height: 65px;
@@ -646,6 +649,13 @@ h3 .job-title {
 .homeBannerSlider .slick-dots {
     left: 20px;
 }
+.desktopSubMenuWrap {
+    height: 167px;
+}
+.desktopSubMenuWrap .subMenuWrap li a {
+    padding: 10px;
+    font-size: 14px;
+}
 } 
 
  
@@ -658,6 +668,9 @@ h3 .job-title {
     padding: 70px 0;
 }
 body, .cmn_accordion .card .card-header h5 {
+    font-size: 16px;
+}
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label {
     font-size: 16px;
 }
 .main-heading h2, h2, h3 .job-title {
@@ -1062,6 +1075,9 @@ body {
     overflow-x: hidden;
 }
 body, .cmn_accordion .card .card-header h5 {
+    font-size: 14px;
+}
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label {
     font-size: 14px;
 }
 .cmnPadd{
