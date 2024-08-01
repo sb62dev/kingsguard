@@ -144,6 +144,39 @@ function sendDataToZohoLeads($data) {
     return $response;
 } 
 
+function isEmailInZoho($email) {
+    $access_token = getZohoAccessToken();
+
+    if (!$access_token) {
+        error_log('Failed to retrieve access token for email check.');
+        return false; // Default to false if access token can't be obtained
+    }
+
+    // Define the API URL for searching leads with the specified email
+    $apiurl = "https://www.zohoapis.eu/crm/v2/Leads/search?criteria=(Email:equals:$email)";
+
+    // Set up the request
+    $response = wp_remote_get($apiurl, array(
+        'headers' => array(
+            'Authorization' => 'Zoho-oauthtoken ' . $access_token
+        )
+    ));
+
+    if (is_wp_error($response)) {
+        error_log('Error in API request: ' . $response->get_error_message());
+        return false;
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    $responseData = json_decode($body, true);
+
+    if (isset($responseData['data']) && !empty($responseData['data'])) {
+        return true; // Email exists in Zoho
+    } else {
+        return false; // Email does not exist in Zoho
+    }
+}
+
 // Function to handle file upload
 function handle_file_upload($file_field_name, $custom_dir, $prefix) {
     if (isset($_FILES[$file_field_name]) && !empty($_FILES[$file_field_name]['name'])) {

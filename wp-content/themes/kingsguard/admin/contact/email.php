@@ -4,96 +4,193 @@
 function generate_contact_user_email_html($name) {
     ob_start();
     ?>
-    <html>
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <style type="text/css"> 
-                table {
-                    border-collapse: collapse;
-                    border-spacing: 0;
-                }  
-                a {
-                    border: 0 !important;
-                    outline: 0 !important;
-                    box-shadow: none !important;
-                } 
-                @media(min-width: 500px) {
-                    .space_left_right {
-                        padding: 50px !important;
-                    }  
-                    .ls_space_left_right {
-                        padding: 30px !important;
+        <html> 
+            <head>
+                <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <style type="text/css">
+                    table {
+                        border-collapse: collapse;
+                        border-spacing: 0;
                     }
-                } 
-            </style>
-        </head>
-        <body>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
-                <tbody>
-                    <tr>
-                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
-                                <tbody>
-                                    <tr>
-                                        <td valign="top" style="background-color:#ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign="top">
-                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
-                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
-                                                                                <tr><td style="height: 10px;" height="10"></td></tr>
-                                                                                <tr>
-                                                                                    <td align="center" style="text-align: center;">  
-                                                                                        <img src="https://kingsguardsecurity.ca/wp-content/uploads/2024/07/blue-logo-kings.png" alt="Kingsguard Security Logo" width="70px" height="85px"> 
-                                                                                    </td>
-                                                                                </tr> 
-                                                                                <tr><td style="height: 15px;" height="15"></td></tr>
-                                                                                <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Thank You for Reaching Out! </td>
-                                                                                </tr>
-                                                                                <tr><td style="height: 25px;" height="25"></td></tr>
-                                                                                <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear {{name}}, </td>
-                                                                                </tr>
-                                                                                <tr><td style="height: 15px;" height="15"></td></tr> 
-                                                                                <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> We appreciate your enquiry and have received your request. Our team will review your message and get back to you as soon as possible. </td>
-                                                                                </tr> 
-                                                                                <tr><td style="height: 15px;" height="15"></td></tr>  
-                                                                                <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you for your patience and understanding. </td>
-                                                                                </tr>
-                                                                                <tr><td style="height: 35px;" height="35"></td></tr>  
-                                                                                <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
-                                                                                </tr>
-                                                                                <tr><td style="height: 10px;" height="10"></td></tr>   
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr> 
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </body>
-    </html>
+
+                    a {
+                        border: 0 !important;
+                        outline: 0 !important;
+                        box-shadow: none !important;
+                    }
+
+                    @media(min-width: 500px) {
+                        .space_left_right {
+                            padding: 50px !important;
+                        }
+
+                        .ls_space_left_right {
+                            padding: 30px !important;
+                        }
+                    }
+
+                </style>
+            </head> 
+            <body>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+                    <tbody>
+                        <tr>
+                            <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" style="background-color:#000000;color: #ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
+                                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                                                                                    <tr>
+                                                                                        <td style="height: 10px;" height="10"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="center" style="text-align: center;">
+                                                                                            <img src="https://kingsguardsecurity.ca/wp-content/uploads/2024/07/blue-logo-kings.png" alt="Kingsguard Security Logo" width="70px" height="85px">
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="height: 15px;" height="15"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #ffffff;"> We Received Your Request! </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="height: 25px;" height="25"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Dear {{name}}, </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="height: 15px;" height="15"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Thank you for requesting a quote from KingsGuard Security. We are thrilled to have the opportunity to provide you with our top-notch security services. Below, you will find an overview of the comprehensive security solutions we offer to meet your specific needs. </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="height: 25px;" height="25"></td>
+                                                                                    </tr> 
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="top" >
+                                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse"> 
+                                                                                    <tr>
+                                                                                        <td align="left" style=""><a href="https://kingsguardsecurity.ca/" target="_blank"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/quote_banner.png" style="width: 100%" width="100%" alt="Image"></a></td>
+                                                                                    </tr> 
+                                                                                    <tr>
+                                                                                        <td style="height: 40px;" height="40"></td>
+                                                                                    </tr> 
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
+                                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">  
+                                                                                    <tr>
+                                                                                        <td align="left" width="25" style="width:25px"></td>
+                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Costco.jpg" style="width: 70px" width="70" alt="Image"></td>
+                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Grand-River-Foods.jpg" style="width: 60px" width="60" alt="Image"></td>
+                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Ellis-Don.jpg" style="width: 140px" width="140" alt="Image"></td>
+                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Crowne-Plaza.jpg" style="width: 90px" width="90" alt="Image"></td>
+                                                                                        <td align="left" width="25" style="width:25px"></td>
+                                                                                    </tr> 
+                                                                                    <tr>
+                                                                                        <td style="height: 10px;" height="10"></td>
+                                                                                    </tr> 
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
+                                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">  
+                                                                                    <tr> 
+                                                                                        <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-1.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> Advanced Electronic Reports </p></td>
+                                                                                        <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-2.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> 24/7 <br> Dispatch </p></td>
+                                                                                        <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-3.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> Customer <br> Satisfaction </p></td> 
+                                                                                    </tr> 
+                                                                                    <tr>
+                                                                                        <td style="height: 40px;" height="40"></td>
+                                                                                    </tr> 
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
+                                                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">  
+                                                                                    <tr> 
+                                                                                        <td align="left" style="width: 30%;font-size: 12px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-ftr-icon-1.jpg" style="width: 12px;margin-right: 3px;vertical-align: middle;" width="12" alt="Image"><span style="font-size: 12px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;margin: 20px 0 0;">info@kingsguard.ca</span></td>
+                                                                                        <td align="left" style="width: 2%;" width="2%"></td>
+                                                                                        <td align="left" style="width: 30%;font-size: 12px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-ftr-icon-2.jpg" style="width: 12px;margin-right: 3px;vertical-align: middle;" width="12" alt="Image"><span style="font-size: 12px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;margin: 20px 0 0;">1241 Strasburg Rd, Unit 205 Kitchener, ON, N2R1S6</span></td>
+                                                                                        <td align="left" style="width: 2%;" width="2%"></td>
+                                                                                        <td align="left" style="width: 24%;font-size: 12px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-ftr-icon-3.jpg" style="width: 12px;margin-right: 3px;vertical-align: middle;" width="12" alt="Image"><span style="font-size: 12px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;margin: 20px 0 0;">www.kingsguard.ca</span></td>
+                                                                                    </tr> 
+                                                                                    <tr>
+                                                                                        <td style="height: 10px;" height="10"></td>
+                                                                                    </tr> 
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </body> 
+        </html>
     <?php
     return ob_get_clean();
 }

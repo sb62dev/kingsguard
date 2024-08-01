@@ -31,7 +31,7 @@ function handle_contact_form() {
             $parking_services = isset($_POST['kg_contact_parking_services']) ? implode(', ', $_POST['kg_contact_parking_services']) : '';
             $site_types = sanitize_text_field($_POST['kg_contact_site_types']);
             $length_cover = sanitize_text_field($_POST['kg_contact_length_cover']);
-            $add_info = sanitize_textarea_field($_POST['kg_contact_add_info']);
+            $add_info = sanitize_textarea_field($_POST['kg_contact_add_info']);  
 
             $name = $fname . ' ' . $lname; 
             $form_type = 'Quote';
@@ -69,8 +69,10 @@ function handle_contact_form() {
             ); 
 
             send_contact_user_email($email, $name);  
-            send_contact_admin_email($name,$email,$title,$phone,$services_list,$parking_services,$security_services,$site_types,$length_cover,$add_info);
-            sendDataToZohoLeads($userData);
+            send_contact_admin_email($name,$email,$title,$phone,$services_list,$parking_services,$security_services,$site_types,$length_cover,$add_info); 
+            if (!isEmailInZoho($email)) {
+                sendDataToZohoLeads($userData);
+            } 
 
             wp_send_json_success(array(
                 'message' => 'Submitted successful!'
