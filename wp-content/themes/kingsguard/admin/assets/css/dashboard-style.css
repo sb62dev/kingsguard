@@ -637,6 +637,7 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
     font-size: 16px;
     font-family: 'Gilroy-Bold';
     margin: 0 !important;
+    padding-right: 20px;
 }
 .quicklinks li#wp-admin-bar-site-name {
     display: none;
@@ -674,6 +675,9 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab
     line-height: 1;
     padding: 0;
     height: auto !important;
+}
+#collapse-menu {
+    display: none;
 }
 @media screen and (max-width: 960px) {
     #adminmenu li.my-custom-logo a img {
