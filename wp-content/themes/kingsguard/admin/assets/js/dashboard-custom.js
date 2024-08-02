@@ -13,4 +13,6 @@ jQuery(document).ready(function($) {
 
     // Add the new list item to the beginning of the sidebar menu
     $sidebarMenu.prepend(listItem);
+
+    $('div#wp-toolbar').hide();
 });
