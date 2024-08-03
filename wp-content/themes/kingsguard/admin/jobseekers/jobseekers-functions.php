@@ -1,5 +1,7 @@
 <?php    
 
+define('ADMIN_EMAILS', 'sb62dev@gmail.com');
+
 /* Function to add common JS for Jobseekers */
 function enqueue_custom_jobseekers_scripts() {
     wp_enqueue_script('custom-jobseekers-common-script', get_template_directory_uri() . '/admin/jobseekers/js/jobseekers-common.js', array('jquery'), null, true);
@@ -110,7 +112,7 @@ function sendDataToZohoLeads($data) {
     if (!$access_token) {
         echo 'Failed to retrieve access token. Cannot proceed with sending data.';
         return;
-    }
+    } 
 
     $payload = json_encode(array(
         'data' => array(
@@ -119,7 +121,8 @@ function sendDataToZohoLeads($data) {
                 'Email' => isset($data['email']) ? $data['email'] : '', 
                 'First_Name' => isset($data['first_name']) ? $data['first_name'] : '',
                 'Last_Name' => isset($data['last_name']) ? $data['last_name'] : '', 
-                'Phone' => isset($data['phone_number']) ? $data['phone_number'] : '',    
+                'Phone' => isset($data['phone_number']) ? $data['phone_number'] : '',  
+                'Consent_Checkbox' => isset($data['consent_checkbox']) ? $data['consent_checkbox'] : '',  
             )
         )
     ));

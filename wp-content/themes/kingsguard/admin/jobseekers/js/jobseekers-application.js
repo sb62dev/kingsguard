@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
             license.next(errorClass).html(license_empty_err_msg).show();
             scrollId = scrollId == '' ? license : scrollId;
             go_ahead = false;
-        } else if (license.val().length <= 6 ) {
+        } else if (license.val().length < 7 ) {
             license.next(errorClass).html(min_7_length_err_msg).show();
             scrollId = scrollId == '' ? license : scrollId;
             go_ahead = false;

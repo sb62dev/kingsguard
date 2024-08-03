@@ -31,14 +31,14 @@ function generate_newsletter_user_email_html() {
             </style>
         </head>
         <body>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
                         <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
-                                        <td valign="top" style="background-color:#ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
+                                        <td valign="top" style="background-color:#000000;border-top:0;border:1px solid #ffffff;padding-top:0;padding-bottom:0px">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                 <tbody>
                                                     <tr>
@@ -46,7 +46,7 @@ function generate_newsletter_user_email_html() {
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
+                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
@@ -56,19 +56,19 @@ function generate_newsletter_user_email_html() {
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Thank you for subscribing to our newsletter! </td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #ffffff;"> Thank you for subscribing to our newsletter! </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> If you ever have any questions or need assistance, feel free to reach out to us at info@kingsguard.ca. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> If you ever have any questions or need assistance, feel free to reach out to us at info@kingsguard.ca. </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you once again for subscribing. Stay tuned for our next newsletter! </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Thank you once again for subscribing. Stay tuned for our next newsletter! </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong style="color: #ffffff;">Best regards,</strong><br>KingsGuard Security Team </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>   
                                                                             </table>
@@ -125,14 +125,14 @@ function generate_newsletter_admin_email_html($email) {
             </style>
         </head>
         <body>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
                         <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
-                                        <td valign="top" style="background-color:#ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
+                                        <td valign="top" style="background-color:#000000;border-top:0;border:1px solid #ffffff;padding-top:0;padding-bottom:0px">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                 <tbody>
                                                     <tr>
@@ -140,7 +140,7 @@ function generate_newsletter_admin_email_html($email) {
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
+                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
@@ -150,27 +150,27 @@ function generate_newsletter_admin_email_html($email) {
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Newsletter Subscription</td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #ffffff;"> Newsletter Subscription</td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 25px;" height="25"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear Admin, </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Dear Admin, </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> We have a new subscriber to the KingsGuard Security newsletter! Subscriber Details: </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> We have a new subscriber to the KingsGuard Security newsletter! Subscriber Details: </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Email: </strong> {{email}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Email: </strong> {{email}} </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> This subscriber will now receive our latest updates, news, and special promotions. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> This subscriber will now receive our latest updates, news, and special promotions. </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong style="color: #ffffff;">Best regards,</strong><br>KingsGuard Security Team </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>   
                                                                             </table>
@@ -207,7 +207,7 @@ function send_newsletter_user_email($email) {
 // Function to send email to admin with replaced placeholders
 function send_newsletter_admin_email($email) {
     $subject = 'New Newsletter Subscription!';
-    $adminemail= 'sb62dev@gmail.com';
+    $adminemail= ADMIN_EMAILS;
     $message = generate_newsletter_admin_email_html($email);
     // Replace placeholders with actual values  
     $message = str_replace('{{email}}', $email, $message);  

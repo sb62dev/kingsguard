@@ -33,6 +33,7 @@ function create_jobseekers_table() {
         reset_requested_at datetime DEFAULT NULL,
         user_info longtext DEFAULT NULL,
         job_applications longtext DEFAULT NULL,
+        consent_checkbox varchar(10) DEFAULT 'No',
         submission_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY  (id)
     ) $charset_collate;";

@@ -87,7 +87,7 @@ function handle_job_application_submission() {
                 );
 
                 if($result !== false) {
-                    send_applications_email($email, $firstname, $lastname); 
+                    send_applications_email($email, $firstname, $lastname, $job_title); 
                     send_admin_applications_email($firstname, $lastname, $job_title); 
                     $json_response = array('status' => 'success', "code" => 200, "message" => __("Application has been updated successfully.", 'jobseekers'));
                     wp_send_json_success($json_response);

@@ -63,6 +63,13 @@ function jobseekers_register_form() {
                             </div>
                         </div>
                         <div class="jobseek_register_col col-md-12">
+                            <div class="jobseek_register_inputWrap jobseek_register_checkWrap">
+                                <input type="hidden" name="jobseek_register_consent_checkbox" value="No">
+                                <input type="checkbox" class="jobseek_register_consent_checkbox" id="jobseek_register_consent_checkbox" name="jobseek_register_consent_checkbox" value="Yes">
+                                <label class="jobseek_consent_checkbox_label" for="jobseek_register_consent_checkbox">Yes, I consent to receiving communications from KingsGuard Security. I understand that I can withdraw my consent at any time. (Optional)</label>
+                            </div>
+                        </div> 
+                        <div class="jobseek_register_col col-md-12">
                             <div class="jobseek_register_captcha_Wrap">
                                 <div class="g-recaptcha" data-callback="jobseek_register_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                                 <div class="jobseek_error"></div>
