@@ -54,4 +54,71 @@ function redirect_editor_from_profile_page() {
 }
 add_action('admin_init', 'redirect_editor_from_profile_page');   
 
+function remove_menus_for_specific_user() {
+    // Get current user
+    $user = wp_get_current_user();
+    
+    // Check if the current user's username matches the specified username
+    if ($user->user_login === 'kingsadmin') {
+        remove_menu_page('edit.php'); 
+        remove_menu_page('edit.php?post_type=page'); 
+        remove_menu_page('edit.php?post_type=services'); 
+        remove_menu_page('edit.php?post_type=projects'); 
+        remove_menu_page('edit.php?post_type=industries'); 
+        remove_menu_page('edit.php?post_type=general_settings'); 
+        remove_menu_page('upload.php');   
+    }
+}
+add_action('admin_menu', 'remove_menus_for_specific_user', 999);
+
+function remove_admin_bar_items_for_specific_user() {
+    // Get current user
+    $user = wp_get_current_user();
+    
+    // Check if the current user's username matches the specified username
+    if ($user->user_login === 'kingsadmin') {
+        global $wp_admin_bar;    
+        $wp_admin_bar->remove_menu('new-post'); // New Post
+        $wp_admin_bar->remove_menu('new-media'); // New Media
+    }
+}
+add_action('wp_before_admin_bar_render', 'remove_admin_bar_items_for_specific_user');  
+
+function enqueue_admin_menu_hiding_script() {
+    // Get current user
+    $user = wp_get_current_user();
+
+    // Check if the current user's username matches the specified username
+    if ($user->user_login === 'kingsadmineditor') {
+        // Enqueue script to hide admin menu items
+        add_action('admin_footer', 'hide_admin_menu_items_script');
+    }
+}
+add_action('admin_menu', 'enqueue_admin_menu_hiding_script');
+
+function hide_admin_menu_items_script() {
+    ?>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide specific admin menu items
+            var menuItems = [
+                '#menu-posts-careers',
+                '#toplevel_page_newsletter-entries',
+                '#toplevel_page_jobseekers-job-applications',
+                '#toplevel_page_quote-applications'
+            ];
+
+            menuItems.forEach(function(selector) {
+                var element = document.querySelector(selector);
+                if (element) {
+                    element.style.display = 'none';
+                }
+            });
+        });
+    </script> 
+    <?php
+} 
+
+
+
 ?>
