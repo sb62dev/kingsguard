@@ -35,10 +35,10 @@ function generate_contact_user_email_html($name) {
                 </style>
             </head> 
             <body>
-                <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                     <tbody>
                         <tr>
-                            <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                            <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                     <tbody>
                                         <tr>
@@ -117,10 +117,10 @@ function generate_contact_user_email_html($name) {
                                                                                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">  
                                                                                     <tr>
                                                                                         <td align="left" width="25" style="width:25px"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Costco.jpg" style="width: 70px" width="70" alt="Image"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Grand-River-Foods.jpg" style="width: 60px" width="60" alt="Image"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Ellis-Don.jpg" style="width: 140px" width="140" alt="Image"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Crowne-Plaza.jpg" style="width: 90px" width="90" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Costco.jpg" style="width: 70px" width="70" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Grand-River-Foods.jpg" style="width: 60px" width="60" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Ellis-Don.jpg" style="width: 140px" width="140" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Crowne-Plaza.jpg" style="width: 90px" width="90" alt="Image"></td>
                                                                                         <td align="left" width="25" style="width:25px"></td>
                                                                                     </tr> 
                                                                                     <tr>
@@ -142,7 +142,7 @@ function generate_contact_user_email_html($name) {
                                                                                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">  
                                                                                     <tr> 
                                                                                         <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-1.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> Advanced Electronic Reports </p></td>
-                                                                                        <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-2.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> 24/7 <br> Dispatch </p></td>
+                                                                                        <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;padding: 0 5px;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-2.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> 24/7 <br> Dispatch </p></td>
                                                                                         <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-3.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> Customer <br> Satisfaction </p></td> 
                                                                                     </tr> 
                                                                                     <tr>
@@ -226,14 +226,14 @@ function generate_contact_admin_email_html($name,$email,$title,$phone,$service,$
             </style>
         </head>
         <body>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
-                                        <td valign="top" style="background-color:#ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
+                                        <td valign="top" style="background-color:#000000;border-top:0;border:1px solid #ffffff;padding-top:0;padding-bottom:0px">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                 <tbody>
                                                     <tr>
@@ -241,7 +241,7 @@ function generate_contact_admin_email_html($name,$email,$title,$phone,$service,$
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
+                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
@@ -251,60 +251,60 @@ function generate_contact_admin_email_html($name,$email,$title,$phone,$service,$
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Customer Enquiry Form </td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #ffffff;"> Customer Enquiry Form </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 25px;" height="25"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear Admin, </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Dear Admin, </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> New enquiry form submitted, here are the customer enquiry form fields: </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> New enquiry form submitted, here are the customer enquiry form fields: </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Name: </strong> {{name}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Name: </strong> {{name}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Email: </strong> {{email}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Email: </strong> {{email}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Title: </strong> {{title}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Title: </strong> {{title}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Phone: </strong> {{phone}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Phone: </strong> {{phone}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Service: </strong> {{service}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Service: </strong> {{service}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Parking Enforcement Service: </strong> {{parkingservice}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Parking Enforcement Service: </strong> {{parkingservice}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Security Systems Service: </strong> {{securityservice}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Security Systems Service: </strong> {{securityservice}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Type of Site: </strong> {{sitetype}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Type of Site: </strong> {{sitetype}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Length of Cover: </strong> {{lengthcover}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Length of Cover: </strong> {{lengthcover}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong> Additional Information: </strong> {{addinfo}} </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Additional Information: </strong> {{addinfo}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong style="color: #ffffff;">Best regards,</strong><br>KingsGuard Security Team</td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>   
                                                                             </table>
@@ -344,7 +344,7 @@ function send_contact_user_email($email, $name) {
 // Function to send email to admin with replaced placeholders
 function send_contact_admin_email($name,$email,$title,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo) {
     $subject = 'Quote Form!';
-    $adminemail= 'sb62dev@gmail.com';
+    $adminemail= ADMIN_EMAILS;
     $message = generate_contact_admin_email_html($name,$email,$title,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo);
 
     // Replace placeholders with actual values 

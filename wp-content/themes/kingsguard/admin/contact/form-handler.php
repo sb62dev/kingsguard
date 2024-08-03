@@ -32,6 +32,7 @@ function handle_contact_form() {
             $site_types = sanitize_text_field($_POST['kg_contact_site_types']);
             $length_cover = sanitize_text_field($_POST['kg_contact_length_cover']);
             $add_info = sanitize_textarea_field($_POST['kg_contact_add_info']);  
+            $consent_checkbox = sanitize_text_field($_POST['kg_contact_consent_checkbox']); 
 
             $name = $fname . ' ' . $lname; 
             $form_type = 'Quote';
@@ -54,6 +55,7 @@ function handle_contact_form() {
                     'contact_site_types' => $site_types,
                     'contact_length_cover' => $length_cover,
                     'contact_add_info' => $add_info,
+                    'contact_consent' => $consent_checkbox,
                     'submission_date' => $datetime->format('Y-m-d H:i:s'),
                 ),
                 array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
@@ -66,6 +68,7 @@ function handle_contact_form() {
                 'first_name' => $fname,
                 'last_name' => $lname,
                 'phone_number' => $phone,   
+                'consent_checkbox' => $consent_checkbox, 
             ); 
 
             send_contact_user_email($email, $name);  

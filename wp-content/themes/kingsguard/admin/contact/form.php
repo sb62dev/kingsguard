@@ -188,6 +188,13 @@ function contact_form() {
                             </div>
                         </div>  
                         <div class="kg_contact_col col-md-12">
+                            <div class="kg_contact_inputWrap kg_contact_checkWrap">
+                                <input type="hidden" name="kg_contact_consent_checkbox" value="No">
+                                <input type="checkbox" class="kg_contact_consent_checkbox" id="kg_contact_consent_checkbox" name="kg_contact_consent_checkbox" value="Yes">
+                                <label class="kg_contact_label" for="kg_contact_consent_checkbox">Yes, I consent to receiving communications from KingsGuard Security. I understand that I can withdraw my consent at any time. (Optional)</label>
+                            </div>  
+                        </div>  
+                        <div class="kg_contact_col col-md-12">
                             <div class="kg_contact_captcha_Wrap" id="g-recaptcha-response-wrap">
                                 <div class="g-recaptcha" data-callback="kg_contact_recaptchaCallback" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                                 <div class="contact_error"></div>
@@ -199,6 +206,9 @@ function contact_form() {
                             </div>
                         </div>
                     </div>
+                    <div class="kg_quote_infoWrap">
+                        By clicking "Request a Quote," I hereby consent to the control and processing of any information pursuant to the terms of our Privacy Notice.
+                    </div> 
                 </div>
             </form>
             <div class="kg_contact_thankWrap" id="kg_contact_thankWrap">

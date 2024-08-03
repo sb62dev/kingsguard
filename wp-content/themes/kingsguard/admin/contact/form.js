@@ -271,6 +271,10 @@ jQuery(document).ready(function($) {
 
     $(servicesCheckboxList).change(function() {
         updateCheckboxVisibility();
+    });  
+
+    jQuery(sitetypesId).change(function() {  
+        jQuery(sitetypesId).next(contact_error).html('').hide();
     }); 
 
     // Checkbox change event listener to hide error messages 
@@ -313,4 +317,4 @@ function kg_contact_recaptchaCallback() {
 function isRestrictedDomain(email) {
     var domain = email.substring(email.lastIndexOf("@"));
     return restrictedDomains.includes(domain.toLowerCase());
-}
+} 

@@ -29,6 +29,7 @@ function handle_jobseekers_registration() {
             $firstname = sanitize_text_field($_POST['jobseek_register_fname']);
             $lastname = sanitize_text_field($_POST['jobseek_register_lname']);
             $verification_token = wp_generate_password(20, false);
+            $consent_checkbox = sanitize_text_field($_POST['jobseek_register_consent_checkbox']); 
 
             // Check if the user already exists
             $user_exists = $wpdb->get_var($wpdb->prepare(
@@ -53,6 +54,7 @@ function handle_jobseekers_registration() {
                         'last_name' => $lastname,
                         'role' => 'jobseeker',
                         'verification_token' => $verification_token,
+                        'consent_checkbox' => $consent_checkbox,
                         'submission_date' => $datetime->format('Y-m-d H:i:s'),
                     )
                 );
@@ -103,6 +105,7 @@ function verify_jobseekers_email() {
                     'email' => $user->email,
                     'first_name' =>  $user->first_name,
                     'last_name' => $user->last_name, 
+                    'consent_checkbox' => $user->consent_checkbox, 
                 ); 
 
                 // Send data to Zoho Leads

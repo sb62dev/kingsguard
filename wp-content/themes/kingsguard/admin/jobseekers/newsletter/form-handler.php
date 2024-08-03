@@ -41,7 +41,7 @@ function handle_newsletter_form() {
                 $userData = array(
                     'lead_source' => 'Newsletter',
                     'email' => $email, 
-                    'last_name' => '-',   
+                    'last_name' => '-',    
                 );   
 
                 send_newsletter_user_email($email);

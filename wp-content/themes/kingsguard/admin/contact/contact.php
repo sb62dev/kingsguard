@@ -18,6 +18,7 @@ function create_contact_form_table() {
         contact_site_types varchar(100) DEFAULT '', 
         contact_length_cover varchar(100) DEFAULT '',
         contact_add_info longtext DEFAULT NULL,
+        contact_consent varchar(10) DEFAULT 'No',
         submission_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY  (id)
     ) $charset_collate;";

@@ -31,14 +31,14 @@ function generate_forgot_html($name, $reset_url) {
             </style>
         </head>
         <body>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
-                                        <td valign="top" style="background-color:#ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
+                                        <td valign="top" style="background-color:#000000;border-top:0;border:1px solid #ffffff;padding-top:0;padding-bottom:0px">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                 <tbody>
                                                     <tr>
@@ -46,7 +46,7 @@ function generate_forgot_html($name, $reset_url) {
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
+                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
@@ -56,29 +56,29 @@ function generate_forgot_html($name, $reset_url) {
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Reset Password! </td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #ffffff;"> Reset Password! </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 25px;" height="25"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear {{name}}, </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Dear {{name}}, </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Please click below link to reset the password. Note: Link is valid for 30 Mintues only. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Please click below link to reset the password. Note: Link is valid for 30 Mintues only. </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 20px;" height="20"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> 
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> 
                                                                                         <a href="{{reset_url}}" style="display: inline-block; padding: 10px 20px; background-color: #0098FF; color: #ffffff; text-decoration: none; border-radius: 5px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;">Reset Password</a> 
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> If you did not request, you can safely ignore this email. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> If you did not request, you can safely ignore this email. </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong style="color: #ffffff;">Best regards,</strong><br>KingsGuard Security Team </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>   
                                                                             </table>

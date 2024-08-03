@@ -31,14 +31,14 @@ function generate_applicant_rejected_email_html($firstname, $lastname, $Job_titl
             </style>
         </head>
         <body>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
                         <td align="center" valign="top" style="height:100%;margin:0;padding:50px 50px;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
-                                        <td valign="top" style="background-color:#ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
+                                        <td valign="top" style="background-color:#000000;border-top:0;border:1px solid #ffffff;padding-top:0;padding-bottom:0px">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                 <tbody>
                                                     <tr>
@@ -46,7 +46,7 @@ function generate_applicant_rejected_email_html($firstname, $lastname, $Job_titl
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
+                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
@@ -56,27 +56,27 @@ function generate_applicant_rejected_email_html($firstname, $lastname, $Job_titl
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Job Application </td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #ffffff;"> Job Application </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 25px;" height="25"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear {{first_name}} {{last_name}}, </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Dear {{first_name}} {{last_name}}, </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you for taking the time to consider Kingsguard. Our hiring team reviewed your application and we’d like to inform you that we are not able to advance you to the next round for the {{job_title}} position at this time. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Thank you for taking the time to consider KingsGuard Security. Our hiring team reviewed your application and we’d like to inform you that we are not able to advance you to the next round for the {{job_title}} position at this time. </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> We encourage you to apply again in the future, if you find an open role at our company that suits you. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> We encourage you to apply again in the future, if you find an open role at our company that suits you. </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you again for applying to Kingsguard and we wish you all the best in your job search. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Thank you again for applying to KingsGuard Security and we wish you all the best in your job search. </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>   
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong style="color: #ffffff;">Best regards,</strong><br>KingsGuard Security Team </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>   
                                                                             </table>
@@ -133,14 +133,14 @@ function generate_applicant_approved_email_html($firstname, $lastname, $job_titl
             </style>
         </head>
         <body>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#e9eaec">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
-                                        <td valign="top" style="background-color:#ffffff;border-top:0;border:1px solid #c1c1c1;padding-top:0;padding-bottom:0px">
+                                        <td valign="top" style="background-color:#000000;border-top:0;border:1px solid #ffffff;padding-top:0;padding-bottom:0px">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                 <tbody>
                                                     <tr>
@@ -148,7 +148,7 @@ function generate_applicant_approved_email_html($firstname, $lastname, $job_titl
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #555555;">
+                                                                        <td valign="top" class="ls_space_left_right" style="padding: 15px;color: #ffffff;">
                                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
@@ -158,23 +158,23 @@ function generate_applicant_approved_email_html($firstname, $lastname, $job_titl
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #000000;"> Job Application </td>
+                                                                                    <td align="center" style="font-size: 26px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;color: #ffffff;"> Job Application </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 25px;" height="25"></td></tr>
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Dear {{first_name}} {{last_name}}, </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Dear {{first_name}} {{last_name}}, </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you for taking the time to consider Kingsguard. Our hiring team reviewed your application and we are pleased to inform you that you have advanced to the next round for the {{job_title}} position. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Thank you for taking the time to consider KingsGuard Security. Our hiring team reviewed your application and we are pleased to inform you that you have advanced to the next round for the {{job_title}} position. </td>
                                                                                 </tr>  
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr> 
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> Thank you again for applying to Kingsguard. </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> Thank you again for applying to KingsGuard Security. </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 35px;" height="35"></td></tr>   
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #555555;"> <strong style="color: #000;">Best regards,</strong><br>Kingsguard Team </td>
+                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong style="color: #ffffff;">Best regards,</strong><br>KingsGuard Security Team </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>   
                                                                             </table>
