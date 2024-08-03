@@ -210,24 +210,42 @@ if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers
                 <div class="desktopSubMenuInner">
                     <div class="subMenuOptions">
                         <div class="serviceSubmenu">
-                            <?php  
-                                wp_nav_menu(
-                                    array(
-                                        'theme_location' => 'submenu1',
-                                        'menu_class'     => 'subMenuWrap'
-                                    )
-                                );
-                            ?>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <?php  
+                                        wp_nav_menu(
+                                            array(
+                                                'theme_location' => 'submenu1',
+                                                'menu_class'     => 'subMenuWrap serviceMenu',
+                                                'container'      => false
+                                            )
+                                        );
+                                    ?>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="serviceSubMenuDetails">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="industrySubmenu">
-                            <?php  
-                                wp_nav_menu(
-                                    array(
-                                        'theme_location' => 'submenu2',
-                                        'menu_class'     => 'subMenuWrap'
-                                    )
-                                );
-                            ?>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <?php  
+                                        wp_nav_menu(
+                                            array(
+                                                'theme_location' => 'submenu2',
+                                                'menu_class'     => 'subMenuWrap industryMenu',
+                                                'container'      => false
+                                            )
+                                        );
+                                    ?>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="industrySubMenuDetails">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -777,3 +777,9 @@ function enqueue_custom_admin_scripts() {
 	wp_enqueue_script('common-admin-common-scripts', get_template_directory_uri() . '/admin/assets/js/dashboard-common.js', array('jquery'), null, true);
 } 
 add_action('admin_enqueue_scripts', 'enqueue_custom_admin_scripts');    
+
+add_filter('wp_nav_menu_items', 'allow_html_in_nav_menu', 10, 2);
+function allow_html_in_nav_menu($items, $args) {
+    $items = do_shortcode($items);
+    return $items;
+}

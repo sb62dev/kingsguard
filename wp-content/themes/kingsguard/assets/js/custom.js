@@ -1,44 +1,94 @@
 jQuery(document).ready(function () {
+    // Hide the submenu on page load
   jQuery('.desktopSubMenuWrap').hide();
+
+  // Function to show the submenu with a transition
   function showSubmenu(submenuClass) {
-      jQuery('.desktopSubMenuWrap .subMenuOptions > div').stop().slideUp(500);
-      jQuery('.desktopSubMenuWrap .' + submenuClass).stop().slideDown(500);
-      jQuery('.desktopSubMenuWrap').slideDown(500).addClass('show');
+    jQuery('.desktopSubMenuWrap .subMenuOptions > div').hide();
+    jQuery('.desktopSubMenuWrap .' + submenuClass).show();
+    jQuery('.desktopSubMenuWrap').slideDown(300).addClass('show');
+    jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').addClass('fade-right');
+    jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').addClass('fade-right');
+    jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').addClass('fade-right');
   }
 
-  function hideSubmenu() {
-    jQuery('.desktopSubMenuWrap').stop().slideUp(500).removeClass('show');
+  // Function to show the submenu details of the first item by default
+  function showFirstSubmenuDetails(menuClass, detailsClass) {
+      var firstSubmenuDetails = jQuery('.' + menuClass + ' > li:first-child .sub-menu').html();
+      jQuery('.' + detailsClass).html(firstSubmenuDetails).show();
   }
 
+  function restartAnimation(selector) {
+    var element = jQuery(selector);
+    element.removeClass('fade-right');
+    void element[0].offsetWidth; // Trigger reflow
+    element.addClass('fade-right');
+  }
+
+  // Event handlers for hovering on the main menu items
   jQuery('.website_nav .menu-item-services').hover(
       function () {
           showSubmenu('serviceSubmenu');
+          showFirstSubmenuDetails('serviceMenu', 'serviceSubMenuDetails');
       },
       function () {
+          // Do nothing when hovering out of the main menu item
       }
   );
 
   jQuery('.website_nav .menu-item-industries').hover(
       function () {
           showSubmenu('industrySubmenu');
+          showFirstSubmenuDetails('industryMenu', 'industrySubMenuDetails');
       },
       function () {
+          // Do nothing when hovering out of the main menu item
       }
   );
 
   jQuery('.website_nav .menu-item').not('.menu-item-services, .menu-item-industries').hover(
+    function () {
+      jQuery('.desktopSubMenuWrap').slideUp(300).removeClass('show');
+      jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').removeClass('fade-right');
+      jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').removeClass('fade-right');
+      jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').removeClass('fade-right');
+    },
+    function () {
+    }
+  );
+
+  jQuery('.serviceMenu > li').hover(
       function () {
-          hideSubmenu();
+          var submenuDetails = jQuery(this).find('.sub-menu').html();
+          jQuery('.serviceSubMenuDetails').html(submenuDetails).show();
+          restartAnimation('.serviceSubMenuDetails');
       },
       function () {
+          // Do nothing when not hovering over a menu item
       }
   );
 
-  jQuery('.desktopSubMenuWrap').hover(
+  jQuery('.industryMenu > li').hover(
       function () {
+          var submenuDetails = jQuery(this).find('.sub-menu').html();
+          jQuery('.industrySubMenuDetails').html(submenuDetails).show();
+          restartAnimation('.industrySubMenuDetails');
       },
       function () {
-          hideSubmenu();
+          // Do nothing when not hovering over a menu item
+      }
+  );
+
+  // Ensure the submenu remains visible when hovering over the submenu wrap
+  jQuery('.desktopSubMenuWrap').hover(
+      function () {
+          // Do nothing when hovering over the submenu
+      },
+      function () {
+        jQuery('.desktopSubMenuWrap').slideUp(300).removeClass('show');
+        jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').removeClass('fade-right');
+        jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').removeClass('fade-right');
+        jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').removeClass('fade-right');
       }
   );
 

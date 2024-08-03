@@ -634,31 +634,55 @@ header.Sticky-fixed .logo .logotxt {
     width: 100%;
     overflow: hidden;
     box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
-    display: block;
     z-index: 2;
     background-color: #242425;
     top: 120px;
     padding-bottom: 30px;
     padding-top: 40px;
-    height: 190px;
+    height: auto;
 }
 .desktopSubMenuWrap .subMenuWrap {
+    border-right: 1px solid #4c4c4e !important;
+    height: 100%;
+}
+.desktopSubMenuWrap .subMenuWrap li + li {
+    margin-top: 10px;
+}
+.desktopSubMenuWrap .subMenuWrap li a {
+    font-size: 16px;
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.desktopSubMenuWrap .subMenuWrap li a:hover,
+.desktopSubMenuWrap .subMenuWrap li a:focus {
+    color: #0098FF;
+}
+.desktopSubMenuWrap .subMenuWrap .sub-menu-toggle,
+.desktopSubMenuWrap .subMenuWrap .sub-menu {
+    display: none !important;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     margin: 0 -10px;
 }
-.desktopSubMenuWrap .subMenuWrap li {
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li {
     width: 25%;
     display: inline-flex;
     padding: 0 5px 10px;
 }
-.desktopSubMenuWrap .subMenuWrap li a {
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a {
     background-color: #1e1e20;
     display: block;
     width: 100%;
     padding: 15px;
-    text-align: center;
+    text-align: left;
     font-size: 16px;
     border: 0;
     border-radius: 4px;
@@ -667,10 +691,36 @@ header.Sticky-fixed .logo .logotxt {
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
-.desktopSubMenuWrap .subMenuWrap li a:hover,
-.desktopSubMenuWrap .subMenuWrap li a:focus {
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a i,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #dddddd;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a:hover,
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a:focus,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a:hover,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a:focus {
     color: #ffffff;
     background-color: #151518;
+}
+.serviceSubMenuDetails, .industrySubMenuDetails {
+    display: none;
+}
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fade-right {
+    animation: fadeRight 0.3s linear;
+    -webkit-animation: fadeRight 0.3s linear;
+    -o-animation: fadeRight 0.3s linear;
 }
 /****NEETU***/
 .sm_container {
@@ -925,11 +975,14 @@ input:-moz-placeholder {
     margin-top: 20px;
 }
 .main_footer .social_list ul li + li {
-    margin-left: 40px;
+    margin-left: 30px;
 }
 .main_footer .social_list ul li a:hover,
 .main_footer .social_list ul li a:focus {
     text-decoration: none;
+}
+.main_footer .social_list ul li a img {
+    max-width: 26px;
 }
 .main_footer .footer_btm {
     margin-top: 40px;
@@ -1699,6 +1752,7 @@ h3 .job-title {
     object-fit: cover;
     height: 300px !important;
     border-radius: 12px 12px 0px 0px;
+    object-position: top;
 }
 .fetured_card_text_main {
     padding: 30px;
@@ -1772,6 +1826,7 @@ h3 .job-title {
     max-width: 100% !important;
     height: 700px !important;
     object-fit: cover;
+    object-position: top;
 }
 .singleBlogWrapper .singleBlogMeta {
     display: flex;
@@ -3767,6 +3822,31 @@ input[type=checkbox], input[type=radio] {
 .kg_contact_inputWrap.kg_contact_selectWrap.kg_contact_multi_services {
     position: relative;
 }
+.kg_contact_inputWrap.kg_contact_checkWrap,
+.jobseek_register_inputWrap.jobseek_register_checkWrap {
+    position: relative;
+}
+.kg_contact_inputWrap.kg_contact_checkWrap input[type=checkbox],
+.jobseek_register_inputWrap.jobseek_register_checkWrap input[type=checkbox] {
+    position: absolute;
+    left: 0;
+}
+.kg_contact_inputWrap.kg_contact_checkWrap label.kg_contact_label,
+.jobseek_register_inputWrap.jobseek_register_checkWrap label.jobseek_consent_checkbox_label {
+    padding-left: 30px;
+    font-size: 16px !important;
+}
+.kg_quote_infoWrap {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 700px;
+}
+.kg_contact_inputWrap.kg_contact_checkWrap .kg_contact_checkbox_list li {
+    position: relative;
+}
+.kg_contact_inputWrap.kg_contact_checkWrap .kg_contact_checkbox_list li label {
+    padding-left: 30px;
+}
 .kg_contact_multi_services .contact_error {
     bottom: -28px;
 }
@@ -4009,4 +4089,25 @@ input[type=checkbox], input[type=radio] {
 }
 .quote_thankBody .commonBannerWrapper {
     display: none;
+}
+.ErrorInnerWrap {
+    text-align: center;
+}
+.ErrorInnerWrap .h2 {
+    margin-bottom: 20px;
+}
+.ErrorInnerWrap p {
+    margin-bottom: 50px;
+}
+.privacyPolicyPage .privacyPolicyPageInner ul {
+    margin-bottom: 30px;
+    list-style-type: disc;
+    padding-left: 16px;
+}
+.privacyPolicyPage .privacyPolicyPageInner ul li + li {
+    margin-top: 10px;
+}
+.privacyPolicyPage .privacyPolicyPageInner h3,
+.privacyPolicyPage .privacyPolicyPageInner h5 {
+    margin: 30px 0 15px 0;
 }

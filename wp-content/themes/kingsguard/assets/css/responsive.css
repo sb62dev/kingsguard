@@ -171,7 +171,7 @@
         margin-left: 30px;
     }
     .main_footer .social_list ul li + li {
-        margin-left: 30px;
+        margin-left: 25px;
     }
     .main_footer .social_list .socialTitle {
         font-size: 13px;
@@ -649,12 +649,22 @@ h3 .job-title {
 .homeBannerSlider .slick-dots {
     left: 20px;
 }
-.desktopSubMenuWrap {
-    height: 167px;
-}
 .desktopSubMenuWrap .subMenuWrap li a {
-    padding: 10px;
     font-size: 14px;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a {
+    font-size: 14px;
+    padding: 10px;
+}
+.ErrorInnerWrap .h2 {
+    margin-bottom: 15px;
+}
+.ErrorInnerWrap p {
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 24px;
 }
 } 
 
@@ -1065,6 +1075,12 @@ input:-moz-placeholder {
     font-size: 12px;
     width: 24px;
     height: 24px;
+}
+.ErrorWrap .ErrorInnerWrap {
+    padding-top: 0 !important;
+}
+h3 {
+    font-size: 20px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1914,6 +1930,19 @@ button.modal_close span {
 }
 .homeBannerSlider .slick-dots li {
     margin: 8px 0;
+}
+.ErrorInnerWrap .h2 {
+    margin-bottom: 10px;
+}
+.ErrorInnerWrap p {
+    margin-bottom: 20px;
+}
+.kg_contact_inputWrap.kg_contact_checkWrap label.kg_contact_label,
+.jobseek_register_inputWrap.jobseek_register_checkWrap label.jobseek_consent_checkbox_label {
+    font-size: 14px !important;
+}
+.kg_quote_infoWrap {
+    font-size: 12px;
 }
 }
 @media only screen and (max-width: 600px) {

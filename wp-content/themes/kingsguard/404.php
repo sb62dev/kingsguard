@@ -11,17 +11,18 @@
 
 get_header();
 ?>
-
-	<header class="page-header alignwide">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing here', 'twentytwentyone' ); ?></h1>
-	</header><!-- .page-header -->
-
-	<div class="error-404 not-found default-max-width">
-		<div class="page-content">
-			<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentytwentyone' ); ?></p>
-			<?php get_search_form(); ?>
-		</div><!-- .page-content -->
-	</div><!-- .error-404 -->
-
+<div class="pageBody">
+	<div class="ErrorWrap">
+		<div class="sm_container">
+			<div class="ErrorInnerWrap py100">
+				<h1 class="mb0 h2"> Oops! </h1>
+				<p>The content you are looking for is no longer available.</p>
+				<div class="btnWrap">
+					<a href="<?php echo esc_url(get_home_url()); ?>" target="_self" aria-label="Click here to go back to Homepage" class="btn-style gradientBtn">Back to Home</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <?php
 get_footer();
