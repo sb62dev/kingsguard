@@ -34,7 +34,7 @@ function generate_applications_email_html($firstname, $lastname, $job_title) {
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
@@ -136,7 +136,7 @@ function generate_admin_applications_email_html($firstname, $lastname, $job_id) 
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>

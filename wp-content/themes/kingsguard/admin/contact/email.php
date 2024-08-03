@@ -38,7 +38,7 @@ function generate_contact_user_email_html($name) {
                 <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                     <tbody>
                         <tr>
-                            <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                            <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                     <tbody>
                                         <tr>
@@ -117,10 +117,10 @@ function generate_contact_user_email_html($name) {
                                                                                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">  
                                                                                     <tr>
                                                                                         <td align="left" width="25" style="width:25px"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Costco.jpg" style="width: 70px" width="70" alt="Image"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Grand-River-Foods.jpg" style="width: 60px" width="60" alt="Image"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Ellis-Don.jpg" style="width: 140px" width="140" alt="Image"></td>
-                                                                                        <td align="center"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Crowne-Plaza.jpg" style="width: 90px" width="90" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Costco.jpg" style="width: 70px" width="70" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Grand-River-Foods.jpg" style="width: 60px" width="60" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Ellis-Don.jpg" style="width: 140px" width="140" alt="Image"></td>
+                                                                                        <td align="center" style="padding: 0 7px;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/Crowne-Plaza.jpg" style="width: 90px" width="90" alt="Image"></td>
                                                                                         <td align="left" width="25" style="width:25px"></td>
                                                                                     </tr> 
                                                                                     <tr>
@@ -142,7 +142,7 @@ function generate_contact_user_email_html($name) {
                                                                                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">  
                                                                                     <tr> 
                                                                                         <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-1.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> Advanced Electronic Reports </p></td>
-                                                                                        <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-2.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> 24/7 <br> Dispatch </p></td>
+                                                                                        <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;padding: 0 5px;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-2.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> 24/7 <br> Dispatch </p></td>
                                                                                         <td align="center" style="width: 30%;font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;" width="30%"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/admin/assets/images/email-icon-3.jpg" style="width: 45px" width="45" alt="Image"><p style="font-size: 15px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: center;color: #ffffff;margin: 20px 0 0;font-weight: 600;"> Customer <br> Satisfaction </p></td> 
                                                                                     </tr> 
                                                                                     <tr>
@@ -229,7 +229,7 @@ function generate_contact_admin_email_html($name,$email,$title,$phone,$service,$
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#eeeeee">
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:25px 15px;width:100%">
+                        <td align="center" valign="top" class="space_left_right" style="height:100%;margin:0;padding:0;width:100%">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
                                 <tbody>
                                     <tr>
