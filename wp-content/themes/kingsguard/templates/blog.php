@@ -56,7 +56,7 @@ get_header();
                                         </div>
                                         <div class="fetured_card_text_main">
                                             <div class="fetured_card_text1">
-                                                <p>Authored By: <?php the_author(); ?></p>
+                                                <p>Author: <?php the_author(); ?></p>
                                                 <div>
                                                     <label for=""><?php echo estimated_reading_time(); ?> Min read</label>
                                                 </div>

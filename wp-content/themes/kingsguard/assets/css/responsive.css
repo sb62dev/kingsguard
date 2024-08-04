@@ -610,7 +610,8 @@ h3 .job-title {
 .serviceTabImg img {
     height: 400px;
 }
-.singleBlogWrapper .singleBlogImage img {
+.singleBlogWrapper .singleBlogImage img,
+.projectDetailPage .projectDetailImg img {
     height: 600px !important;
 }
 .clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link {
@@ -1015,7 +1016,8 @@ input:-moz-placeholder {
 .mobMenus .website_nav li .sub-menu-toggle {
     top: 7px;
 }
-.singleBlogWrapper .singleBlogImage img {
+.singleBlogWrapper .singleBlogImage img,
+.projectDetailPage .projectDetailImg img {
     height: 500px !important;
 }
 .clientSec.testimonialsSec .testimonialsInner .clientReviewInner {
@@ -1698,7 +1700,8 @@ input:-moz-placeholder {
 .featur_card_img_div img {
     height: 250px !important;
 }
-.singleBlogWrapper .singleBlogImage img {
+.singleBlogWrapper .singleBlogImage img,
+.projectDetailPage .projectDetailImg img {
     height: 300px !important;
 }
 .jobListingWrapper .jobSearchForm {

@@ -119,7 +119,7 @@ get_header();
                                 <div class="projectOverlayDes">
                                     <div class="<?php echo $count == 1 ? 'project_bigcard_text' : 'project_card_text'; ?>">
                                         <h4><?php echo esc_html($project_title); ?></h4>
-                                        <p><?php echo esc_html($location); ?></p>
+                                        <!-- <p><?php echo esc_html($location); ?></p> -->
                                     </div>
                                     <div class="projectMoreInfo">
                                         <?php 
