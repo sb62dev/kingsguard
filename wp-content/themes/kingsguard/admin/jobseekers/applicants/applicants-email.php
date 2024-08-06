@@ -51,7 +51,7 @@ function generate_applicant_rejected_email_html($firstname, $lastname, $Job_titl
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
                                                                                     <td align="center" style="text-align: center;">  
-                                                                                        <img src="https://kingsguardsecurity.ca/wp-content/uploads/2024/07/blue-logo-kings.png" alt="Kingsguard Security Logo" width="70px" height="85px"> 
+                                                                                        <img src="https://kingsguard.ca/wp-content/uploads/2024/07/blue-logo-kings.png" alt="Kingsguard Security Logo" width="70px" height="85px"> 
                                                                                     </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>
@@ -153,7 +153,7 @@ function generate_applicant_approved_email_html($firstname, $lastname, $job_titl
                                                                                 <tr><td style="height: 10px;" height="10"></td></tr>
                                                                                 <tr>
                                                                                     <td align="center" style="text-align: center;">  
-                                                                                        <img src="https://kingsguardsecurity.ca/wp-content/uploads/2024/07/blue-logo-kings.png" alt="Kingsguard Security Logo" width="70px" height="85px"> 
+                                                                                        <img src="https://kingsguard.ca/wp-content/uploads/2024/07/blue-logo-kings.png" alt="Kingsguard Security Logo" width="70px" height="85px"> 
                                                                                     </td>
                                                                                 </tr> 
                                                                                 <tr><td style="height: 15px;" height="15"></td></tr>

@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 
     // Create your list item with the image
     var listItem = '<li class="my-custom-logo">'
-                 + '<a href="https://kingsguardsecurity.ca" target="_self" aria-label="Click here to go to Homepage"><img src="https://kingsguardsecurity.ca/wp-content/themes/kingsguard/assets/images/white-logo-kingsguard.svg" alt="Kingsguard Logo"></a>'
+                 + '<a href="https://kingsguard.ca/" target="_self" aria-label="Click here to go to Homepage"><img src="https://kingsguard.ca/wp-content/themes/kingsguard/assets/images/white-logo-kingsguard.svg" alt="Kingsguard Logo"></a>'
                  + '<div class="custom-logo_btmUser"> Welcome, ' + username + ' </div>';
                  + '</li>';
 
