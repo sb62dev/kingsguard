@@ -3213,6 +3213,7 @@ div.wpforms-container-full .wpforms-form label.wpforms-error, div.wpforms-contai
 .registerWrapper .registerInner .jobseek_error,
 .jobseekers_application_wrapper .jobseekers_application_formWrap .jobseek_error,
 .jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_captcha_Wrap .jobseek_error,
+.jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_inputWrap .jobseek_error, 
 .jobseekers_profile_wrapper .jobseekers_profile_formWrap .jobseek_profile_picMainwrap .jobseek_error {
     margin-top: 10px;
     color: #ff0000;

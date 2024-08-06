@@ -783,3 +783,12 @@ function allow_html_in_nav_menu($items, $args) {
     $items = do_shortcode($items);
     return $items;
 }
+
+function enqueue_project_filter_script() {
+    wp_enqueue_script('project-filter', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), null, true);
+
+    wp_localize_script('project-filter', 'projectFilter', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_project_filter_script');
