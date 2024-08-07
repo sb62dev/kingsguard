@@ -30,5 +30,3 @@ include('contact-single.php');
 
 // // Applicants Email File
 // include('contact-email.php'); 
-
-?> 

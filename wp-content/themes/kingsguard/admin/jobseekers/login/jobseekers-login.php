@@ -4,6 +4,4 @@
 include('form.php');
 
 // Register Form Handler File
-include('form-handler.php'); 
-
-?>
+include('form-handler.php');  

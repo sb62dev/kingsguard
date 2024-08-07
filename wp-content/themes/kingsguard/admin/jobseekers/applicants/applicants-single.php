@@ -1,5 +1,7 @@
 <?php  
 
+ob_start();
+
 function view_jobseeker_page() {
     if (!isset($_GET['user_id'])) {
         return;
@@ -141,4 +143,5 @@ function view_jobseeker_page() {
             </div>
         </div> 
     </div>  
-<?php }  ?> 
+
+<?php ob_end_flush(); }

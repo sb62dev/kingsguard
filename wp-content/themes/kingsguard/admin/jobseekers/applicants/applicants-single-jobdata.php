@@ -1,5 +1,7 @@
 <?php  
 
+ob_start();
+
 function jobseekers_detailed_page() {
     if (!isset($_GET['user_id']) || !isset($_GET['application_index'])) {
         echo '<div class="wrap"><h1>No data found</h1></div>';
@@ -154,4 +156,4 @@ function jobseekers_detailed_page() {
         </div> 
     </div>  
     
-<?php }  ?>  
+<?php ob_end_flush(); }

@@ -1,8 +1,7 @@
-<?php    
+<?php
 
-//define('ADMIN_EMAILS', 'rajdeep@kingsguard.ca, operations@kingsguard.ca');
 define('ADMIN_EMAILS', 'sb62dev@gmail.com, operations@kingsguard.ca'); 
-define('ADMIN_EMAILS_QUOTE', 'sb62dev@gmail.com, quotes@kingsguard.ca');  
+define('ADMIN_EMAILS_QUOTE', 'sb62dev@gmail.com, quotes@kingsguard.ca'); 
 
 /* Function to add common JS for Jobseekers */
 function enqueue_custom_jobseekers_scripts() {
@@ -248,7 +247,6 @@ require get_template_directory() . '/admin/jobseekers/profile/profile.php';
 // Include newsletter
 require get_template_directory() . '/admin/jobseekers/newsletter/newsletter.php';
 
-
 // Add custom rewrite rules
 function custom_jobseekers_dashboard_rewrite_rules() {
     add_rewrite_rule('^jobseekers-dashboard/([^/]+)/?$', 'index.php?post_type=careers&name=$matches[1]', 'top');
@@ -297,6 +295,4 @@ function custom_jobseekers_dashboard_template_redirect() {
         }
     }
 }
-add_action('template_redirect', 'custom_jobseekers_dashboard_template_redirect');
-
-?>
+add_action('template_redirect', 'custom_jobseekers_dashboard_template_redirect'); 

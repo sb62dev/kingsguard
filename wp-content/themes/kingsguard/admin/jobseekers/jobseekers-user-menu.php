@@ -78,6 +78,4 @@ function jobseekers_logout() {
 }
 
 add_action('wp_ajax_jobseekers_logout', 'jobseekers_logout');
-add_action('wp_ajax_nopriv_jobseekers_logout', 'jobseekers_logout');
-
-?>
+add_action('wp_ajax_nopriv_jobseekers_logout', 'jobseekers_logout'); 

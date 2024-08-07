@@ -1,5 +1,4 @@
 <?php   
-
 function newsletter_admin_menu() {
     add_menu_page(
         'Newsletter Entries',
@@ -15,6 +14,4 @@ function newsletter_admin_menu() {
 add_action('admin_menu', 'newsletter_admin_menu');
 
 // Applicants Archive File
-include('newsletter-archive.php'); 
-
-?> 
+include('newsletter-archive.php');  

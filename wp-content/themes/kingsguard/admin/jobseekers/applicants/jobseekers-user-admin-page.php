@@ -40,6 +40,4 @@ include('applicants-single.php');
 include('applicants-single-jobdata.php'); 
 
 // Applicants Email File
-include('applicants-email.php'); 
-
-?> 
+include('applicants-email.php');  

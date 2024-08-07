@@ -71,6 +71,4 @@ function show_user_submitted_jobs($atts) {
     } 
 } 
 
-add_shortcode('user_submitted_jobs', 'show_user_submitted_jobs'); 
-
-?>
+add_shortcode('user_submitted_jobs', 'show_user_submitted_jobs');  

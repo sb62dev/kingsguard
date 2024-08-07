@@ -61,7 +61,4 @@ function create_newsletter_table() {
     dbDelta($sql); 
 }
 
-add_action('after_setup_theme', 'create_newsletter_table');
-
-
-?>
+add_action('after_setup_theme', 'create_newsletter_table'); 
