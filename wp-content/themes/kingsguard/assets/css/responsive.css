@@ -1235,7 +1235,16 @@ h3 .job-title {
     background-color: #2e2e2e;
 }
 div#collapsibleNavbar {
-    top: 57px;
+    top: 56px;
+    height: 100%;
+    overflow-y: auto;
+}
+.fixdNav::after, .fixdNav::before {
+    display: none;
+}
+.fixdNav-mid {
+    padding-top: 50px;
+    padding-bottom: 40px;
 }
 .ftrMainMenu .menu-footer-menu-container ul {
     text-align: center;
@@ -1413,7 +1422,10 @@ div#collapsibleNavbar {
     margin-bottom: 30px;
 }
 .testimonialsSec::after {
-    top: -150px;
+    display: none;
+}
+.joinUsSecOuter.getStartedSec .joinUsSec .joinUsInner {
+    z-index: 99;
 }
 .testimonialsSec .testimonial_slide_inner {
     padding: 30px;

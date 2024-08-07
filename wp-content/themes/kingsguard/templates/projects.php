@@ -30,7 +30,7 @@ get_header();
                                 <?php
                                 $cities = get_terms(array(
                                     'taxonomy' => 'cities',
-                                    'hide_empty' => false,
+                                    'hide_empty' => true, 
                                 ));
                                 foreach ($cities as $city) {
                                     echo '<option value="' . esc_attr($city->slug) . '">' . esc_html($city->name) . '</option>';
@@ -49,7 +49,7 @@ get_header();
                                 <?php
                                 $service_types = get_terms(array(
                                     'taxonomy' => 'service-types',
-                                    'hide_empty' => false,
+                                    'hide_empty' => true,
                                 ));
                                 foreach ($service_types as $service_type) {
                                     echo '<option value="' . esc_attr($service_type->slug) . '">' . esc_html($service_type->name) . '</option>';

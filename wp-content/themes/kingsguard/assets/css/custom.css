@@ -2164,6 +2164,8 @@ h3 .job-title {
 .industryBlock .industryBlockImg img {
     border: 1px solid #0098FF;
     border-radius: 20px;
+    width: 450px;
+    object-fit: cover;
 }
 .industryBlock .industryBlockCont .h3 {
     font-size: 40px;

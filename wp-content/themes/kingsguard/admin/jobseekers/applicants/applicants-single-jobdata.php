@@ -46,7 +46,7 @@ function jobseekers_detailed_page() {
         return;
     } 
 
-    $application = $job_applications[$application_index];
+    $application = $job_applications[$application_index]; 
 
     echo '<div class="wrap">';
     echo '<div class="userWrap">';
@@ -71,8 +71,8 @@ function jobseekers_detailed_page() {
     echo '<tr><th>Security Guard License:</th><td>' . esc_html($application['license']) . '</td></tr>';
     echo '<tr><th>License Expiry Date:</th><td>' . esc_html($application['expiry_date']) . '</td></tr>';
     echo '<tr><th>Current Application Status:</th><td>' . esc_html($application['status']) . '</td></tr>';
-    echo '<tr><th>Resume:</th><td>';
-    if (isset($application['resume_url'])) {
+    echo '<tr><th>Resume:</th><td>'; 
+    if (isset($application['resume_url']) && !empty($application['resume_url'])) {
         $upload_dir = wp_upload_dir();
         $full_resume_url = $upload_dir['baseurl'] . '/jobseekers-assets/' . $application['resume_url'];
         echo '<a href="' . esc_url($full_resume_url) . '" target="_blank">View</a>';
@@ -81,7 +81,7 @@ function jobseekers_detailed_page() {
     }
     echo '</td></tr>';
     echo '<tr><th>License Copy:</th><td>';
-    if (isset($application['license_url'])) {
+    if (isset($application['license_url']) && !empty($application['license_url'])) { 
         $upload_dir = wp_upload_dir();
         $full_resume_url = $upload_dir['baseurl'] . '/jobseekers-assets/' . $application['license_url'];
         echo '<a href="' . esc_url($full_resume_url) . '" target="_blank">View</a>';
@@ -90,7 +90,7 @@ function jobseekers_detailed_page() {
     }
     echo '</td></tr>';
     echo '<tr><th>CPR and First Aid Copy:</th><td>';
-    if (isset($application['cpr_url'])) {
+    if (isset($application['cpr_url']) && !empty($application['cpr_url'])) {  
         $upload_dir = wp_upload_dir();
         $full_resume_url = $upload_dir['baseurl'] . '/jobseekers-assets/' . $application['cpr_url'];
         echo '<a href="' . esc_url($full_resume_url) . '" target="_blank">View</a>';
@@ -99,7 +99,7 @@ function jobseekers_detailed_page() {
     }
     echo '</td></tr>';
     echo '<tr><th>Smart Serve License Copy:</th><td>';
-    if (isset($application['smartserve_url'])) {
+    if (isset($application['smartserve_url']) && !empty($application['smartserve_url'])) {   
         $upload_dir = wp_upload_dir();
         $full_resume_url = $upload_dir['baseurl'] . '/jobseekers-assets/' . $application['smartserve_url'];
         echo '<a href="' . esc_url($full_resume_url) . '" target="_blank">View</a>';
@@ -108,7 +108,7 @@ function jobseekers_detailed_page() {
     }
     echo '</td></tr>';
     echo '<tr><th>Use of Force Training Certification Copy:</th><td>';
-    if (isset($application['force_training_url'])) {
+    if (isset($application['force_training_url']) && !empty($application['force_training_url'])) {   
         $upload_dir = wp_upload_dir();
         $full_resume_url = $upload_dir['baseurl'] . '/jobseekers-assets/' . $application['force_training_url'];
         echo '<a href="' . esc_url($full_resume_url) . '" target="_blank">View</a>';
