@@ -665,6 +665,11 @@ header.Sticky-fixed .logo .logotxt {
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails {
+    display: block;
+    width: 100%;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap {
     display: flex;
     width: 100%;
     flex-wrap: wrap;

@@ -23,6 +23,8 @@ function remove_menus_for_edituser_role() {
         remove_menu_page('tools.php');      // Tools
         remove_menu_page('edit-comments.php'); // Comments
         remove_menu_page('profile.php');
+
+        add_action('admin_footer', 'hide_admin_menu_items_script_editor');
     }
 }
 add_action('admin_menu', 'remove_menus_for_edituser_role', 999);
@@ -37,6 +39,8 @@ function remove_admin_bar_items_for_editsuser_role() {
         $wp_admin_bar->remove_menu('new-content'); // New (from New Content) 
         $wp_admin_bar->remove_menu('edit-profile'); // Remove the profile link
         $wp_admin_bar->remove_menu('user-info'); // Remove the user info menu
+
+       
     }
 }
 add_action('wp_before_admin_bar_render', 'remove_admin_bar_items_for_editsuser_role');  
@@ -117,8 +121,27 @@ function hide_admin_menu_items_script() {
         });
     </script> 
     <?php
-} 
+}  
 
+function hide_admin_menu_items_script_editor() {
+    ?>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide specific admin menu items
+            var menuItems = [
+                '#toplevel_page_wpseo_workouts' 
+            ];
+
+            menuItems.forEach(function(selector) {
+                var element = document.querySelector(selector);
+                if (element) {
+                    element.style.display = 'none';
+                }
+            });
+        });
+    </script> 
+    <?php
+}  
 
 
 ?>
