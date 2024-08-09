@@ -1,96 +1,280 @@
 jQuery(document).ready(function () {
     // Hide the submenu on page load
-  jQuery('.desktopSubMenuWrap').hide();
+    jQuery('.desktopSubMenuWrap').hide();
 
-  // Function to show the submenu with a transition
-  function showSubmenu(submenuClass) {
-    jQuery('.desktopSubMenuWrap .subMenuOptions > div').hide();
-    jQuery('.desktopSubMenuWrap .' + submenuClass).show();
-    jQuery('.desktopSubMenuWrap').slideDown(300).addClass('show');
-    jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').addClass('fade-right');
-    jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').addClass('fade-right');
-    jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').addClass('fade-right');
-  }
-
-  // Function to show the submenu details of the first item by default
-  function showFirstSubmenuDetails(menuClass, detailsClass) {
-      var firstSubmenuDetails = jQuery('.' + menuClass + ' > li:first-child .sub-menu').html();
-      jQuery('.' + detailsClass).html(firstSubmenuDetails).show();
-  }
-
-  function restartAnimation(selector) {
-    var element = jQuery(selector);
-    element.removeClass('fade-right');
-    void element[0].offsetWidth; // Trigger reflow
-    element.addClass('fade-right');
-  }
-
-  // Event handlers for hovering on the main menu items
-  jQuery('.website_nav .menu-item-services').hover(
-      function () {
-          showSubmenu('serviceSubmenu');
-          showFirstSubmenuDetails('serviceMenu', 'serviceSubMenuDetails');
-      },
-      function () {
-          // Do nothing when hovering out of the main menu item
-      }
-  );
-
-  jQuery('.website_nav .menu-item-industries').hover(
-      function () {
-          showSubmenu('industrySubmenu');
-          showFirstSubmenuDetails('industryMenu', 'industrySubMenuDetails');
-      },
-      function () {
-          // Do nothing when hovering out of the main menu item
-      }
-  );
-
-  jQuery('.website_nav .menu-item').not('.menu-item-services, .menu-item-industries').hover(
-    function () {
-      jQuery('.desktopSubMenuWrap').slideUp(300).removeClass('show');
-      jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').removeClass('fade-right');
-      jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').removeClass('fade-right');
-      jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').removeClass('fade-right');
-    },
-    function () {
+    // Function to show the submenu with a transition
+    function showSubmenu(submenuClass) {
+        jQuery('.desktopSubMenuWrap .subMenuOptions > div').hide();
+        jQuery('.desktopSubMenuWrap .' + submenuClass).show();
+        jQuery('.desktopSubMenuWrap').slideDown(300).addClass('show');
     }
-  );
 
-  jQuery('.serviceMenu > li').hover(
-      function () {
-          var submenuDetails = jQuery(this).find('.sub-menu').html();
-          jQuery('.serviceSubMenuDetails').html(submenuDetails).show();
-          restartAnimation('.serviceSubMenuDetails');
-      },
-      function () {
-          // Do nothing when not hovering over a menu item
-      }
-  );
+    // Function to check for the presence of multichild_menu class and update HTML structure
+    function updateSubMenuStructure(menuItem) {
+        var $submenuDetails = jQuery(menuItem).find('.sub-menu').html();
+        var hasMultiChild = jQuery(menuItem).hasClass('multichild_menu');
+        var $detailsContainer = jQuery('.serviceSubMenuDetails, .industrySubMenuDetails');
+        
+        if (hasMultiChild) {
+            $detailsContainer.html(`
+                <div class="row no-gutters">
+                    <div class="col-md-2">
+                        <div class="submenuWrap simpleList">
+                            ${$submenuDetails}
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="childSubmenuWrap"></div>
+                    </div>
+                </div>
+            `);
 
-  jQuery('.industryMenu > li').hover(
-      function () {
-          var submenuDetails = jQuery(this).find('.sub-menu').html();
-          jQuery('.industrySubMenuDetails').html(submenuDetails).show();
-          restartAnimation('.industrySubMenuDetails');
-      },
-      function () {
-          // Do nothing when not hovering over a menu item
-      }
-  );
+            // Show the first child submenu by default
+            var firstChild = jQuery('.submenuWrap.simpleList > li:first-child');
+            if (firstChild.length) {
+                var firstChildSubmenu = firstChild.find('.sub-menu').html();
+                if (firstChildSubmenu) {
+                    jQuery('.childSubmenuWrap').html(`
+                        <ul class="child-sub-menu fade-right">
+                            ${firstChildSubmenu}
+                        </ul>
+                    `).show();
+                    restartAnimation('.childSubmenuWrap .child-sub-menu');
+                }
+            }
 
-  // Ensure the submenu remains visible when hovering over the submenu wrap
-  jQuery('.desktopSubMenuWrap').hover(
-      function () {
-          // Do nothing when hovering over the submenu
-      },
-      function () {
-        jQuery('.desktopSubMenuWrap').slideUp(300).removeClass('show');
-        jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').removeClass('fade-right');
-        jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').removeClass('fade-right');
-        jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').removeClass('fade-right');
-      }
-  );
+            // Add hover event for submenu items to show child submenu in childSubmenuWrap
+            jQuery('.submenuWrap.simpleList > li').hover(
+                function () {
+                    var childSubmenu = jQuery(this).find('.sub-menu').html();
+                    if (childSubmenu) {
+                        jQuery('.childSubmenuWrap').html(`
+                            <ul class="child-sub-menu fade-right">
+                                ${childSubmenu}
+                            </ul>
+                        `).show();
+                        restartAnimation('.childSubmenuWrap .child-sub-menu');
+                    } else {
+                        jQuery('.childSubmenuWrap').empty();
+                    }
+                },
+                function () {
+                    // Optional: Clear the child submenu on hover out
+                    // jQuery('.childSubmenuWrap').empty();
+                }
+            );
+        } else {
+            $detailsContainer.html(`
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                        <div class="submenuWrap">
+                            ${$submenuDetails}
+                        </div>
+                    </div>
+                </div>
+            `);
+        }
+    }
+
+    // Function to restart the animation
+    function restartAnimation(selector) {
+        var element = jQuery(selector);
+        element.removeClass('fade-right');
+        void element[0].offsetWidth; // Trigger reflow
+        element.addClass('fade-right');
+    }
+
+    // Event handlers for hovering on the main menu items
+    jQuery('.website_nav .menu-item-services').hover(
+        function () {
+            showSubmenu('serviceSubmenu');
+            var firstItem = jQuery('.serviceMenu > li:first-child');
+            updateSubMenuStructure(firstItem);
+        },
+        function () {
+            // Do nothing when hovering out of the main menu item
+        }
+    );
+
+    jQuery('.website_nav .menu-item-industries').hover(
+        function () {
+            showSubmenu('industrySubmenu');
+            var firstItem = jQuery('.industryMenu > li:first-child');
+            updateSubMenuStructure(firstItem);
+        },
+        function () {
+            // Do nothing when hovering out of the main menu item
+        }
+    );
+
+    jQuery('.website_nav .menu-item').not('.menu-item-services, .menu-item-industries').hover(
+        function () {
+            jQuery('.desktopSubMenuWrap').slideUp(300).removeClass('show');
+            jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').removeClass('fade-right');
+            jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').removeClass('fade-right');
+            jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').removeClass('fade-right');
+        },
+        function () {
+        }
+    );
+
+    // Event handlers for hovering on submenu items
+    jQuery('.serviceMenu > li').hover(
+        function () {
+            var submenuDetails = jQuery(this).find('.sub-menu').html();
+            var hasMultiChild = jQuery(this).hasClass('multichild_menu');
+            var $detailsContainer = jQuery('.serviceSubMenuDetails');
+            
+            if (hasMultiChild) {
+                $detailsContainer.html(`
+                    <div class="row no-gutters">
+                        <div class="col-md-2">
+                            <div class="submenuWrap simpleList">
+                                ${submenuDetails}
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="childSubmenuWrap"></div>
+                        </div>
+                    </div>
+                `);
+
+                 // Show the first child submenu by default
+                var firstChild = jQuery('.submenuWrap.simpleList > li:first-child');
+                if (firstChild.length) {
+                    var firstChildSubmenu = firstChild.find('.sub-menu').html();
+                    if (firstChildSubmenu) {
+                        jQuery('.childSubmenuWrap').html(`
+                            <ul class="child-sub-menu fade-right">
+                                ${firstChildSubmenu}
+                            </ul>
+                        `).show();
+                        restartAnimation('.childSubmenuWrap .child-sub-menu');
+                    }
+                }
+
+                // Add hover event for submenu items to show child submenu in childSubmenuWrap
+                jQuery('.submenuWrap.simpleList > li').hover(
+                    function () {
+                        var childSubmenu = jQuery(this).find('.sub-menu').html();
+                        if (childSubmenu) {
+                            jQuery('.childSubmenuWrap').html(`
+                                <ul class="child-sub-menu fade-right">
+                                    ${childSubmenu}
+                                </ul>
+                            `).show();
+                            restartAnimation('.childSubmenuWrap .child-sub-menu');
+                        } else {
+                            jQuery('.childSubmenuWrap').empty();
+                        }
+                    },
+                    function () {
+                        // Optional: Clear the child submenu on hover out
+                        // jQuery('.childSubmenuWrap').empty();
+                    }
+                );
+            } else {
+                $detailsContainer.html(`
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <div class="submenuWrap">
+                                ${submenuDetails}
+                            </div>
+                        </div>
+                    </div>
+                `);
+            }
+            restartAnimation('.serviceSubMenuDetails');
+        },
+        function () {
+            // Do nothing when not hovering over a menu item
+        }
+    );
+
+    jQuery('.industryMenu > li').hover(
+        function () {
+            var submenuDetails = jQuery(this).find('.sub-menu').html();
+            var hasMultiChild = jQuery(this).hasClass('multichild_menu');
+            var $detailsContainer = jQuery('.industrySubMenuDetails');
+            
+            if (hasMultiChild) {
+                $detailsContainer.html(`
+                    <div class="row no-gutters">
+                        <div class="col-md-2">
+                            <div class="submenuWrap simpleList">
+                                ${submenuDetails}
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="childSubmenuWrap"></div>
+                        </div>
+                    </div>
+                `);
+
+                 // Show the first child submenu by default
+                var firstChild = jQuery('.submenuWrap.simpleList > li:first-child');
+                if (firstChild.length) {
+                    var firstChildSubmenu = firstChild.find('.sub-menu').html();
+                    if (firstChildSubmenu) {
+                        jQuery('.childSubmenuWrap').html(`
+                            <ul class="child-sub-menu fade-right">
+                                ${firstChildSubmenu}
+                            </ul>
+                        `).show();
+                        restartAnimation('.childSubmenuWrap .child-sub-menu');
+                    }
+                }
+
+                // Add hover event for submenu items to show child submenu in childSubmenuWrap
+                jQuery('.submenuWrap.simpleList > li').hover(
+                    function () {
+                        var childSubmenu = jQuery(this).find('.sub-menu').html();
+                        if (childSubmenu) {
+                            jQuery('.childSubmenuWrap').html(`
+                                <ul class="child-sub-menu fade-right">
+                                    ${childSubmenu}
+                                </ul>
+                            `).show();
+                            restartAnimation('.childSubmenuWrap .child-sub-menu');
+                        } else {
+                            jQuery('.childSubmenuWrap').empty();
+                        }
+                    },
+                    function () {
+                        // Optional: Clear the child submenu on hover out
+                        // jQuery('.childSubmenuWrap').empty();
+                    }
+                );
+            } else {
+                $detailsContainer.html(`
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <div class="submenuWrap">
+                                ${submenuDetails}
+                            </div>
+                        </div>
+                    </div>
+                `);
+            }
+            restartAnimation('.industrySubMenuDetails');
+        },
+        function () {
+            // Do nothing when not hovering over a menu item
+        }
+    );
+
+    // Ensure the submenu remains visible when hovering over the submenu wrap
+    jQuery('.desktopSubMenuWrap').hover(
+        function () {
+            // Do nothing when hovering over the submenu
+        },
+        function () {
+            jQuery('.desktopSubMenuWrap').slideUp(300).removeClass('show');
+            jQuery('.desktopSubMenuWrap .desktopSubMenuInner .subMenuWrap').removeClass('fade-right');
+            jQuery('.desktopSubMenuWrap .desktopSubMenuInner .serviceSubMenuDetails').removeClass('fade-right');
+            jQuery('.desktopSubMenuWrap .desktopSubMenuInner .industrySubMenuDetails').removeClass('fade-right');
+        }
+    );
 
   jQuery('.homeBannerSlider').on('init', function(event, slick) {
       slick.$dots.addClass('vertical-dots');

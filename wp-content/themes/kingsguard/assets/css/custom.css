@@ -651,6 +651,7 @@ header.Sticky-fixed .logo .logotxt {
 .desktopSubMenuWrap .subMenuWrap li a {
     font-size: 16px;
     color: #ffffff;
+    text-transform: capitalize;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
@@ -668,6 +669,10 @@ header.Sticky-fixed .logo .logotxt {
     display: block;
     width: 100%;
 }
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails > .row, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails > .row {
+    width: 100%;
+}
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap {
     display: flex;
@@ -675,11 +680,17 @@ header.Sticky-fixed .logo .logotxt {
     flex-wrap: wrap;
     margin: 0 -10px;
 }
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu {
+    width: 100%;
+    display: block;
+}
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li {
     width: 25%;
     display: inline-flex;
     padding: 0 5px 10px;
+    float: left;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a {
@@ -709,6 +720,67 @@ header.Sticky-fixed .logo .logotxt {
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a:focus {
     color: #ffffff;
     background-color: #151518;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList {
+    display: block;
+    border-right: 1px solid #4c4c4e !important;
+    height: 100%;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList li,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap.simpleList li {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList li + li,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap.simpleList li + li {
+    margin-top: 10px;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList li a,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap.simpleList li a {
+    font-size: 16px;
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    text-transform: capitalize;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList li a:hover,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap.simpleList li a:hover,
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList li a:focus,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap.simpleList li a:focus {
+    color: #0098FF;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li a,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li a {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li a img,
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li a img {
+    position: relative;
+    right: 0;
+    max-width: 50px;
+    display: block;
+    top: 0;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a {
+    flex-direction: column-reverse;
+    text-align: left;
+    align-items: flex-start;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a img, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a img {
+    max-width: 232px;
 }
 .serviceSubMenuDetails, .industrySubMenuDetails {
     display: none;
