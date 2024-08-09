@@ -761,7 +761,7 @@ header.Sticky-fixed .logo .logotxt {
     position: relative;
     display: flex !important;
     align-items: center;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
     justify-content: space-between;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li a img,
