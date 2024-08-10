@@ -278,6 +278,7 @@ input[type=color], input[type=date], input[type=datetime-local], input[type=date
     border: 1px solid #505059;
     background-color: transparent;
     color: #ffffff;
+    height: 36px;
 }
 .widefat tbody td, .widefat tbody th,
 .widefat tfoot td, .widefat tfoot th {
@@ -562,6 +563,9 @@ div#wpforms-entry-geolocation, div#wpforms-entry-user-journey, div#wpforms-entry
 .userWrapBoxWrap .userInfobox + .userInfobox .userInfoboxInner {
     border-left: 1px solid #0098ff;
 }
+.userWrap_info .userInfobox .userInfoboxInner {
+    padding: 10px;
+}
 .userWrap_info .userInfobox .userInfoboxIcon {
     margin-bottom: 12px;
 }
@@ -663,10 +667,9 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul {
     margin: 0;
     padding: 0 !important;
 }
-
 ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li {
     margin: 0 !important;
-    padding: 10px 30px 10px 0!important;
+    padding: 15px 20px 15px 0!important;
 }
 ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab-item {
     display: block !important;
@@ -678,6 +681,31 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab
 }
 #collapse-menu {
     display: none;
+}
+#adminmenu a:focus, #adminmenu a:hover, 
+.folded #adminmenu .wp-submenu-head:hover {
+    box-shadow: none;
+}
+.table_responsive_wrap,
+#posts-filter {
+    overflow-x: auto;
+    width: 100%;
+}
+.table_responsive_wrap table,
+#posts-filter table {
+    min-width: 850px;
+}
+.tablenav {
+    height: 36px;
+    margin: 6px 0 10px;
+}
+@media screen and (max-width: 1199px) {
+    .userWrap_info {
+        padding: 40px;
+    }
+    .userWrap_info .userInfobox .userInfobox_rght {
+        font-size: 16px;
+    }
 }
 @media screen and (max-width: 960px) {
     #adminmenu li.my-custom-logo a img {
@@ -702,6 +730,7 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab
     }
     #wpadminbar .quicklinks ul li:first-child {
         display: block !important;
+        margin-left: 5px;
     }
     #wpadminbar .quicklinks ul li {
         display: none !important;
@@ -723,6 +752,57 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab
         height: 16px;
         width: 16px;
     }
+    input[type=checkbox]:before {
+        width: 16px !important;
+        height: 16px !important;
+        margin: 0 -2px !important;
+    }
+    input[type=radio]:before {
+        margin: 3px !important;
+        width: 9px !important;
+        height: 9px !important;
+    }
+    .auto-fold #adminmenuback {
+        position: absolute;
+        left: 0;
+        -webkit-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+    .wp-responsive-open #wpbody {
+        right: 0;
+    }
+    .auto-fold #adminmenuback, .auto-fold #adminmenuwrap {
+        display: inherit;
+        left: -300px;
+        -webkit-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+    .auto-fold .wp-responsive-open #adminmenuback, .auto-fold .wp-responsive-open #adminmenuwrap {
+        display: inherit;
+        left: 0;
+    }
+    #wpadminbar #wp-admin-bar-menu-toggle .ab-icon:before {
+        font: normal 30px/45px dashicons;
+    }
+    .wp-core-ui .button, .wp-core-ui .button.button-large, .wp-core-ui .button.button-small, a.preview, input#publish, input#save-post {
+        min-height: 36px;
+        line-height: 28px;
+    }
+    .tablenav-pages .pagination-links {
+        font-size: 12px;
+    }
+    .auto-fold #adminmenu li a {
+        font-size: 14px;
+    }
+    .wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle a {
+        background: #1b2a36;
+    }
+    .subsubsub {
+        font-size: 14px;
+        text-align: left;
+    }
 }
 @media screen and (max-width: 767px) {
     .userWrap_info > .row > div {
@@ -738,8 +818,46 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab
     .userWrapBoxWrap .userInfobox + .userInfobox .userInfoboxInner {
         border-left: 0;
     }
-    .comment-ays, .feature-filter, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat, table.wp-list-table.widefat.striped.wpforms-table-list.table-view-list.has-few-columns {
-        width: 700px;
-        overflow-x: scroll;
+    .jobFilter_wrap {
+        display: block !important;
+        margin-bottom: 10px;
+    }
+    .jobFilter_wrap .jobFilter_col.jobFilter_col_2 {
+        margin: 10px 0;
+    }
+    .userWrap_info {
+        border: 1px solid #0098ff;
+        padding: 40px;
+        background: #1a2935;
+        margin-bottom: 40px;
+    }
+    .userWrap_info {
+        padding: 30px;
+    }
+    .postbox .inside h2, .wrap [class$=icon32]+h2, .wrap h1, .wrap>h2:first-child {
+        font-size: 20px;
+    }
+    .userWrap_info h2 {
+        margin-bottom: 40px !important;
+        font-size: 20px;
+    }
+    .userWrap_info .userInfobox .userInfoboxIcon i {
+        font-size: 30px;
+    }
+    .userWrap_info .userInfobox  + .userInfobox {
+        margin-top: 25px;
+        border-top: 1px solid #1e4564;
+        padding-top: 25px;
+    }
+    .userWrap_info > .row {
+        margin-bottom: -40px;
+    }
+    .userWrap_info > .row > div {
+        margin-bottom: 40px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .tablenav-pages .tablenav-paging-text {
+        padding-top: 0;
     }
 }

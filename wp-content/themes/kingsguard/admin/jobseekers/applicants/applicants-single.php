@@ -67,7 +67,7 @@ function view_jobseeker_page() {
 
     if (!empty($paged_job_applications)) {
         echo '<h3>Job Applications</h3>';
-        echo '<table class="widefat fixed" cellspacing="0">';
+        echo '<div class="table_responsive_wrap"><table class="widefat fixed" cellspacing="0">';
         echo '<thead><tr><th style="width: 25px">ID</th><th>Job Title</th><th>Job Location</th><th>Status</th><th>Resume</th><th>Date/time</th><th>Action</th></tr></thead>';
         echo '<tbody>';
 
@@ -105,7 +105,7 @@ function view_jobseeker_page() {
             $counter++; 
         }
 
-        echo '</tbody></table>';
+        echo '</tbody></table></div>';
 
         echo common_pagination($current_page, $total_applications, $total_pages, admin_url('admin.php?page=view-jobseeker&user_id=' . $user_id));
     } else {

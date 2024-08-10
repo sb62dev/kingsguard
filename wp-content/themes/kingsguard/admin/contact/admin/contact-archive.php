@@ -29,7 +29,7 @@ function contact_admin_page() {
     echo '<h1>Quote Applications</h1>';
     echo '<form method="post" action="">';
     echo '<input type="submit" name="bulk_delete" value="Delete Selected" class="button button-danger" onclick="return confirm(\'Are you sure you want to delete the selected users?\');">';
-    echo '<table class="widefat fixed" cellspacing="0">';
+    echo '<div class="table_responsive_wrap"><table class="widefat fixed" cellspacing="0">';
     echo '<thead><tr><th style="width: 50px"><input type="checkbox" id="select-all">ID</th><th>Name</th><th>Email</th><th>Phone Number</th><th>Date/time</th><th>Action</th></tr></thead>';
     echo '<tbody>';
 
@@ -46,7 +46,7 @@ function contact_admin_page() {
         $counter++; 
     } 
 
-    echo '</tbody></table>';  
+    echo '</tbody></table></div>';  
 
     echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=quote-applications'));
 

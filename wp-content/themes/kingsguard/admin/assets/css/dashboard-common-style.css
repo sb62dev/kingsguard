@@ -83,6 +83,7 @@
     font-size: 24px;
     margin-bottom: 40px !important;
     text-align: center;
+    line-height: normal;
 }
 .statusModal_container #statusForm label {
     font-size: 16px;
@@ -105,4 +106,28 @@
 }
 .jobFilter_wrap *, .jobFilter_wrap select {
     font-size: 13px;
+}
+@media screen and (max-width: 767px) {
+    .statusModal_container {
+        padding: 30px;
+    }
+    .statusModal_containerWrap {
+        margin: 35px 20px;
+    }
+    .statusModal_container .statusModal_heading h2 {
+        font-size: 20px;
+        margin-bottom: 30px !important;
+    }
+    .statusModal_container #statusForm label {
+        margin-bottom: 10px;
+        display: block;
+    }
+    .statusModal_container #modal_status {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .statusModal_container .button {
+        width: 100%;
+    }
 }

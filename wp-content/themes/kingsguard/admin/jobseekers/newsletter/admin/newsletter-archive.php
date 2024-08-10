@@ -30,7 +30,7 @@ function newsletter_admin_page() {
     echo '<form method="post" action="">';
     wp_nonce_field('bulk_delete_nonce');
     echo '<input type="submit" name="bulk_delete" value="Delete Selected" class="button button-danger" onclick="return confirm(\'Are you sure you want to delete the selected users?\');">';
-    echo '<table class="widefat fixed" cellspacing="0">';
+    echo '<div class="table_responsive_wrap"><table class="widefat fixed" cellspacing="0">';
     echo '<thead><tr><th><input type="checkbox" id="select-all"> ID</th><th>Email</th><th>Date/Time</th></tr></thead>';
     echo '<tbody>';
 
@@ -44,7 +44,7 @@ function newsletter_admin_page() {
         $counter++; 
     } 
 
-    echo '</tbody></table>';  
+    echo '</tbody></table></div>';  
 
     echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=newsletter-entries'));
 

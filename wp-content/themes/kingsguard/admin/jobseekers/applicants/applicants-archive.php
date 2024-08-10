@@ -88,7 +88,7 @@ function jobseekers_admin_page() {
     // Form for bulk actions
     echo '<form method="post" action="">';
     echo '<input type="submit" name="bulk_delete" value="Delete Selected" class="button button-danger" onclick="return confirm(\'Are you sure you want to delete the selected users?\');">';
-    echo '<table class="widefat fixed" cellspacing="0">';
+    echo '<div class="table_responsive_wrap"><table class="widefat fixed" cellspacing="0">';
     echo '<thead><tr><th style="width: 50px"><input type="checkbox" id="select-all">ID</th><th style="width: 90px">Applicant ID</th><th>Name</th><th>Email</th><th>Job Count</th><th>Date/time</th><th>Action</th></tr></thead>';
     echo '<tbody>';
 
@@ -112,7 +112,7 @@ function jobseekers_admin_page() {
         echo '<tr><td colspan="7">No users found.</td></tr>';
     }
 
-    echo '</tbody></table>';
+    echo '</tbody></table></div>';
 
     // Pagination with filter state
     echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=jobseekers-job-applications&submitted_jobs_only=' . esc_attr($submitted_jobs_only) . '&job_title=' . urlencode($selected_job_title)));
