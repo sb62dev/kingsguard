@@ -1,18 +1,33 @@
-<?php   
+<?php
 
 function jobseekers_admin_page() {
     global $wpdb;
     $table_name = jobseekers_users_table();
     $users_per_page = 10;
-    $total_users = $wpdb->get_var("SELECT COUNT(*) FROM {$table_name}");
-    $total_pages = ceil($total_users / $users_per_page); 
+
+    // Check if 'submitted_jobs_only' is set in the URL; if not set, show only users who have submitted jobs
+    $submitted_jobs_only = isset($_GET['submitted_jobs_only']) ? intval($_GET['submitted_jobs_only']) : 1;
+    
+    $total_users_query = "SELECT COUNT(*) FROM {$table_name}";
+    if ($submitted_jobs_only === 1) {
+        $total_users_query .= " WHERE job_applications IS NOT NULL AND job_applications != ''";
+    }
+    
+    $total_users = $wpdb->get_var($total_users_query);
+    $total_pages = ceil($total_users / $users_per_page);
 
     // Determine the current page
     $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
     $offset = ($current_page - 1) * $users_per_page;
 
     // Retrieve users for the current page
-    $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$table_name} LIMIT %d OFFSET %d", $users_per_page, $offset));
+    $users_query = "SELECT * FROM {$table_name}";
+    if ($submitted_jobs_only === 1) {
+        $users_query .= " WHERE job_applications IS NOT NULL AND job_applications != ''";
+    }
+
+    $users_query .= $wpdb->prepare(" LIMIT %d OFFSET %d", $users_per_page, $offset);
+    $users = $wpdb->get_results($users_query);
 
     // Handle bulk delete action
     if (isset($_POST['bulk_delete'])) {
@@ -27,6 +42,16 @@ function jobseekers_admin_page() {
 
     echo '<div class="wrap">';
     echo '<h1>Job Applications</h1>';
+
+    // Form for the filter
+    echo '<form method="get" action="">';
+    echo '<input type="hidden" name="page" value="jobseekers-job-applications">';
+    echo '<label><input type="checkbox" name="submitted_jobs_only" value="0"' . checked(0, $submitted_jobs_only, false) . '> Show all users</label>';
+    echo '<input type="hidden" name="paged" id="paged" value="1">'; // Set pagination to page 1 on filter change
+    echo '<input type="submit" class="button" value="Filter">';
+    echo '</form>';
+
+    // Form for bulk actions
     echo '<form method="post" action="">';
     echo '<input type="submit" name="bulk_delete" value="Delete Selected" class="button button-danger" onclick="return confirm(\'Are you sure you want to delete the selected users?\');">';
     echo '<table class="widefat fixed" cellspacing="0">';
@@ -46,12 +71,17 @@ function jobseekers_admin_page() {
         echo '<td>' . esc_html($user->submission_date) . '</td>';
         echo '<td><a href="' . admin_url('admin.php?page=view-jobseeker&user_id=' . $user->id) . '" class="button button-primary">View Details</a></td>';
         echo '</tr>';
-        $counter++; 
-    } 
+        $counter++;
+    }
 
-    echo '</tbody></table>';  
+    if (empty($users)) {
+        echo '<tr><td colspan="7">No users found.</td></tr>';
+    }
 
-    echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=jobseekers-job-applications'));
+    echo '</tbody></table>';
+
+    // Pagination with filter state
+    echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=jobseekers-job-applications&submitted_jobs_only=' . esc_attr($submitted_jobs_only)));
 
     echo '</form></div>';
 
@@ -64,6 +94,6 @@ function jobseekers_admin_page() {
         }
     });
     </script>';
-} 
+}
 
 ?>
