@@ -644,6 +644,7 @@ header.Sticky-fixed .logo .logotxt {
 .desktopSubMenuWrap .subMenuWrap {
     border-right: 1px solid #4c4c4e !important;
     height: 100%;
+    padding-right: 10px;
 }
 .desktopSubMenuWrap .subMenuWrap li + li {
     margin-top: 10px;
@@ -680,17 +681,28 @@ header.Sticky-fixed .logo .logotxt {
     flex-wrap: wrap;
     margin: 0 -10px;
 }
-.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu, 
-.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu {
-    width: 100%;
-    display: block;
-}
+
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li {
     width: 25%;
     display: inline-flex;
     padding: 0 5px 10px;
     float: left;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu {
+    width: 100%;
+    display: block;
+    column-count: 4;
+    column-gap: 10px;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li {
+    width: 100%;
+    break-inside: avoid;
+    padding: 5px 0;
+    display: inherit;
+    float: none;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a {
@@ -725,6 +737,7 @@ header.Sticky-fixed .logo .logotxt {
     display: block;
     border-right: 1px solid #4c4c4e !important;
     height: 100%;
+    padding-right: 10px;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList li,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap.simpleList li {

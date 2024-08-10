@@ -658,6 +658,10 @@ h3 .job-title {
     font-size: 14px;
     padding: 10px;
 }
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .submenuWrap.simpleList li a, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .submenuWrap.simpleList li a {
+    font-size: 14px;
+}
 .ErrorInnerWrap .h2 {
     margin-bottom: 15px;
 }

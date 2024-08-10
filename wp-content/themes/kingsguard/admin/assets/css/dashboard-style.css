@@ -683,6 +683,46 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab
     #adminmenu li.my-custom-logo a img {
         max-width: 30px;
     }
+    .auto-fold #adminmenu, 
+    .auto-fold #adminmenu li.menu-top, 
+    .auto-fold #adminmenuback, 
+    .auto-fold #adminmenuwrap {
+        width: 75px;
+    }
+    .auto-fold #wpcontent, .auto-fold #wpfooter {
+        margin-left: 75px;
+    }
+    .auto-fold #adminmenu div.wp-menu-image {
+        width: 75px;
+    }
+}
+@media screen and (max-width: 782px) {
+    #wpadminbar .quicklinks ul {
+        display: block !important;
+    }
+    #wpadminbar .quicklinks ul li:first-child {
+        display: block !important;
+    }
+    #wpadminbar .quicklinks ul li {
+        display: none !important;
+    }
+    .auto-fold #wpcontent, .auto-fold #wpfooter {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+    .auto-fold #adminmenu, .auto-fold #adminmenuback, .auto-fold #adminmenuwrap {
+        width: 190px;
+    }
+    .auto-fold #adminmenu, .auto-fold #adminmenu li.menu-top, .auto-fold #adminmenuback, .auto-fold #adminmenuwrap {
+        width: 190px;
+    }
+    .auto-fold #adminmenu div.wp-menu-image {
+        width: 34px;
+    }
+    input[type=checkbox], input[type=radio] {
+        height: 16px;
+        width: 16px;
+    }
 }
 @media screen and (max-width: 767px) {
     .userWrap_info > .row > div {
