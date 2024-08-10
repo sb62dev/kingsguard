@@ -215,7 +215,7 @@ table.widefat>tbody tr td input{
 }
 .wp-core-ui select {
     background-color: transparent !important;
-    background-image: url('../assets/images/down-arrow.svg');
+    background-image: url('../images/down_white.svg');
     background-repeat: no-repeat;
     background-position: center right 12px;
     background-size: 9px auto;

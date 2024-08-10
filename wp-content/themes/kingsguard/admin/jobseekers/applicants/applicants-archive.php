@@ -7,26 +7,35 @@ function jobseekers_admin_page() {
 
     // Check if 'submitted_jobs_only' is set in the URL; if not set, show only users who have submitted jobs
     $submitted_jobs_only = isset($_GET['submitted_jobs_only']) ? intval($_GET['submitted_jobs_only']) : 1;
-    
-    $total_users_query = "SELECT COUNT(*) FROM {$table_name}";
+
+    // Get the selected job title from the filter
+    $selected_job_title = isset($_GET['job_title']) ? sanitize_text_field($_GET['job_title']) : '';
+
+    // Build the base SQL query
+    $total_users_query = "SELECT * FROM {$table_name}";
+
+    // Apply filtering based on job title and whether the user has submitted jobs
+    $where_clauses = [];
     if ($submitted_jobs_only === 1) {
-        $total_users_query .= " WHERE job_applications IS NOT NULL AND job_applications != ''";
+        $where_clauses[] = "job_applications IS NOT NULL AND job_applications != ''";
     }
-    
-    $total_users = $wpdb->get_var($total_users_query);
+    if (!empty($selected_job_title)) {
+        $where_clauses[] = $wpdb->prepare("job_applications LIKE %s", '%' . $wpdb->esc_like($selected_job_title) . '%');
+    }
+    if (!empty($where_clauses)) {
+        $total_users_query .= " WHERE " . implode(' AND ', $where_clauses);
+    }
+
+    // Get the total number of users
+    $total_users = count($wpdb->get_results($total_users_query));
     $total_pages = ceil($total_users / $users_per_page);
 
     // Determine the current page
     $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
     $offset = ($current_page - 1) * $users_per_page;
 
-    // Retrieve users for the current page
-    $users_query = "SELECT * FROM {$table_name}";
-    if ($submitted_jobs_only === 1) {
-        $users_query .= " WHERE job_applications IS NOT NULL AND job_applications != ''";
-    }
-
-    $users_query .= $wpdb->prepare(" LIMIT %d OFFSET %d", $users_per_page, $offset);
+    // Get the filtered users for the current page
+    $users_query = $total_users_query . $wpdb->prepare(" LIMIT %d OFFSET %d", $users_per_page, $offset);
     $users = $wpdb->get_results($users_query);
 
     // Handle bulk delete action
@@ -40,13 +49,38 @@ function jobseekers_admin_page() {
         }
     }
 
+    // Retrieve all distinct job titles for the dropdown filter
+    $distinct_job_titles = $wpdb->get_col("SELECT DISTINCT job_applications FROM {$table_name} WHERE job_applications IS NOT NULL");
+    $job_titles = [];
+    foreach ($distinct_job_titles as $serialized_jobs) {
+        $jobs = unserialize($serialized_jobs);
+        if (is_array($jobs)) {
+            foreach ($jobs as $job) {
+                if (isset($job['job_title']) && !in_array($job['job_title'], $job_titles)) {
+                    $job_titles[] = $job['job_title'];
+                }
+            }
+        }
+    }
+
+    // Start rendering the page
     echo '<div class="wrap">';
     echo '<h1>Job Applications</h1>';
 
     // Form for the filter
-    echo '<form method="get" action="">';
+    echo '<form method="get" action="" class="jobFilter_wrap">';
     echo '<input type="hidden" name="page" value="jobseekers-job-applications">';
-    echo '<label><input type="checkbox" name="submitted_jobs_only" value="0"' . checked(0, $submitted_jobs_only, false) . '> Show all users</label>';
+    echo '<div class="jobFilter_col jobFilter_col_1"><label><input type="checkbox" name="submitted_jobs_only" value="0"' . checked(0, $submitted_jobs_only, false) . '> Show all users</label></div>';
+    
+    // Job title dropdown 
+    echo '<div class="jobFilter_col jobFilter_col_2"><label for="job_title">Filter by Job Title:</label>';
+    echo '<select name="job_title" id="job_title">';
+    echo '<option value="">Select Job Title</option>';
+    foreach ($job_titles as $job_title) {
+        echo '<option value="' . esc_attr($job_title) . '"' . selected($selected_job_title, $job_title, false) . '>' . esc_html($job_title) . '</option>';
+    }
+    echo '</select></div>';
+
     echo '<input type="hidden" name="paged" id="paged" value="1">'; // Set pagination to page 1 on filter change
     echo '<input type="submit" class="button" value="Filter">';
     echo '</form>';
@@ -81,7 +115,7 @@ function jobseekers_admin_page() {
     echo '</tbody></table>';
 
     // Pagination with filter state
-    echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=jobseekers-job-applications&submitted_jobs_only=' . esc_attr($submitted_jobs_only)));
+    echo common_pagination($current_page, $total_users, $total_pages, admin_url('admin.php?page=jobseekers-job-applications&submitted_jobs_only=' . esc_attr($submitted_jobs_only) . '&job_title=' . urlencode($selected_job_title)));
 
     echo '</form></div>';
 
