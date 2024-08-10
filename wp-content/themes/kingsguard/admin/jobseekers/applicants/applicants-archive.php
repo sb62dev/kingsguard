@@ -34,8 +34,8 @@ function jobseekers_admin_page() {
     $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
     $offset = ($current_page - 1) * $users_per_page;
 
-    // Get the filtered users for the current page
-    $users_query = $total_users_query . $wpdb->prepare(" LIMIT %d OFFSET %d", $users_per_page, $offset);
+    // Get the filtered users for the current page 
+    $users_query = $total_users_query . $wpdb->prepare(" ORDER BY id DESC LIMIT %d OFFSET %d", $users_per_page, $offset);
     $users = $wpdb->get_results($users_query);
 
     // Handle bulk delete action
