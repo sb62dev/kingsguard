@@ -1,7 +1,7 @@
 <?php
 
-define('ADMIN_EMAILS', 'sb62dev@gmail.com, operations@kingsguard.ca'); 
-define('ADMIN_EMAILS_QUOTE', 'sb62dev@gmail.com, quotes@kingsguard.ca'); 
+define('ADMIN_EMAILS', 'operations@kingsguard.ca'); 
+define('ADMIN_EMAILS_QUOTE', 'quotes@kingsguard.ca'); 
 
 /* Function to add common JS for Jobseekers */
 function enqueue_custom_jobseekers_scripts() {
