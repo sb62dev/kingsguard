@@ -130,4 +130,12 @@
     .statusModal_container .button {
         width: 100%;
     }
+    .jobFilter_wrap select {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .jobFilter_wrap .button {
+        width: 100%;
+    }
 }
