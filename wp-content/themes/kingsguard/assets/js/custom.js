@@ -276,49 +276,16 @@ jQuery(document).ready(function () {
         }
     );
 
-  jQuery('.homeBannerSlider').on('init', function(event, slick) {
-      slick.$dots.addClass('vertical-dots');
-    });
     jQuery('.homeBannerSlider').slick({
         infinite: true,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
         speed: 300,
         autoplaySpeed: 3000,
         pauseOnHover: false,
-        customPaging: function(slider, i) {
-          return '<button>' + (i + 1) + '</button>';
-        }
-    });
-
-    function startCountdown() {
-      var $activeDot = $('.slick-dots li.slick-active');
-      var countdown = 3;
-      $activeDot.addClass('countdown').text(countdown);
-  
-      var countdownInterval = setInterval(function() {
-        countdown--;
-        $activeDot.text(countdown);
-        if (countdown <= 0) {
-          clearInterval(countdownInterval);
-          $activeDot.removeClass('countdown').text('');
-        }
-      }, 1000);
-    }
-  
-    startCountdown();
-  
-    jQuery('.homeBannerSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-      var $activeDot = jQuery('.slick-dots li').eq(nextSlide);
-      jQuery('.slick-dots li').removeClass('countdown').text('');
-      $activeDot.addClass('countdown').text(3);
-    });
-  
-    jQuery('.homeBannerSlider').on('afterChange', function(event, slick, currentSlide) {
-      startCountdown();
     });
 
     jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -703,6 +670,17 @@ jQuery(document).ready(function () {
           });
       }
   }
+
+  jQuery('a.smooth-scroll').on('click', function(event) {
+    event.preventDefault();
+    
+    var target = jQuery(this).attr('href');
+    var offsetTop = jQuery(target).offset().top - 120; // Subtract 120px from the target offset
+    
+    jQuery('html, body').animate({
+        scrollTop: offsetTop
+    }, 800); // 800 milliseconds
+  });
   
   const citySelect = document.querySelector('select[name="city"]');
   const serviceSelect = document.querySelector('select[name="service"]');

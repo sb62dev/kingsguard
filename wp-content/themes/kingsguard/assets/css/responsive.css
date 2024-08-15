@@ -395,7 +395,7 @@
         font-size: 26px;
     }
     .homeBannerSlider .slick-dots {
-        left: 50px;
+        right: 50px;
     }
 }
 
@@ -648,7 +648,7 @@ h3 .job-title {
     max-height: 70px;
 }
 .homeBannerSlider .slick-dots {
-    left: 20px;
+    right: 20px;
 }
 .desktopSubMenuWrap .subMenuWrap li a {
     font-size: 14px;
@@ -1072,10 +1072,18 @@ input:-moz-placeholder {
     margin-right: 4px;
 }
 .homeBannerSlider .slick-dots {
-    left: 15px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    bottom: 30px;
+    transform: translateY(0%);
+    top: auto;
+    flex-direction: row;
+    padding: 0 30px;
 }
 .homeBannerSlider .slick-dots li {
-    margin: 10px 0;
+    margin: 0 6px;
 }
 .homeBannerSlider .slick-dots li.countdown {
     font-size: 12px;
@@ -1087,6 +1095,15 @@ input:-moz-placeholder {
 }
 h3 {
     font-size: 20px;
+}
+.homeDeskSlider {
+    display: none;
+}
+.homeMobSlider {
+    display: block;
+}
+.homeVideoSlider .scroll-guide-icon {
+    display: none;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1946,9 +1963,6 @@ button.modal_close span {
 .jobseek_application_resume_box {
     font-size: 16px !important;
     padding: 15px 15px !important;
-}
-.homeBannerSlider .slick-dots li {
-    margin: 8px 0;
 }
 .ErrorInnerWrap .h2 {
     margin-bottom: 10px;

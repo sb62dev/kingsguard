@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <div class="pageBody homeBody">
-    <?php if (have_rows('home_img_slider')) : ?>
+    <!-- <?php if (have_rows('home_img_slider')) : ?>
     <div class="homeBannerSlider slider mb-0">
         <?php while (have_rows('home_img_slider')) : the_row(); ?>
         <?php
@@ -26,7 +26,54 @@ get_header();
         <?php } ?>
         <?php endwhile; ?>
     </div>
-    <?php endif; wp_reset_query(); ?> 
+    <?php endif; wp_reset_query(); ?>  -->
+
+    <section class="homeVideoSlider">
+        <?php if (have_rows('home_video_slider')) : ?>
+        <div class="homeBannerSlider slider mb-0 homeDeskSlider">
+            <?php while (have_rows('home_video_slider')) : the_row(); ?>
+            <?php
+                $home_banner_video = get_sub_field('home_banner_video');
+                if (isset($home_banner_video) && !empty($home_banner_video)) {
+            ?>
+                <div class="homeBannerSlide">
+                    <video id="slider_video" loop muted autoplay>
+                        <source src="<?php echo $home_banner_video; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            <?php } ?>
+            <?php endwhile; ?>
+        </div>
+        <?php endif; wp_reset_query(); ?> 
+
+        <?php if (have_rows('home_mob_video_slider')) : ?>
+        <div class="homeBannerSlider slider mb-0 homeMobSlider">
+            <?php while (have_rows('home_mob_video_slider')) : the_row(); ?>
+            <?php
+                $home_mob_banner_video = get_sub_field('home_mob_banner_video');
+                if (isset($home_mob_banner_video) && !empty($home_mob_banner_video)) {
+            ?>
+                <div class="homeBannerSlide">
+                    <video id="slider_video" loop muted autoplay>
+                        <source src="<?php echo $home_mob_banner_video; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            <?php } ?>
+            <?php endwhile; ?>
+        </div>
+        <?php endif; wp_reset_query(); ?> 
+    
+        <div class="scroll-guide-icon">
+            <div class="desktop remove-line-height">
+                <a href="#logoSliderWrap" class="smooth-scroll">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-scroll.svg" alt="Scroll down indicator"> 
+                    <div class="down-arrow"></div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- <?php
         $home_banner_title = get_field('home_banner_title');
@@ -69,7 +116,7 @@ get_header();
 
     <?php if (have_rows('client_logos')) : ?>
     <section>
-        <div class="logosSLiderWrapper" data-aos="fade-down" data-aos-duration="1000">
+        <div class="logosSLiderWrapper">
             <div class="sm_container">
                 <div class="slider clientSlider clientLogo">
                     <?php while (have_rows('client_logos')) : the_row(); ?>
@@ -185,7 +232,7 @@ get_header();
 
     <?php if (have_rows('our_services')) : ?>
     <section>
-        <div class="clientSec ServiceSec">
+        <div class="clientSec ServiceSec" id="logoSliderWrap">
             <div class="sm_container">
                 <div class="clientInner text-center">
                     <?php
