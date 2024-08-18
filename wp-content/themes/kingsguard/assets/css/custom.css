@@ -4198,6 +4198,10 @@ input[type=checkbox], input[type=radio] {
 }
 .homeVideoSlider {
     position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    max-height: 680px;
+    overflow-y: hidden;
 }
 .homeVideoSlider .scroll-guide-icon {
     z-index: 4;
@@ -4282,4 +4286,4 @@ input[type=checkbox], input[type=radio] {
 }
 .modal iframe {
     min-height: 400px !important;
-}
+} 

@@ -18,10 +18,10 @@ get_header();
             <?php
                 $home_banner_video = get_sub_field('home_banner_video');
                 if (isset($home_banner_video) && !empty($home_banner_video)) {
-                $home_video_duration = get_sub_field('home_video_duration');
+                $home_video_duration = get_sub_field('duration');
             ?>
-                <div class="heroSlide homeBannerSlide" data-duration="<?php echo $home_video_duration; ?>">
-                    <video id="slider_video" loop muted autoplay>
+                <div class="heroSlide homeBannerSlide">
+                    <video id="slider_video" loop muted autoplay data-duration="<?php echo $home_video_duration; ?>">
                         <source src="<?php echo $home_banner_video; ?>" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -37,10 +37,10 @@ get_header();
             <?php
                 $home_mob_banner_video = get_sub_field('home_mob_banner_video');
                 if (isset($home_mob_banner_video) && !empty($home_mob_banner_video)) {
-                $home_mob_video_duration = get_sub_field('home_mob_video_duration');
+                $home_mob_video_duration = get_sub_field('duration');
             ?>
-                <div class="homeBannerSlide" data-duration="<?php echo $home_mob_video_duration; ?>">
-                    <video id="slider_video" loop muted autoplay>
+                <div class="homeBannerSlide">
+                    <video id="slider_video" loop muted autoplay data-duration="<?php echo $home_mob_video_duration; ?>">
                         <source src="<?php echo $home_mob_banner_video; ?>" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -60,46 +60,7 @@ get_header();
                 </a>
             </div>
         </div>
-    </section> 
-
-    <!-- <?php
-        $home_banner_title = get_field('home_banner_title');
-        if (isset($home_banner_title) && !empty($home_banner_title)) {
-        $home_banner_description = get_field('home_banner_description');
-        $home_banner_bg = get_field('home_banner_bg');
-    ?>
-    <section class="hero_section">
-        <div class="video-container">
-            <div class="video_content_inner">
-                <video id="background-video" loop muted autoplay>
-                    <source src="<?php echo $home_banner_bg; ?>" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div id="video-overlay"></div>
-                <div class="hero_text_main" data-aos="fade-down" data-aos-duration="1000">
-                    <div class="hero_text_inner_div">
-                        <h1 class="h2"><?php echo $home_banner_title; ?></h1>
-                        <p><?php echo $home_banner_description; ?></p>
-                        <?php
-                            $home_banner_button_title = get_field('home_banner_button_title');
-                            if (isset($home_banner_button_title) && !empty($home_banner_button_title)) {
-                            $home_banner_button_link = get_field('home_banner_button_link');
-                            $home_banner_button_target = get_field('home_banner_button_target');
-                            $home_button_aria_label = get_field('home_button_aria_label');
-                        ?>
-                            <a href="<?php echo $home_banner_button_link; ?>" target="<?php echo $home_banner_button_target; ?>" aria-label="<?php echo $home_button_aria_label; ?>" class="btn-style gradientBtn"><?php echo $home_banner_button_title; ?></a>
-                        <?php } ?>
-                    </div>
-                </div>
-                <button id="play-button">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/play_icon.png" class="play_icon"
-                        alt="">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pause.png" class="pause_icon" alt="">
-                </button>
-            </div>
-        </div>
-    </section>
-    <?php } ?> -->
+    </section>  
 
     <?php if (have_rows('client_logos')) : ?>
     <section>

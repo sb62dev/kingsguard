@@ -219,11 +219,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/aos.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/custom.js"></script>
-<script>
-    AOS.init();
-</script>
 <?php wp_footer(); ?>
 
+<!-- <script>
+    AOS.init();
+</script> -->
 <div class="modal fade" id="projectVideo" tabindex="-1" role="dialog" aria-labelledby="projectVideoLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

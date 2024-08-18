@@ -1,4 +1,7 @@
 jQuery(document).ready(function () {
+
+    AOS.init();
+
     // Hide the submenu on page load
     jQuery('.desktopSubMenuWrap').hide();
 
@@ -771,116 +774,113 @@ jQuery(document).ready(function () {
 			jQuery('.jobseek_login_link').addClass('loggedIn');
 			jQuery('.jobseek_login_link a').html(profileImage + ' ' + username);
 		}
-  }
+  } 
+ 
+  jQuery('.homeDeskSlider video, .homeMobSlider video').each(function() {
+    this.pause();
+  });
 
-});
+}); 
 
-jQuery(document).ready(function($) {
-    function initializeSlider(selector) {
-        var $slider = $(selector);
+function initializeSlider(selector) {
+    var $slider = $(selector); 
 
-        $slider.slick({
-            dots: true,
-            arrows: false,
-            appendDots: $('.heroSliderDots'),
-            customPaging: function(slider, i) {
-                var video = $(slider.$slides[i]).find('video').get(0);
-                var duration = Math.floor(video.duration);
+    $slider.slick({
+        dots: true,
+        arrows: false,
+        appendDots: $('.heroSliderDots'),
+        customPaging: function(slider, i) {
+            var video = $(slider.$slides[i]).find('video').get(0);
+            var duration = $(video).data('duration'); // Use the data-duration attribute
 
-                if (isNaN(duration) || duration <= 0) {
-                    video.addEventListener('loadedmetadata', function() {
-                        duration = Math.floor(video.duration);
-                        $('.heroSliderDots .slick-dots li').eq(i).find('.duration').text(duration);
-                    });
-                    duration = ''; // Temporarily set duration to empty
-                }
+            return `
+            <span class="dot">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="timer_circle">
+                    <g>
+                        <circle id="circle" class="circle_animation" r="14" cy="15" cx="15" stroke-width="2" stroke="#ffffff" fill="none" stroke-dasharray="0, 88"/>
+                    </g>
+                </svg>
+                <span class="duration">${duration}</span>
+            </span>`;
+        }
+    });
 
-                return `
-                <span class="dot">
-                    <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="timer_circle">
-                        <g>
-                            <circle id="circle" class="circle_animation" r="14" cy="15" cx="15" stroke-width="2" stroke="#ffffff" fill="none" stroke-dasharray="0, 88"/>
-                        </g>
-                    </svg>
-                    <span class="duration">${duration}</span>
-                </span>`;
-            }
-        });
+    let countdownInterval;
 
-        let countdownInterval;
+    $slider.on('afterChange', function(event, slick, currentSlide) {
+        var video = $(slick.$slides[currentSlide]).find('video').get(0);
+        video.play();  // Start playing the video after the slide changes
 
-        $slider.on('afterChange', function(event, slick, currentSlide) {
-            var video = $(slick.$slides[currentSlide]).find('video').get(0);
-            video.play();
+        clearInterval(countdownInterval);
 
-            clearInterval(countdownInterval);
+        var duration = $(video).data('duration'); // Use the data-duration attribute
+        var totalDuration = duration;
 
-            var duration = Math.floor(video.duration);
-            var totalDuration = duration;
+        updateCountdown(duration, currentSlide, totalDuration);
 
+        countdownInterval = setInterval(function() {
+            duration--;
             updateCountdown(duration, currentSlide, totalDuration);
 
-            countdownInterval = setInterval(function() {
-                duration--;
-                updateCountdown(duration, currentSlide, totalDuration);
-
-                if (duration <= 0) {
-                    clearInterval(countdownInterval);
-                    $slider.slick('slickNext');
-                }
-            }, 1000);
-
-            video.onended = function() {
+            if (duration <= 0) {
+                clearInterval(countdownInterval);
                 $slider.slick('slickNext');
-            };
-        });
-
-        $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            var video = $(slick.$slides[currentSlide]).find('video').get(0);
-            video.pause();
-            video.currentTime = 0;
-
-            clearInterval(countdownInterval);
-
-            $('.heroSliderDots .slick-dots li').each(function(index) {
-                if (index !== nextSlide) {
-                    $(this).find('.circle_animation').css('stroke-dasharray', '0, 88');
-                    $(this).find('.duration').text('');
-                }
-            });
-        });
-
-        function updateCountdown(duration, currentSlide, totalDuration) {
-            var percentage = (1 - (duration / totalDuration)) * 88;
-            var circle = $('.heroSliderDots .slick-dots li').eq(currentSlide).find('.circle_animation');
-            circle.css('stroke-dasharray', `${percentage}, 88`);
-            $('.heroSliderDots .slick-dots li').eq(currentSlide).find('.duration').text(duration);
-        }
-
-        $slider.slick('slickGoTo', 0);
-    }
-
-    function handleResponsiveSliders() {
-        if ($(window).width() <= 767) {
-            if (!$('.homeMobSlider').hasClass('slick-initialized')) {
-                initializeSlider('.homeMobSlider');
             }
-            if ($('.homeDeskSlider').hasClass('slick-initialized')) {
-                $('.homeDeskSlider').slick('unslick');
-            }
-        } else {
-            if (!$('.homeDeskSlider').hasClass('slick-initialized')) {
-                initializeSlider('.homeDeskSlider');
-            }
-            if ($('.homeMobSlider').hasClass('slick-initialized')) {
-                $('.homeMobSlider').slick('unslick');
-            }
-        }
-    }
+        }, 1000);
 
-    handleResponsiveSliders();
-
-    $(window).resize(function() {
-        handleResponsiveSliders();
+        video.onended = function() {
+            $slider.slick('slickNext');
+        };
     });
-});
+
+    $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        var video = $(slick.$slides[currentSlide]).find('video').get(0);
+        video.pause();
+        video.currentTime = 0;
+
+        clearInterval(countdownInterval);
+
+        $('.heroSliderDots .slick-dots li').each(function(index) {
+            if (index !== nextSlide) {
+                $(this).find('.circle_animation').css('stroke-dasharray', '0, 88');
+                $(this).find('.duration').text('');
+            }
+        });
+    });
+
+function updateCountdown(duration, currentSlide, totalDuration) {
+        var percentage = (1 - (duration / totalDuration)) * 88;
+        var circle = $('.heroSliderDots .slick-dots li').eq(currentSlide).find('.circle_animation');
+        circle.css('stroke-dasharray', `${percentage}, 88`);
+        $('.heroSliderDots .slick-dots li').eq(currentSlide).find('.duration').text(duration);
+    }
+    $slider.slick('slickGoTo', 0);
+}
+
+function handleResponsiveSliders() {
+    if ($(window).width() <= 767) {
+        if (!$('.homeMobSlider').hasClass('slick-initialized')) {
+            initializeSlider('.homeMobSlider');
+        }
+        if ($('.homeDeskSlider').hasClass('slick-initialized')) {
+            $('.homeDeskSlider').slick('unslick');
+        }
+    } else {
+        if (!$('.homeDeskSlider').hasClass('slick-initialized')) {
+            initializeSlider('.homeDeskSlider');
+        }
+        if ($('.homeMobSlider').hasClass('slick-initialized')) {
+            $('.homeMobSlider').slick('unslick');
+        }
+    }
+}  
+
+jQuery(window).on('load', function() { 
+
+    handleResponsiveSliders(); 
+
+    jQuery('.homeDeskSlider video, .homeMobSlider video').each(function() {
+        this.play();
+    });
+
+}); 

@@ -1975,6 +1975,11 @@ button.modal_close span {
 .modal iframe {
     min-height: 300px !important;
 }
+.homeVideoSlider { 
+    max-width: 480px;
+    max-height: 600px;
+}
+
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -2022,8 +2027,17 @@ button.modal_close span {
     }
     .projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner p {
         font-size: 12px !important;
-    }
+    } 
 }
+
+@media screen and ( max-width: 479px ) { 
+
+.homeVideoSlider {  
+    max-height: 520px;
+}
+
+}
+
 @media screen and ( max-width: 413px ) { 
     .hd4 {
         font-size: 20px;
@@ -2100,4 +2114,15 @@ button.modal_close span {
     .serviceTabImg img {
         height: 240px;
     }
+    .homeVideoSlider {  
+        max-height: 470px;
+    }
+}
+
+@media screen and ( max-width: 374px ) { 
+
+    .homeVideoSlider {  
+        max-height: 450px;
+    }
+    
 }
