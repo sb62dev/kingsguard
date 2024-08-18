@@ -4119,12 +4119,11 @@ input[type=checkbox], input[type=radio] {
 .jobseekers_profile_thankWrap.profilePicUpdated h4 {
     margin-bottom: 0;
 }
-.homeBannerSlider .slick-dots,
-.testSlider .slick-dots {
+.homeVideoSlider .slick-dots {
     position: absolute;
-    top: 56%;
+    top: 57%;
     right: 100px;
-    transform: translateY(-44%);
+    transform: translateY(-43%);
     display: flex !important;
     flex-direction: column;
     list-style: none;
@@ -4134,66 +4133,65 @@ input[type=checkbox], input[type=radio] {
     align-items: center;
     z-index: 2;
 }
-.homeBannerSlider .slick-dots li,
-.testSlider .slick-dots li {
-    background-color: rgba(255, 255, 255, 0.6);
-    width: 6px;
-    height: 6px;
-    border: 0;
-    border-radius: 6px;
-    margin: 15px 0;
-    font-size: 0;
+.homeVideoSlider .slick-dots li {
+    height: auto;
+    width: auto;
+    margin: 0 0 7px;
+    padding: 0;
+    display: block;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
-.homeBannerSlider .slick-dots li button,
-.testSlider .slick-dots li button {
-    display: none !important;
-}
-.homeBannerSlider .slick-dots li:hover,
-.homeBannerSlider .slick-dots li:focus {
-    background-color: #0098FF;
-}
-.homeBannerSlider .slick-dots li.countdown,
-.testSlider .slick-dots li.slick-active {
-    font-size: 14px;
-    font-family: 'Gilroy-SemiBold';
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 5px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+.homeVideoSlider .dot {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 30px;
+    width: 30px; 
     position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.homeBannerSlider .slick-dots li.countdown::after,
-.testSlider .slick-dots li.slick-active::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
     border: 2px solid transparent;
-    box-sizing: border-box;
-    animation: countdown-animation 3s linear infinite;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center; 
+    color: #fff;
 }
-@keyframes countdown-animation {
-    from {
-        border-color: rgba(255, 255, 255, 0.4);
-    }
-    to {
-        border-color: #ffffff;
-    }
+.homeVideoSlider .dot:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
 }
-.homeBannerSlider .homeBannerSlide video,
-.testSlider  .homeBannerSlide video {
+.homeVideoSlider .dot svg, .homeVideoSlider .dot .duration{
+    opacity: 0;
+    font-size: 12px;
+    line-height: 1;
+}
+.homeVideoSlider .slick-active .dot {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.4);
+} 
+.homeVideoSlider .slick-active .dot .duration, .homeVideoSlider .slick-active .dot svg {
+    opacity: 1;
+}
+.homeVideoSlider .slick-active .dot:before {
+    opacity: 0;
+}
+.homeVideoSlider .timer_circle {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    transform: rotate(-90deg);
+}
+.homeVideoSlider .circle_animation {
+    transition: stroke-dasharray 1s linear;
+} 
+.homeVideoSlider .homeBannerSlide video {
     width: 100%;
     margin-bottom: -7px;
     height: auto;
@@ -4281,4 +4279,7 @@ input[type=checkbox], input[type=radio] {
 }
 .homeMobSlider {
     display: none;
+}
+.modal iframe {
+    min-height: 400px !important;
 }

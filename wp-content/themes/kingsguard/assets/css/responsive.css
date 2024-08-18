@@ -391,7 +391,7 @@
     .projects_section_two .noProjectFound {
         font-size: 26px;
     }
-    .homeBannerSlider .slick-dots {
+    .homeVideoSlider .slick-dots {
         right: 50px;
     }
 }
@@ -638,7 +638,7 @@ h3 .job-title {
 .kg_contact_wrapper .kg_contact_thankWrap .backHome {
     margin-top: 60px;
 }
-.homeBannerSlider .slick-dots {
+.homeVideoSlider .slick-dots {
     right: 20px;
 }
 .desktopSubMenuWrap .subMenuWrap li a {
@@ -1062,21 +1062,21 @@ input:-moz-placeholder {
     object-fit: cover;
     margin-right: 4px;
 }
-.homeBannerSlider .slick-dots {
+.homeVideoSlider .slick-dots {
     right: 0;
     left: 0;
     width: 100%;
     height: 20px;
-    bottom: 30px;
+    bottom: 65px;
     transform: translateY(0%);
     top: auto;
     flex-direction: row;
     padding: 0 30px;
 }
-.homeBannerSlider .slick-dots li {
-    margin: 0 6px;
+.homeVideoSlider .slick-dots li {
+    margin: 0 4px;
 }
-.homeBannerSlider .slick-dots li.countdown {
+.homeVideoSlider .slick-dots li.countdown {
     font-size: 12px;
     width: 24px;
     height: 24px;
@@ -1092,9 +1092,6 @@ h3 {
 }
 .homeMobSlider {
     display: block;
-}
-.homeVideoSlider .scroll-guide-icon {
-    display: none;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1964,6 +1961,19 @@ button.modal_close span {
 }
 .kg_quote_infoWrap {
     font-size: 12px;
+}
+.homeVideoSlider .scroll-guide-icon .down-arrow:after {
+    width: 4px;
+    height: 4px;
+}
+.homeVideoSlider .scroll-guide-icon .desktop {
+    max-width: 20px;
+}
+.homeVideoSlider .scroll-guide-icon {
+    bottom: 15px;
+}
+.modal iframe {
+    min-height: 300px !important;
 }
 }
 @media only screen and (max-width: 600px) {

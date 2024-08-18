@@ -11,34 +11,20 @@ get_header();
 ?>
 
 <div class="pageBody homeBody">
-    <!-- <?php if (have_rows('home_img_slider')) : ?>
-    <div class="homeBannerSlider slider mb-0">
-        <?php while (have_rows('home_img_slider')) : the_row(); ?>
-        <?php
-            $home_banner_image = get_sub_field('home_banner_image');
-            if (isset($home_banner_image) && !empty($home_banner_image)) {
-                $image_url = wp_get_attachment_image_src($home_banner_image, 'full')[0];
-                $image_alt = get_post_meta($home_banner_image, '_wp_attachment_image_alt', true);
-        ?>
-            <div class="homeBannerSlide">
-                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-            </div>
-        <?php } ?>
-        <?php endwhile; ?>
-    </div>
-    <?php endif; wp_reset_query(); ?>  -->
-
     <section class="homeVideoSlider">
         <?php if (have_rows('home_video_slider')) : ?>
-        <div class="homeBannerSlider slider mb-0 homeDeskSlider">
+        <div class="heroSlider homeDeskSliderd slider mb-0 homeDeskSlider">
             <?php while (have_rows('home_video_slider')) : the_row(); ?>
             <?php
                 $home_banner_video = get_sub_field('home_banner_video');
                 if (isset($home_banner_video) && !empty($home_banner_video)) {
                 $home_video_duration = get_sub_field('home_video_duration');
             ?>
-                <div class="homeBannerSlide" data-duration="<?php echo $home_video_duration; ?>">
-                    <video src="<?php echo $home_banner_video; ?>" loop muted autoplay></video>
+                <div class="heroSlide homeBannerSlide" data-duration="<?php echo $home_video_duration; ?>">
+                    <video id="slider_video" loop muted autoplay>
+                        <source src="<?php echo $home_banner_video; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             <?php } ?>
             <?php endwhile; ?>
@@ -46,7 +32,7 @@ get_header();
         <?php endif; wp_reset_query(); ?> 
 
         <?php if (have_rows('home_mob_video_slider')) : ?>
-        <div class="homeBannerSlider slider mb-0 homeMobSlider">
+        <div class="homeMobSlider slider mb-0 homeMobSlider">
             <?php while (have_rows('home_mob_video_slider')) : the_row(); ?>
             <?php
                 $home_mob_banner_video = get_sub_field('home_mob_banner_video');
@@ -54,14 +40,17 @@ get_header();
                 $home_mob_video_duration = get_sub_field('home_mob_video_duration');
             ?>
                 <div class="homeBannerSlide" data-duration="<?php echo $home_mob_video_duration; ?>">
-                    <video src="<?php echo $home_mob_banner_video; ?>" loop muted autoplay></video>
+                    <video id="slider_video" loop muted autoplay>
+                        <source src="<?php echo $home_mob_banner_video; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             <?php } ?>
             <?php endwhile; ?>
         </div>
         <?php endif; wp_reset_query(); ?> 
-    
-        <div class="dots"></div>
+
+        <div class="heroSliderDots"></div>
         
         <div class="scroll-guide-icon">
             <div class="desktop remove-line-height">
@@ -71,7 +60,7 @@ get_header();
                 </a>
             </div>
         </div>
-    </section>
+    </section> 
 
     <!-- <?php
         $home_banner_title = get_field('home_banner_title');
