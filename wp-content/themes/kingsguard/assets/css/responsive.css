@@ -296,9 +296,6 @@
     .testimonialsSec .testimonial_slide_inner .quoteIcon img {
         max-width: 45px;
     }
-    .logosSLiderWrapper {
-        padding: 30px 0;
-    }
     .keyBenefitSec .keyBenefitInner .keyBenefitCont {
         margin-left: 60px;
     }
@@ -640,12 +637,6 @@ h3 .job-title {
 }
 .kg_contact_wrapper .kg_contact_thankWrap .backHome {
     margin-top: 60px;
-}
-.clientLogoSlide, .clientLogoSlide .clientLogoSlideInner {
-    height: 100px;
-}
-.clientLogoSlide .clientLogoSlideInner img {
-    max-height: 70px;
 }
 .homeBannerSlider .slick-dots {
     right: 20px;
@@ -1052,10 +1043,10 @@ input:-moz-placeholder {
     font-size: 30px;
 }
 .clientLogoSlide, .clientLogoSlide .clientLogoSlideInner {
-    height: 75px;
+    height: 70px;
 }
 .clientLogoSlide .clientLogoSlideInner img {
-    max-height: 55px;
+    max-height: 40px;
 }
 .appli-listings {
     overflow-x: scroll;
@@ -1472,9 +1463,6 @@ div#collapsibleNavbar {
 .testimonialsSec .testimonial_slide_inner .quoteIcon img {
     max-width: 32px;
 }
-.logosSLiderWrapper {
-    padding: 20px 0;
-}
 .testimonialsSec .testimonial_slide {
     margin: 0;
 }
@@ -1844,7 +1832,7 @@ button.modal_close span {
     height: 50px;
 }
 .clientLogoSlide .clientLogoSlideInner img {
-    max-height: 40px;
+    max-height: 30px;
 }
 .clientSec.testimonialsSec {
     padding-bottom: 70px;

@@ -1390,14 +1390,14 @@ h3 .job-title {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 90px;
     vertical-align: middle;
 }
 .clientLogoSlide .clientLogoSlideInner img {
     display: flex;
     align-items: center;
     height: auto;
-    max-height: 80px;
+    max-height: 50px;
 }
 .mapSection img {
     width: 100%;
@@ -1466,7 +1466,7 @@ h3 .job-title {
     margin-bottom: 0;
 }
 .logosSLiderWrapper {
-    padding: 40px 0;
+    padding: 10px 0;
     background-color: #0098FF;
     background-image: linear-gradient(to right,#0194f8, #0973bd, #0973bc, #0974bd, #50a3d4);
     position: relative;
@@ -4119,11 +4119,12 @@ input[type=checkbox], input[type=radio] {
 .jobseekers_profile_thankWrap.profilePicUpdated h4 {
     margin-bottom: 0;
 }
-.homeBannerSlider .slick-dots {
+.homeBannerSlider .slick-dots,
+.testSlider .slick-dots {
     position: absolute;
-    top: 50%;
+    top: 56%;
     right: 100px;
-    transform: translateY(-50%);
+    transform: translateY(-44%);
     display: flex !important;
     flex-direction: column;
     list-style: none;
@@ -4133,31 +4134,32 @@ input[type=checkbox], input[type=radio] {
     align-items: center;
     z-index: 2;
 }
-.homeBannerSlider .slick-dots li {
-    background-color: rgba(255, 255, 255, 0.4);
-    width: 10px;
-    height: 10px;
+.homeBannerSlider .slick-dots li,
+.testSlider .slick-dots li {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 6px;
+    height: 6px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 6px;
     margin: 15px 0;
+    font-size: 0;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
-.homeBannerSlider .slick-dots li.slick-active {
-    background-color: #00a8ff;
-}
-.homeBannerSlider .slick-dots li button {
+.homeBannerSlider .slick-dots li button,
+.testSlider .slick-dots li button {
     display: none !important;
 }
 .homeBannerSlider .slick-dots li:hover,
 .homeBannerSlider .slick-dots li:focus {
     background-color: #0098FF;
 }
-.homeBannerSlider .slick-dots li.countdown {
+.homeBannerSlider .slick-dots li.countdown,
+.testSlider .slick-dots li.slick-active {
     font-size: 14px;
     font-family: 'Gilroy-SemiBold';
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     padding: 5px;
     border-radius: 50%;
     width: 30px;
@@ -4169,7 +4171,8 @@ input[type=checkbox], input[type=radio] {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.homeBannerSlider .slick-dots li.countdown::after {
+.homeBannerSlider .slick-dots li.countdown::after,
+.testSlider .slick-dots li.slick-active::after {
     content: '';
     position: absolute;
     top: 0;
@@ -4181,7 +4184,16 @@ input[type=checkbox], input[type=radio] {
     box-sizing: border-box;
     animation: countdown-animation 3s linear infinite;
 }
-.homeBannerSlider .homeBannerSlide video {
+@keyframes countdown-animation {
+    from {
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+    to {
+        border-color: #ffffff;
+    }
+}
+.homeBannerSlider .homeBannerSlide video,
+.testSlider  .homeBannerSlide video {
     width: 100%;
     margin-bottom: -7px;
     height: auto;
@@ -4241,14 +4253,6 @@ input[type=checkbox], input[type=radio] {
     100% {
         opacity: 0;
         transform: translate3d(0,10px,0)
-    }
-}
-@keyframes countdown-animation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
     }
 }
 .quote_thankBody .commonBannerWrapper {

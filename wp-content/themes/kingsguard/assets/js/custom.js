@@ -288,6 +288,76 @@ jQuery(document).ready(function () {
         pauseOnHover: false,
     });
 
+    jQuery('.testSlider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        appendDots: jQuery('.dots'),
+        customPaging: function(slider, i) {
+            var video = jQuery(slider.$testSlider[i]).find('video').get(0);
+            video.addEventListener('loadedmetadata', function() {
+                var duration = Math.floor(video.duration);
+                jQuery('.slick-dots li').eq(i).find('.dot').text(duration);
+            });
+
+            return '<span class="dot">Loading...</span>';
+        }
+    });
+
+    // Initialize variables for countdown
+    let countdownInterval;
+
+    // Play video when the slide is shown
+    jQuery('.testSlider').on('afterChange', function(event, slick, currentSlide){
+        var video = jQuery(slick.$testSlider[currentSlide]).find('video').get(0);
+        video.play();
+
+        // Clear any existing countdown interval
+        clearInterval(countdownInterval);
+
+        // Initialize the countdown
+        var duration = Math.floor(video.duration);
+        var totalDuration = duration; // Store total duration for reference
+        updateCountdown(duration, currentSlide, totalDuration);
+
+        // Start the countdown
+        countdownInterval = setInterval(function() {
+            duration--;
+            updateCountdown(duration, currentSlide, totalDuration);
+
+            if (duration <= 0) {
+                clearInterval(countdownInterval);
+                jQuery('.testSlider').slick('slickNext');
+            }
+        }, 1000);
+
+        // Move to the next slide when the video ends
+        video.onended = function() {
+            jQuery('.testSlider').slick('slickNext');
+        };
+    });
+
+    // Pause all videos except the active one
+    jQuery('.testSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var video = jQuery(slick.$testSlider[currentSlide]).find('video').get(0);
+        video.pause();
+        video.currentTime = 0;
+
+        // Clear the countdown when changing slides
+        clearInterval(countdownInterval);
+    });
+
+    function updateCountdown(duration, currentSlide, totalDuration) {
+        var percentage = ((totalDuration - duration) / totalDuration) * 100;
+        jQuery('.slick-dots li').eq(currentSlide).find('.dot').text(duration);
+        jQuery('.slick-dots li').eq(currentSlide).find('.dot').css('border-image', `conic-gradient(#717171 ${percentage}%, transparent ${percentage}%) 1`);
+    }
+
+    // Initial play of the first video
+    jQuery('.testSlider').slick('slickGoTo', 0);
+
     jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       jQuery('.slider').slick('setPosition');
     });
