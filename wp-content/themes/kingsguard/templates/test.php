@@ -2,7 +2,7 @@
 
 /**
 
- * Template Name: Homepage
+ * Template Name: Home Test
 
 **/
 
@@ -30,7 +30,7 @@ get_header();
 
     <section class="homeVideoSlider">
         <?php if (have_rows('home_video_slider')) : ?>
-        <div class="homeBannerSlider slider mb-0 homeDeskSlider">
+        <div class="testSlider slider mb-0 homeDeskSlider">
             <?php while (have_rows('home_video_slider')) : the_row(); ?>
             <?php
                 $home_banner_video = get_sub_field('home_banner_video');
@@ -38,7 +38,10 @@ get_header();
                 $home_video_duration = get_sub_field('home_video_duration');
             ?>
                 <div class="homeBannerSlide" data-duration="<?php echo $home_video_duration; ?>">
-                    <video src="<?php echo $home_banner_video; ?>" loop muted autoplay></video>
+                    <video id="slider_video" loop muted autoplay>
+                        <source src="<?php echo $home_banner_video; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             <?php } ?>
             <?php endwhile; ?>
@@ -46,7 +49,7 @@ get_header();
         <?php endif; wp_reset_query(); ?> 
 
         <?php if (have_rows('home_mob_video_slider')) : ?>
-        <div class="homeBannerSlider slider mb-0 homeMobSlider">
+        <div class="testSlider slider mb-0 homeMobSlider">
             <?php while (have_rows('home_mob_video_slider')) : the_row(); ?>
             <?php
                 $home_mob_banner_video = get_sub_field('home_mob_banner_video');
@@ -54,15 +57,16 @@ get_header();
                 $home_mob_video_duration = get_sub_field('home_mob_video_duration');
             ?>
                 <div class="homeBannerSlide" data-duration="<?php echo $home_mob_video_duration; ?>">
-                    <video src="<?php echo $home_mob_banner_video; ?>" loop muted autoplay></video>
+                    <video id="slider_video" loop muted autoplay>
+                        <source src="<?php echo $home_mob_banner_video; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             <?php } ?>
             <?php endwhile; ?>
         </div>
         <?php endif; wp_reset_query(); ?> 
     
-        <div class="dots"></div>
-        
         <div class="scroll-guide-icon">
             <div class="desktop remove-line-height">
                 <a href="#logoSliderWrap" class="smooth-scroll">

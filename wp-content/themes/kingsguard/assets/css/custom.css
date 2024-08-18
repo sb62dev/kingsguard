@@ -1390,14 +1390,14 @@ h3 .job-title {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 90px;
     vertical-align: middle;
 }
 .clientLogoSlide .clientLogoSlideInner img {
     display: flex;
     align-items: center;
     height: auto;
-    max-height: 80px;
+    max-height: 50px;
 }
 .mapSection img {
     width: 100%;
@@ -1466,7 +1466,7 @@ h3 .job-title {
     margin-bottom: 0;
 }
 .logosSLiderWrapper {
-    padding: 40px 0;
+    padding: 10px 0;
     background-color: #0098FF;
     background-image: linear-gradient(to right,#0194f8, #0973bd, #0973bc, #0974bd, #50a3d4);
     position: relative;
@@ -4119,11 +4119,12 @@ input[type=checkbox], input[type=radio] {
 .jobseekers_profile_thankWrap.profilePicUpdated h4 {
     margin-bottom: 0;
 }
-.homeBannerSlider .slick-dots {
+.homeBannerSlider .slick-dots,
+.testSlider .slick-dots {
     position: absolute;
-    top: 50%;
-    left: 100px;
-    transform: translateY(-50%);
+    top: 56%;
+    right: 100px;
+    transform: translateY(-44%);
     display: flex !important;
     flex-direction: column;
     list-style: none;
@@ -4131,29 +4132,34 @@ input[type=checkbox], input[type=radio] {
     padding: 0;
     width: 50px;
     align-items: center;
+    z-index: 2;
 }
-.homeBannerSlider .slick-dots li {
+.homeBannerSlider .slick-dots li,
+.testSlider .slick-dots li {
     background-color: rgba(255, 255, 255, 0.6);
     width: 6px;
     height: 6px;
     border: 0;
     border-radius: 6px;
     margin: 15px 0;
+    font-size: 0;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
-.homeBannerSlider .slick-dots li button {
+.homeBannerSlider .slick-dots li button,
+.testSlider .slick-dots li button {
     display: none !important;
 }
 .homeBannerSlider .slick-dots li:hover,
 .homeBannerSlider .slick-dots li:focus {
     background-color: #0098FF;
 }
-.homeBannerSlider .slick-dots li.countdown {
+.homeBannerSlider .slick-dots li.countdown,
+.testSlider .slick-dots li.slick-active {
     font-size: 14px;
     font-family: 'Gilroy-SemiBold';
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     padding: 5px;
     border-radius: 50%;
     width: 30px;
@@ -4164,7 +4170,9 @@ input[type=checkbox], input[type=radio] {
     position: relative;
     background-color: rgba(0, 0, 0, 0.6);
 }
-.homeBannerSlider .slick-dots li.countdown::after {
+
+.homeBannerSlider .slick-dots li.countdown::after,
+.testSlider .slick-dots li.slick-active::after {
     content: '';
     position: absolute;
     top: 0;
@@ -4178,10 +4186,73 @@ input[type=checkbox], input[type=radio] {
 }
 @keyframes countdown-animation {
     from {
-      transform: rotate(0deg);
+        border-color: rgba(255, 255, 255, 0.4);
     }
     to {
-      transform: rotate(360deg);
+        border-color: #ffffff;
+    }
+}
+.homeBannerSlider .homeBannerSlide video,
+.testSlider  .homeBannerSlide video {
+    width: 100%;
+    margin-bottom: -7px;
+    height: auto;
+}
+.homeVideoSlider {
+    position: relative;
+}
+.homeVideoSlider .scroll-guide-icon {
+    z-index: 4;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: opacity .85s cubic-bezier(.475,.425,0,.995);
+}
+.homeVideoSlider .scroll-guide-icon .desktop {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+}
+.homeVideoSlider .scroll-guide-icon .down-arrow {
+    display: block;
+}
+.homeVideoSlider .scroll-guide-icon .down-arrow:not(.no-motion) {
+    animation: arrow-glide-down 2.4s forwards infinite;
+}
+.homeVideoSlider .scroll-guide-icon .down-arrow:after {
+    content: "";
+    display: block;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #fff;
+    border-right: 0;
+    border-bottom: 0;
+    transform-origin: center;
+    transform: translate3d(9px,7px,0)rotate(-135deg);
+}
+.homeVideoSlider .scroll-guide-icon .down-arrow:after {
+    transform: translate3d(0,7px,0)rotate(-135deg);
+}
+@keyframes arrow-glide-down {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-10px,0)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate3d(0,0,0)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(0,10px,0)
     }
 }
 .quote_thankBody .commonBannerWrapper {
@@ -4207,4 +4278,7 @@ input[type=checkbox], input[type=radio] {
 .privacyPolicyPage .privacyPolicyPageInner h3,
 .privacyPolicyPage .privacyPolicyPageInner h5 {
     margin: 30px 0 15px 0;
+}
+.homeMobSlider {
+    display: none;
 }

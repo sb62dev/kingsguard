@@ -860,4 +860,7 @@ ul#wp-admin-bar-top-secondary #wp-admin-bar-my-account .ab-sub-wrapper ul li .ab
     .tablenav-pages .tablenav-paging-text {
         padding-top: 0;
     }
+    #wpadminbar .ab-top-menu>.menupop>.ab-sub-wrapper .ab-item {
+        font-size: 14px;
+    }
 }

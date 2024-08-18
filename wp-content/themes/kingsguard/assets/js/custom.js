@@ -276,50 +276,87 @@ jQuery(document).ready(function () {
         }
     );
 
-  jQuery('.homeBannerSlider').on('init', function(event, slick) {
-      slick.$dots.addClass('vertical-dots');
-    });
     jQuery('.homeBannerSlider').slick({
         infinite: true,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
         speed: 300,
         autoplaySpeed: 3000,
         pauseOnHover: false,
+    });
+
+    jQuery('.testSlider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        appendDots: jQuery('.dots'),
         customPaging: function(slider, i) {
-          return '<button>' + (i + 1) + '</button>';
+            var video = jQuery(slider.$testSlider[i]).find('video').get(0);
+            video.addEventListener('loadedmetadata', function() {
+                var duration = Math.floor(video.duration);
+                jQuery('.slick-dots li').eq(i).find('.dot').text(duration);
+            });
+
+            return '<span class="dot">Loading...</span>';
         }
     });
 
-    function startCountdown() {
-      var $activeDot = $('.slick-dots li.slick-active');
-      var countdown = 3;
-      $activeDot.addClass('countdown').text(countdown);
-  
-      var countdownInterval = setInterval(function() {
-        countdown--;
-        $activeDot.text(countdown);
-        if (countdown <= 0) {
-          clearInterval(countdownInterval);
-          $activeDot.removeClass('countdown').text('');
-        }
-      }, 1000);
+    // Initialize variables for countdown
+    let countdownInterval;
+
+    // Play video when the slide is shown
+    jQuery('.testSlider').on('afterChange', function(event, slick, currentSlide){
+        var video = jQuery(slick.$testSlider[currentSlide]).find('video').get(0);
+        video.play();
+
+        // Clear any existing countdown interval
+        clearInterval(countdownInterval);
+
+        // Initialize the countdown
+        var duration = Math.floor(video.duration);
+        var totalDuration = duration; // Store total duration for reference
+        updateCountdown(duration, currentSlide, totalDuration);
+
+        // Start the countdown
+        countdownInterval = setInterval(function() {
+            duration--;
+            updateCountdown(duration, currentSlide, totalDuration);
+
+            if (duration <= 0) {
+                clearInterval(countdownInterval);
+                jQuery('.testSlider').slick('slickNext');
+            }
+        }, 1000);
+
+        // Move to the next slide when the video ends
+        video.onended = function() {
+            jQuery('.testSlider').slick('slickNext');
+        };
+    });
+
+    // Pause all videos except the active one
+    jQuery('.testSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var video = jQuery(slick.$testSlider[currentSlide]).find('video').get(0);
+        video.pause();
+        video.currentTime = 0;
+
+        // Clear the countdown when changing slides
+        clearInterval(countdownInterval);
+    });
+
+    function updateCountdown(duration, currentSlide, totalDuration) {
+        var percentage = ((totalDuration - duration) / totalDuration) * 100;
+        jQuery('.slick-dots li').eq(currentSlide).find('.dot').text(duration);
+        jQuery('.slick-dots li').eq(currentSlide).find('.dot').css('border-image', `conic-gradient(#717171 ${percentage}%, transparent ${percentage}%) 1`);
     }
-  
-    startCountdown();
-  
-    jQuery('.homeBannerSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-      var $activeDot = jQuery('.slick-dots li').eq(nextSlide);
-      jQuery('.slick-dots li').removeClass('countdown').text('');
-      $activeDot.addClass('countdown').text(3);
-    });
-  
-    jQuery('.homeBannerSlider').on('afterChange', function(event, slick, currentSlide) {
-      startCountdown();
-    });
+
+    // Initial play of the first video
+    jQuery('.testSlider').slick('slickGoTo', 0);
 
     jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       jQuery('.slider').slick('setPosition');
@@ -703,6 +740,17 @@ jQuery(document).ready(function () {
           });
       }
   }
+
+  jQuery('a.smooth-scroll').on('click', function(event) {
+    event.preventDefault();
+    
+    var target = jQuery(this).attr('href');
+    var offsetTop = jQuery(target).offset().top - 120; // Subtract 120px from the target offset
+    
+    jQuery('html, body').animate({
+        scrollTop: offsetTop
+    }, 800); // 800 milliseconds
+  });
   
   const citySelect = document.querySelector('select[name="city"]');
   const serviceSelect = document.querySelector('select[name="service"]');
