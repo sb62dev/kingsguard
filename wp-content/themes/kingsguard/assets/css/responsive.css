@@ -1979,7 +1979,9 @@ button.modal_close span {
     max-width: 480px;
     max-height: 600px;
 }
-
+.securityServiceSec .securityServiceCont p {
+    font-size: 14px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -2056,6 +2058,9 @@ button.modal_close span {
         font-size: 26px;
         letter-spacing: -1px;
     }
+    .h4 {
+        font-size: 20px;
+    }
     .clientSec .tabsHead.nav-tabs {
         padding: 0 15px;
     }
@@ -2116,6 +2121,9 @@ button.modal_close span {
     }
     .homeVideoSlider {  
         max-height: 470px;
+    }
+    .securityServiceSec .securityServiceCont p {
+        font-size: 12px;
     }
 }
 

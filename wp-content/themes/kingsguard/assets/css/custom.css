@@ -1601,7 +1601,8 @@ h3 .job-title {
     left: 0;
     right: 0;
 }
-.keyBenefitSec {
+.keyBenefitSec,
+.bgTexture {
     background-image: url('../images/pattern-bg.svg');
     background-position: center bottom;
     background-size: 100% auto;
@@ -1609,7 +1610,8 @@ h3 .job-title {
     position: relative;
     z-index: 1;
 }
-.keyBenefitSec::before {
+.keyBenefitSec::before,
+.bgTexture::before {
     content: "";
     position: absolute;
     left: 0;
@@ -1618,7 +1620,8 @@ h3 .job-title {
     width: 278px;
     height: 556px;
 }
-.keyBenefitSec::after {
+.keyBenefitSec::after,
+.bgTexture::after {
     content: "";
     position: absolute;
     right: 0;
@@ -4287,3 +4290,25 @@ input[type=checkbox], input[type=radio] {
 .modal iframe {
     min-height: 400px !important;
 } 
+.securityServiceSec .securityServiceTitle {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.securityServiceSec .securityServiceTitle .h2 {
+    margin-bottom: 20px;
+}
+.securityServiceSec .securityServiceCont {
+    padding: 25px;
+}
+.securityServiceSec .securityServiceCont p {
+    font-size: 16px;
+}
+.securityServiceSec .securityServiceBox {
+    background-color: #1e1e20;
+    border-radius: 10px;
+    border: 1px solid #393737;
+}
+.securityServiceSec .securityServiceBox .securityServiceImg img {
+    border-radius: 10px 10px 0 0;
+}

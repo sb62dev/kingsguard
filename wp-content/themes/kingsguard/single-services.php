@@ -116,6 +116,65 @@ get_header();
             <?php
         }
     } ?>
+
+    <?php 
+        $services_sec_title = get_field('services_sec_title');
+        if(isset($services_sec_title) && !empty($services_sec_title)){ 
+        $services_sec_desc = get_field('services_sec_desc');
+    ?>
+    <section>
+        <div class="securityServiceSec bgTexture py200">
+            <div class="sm_container">
+                <div class="securityServiceInner">
+                    <div class="securityServiceTitle">
+                        <div class="title" data-aos="fade-down" data-aos-duration="1000">
+                            <h2 class="h2"><?php echo $services_sec_title; ?></h2>
+                        </div>
+                        <div class="description text-center" data-aos="fade-down" data-aos-duration="1000">
+                            <?php echo $services_sec_desc; ?>
+                        </div>
+                    </div>
+
+                    <div class="securityServiceBlock" data-aos="fade-down" data-aos-duration="1000">
+                        <div class="row mb30">
+                            <?php if (have_rows('security_service_grid')) : ?>
+                                <?php while (have_rows('security_service_grid')) : the_row(); ?>
+                                    <div class="column col-md-4 col-sm-6">
+                                        <div class="securityServiceBox">
+                                            <?php
+                                                $security_service_image = get_sub_field('security_service_image');
+                                                if (isset($security_service_image) && !empty($security_service_image)) {
+                                                    $image_url = wp_get_attachment_image_src($security_service_image, 'full')[0];
+                                                    $image_alt = get_post_meta($security_service_image, '_wp_attachment_image_alt', true);
+                                            ?>
+                                            <div class="securityServiceImg">
+                                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                            </div>
+                                            <?php } ?>
+
+                                            <?php 
+                                                $security_service_title = get_sub_field('security_service_title');
+                                                if(isset($security_service_title) && !empty($security_service_title)){ 
+                                                $security_service_description = get_sub_field('security_service_description');
+                                            ?>
+                                                <div class="securityServiceCont">
+                                                    <div class="securityServiceContInner">
+                                                        <h4 class="h4"><?php echo $security_service_title; ?></h4>
+                                                        <?php echo $security_service_description; ?>
+                                                    </div>                                
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                <?php $count++; endwhile; ?>
+                            <?php endif; wp_reset_query(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php }  ?>
 </div>
 <?php
 get_footer();
