@@ -4312,3 +4312,61 @@ input[type=checkbox], input[type=radio] {
 .securityServiceSec .securityServiceBox .securityServiceImg img {
     border-radius: 10px 10px 0 0;
 }
+.securityServiceSec .securityServiceBoxOuter .supportNumber {
+    font-size: 50px;
+    font-family: 'Gilroy-SemiBold';
+    color: #0098FF;
+    margin-bottom: 20px;
+}
+.reportSecOuter {
+    background-color: #133148;
+}
+.reportSecOuter .reportFeatures ul li .reportIcon {
+    max-width: 36px;
+}
+.reportSecOuter .reportSecCont {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 60px;
+}
+.reportSecOuter .reportSecInner {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.reportSecOuter .reportSecCont .reportSecContInner .h2 {
+    text-align: left;
+    font-size: 36px;
+    text-transform: none;
+    margin-bottom: 20px;
+    letter-spacing: 0px;
+}
+.reportSecOuter .reportSecCont .reportSecContInner p {
+    font-size: 16px;
+}
+.reportSecOuter .reportSecCont .reportFeatures {
+    margin-top: 40px;
+    clear: both;
+    float: left;
+}
+.reportSecOuter .reportSecCont .reportFeatures ul li {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+}
+.reportSecOuter .reportSecCont .reportList {
+    display: flex;
+    align-items: center;
+}
+.reportSecOuter .reportSecCont .reportList .reportText {
+    margin-left: 15px;
+    font-family: 'Gilroy-SemiBold';
+}
+.reportSecOuter .reportImgSec {
+    display: flex;
+    height: 100%;
+}
+.reportSecOuter .reportImgSec img {
+    object-fit: cover;
+}

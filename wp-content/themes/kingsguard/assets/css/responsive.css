@@ -662,6 +662,21 @@ h3 .job-title {
 h3 {
     font-size: 24px;
 }
+.reportSecOuter .reportSecCont {
+    padding: 50px;
+}
+.reportSecOuter .reportSecCont .reportSecContInner .h2 {
+    font-size: 32px;
+}
+.reportSecOuter .reportSecCont .reportFeatures {
+    margin-top: 25px;
+}
+.reportSecOuter .reportSecCont .reportList .reportText {
+    margin-left: 15px;
+}
+.reportSecOuter .reportFeatures ul li .reportIcon {
+    max-width: 30px;
+}
 } 
 
  
@@ -1092,6 +1107,30 @@ h3 {
 }
 .homeMobSlider {
     display: block;
+}
+.securityServiceSec .securityServiceBoxOuter .supportNumber {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.reportSecOuter .reportSecCont {
+    padding: 40px;
+}
+.reportSecOuter .reportSecCont .reportSecContInner .h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+.reportSecOuter .reportSecCont .reportFeatures {
+    margin-top: 15px;
+}
+.reportSecOuter .reportSecCont .reportFeatures ul li {
+    margin-bottom: 15px;
+}
+.reportSecOuter .reportFeatures ul li .reportIcon {
+    max-width: 24px;
+}
+.reportSecOuter .reportSecCont .reportList .reportText {
+    margin-left: 10px;
+    font-size: 14px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -1982,6 +2021,18 @@ button.modal_close span {
 .securityServiceSec .securityServiceCont p {
     font-size: 14px;
 }
+.securityServiceSec .securityServiceBoxOuter .supportNumber {
+    font-size: 34px;
+}
+.reportSecOuter .reportSecCont {
+    padding: 30px;
+}
+.reportSecOuter .reportSecCont .reportSecContInner p {
+    font-size: 14px;
+}
+.reportSecOuter .reportSecCont .reportSecContInner .h2 {
+    font-size: 24px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -2030,6 +2081,15 @@ button.modal_close span {
     .projects_section_two .projects_sec2_small_card_body .projectMoreInfo .projectMoreInfoInner p {
         font-size: 12px !important;
     } 
+    .reportSecOuter .reportSecCont .reportFeatures ul li {
+        width: 100%;
+    }
+    .reportSecOuter .reportSecCont .reportSecContInner .h2 {
+        font-size: 20px;
+    }
+    .reportSecOuter .reportSecCont {
+        padding: 25px;
+    }
 }
 
 @media screen and ( max-width: 479px ) { 

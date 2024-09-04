@@ -82,41 +82,6 @@ get_header();
     </section>
     <?php }  ?>
     
-    <?php $homepage = get_page_by_path('home');
-        if ($homepage) {
-        $homepage_id = $homepage->ID;
-
-        $get_started_title = get_field('get_started_title', $homepage_id);
-        if (isset($get_started_title) && !empty($get_started_title)) {
-            $get_started_description = get_field('get_started_description', $homepage_id);
-            $get_started_button_label = get_field('get_started_button_label', $homepage_id);
-            ?> 
-            <section>
-                <div class="joinUsSecOuter getStartedSec py100">
-                    <div class="sm_container">
-                        <div class="joinUsSec" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <div class="joinUsInner text-center">
-                                <h2 class="mb0 h2"> <?php echo $get_started_title; ?> </h2>
-                                <p><?php echo $get_started_description; ?></p>
-                                <?php 
-                                    if (isset($get_started_button_label) && !empty($get_started_button_label)) {
-                                        $get_started_button_link = get_field('get_started_button_link', $homepage_id);
-                                        $get_started_button_target = get_field('get_started_button_target', $homepage_id);
-                                        $get_started_button_aria_label = get_field('get_started_button_aria_label', $homepage_id);
-                                    ?> 
-                                    <div class="btnWrap">
-                                        <a href="<?php echo $get_started_button_link; ?>" class="btn-style" target="<?php echo $get_started_button_target; ?>" aria-label="<?php echo $get_started_button_aria_label; ?>"><?php echo $get_started_button_label; ?></a>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <?php
-        }
-    } ?>
-
     <?php 
         $services_sec_title = get_field('services_sec_title');
         if(isset($services_sec_title) && !empty($services_sec_title)){ 
@@ -166,7 +131,7 @@ get_header();
                                             <?php } ?>
                                         </div>
                                     </div>
-                                <?php $count++; endwhile; ?>
+                                <?php endwhile; ?>
                             <?php endif; wp_reset_query(); ?>
                         </div>
                     </div>
@@ -175,6 +140,123 @@ get_header();
         </div>
     </section>
     <?php }  ?>
+
+
+    <section>
+        <div class="reportSecOuter">
+            <div class="reportSecInner">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <?php
+                            $report_sec_image = get_field('report_sec_image');
+                            if (isset($report_sec_image) && !empty($report_sec_image)) {
+                                $image_url = wp_get_attachment_image_src($report_sec_image, 'full')[0];
+                                $image_alt = get_post_meta($report_sec_image, '_wp_attachment_image_alt', true);
+                        ?>
+                        <div class="reportImgSec">
+                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <div class="col-md-6">
+                        <?php 
+                            $resport_sec_title = get_field('resport_sec_title');
+                            if(isset($resport_sec_title) && !empty($resport_sec_title)){ 
+                            $report_sec_description = get_field('report_sec_description');
+                        ?>
+                            <div class="reportSecCont">
+                                <div class="reportSecContInner">
+                                    <h4 class="h2"><?php echo $resport_sec_title; ?></h4>
+                                    <?php echo $report_sec_description; ?>
+
+                                    <?php if (have_rows('report_features')) : ?>
+                                    <div class="reportFeatures">
+                                        <ul>
+                                            <?php while (have_rows('report_features')) : the_row(); ?>
+                                            <li>
+                                                <div class="reportList">
+                                                    <?php
+                                                        $report_feature_icon = get_sub_field('report_feature_icon');
+                                                        if (isset($report_feature_icon) && !empty($report_feature_icon)) {
+                                                            $image_url = wp_get_attachment_image_src($report_feature_icon, 'full')[0];
+                                                            $image_alt = get_post_meta($report_feature_icon, '_wp_attachment_image_alt', true);
+                                                    ?>
+                                                    <div class="reportIcon">
+                                                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                                    </div>
+                                                    <?php } ?>
+                                                    <?php 
+                                                        $report_feature_text = get_sub_field('report_feature_text');
+                                                        if(isset($report_feature_text) && !empty($report_feature_text)){ 
+                                                    ?>
+                                                    <div class="reportText">
+                                                        <?php echo $report_feature_text; ?>
+                                                    </div>
+                                                    <?php } ?>
+                                                </div>
+                                            </li>
+                                            <?php endwhile; ?>
+                                        </ul>
+                                    </div>
+                                    <?php endif; wp_reset_query(); ?>
+                                </div>                                
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <?php if (have_rows('support_block')) : ?>
+    <section>
+        <div class="securityServiceSec bgTexture py200">
+            <div class="sm_container">
+                <div class="securityServiceInner">
+                    <div class="securityServiceBlock" data-aos="fade-down" data-aos-duration="1000">
+                        <div class="row mb30">
+                            <?php $counter = 0; while (have_rows('support_block')) : the_row(); ?>
+                                <div class="column col-md-4 col-sm-6">
+                                    <div class="securityServiceBoxOuter">
+                                        <div class="supportNumber">
+                                            <?php echo sprintf('%02d.', $counter + 1); ?>
+                                        </div>
+                                        <div class="securityServiceBox">
+                                            <?php
+                                                $support_block_img = get_sub_field('support_block_img');
+                                                if (isset($support_block_img) && !empty($support_block_img)) {
+                                                    $image_url = wp_get_attachment_image_src($support_block_img, 'full')[0];
+                                                    $image_alt = get_post_meta($support_block_img, '_wp_attachment_image_alt', true);
+                                            ?>
+                                            <div class="securityServiceImg">
+                                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                            </div>
+                                            <?php } ?>
+
+                                            <?php 
+                                                $support_block_title = get_sub_field('support_block_title');
+                                                if(isset($support_block_title) && !empty($support_block_title)){ 
+                                                $support_block_description = get_sub_field('support_block_description');
+                                            ?>
+                                                <div class="securityServiceCont">
+                                                    <div class="securityServiceContInner">
+                                                        <h4 class="h4"><?php echo $support_block_title; ?></h4>
+                                                        <?php echo $support_block_description; ?>
+                                                    </div>                                
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php $counter++; endwhile; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php endif; wp_reset_query(); ?>
 </div>
 <?php
 get_footer();
