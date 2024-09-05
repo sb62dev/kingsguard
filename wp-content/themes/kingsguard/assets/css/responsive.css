@@ -2033,6 +2033,9 @@ button.modal_close span {
 .reportSecOuter .reportSecCont .reportSecContInner .h2 {
     font-size: 24px;
 }
+.reportSecOuter .reportImgSec {
+    height: auto;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {

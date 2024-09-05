@@ -4369,4 +4369,5 @@ input[type=checkbox], input[type=radio] {
 }
 .reportSecOuter .reportImgSec img {
     object-fit: cover;
+    object-position: left;
 }

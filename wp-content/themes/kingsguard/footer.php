@@ -182,36 +182,6 @@
 </footer>	
 <?php } } ?>
 
-<?php
-	$current_url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
-	if ( !is_page( array( 'jobseekers-dashboard', 'jobseekers-register', 'jobseekers-login', 'jobseekers-careers', 'jobseekers-applications', 'jobseekers-reset-password', 'jobseekers-forgot-password', 'jobseekers-user-profile', 'jobseekers-user-profile-edit' ) ) && strpos($current_url, '/jobseekers-dashboard/') === false ) {  
-	$general_post_name = 'footer'; 
-	$general_post = get_page_by_path($general_post_name, OBJECT, 'general_settings');
-
-	if ($general_post) {
-		$whatsapp_icon = get_field('whatsapp_icon', $general_post->ID);
-		
-		if (isset($whatsapp_icon) && !empty($whatsapp_icon)) { 
-			$whatsapp_logo_aria_label = get_field('whatsapp_link_aria_label', $general_post->ID);
-			$whatsapp_number = get_field('whatsapp_number', $general_post->ID);
-			$whatsapp_link_target = get_field('whatsapp_link_target', $general_post->ID);
-			$whatsapp_logo_img_url = wp_get_attachment_image_url($whatsapp_icon, 'full');
-			$whatsapp_logo_alt = get_post_meta($whatsapp_icon, '_wp_attachment_image_alt', true);
-			
-			if (empty($whatsapp_logo_alt)) {
-				$whatsapp_logo_alt = $whatsapp_logo_aria_label;
-			}
-			
-			$whatsapp_number = preg_replace('/[^0-9]/', '', $whatsapp_number);
-?>
-<div class="whatsapp-chat">
-	<a href="https://wa.me/<?php echo $whatsapp_number; ?>" target="<?php echo $whatsapp_link_target; ?>" aria-label="<?php echo $whatsapp_logo_aria_label; ?>">
-		<img src="<?php echo esc_url($whatsapp_logo_img_url); ?>" alt="<?php echo esc_attr($whatsapp_logo_alt); ?>">
-	</a>
-</div>
-<?php } } } ?>
-
-
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/jquery.min.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/popper.min.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/bootstrap.min.js"></script>
