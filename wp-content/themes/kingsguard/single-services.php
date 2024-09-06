@@ -142,10 +142,10 @@ get_header();
     <?php endif; wp_reset_query(); ?>
 
     <section>
-        <div class="reportSecOuter">
-            <div class="reportSecInner">
+        <div class="reportSecOuter py100">
+            <div class="sm_container">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <?php
                             $report_sec_image = get_field('report_sec_image');
                             if (isset($report_sec_image) && !empty($report_sec_image)) {
@@ -157,7 +157,7 @@ get_header();
                         </div>
                         <?php } ?>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <?php 
                             $resport_sec_title = get_field('resport_sec_title');
                             if(isset($resport_sec_title) && !empty($resport_sec_title)){ 

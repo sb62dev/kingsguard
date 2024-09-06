@@ -4308,6 +4308,7 @@ input[type=checkbox], input[type=radio] {
     background-color: #1e1e20;
     border-radius: 10px;
     border: 1px solid #393737;
+    height: 100%;
 }
 .securityServiceSec .securityServiceBox .securityServiceImg img {
     border-radius: 10px 10px 0 0;
@@ -4328,11 +4329,7 @@ input[type=checkbox], input[type=radio] {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 60px;
-}
-.reportSecOuter .reportSecInner {
-    max-width: 1920px;
-    margin: 0 auto;
+    padding: 0 60px;
 }
 .reportSecOuter .reportSecCont .reportSecContInner .h2 {
     text-align: left;
@@ -4362,12 +4359,4 @@ input[type=checkbox], input[type=radio] {
 .reportSecOuter .reportSecCont .reportList .reportText {
     margin-left: 15px;
     font-family: 'Gilroy-SemiBold';
-}
-.reportSecOuter .reportImgSec {
-    display: flex;
-    height: 100%;
-}
-.reportSecOuter .reportImgSec img {
-    object-fit: cover;
-    object-position: left;
 }
