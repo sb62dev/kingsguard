@@ -2,7 +2,7 @@
 
 /**
 
- * Template Name: Homepage
+ * Template Name: home-v2
 
 **/
 
@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <div class="pageBody homeBody">
-<section class="homeVideoSlider homeBannerWrap">
+    <section class="homeVideoSlider homeBannerWrap">
         <?php if (have_rows('banner_sliderr')) : ?>
         <div class="homeDesktopSlider slider mb-0 homeBannerSlider">
             <?php while (have_rows('banner_sliderr')) : the_row(); ?>
@@ -72,7 +72,7 @@ get_header();
                 </a>
             </div>
         </div>
-    </section>    
+    </section>  
 
     <?php if (have_rows('client_logos')) : ?>
     <section>

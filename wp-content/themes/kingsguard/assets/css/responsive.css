@@ -394,6 +394,9 @@
     .homeVideoSlider .slick-dots {
         right: 50px;
     }
+    .homeVideoSlider.homeBannerWrap .h2 {
+        font-size: 80px;
+    }
 }
 
 @media screen and ( max-width: 1199px ){
@@ -676,6 +679,9 @@ h3 {
 }
 .reportSecOuter .reportFeatures ul li .reportIcon {
     max-width: 30px;
+}
+.homeVideoSlider.homeBannerWrap .h2 {
+    font-size: 70px;
 }
 } 
 
@@ -1108,6 +1114,21 @@ h3 {
 .homeMobSlider {
     display: block;
 }
+.homeVideoSlider.homeBannerWrap .slick-dots {
+    bottom: 10px;
+}
+.homeVideoSlider.homeBannerWrap .slick-dots li {
+    margin-bottom: 0;
+}
+.homeVideoSlider.homeBannerWrap .slick-dots li + li {
+    margin-left: 10px;
+}
+.homeVideoSlider.homeBannerWrap .slick-dots li button {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #808389;
+}
 .securityServiceSec .securityServiceBoxOuter .supportNumber {
     font-size: 40px;
     margin-bottom: 15px;
@@ -1131,6 +1152,9 @@ h3 {
 .reportSecOuter .reportSecCont .reportList .reportText {
     margin-left: 10px;
     font-size: 14px;
+}
+.homeVideoSlider.homeBannerWrap .h2 {
+    font-size: 55px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -2010,6 +2034,7 @@ button.modal_close span {
 }
 .homeVideoSlider .scroll-guide-icon {
     bottom: 15px;
+    display: none;
 }
 .modal iframe {
     min-height: 300px !important;
@@ -2035,6 +2060,15 @@ button.modal_close span {
 }
 .reportSecOuter .reportImgSec {
     height: auto;
+}
+.homeDesktopSlider {
+    display: none;
+}
+.homeMobileSlider {
+    display: block;
+}
+.homeVideoSlider.homeBannerWrap .homeBannerContWrap {
+    display: none;
 }
 }
 @media only screen and (max-width: 600px) {

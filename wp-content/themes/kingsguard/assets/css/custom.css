@@ -893,7 +893,7 @@ header.Sticky-fixed .logo .logotxt {
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
-    background-color: #28303d;
+    background-color: #808389;
 }
 .slick-dots li button::before {
     display: none;
@@ -4244,6 +4244,17 @@ input[type=checkbox], input[type=radio] {
 .homeVideoSlider .scroll-guide-icon .down-arrow:after {
     transform: translate3d(0,7px,0)rotate(-135deg);
 }
+.homeVideoSlider.homeBannerWrap .homeBannerSlideInner {
+    position: relative;
+}
+.homeVideoSlider.homeBannerWrap .homeBannerSlideInner .homeBannerCont {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+}
 @keyframes arrow-glide-down {
     0% {
         opacity: 0;
@@ -4259,6 +4270,34 @@ input[type=checkbox], input[type=radio] {
         opacity: 0;
         transform: translate3d(0,10px,0)
     }
+}
+.homeVideoSlider.homeBannerWrap .slick-dots li {
+    margin: 0 0 15px;
+}
+.homeVideoSlider.homeBannerWrap .slick-dots li button {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+}
+.homeVideoSlider.homeBannerWrap .animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+    -webkit-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+.homeVideoSlider.homeBannerWrap .animated-text.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+.homeVideoSlider.homeBannerWrap .h2 {
+    text-align: left;
+    font-size: 100px;
+    font-family: 'Gilroy-Bold';
+    text-transform: uppercase;
+    line-height: 1;
+    filter: drop-shadow(0px 0px 10px #1E1E20);
+    letter-spacing: normal;
 }
 .quote_thankBody .commonBannerWrapper {
     display: none;
@@ -4285,6 +4324,9 @@ input[type=checkbox], input[type=radio] {
     margin: 30px 0 15px 0;
 }
 .homeMobSlider {
+    display: none;
+}
+.homeMobileSlider {
     display: none;
 }
 .modal iframe {
