@@ -23,6 +23,7 @@ function remove_menus_for_edituser_role() {
         remove_menu_page('tools.php');      // Tools
         remove_menu_page('edit-comments.php'); // Comments
         remove_menu_page('profile.php');
+        remove_menu_page('admin.php?page=WFLS'); 
 
         add_action('admin_footer', 'hide_admin_menu_items_script_editor');
     }
@@ -61,10 +62,12 @@ add_action('admin_init', 'redirect_editor_from_profile_page');
 function remove_menus_for_specific_user() {
     // Get current user
     $user = wp_get_current_user();
+
+    $allowed_users = ['kingsadmin', 'kingsadminhaskarn', 'kingsadminrahul'];
     
-    // Check if the current user's username matches the specified username
-    if ($user->user_login === 'kingsadmin') {
-        remove_menu_page('edit.php'); 
+    // Check if the current user's username matches the specified username 
+    if (in_array($user->user_login, $allowed_users)) {
+        //remove_menu_page('edit.php'); 
         remove_menu_page('edit.php?post_type=page'); 
         remove_menu_page('edit.php?post_type=services'); 
         remove_menu_page('edit.php?post_type=projects'); 
@@ -78,9 +81,11 @@ add_action('admin_menu', 'remove_menus_for_specific_user', 999);
 function remove_admin_bar_items_for_specific_user() {
     // Get current user
     $user = wp_get_current_user();
+
+    $allowed_users = ['kingsadmin', 'kingsadminhaskarn', 'kingsadminrahul'];
     
     // Check if the current user's username matches the specified username
-    if ($user->user_login === 'kingsadmin') {
+    if (in_array($user->user_login, $allowed_users)) {
         global $wp_admin_bar;    
         $wp_admin_bar->remove_menu('new-post'); // New Post
         $wp_admin_bar->remove_menu('new-media'); // New Media
@@ -109,7 +114,8 @@ function hide_admin_menu_items_script() {
                 '#menu-posts-careers',
                 '#toplevel_page_newsletter-entries',
                 '#toplevel_page_jobseekers-job-applications',
-                '#toplevel_page_quote-applications'
+                '#toplevel_page_quote-applications',
+                '#toplevel_page_WFLS'
             ];
 
             menuItems.forEach(function(selector) {
@@ -129,7 +135,8 @@ function hide_admin_menu_items_script_editor() {
         document.addEventListener('DOMContentLoaded', function() {
             // Hide specific admin menu items
             var menuItems = [
-                '#toplevel_page_wpseo_workouts' 
+                '#toplevel_page_wpseo_workouts',
+                '#toplevel_page_WFLS'
             ];
 
             menuItems.forEach(function(selector) {
