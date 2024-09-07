@@ -4281,14 +4281,14 @@ input[type=checkbox], input[type=radio] {
 }
 .homeVideoSlider.homeBannerWrap .animated-text {
     opacity: 0;
-    transform: translateY(20px);
-    -webkit-transition: all 0.3s linear 0s;
-    -o-transition: all 0.3s linear 0s;
-    transition: all 0.3s linear 0s;
+    transform: translateX(-60px);
+    -webkit-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
 }
 .homeVideoSlider.homeBannerWrap .animated-text.fade-up {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 .homeVideoSlider.homeBannerWrap .h2 {
     text-align: left;
