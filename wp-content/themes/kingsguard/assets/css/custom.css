@@ -4402,3 +4402,49 @@ input[type=checkbox], input[type=radio] {
     margin-left: 15px;
     font-family: 'Gilroy-SemiBold';
 }
+.reportSecOuter .reportImgSec {
+    position: relative;
+}
+.reportSecOuter .reportImgSec .reportPlayBtnWrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn {
+    background-color: #0394f7bf;
+    padding: 30px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn i {
+    font-size: 12px;
+    transform: translate3d(-4px, 0, 0);
+    transition: transform .85s cubic-bezier(.475,.425,0,.995);
+}
+.reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn i.after {
+    transform: translate3d(-70px, 0, 0);
+}
+.reportSecOuter .reportImgSec .reportPlayBtnWrap a, .reportSecOuter .reportImgSec .reportPlayBtnWrap a * {
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn:hover i {
+    transform: translate3d(40px,0,0);
+}
+.reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn:hover i.after {
+    transform: translate3d(5px,0,0);
+}
