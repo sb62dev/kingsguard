@@ -689,6 +689,9 @@ header.Sticky-fixed .logo .logotxt {
     padding: 0 5px 10px;
     float: left;
 }
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap {
+    margin-top: -5px;
+}
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu, 
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu {
     width: 100%;
@@ -725,6 +728,11 @@ header.Sticky-fixed .logo .logotxt {
     font-size: 20px;
     margin-right: 10px;
     color: #dddddd;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a img, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a img {
+    max-width: 20px;
+    margin-right: 10px;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a:hover,
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a:focus,
@@ -4404,6 +4412,12 @@ input[type=checkbox], input[type=radio] {
 }
 .reportSecOuter .reportImgSec {
     position: relative;
+    height: calc(100% - 30px);
+    margin-top: 10px;
+}
+.reportSecOuter .reportImgSec img {
+    object-fit: cover;
+    height: 100%;
 }
 .reportSecOuter .reportImgSec .reportPlayBtnWrap {
     position: absolute;

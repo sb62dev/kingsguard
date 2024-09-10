@@ -105,7 +105,12 @@ get_header();
                     <div class="securityServiceBlock" data-aos="fade-down" data-aos-duration="1000">
                         <div class="row mb30">
                             <?php while (have_rows('security_service_grid')) : the_row(); ?>
-                                <div class="column col-md-4 col-sm-6">
+                            <?php 
+                                $security_grid_class = get_sub_field('security_grid_class');
+                                // Check if $security_grid_class is set and not empty, else use default classes
+                                $column_class = (!empty($security_grid_class)) ? $security_grid_class : 'col-md-4 col-sm-6';
+                            ?>
+                                <div class="column <?php echo $column_class; ?>">
                                     <div class="securityServiceBox">
                                         <?php
                                             $security_service_image = get_sub_field('security_service_image');

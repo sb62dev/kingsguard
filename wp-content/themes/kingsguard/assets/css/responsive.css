@@ -623,7 +623,8 @@ h3 .job-title {
 .clientSec.testimonialsSec .testimonialsInner .tabsHead .nav-item .nav-link p {
     font-size: 22px;
 }
-.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn {
+.clientSec.testimonialsSec .testimonialsInner .clientReviewInner .clientTabImg .clientPlayBtnWrap .playBtn,
+.reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn {
     padding: 20px;
     width: 64px;
     height: 64px;
@@ -2069,6 +2070,14 @@ button.modal_close span {
 }
 .homeVideoSlider.homeBannerWrap .homeBannerContWrap {
     display: none;
+}
+.reportSecOuter .reportImgSec {
+    height: auto;
+    margin-top: 0;
+}
+.reportSecOuter .reportImgSec img {
+    object-fit: inherit;
+    height: auto;
 }
 }
 @media only screen and (max-width: 600px) {
