@@ -782,7 +782,7 @@ header.Sticky-fixed .logo .logotxt {
     position: relative;
     display: flex !important;
     align-items: center;
-    /* flex-direction: row-reverse; */
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li a img,
@@ -792,6 +792,8 @@ header.Sticky-fixed .logo .logotxt {
     max-width: 50px;
     display: block;
     top: 0;
+    margin-left: 10px;
+    margin-right: 0;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a, 
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a {
@@ -801,7 +803,9 @@ header.Sticky-fixed .logo .logotxt {
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a img, 
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a img {
-    max-width: 232px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 .serviceSubMenuDetails, .industrySubMenuDetails {
     display: none;
