@@ -681,16 +681,15 @@ header.Sticky-fixed .logo .logotxt {
     flex-wrap: wrap;
     margin: 0 -10px;
 }
-
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap {
+    margin-bottom: -10px;
+}
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li {
     width: 25%;
     display: inline-flex;
     padding: 0 5px 10px;
     float: left;
-}
-.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap {
-    margin-top: -5px;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu, 
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu {
@@ -703,14 +702,15 @@ header.Sticky-fixed .logo .logotxt {
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li {
     width: 100%;
     break-inside: avoid;
-    padding: 5px 0;
+    padding: 0 0 10px;
     display: inherit;
     float: none;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a {
     background-color: #1e1e20;
-    display: block;
+    display: flex;
+    align-items: center;
     width: 100%;
     padding: 15px;
     text-align: left;
@@ -728,6 +728,7 @@ header.Sticky-fixed .logo .logotxt {
     font-size: 20px;
     margin-right: 10px;
     color: #dddddd;
+    width: 20px;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails li a img, 
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails li a img {
@@ -784,6 +785,7 @@ header.Sticky-fixed .logo .logotxt {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: space-between;
+    height: 85px;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li a img,
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li a img {
@@ -800,6 +802,7 @@ header.Sticky-fixed .logo .logotxt {
     flex-direction: column-reverse;
     text-align: left;
     align-items: flex-start;
+    height: 180px;
 }
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a img, 
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a img {

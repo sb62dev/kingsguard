@@ -684,6 +684,14 @@ h3 {
 .homeVideoSlider.homeBannerWrap .h2 {
     font-size: 70px;
 }
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li:first-child a {
+    height: 150px;
+}
+.desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li a, 
+.desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li a {
+    height: 70px;
+}
 } 
 
  
