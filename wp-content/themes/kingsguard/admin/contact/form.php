@@ -207,7 +207,7 @@ function contact_form() {
                         </div>
                     </div>
                     <div class="kg_quote_infoWrap">
-                        By clicking "Request a Quote," I hereby consent to the control and processing of any information pursuant to the terms of our Privacy Notice.
+                        By clicking "Submit," I hereby consent to the control and processing of any information pursuant to the terms of our Privacy Notice.
                     </div> 
                 </div>
             </form>
