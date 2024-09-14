@@ -282,14 +282,26 @@ jQuery(document).ready(function () {
     jQuery('.homeBannerSlider').slick({
         infinite: true,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        speed: 300,
+        speed: 1000,
         autoplaySpeed: 3000,
+        fade: true,
         pauseOnHover: false,
     }); 
+
+    jQuery('.homeBannerSlider').on('afterChange', function(event, slick, currentSlide) {
+        // Remove fade-up class from all animated text
+        jQuery('.animated-text').removeClass('fade-up');
+
+        // Add fade-up class to the current slide's animated-text elements
+        jQuery('.homeBannerSlider .slick-active .animated-text').addClass('fade-up');
+    });
+
+    // Trigger the fade-up animation on the first slide when page loads
+    jQuery('.homeBannerSlider .slick-active .animated-text').addClass('fade-up');
 
     jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       jQuery('.slider').slick('setPosition');

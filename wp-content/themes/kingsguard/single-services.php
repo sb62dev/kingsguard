@@ -105,7 +105,12 @@ get_header();
                     <div class="securityServiceBlock" data-aos="fade-down" data-aos-duration="1000">
                         <div class="row mb30">
                             <?php while (have_rows('security_service_grid')) : the_row(); ?>
-                                <div class="column col-md-4 col-sm-6">
+                            <?php 
+                                $security_grid_class = get_sub_field('security_grid_class');
+                                // Check if $security_grid_class is set and not empty, else use default classes
+                                $column_class = (!empty($security_grid_class)) ? $security_grid_class : 'col-md-4 col-sm-6';
+                            ?>
+                                <div class="column <?php echo $column_class; ?>">
                                     <div class="securityServiceBox">
                                         <?php
                                             $security_service_image = get_sub_field('security_service_image');
@@ -140,24 +145,38 @@ get_header();
         </div>
     </section>
     <?php endif; wp_reset_query(); ?>
-
+    <?php 
+        $resport_sec_title = get_field('resport_sec_title');
+        if(isset($resport_sec_title) && !empty($resport_sec_title)){ 
+    ?>
     <section>
-        <div class="reportSecOuter">
-            <div class="reportSecInner">
+        <div class="reportSecOuter py100">
+            <div class="sm_container">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <?php
                             $report_sec_image = get_field('report_sec_image');
                             if (isset($report_sec_image) && !empty($report_sec_image)) {
                                 $image_url = wp_get_attachment_image_src($report_sec_image, 'full')[0];
                                 $image_alt = get_post_meta($report_sec_image, '_wp_attachment_image_alt', true);
                         ?>
-                        <div class="reportImgSec">
-                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                        </div>
+                            <div class="reportImgSec">
+                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                <?php 
+                                    $report_sec_video_url = get_field('report_sec_video_url');
+                                    if (isset($report_sec_video_url) && !empty($report_sec_video_url)) {
+                                ?>
+                                <div class="reportPlayBtnWrap">
+                                    <a href="#projectVideo" class="playBtn" data-toggle="modal" data-video="<?php echo esc_url($report_sec_video_url); ?>" aria-label="Click here to open Video">
+                                        <i class="fa fa-play after"></i>
+                                        <i class="fa fa-play"></i>
+                                    </a>
+                                </div>
+                                <?php } ?>
+                            </div>
                         <?php } ?>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <?php 
                             $resport_sec_title = get_field('resport_sec_title');
                             if(isset($resport_sec_title) && !empty($resport_sec_title)){ 
@@ -206,7 +225,7 @@ get_header();
             </div>
         </div>
     </section>
-
+    <?php }  ?>
 
     <?php if (have_rows('support_block')) : ?>
     <section>
