@@ -1,7 +1,6 @@
 var contact_error = ".contact_error";
 var contact_loader = ".jobseek_loader";
-var contact_captcha_wrap = ".kg_contact_captcha_Wrap";   
-var title_empty_err_msg = "Title is required.";   
+var contact_captcha_wrap = ".kg_contact_captcha_Wrap";    
 var service_err_msg = "Select Service is required.";
 var parking_service_err_msg = "Parking Enforcement is required.";
 var security_service_err_msg = "Security Systems is required.";
@@ -13,8 +12,7 @@ jQuery(document).ready(function($) {
 
     var formId = "#kg_contact_form";
     var fnameId = "#kg_contact_fname";
-    var lnameId = "#kg_contact_lname"; 
-    var titleId = "#kg_contact_title"; 
+    var lnameId = "#kg_contact_lname";  
     var emailId = "#kg_contact_email"; 
     var phoneId = "#kg_contact_phone";   
     var servicesCheckboxList = 'input[name="kg_contact_services_list[]"]';
@@ -37,8 +35,7 @@ jQuery(document).ready(function($) {
  
         var scrollId = '';
         var fname = $(fnameId);
-        var lname = $(lnameId);
-        var title = $(titleId);
+        var lname = $(lnameId); 
         var email = $(emailId);
         var phone = $(phoneId); 
         var sitetypes = $(sitetypesId);   
@@ -89,19 +86,7 @@ jQuery(document).ready(function($) {
             go_ahead = false;
         } else {
             lname.next(contact_error).html('').hide();
-        }
-
-        // Title validation
-        if ('' == title.val().trim()) {
-            title.next(contact_error).html(title_empty_err_msg).show();
-            go_ahead = false;
-        } else if (title.val().length > 100) {
-            title.next(contact_error).html(max_100_length_err_msg).show();
-            scrollId = scrollId == '' ? title : scrollId;
-            go_ahead = false;
-        } else {
-            title.next(contact_error).html('').hide();
-        }
+        } 
 
         // Email validation
         if ('' == email.val().trim()) {
@@ -298,8 +283,7 @@ jQuery(document).ready(function($) {
 
     // Hide errors on focus
     hideErrorOnFocus(fnameId);
-    hideErrorOnFocus(lnameId); 
-    hideErrorOnFocus(titleId); 
+    hideErrorOnFocus(lnameId);  
     hideErrorOnFocus(emailId); 
     hideErrorOnFocus(phoneId);
     

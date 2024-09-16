@@ -1200,7 +1200,7 @@ button.modal_close:focus {
 }
 .pageBody.homeBody {
     padding-top: 123px;
-}
+} 
 .h2,
 h3 .job-title {
     font-size: 50px;
@@ -1219,6 +1219,13 @@ h3 .job-title {
 }
 .mt200 {
     margin-top: 200px;
+}
+.pb50 {
+    padding-bottom: 50px;
+}
+.py50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .py100 {
     padding-top: 100px;
@@ -2652,7 +2659,7 @@ h3 .job-title {
     margin-bottom: 20px;
 }
 .quoteInnerWrapper {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
 }
 .quoteInnerWrapper .formGroup + .formGroup {
@@ -3901,8 +3908,11 @@ input[type=checkbox], input[type=radio] {
     color: #d63637;
     font-weight: normal;
     font-size: 24px;
-    top: 0px;
+    top: 0;
     margin-left: 2px;
+} 
+.kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label sup {
+    top: 2px; 
 } 
 .getstarted_input_main .jobseek_error {
     color: #ff8282;
@@ -4468,4 +4478,108 @@ input[type=checkbox], input[type=radio] {
 }
 .reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn:hover i.after {
     transform: translate3d(5px,0,0);
+}
+.commonBannerWrapper.quoteWrapper .commonBanner {
+    background: transparent;
+    text-align: left;
+    padding: 0;
+}
+.commonBannerWrapper.quoteWrapper .commonBanner .bannerContent .h2 {
+    text-align: left;
+}
+.commonBannerWrapper.quoteWrapper .commonBanner .bannerContent p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .kg_contact_label {
+    font-size: 14px;
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap input::-webkit-input-placeholder {
+    font-size: 14px !important; 
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  input::-moz-placeholder {
+    font-size: 14px !important; 
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap  input:-ms-input-placeholder {
+    font-size: 14px !important; 
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap input:-moz-placeholder {
+    font-size: 14px !important; 
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .inputField, 
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .selectField {
+    font-size: 14px !important;  
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap textarea {
+    min-height: 100px !important;
+    height: 80px !important;
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_col {
+    margin-bottom: 30px !important;
+}
+.quoteWrapper .kg_contact_inputWrap.kg_contact_checkWrap .kg_contact_checkbox_list li {
+    display: inline-flex;
+    margin-right: 15px;
+}
+.quoteWrapper .kg_contact_inputWrap.kg_contact_checkWrap .kg_contact_checkbox_list li label {
+    font-size: 13px;
+    padding-left: 18px;
+    margin-bottom: 4px;
+}
+.quoteWrapper .kg_contact_inputWrap.kg_contact_checkWrap input[type=checkbox], .quoteWrapper .jobseek_register_inputWrap.jobseek_register_checkWrap input[type=checkbox] {
+    width: 13px;
+    height: 13px;
+    margin: 0px 5px 0 0;
+}
+.quoteWrapper .kg_contact_inputWrap.kg_contact_checkWrap label.kg_contact_label.kg_consent_label {
+    padding-left: 20px;
+    font-size: 14px !important;
+}
+.quoteWrapper .kg_contact_inputWrap.kg_contact_checkWrap .kg_contact_consent_checkbox {
+    top: 6px;
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_captcha_Wrap .contact_error::before,
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .contact_error::before {
+    font-size: 12px;
+    top: -1px;
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_captcha_Wrap .contact_error, 
+.quoteWrapper .kg_contact_wrapper .kg_contact_wrap .kg_contact_inputWrap .contact_error {
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 12px;
+}
+.quoteWrapper .kg_contact_wrapper .kg_contact_form .kg_contact_captcha_Wrap iframe {
+    transform: scale(0.8) translate(-30px, 0px);
+    -webkit-transform: scale(0.8) translate(-30px, 0px);
+    -o-transform: scale(0.8) translate(-30px, 0px);
+}
+
+.quoteleft_heading {
+    font-size: 16px;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    font-family: 'Gilroy-SemiBold';
+}
+.quoteleft_adrs {
+    font-size: 14px;
+}
+.quoteleft_adrs ul {
+    list-style: none;
+}
+.quoteleft_adrs li {
+    margin-bottom: 10px;
+}
+.quoteleft_adrs  address {
+    margin-bottom: 25px;
+}
+.quoteleft_adrs address strong {
+    font-family: 'Gilroy-SemiBold';
+    margin-bottom: 2px;
+}
+.quoteWrapperNoBG {
+    background: none !important;
+}
+.contactDetailWrap.contactMobile {
+    display: none;
 }

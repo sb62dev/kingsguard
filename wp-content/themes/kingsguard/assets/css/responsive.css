@@ -2087,6 +2087,15 @@ button.modal_close span {
     object-fit: inherit;
     height: auto;
 }
+.contactDetailWrap.contactDesktop {
+    display: none;
+}
+.contactDetailWrap.contactMobile {
+    display: block;
+}
+.commonBannerWrapper.quoteWrapper {
+    margin-bottom: 30px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {

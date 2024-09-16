@@ -24,7 +24,6 @@ function handle_contact_form() {
             global $wpdb;  
             $fname = sanitize_text_field($_POST['kg_contact_fname']);  
             $lname = sanitize_text_field($_POST['kg_contact_lname']);  
-            $title = sanitize_text_field($_POST['kg_contact_title']);
             $phone = sanitize_text_field($_POST['kg_contact_phone']);  
             $services_list = isset($_POST['kg_contact_services_list']) ? implode(', ', $_POST['kg_contact_services_list']) : '';
             $security_services = isset($_POST['kg_contact_security_services']) ? implode(', ', $_POST['kg_contact_security_services']) : '';
@@ -46,8 +45,7 @@ function handle_contact_form() {
                 array( 
                     'email' => $email, 
                     'contact_fname' => $fname,  
-                    'contact_lname' => $lname,
-                    'contact_title' => $title,  
+                    'contact_lname' => $lname, 
                     'phone_number' => $phone,   
                     'contact_services' => $services_list,
                     'contact_security_services' => $security_services,
@@ -72,7 +70,7 @@ function handle_contact_form() {
             ); 
 
             send_contact_user_email($email, $name);  
-            send_contact_admin_email($name,$email,$title,$phone,$services_list,$parking_services,$security_services,$site_types,$length_cover,$add_info); 
+            send_contact_admin_email($name,$email,$phone,$services_list,$parking_services,$security_services,$site_types,$length_cover,$add_info); 
             if (!isEmailInZoho($email)) {
                 sendDataToZohoLeads($userData);
             } 

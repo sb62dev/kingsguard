@@ -22,36 +22,29 @@ function contact_form() {
                     <div class="kg_contact_row row"> 
                         <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap">
-                                <label class="kg_contact_label"> First Name<sup>*</sup></label>
-                                <input type="text" class="inputField" id="kg_contact_fname" name="kg_contact_fname" placeholder="Your First Name">
+                                <label class="kg_contact_label sr-only"> First Name<sup>*</sup></label>
+                                <input type="text" class="inputField" id="kg_contact_fname" name="kg_contact_fname" placeholder="First Name*">
                                 <div class="contact_error"></div>
                             </div>
                         </div>
                         <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap">
-                                <label class="kg_contact_label"> Last Name<sup>*</sup></label>
-                                <input type="text" class="inputField" id="kg_contact_lname" name="kg_contact_lname" placeholder="Your Last Name">
+                                <label class="kg_contact_label sr-only"> Last Name<sup>*</sup></label>
+                                <input type="text" class="inputField" id="kg_contact_lname" name="kg_contact_lname" placeholder="Last Name*">
                                 <div class="contact_error"></div>
                             </div>
-                        </div>
-                        <div class="kg_contact_col col-md-12">
-                            <div class="kg_contact_inputWrap">
-                                <label class="kg_contact_label"> Title<sup>*</sup> </label>
-                                <input type="text" class="inputField" id="kg_contact_title" name="kg_contact_title" placeholder="Your Title">
-                                <div class="contact_error"></div>
-                            </div>
-                        </div>
+                        </div> 
                         <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap">
-                                <label class="kg_contact_label"> Work Email<sup>*</sup> </label>
-                                <input type="text" class="inputField" id="kg_contact_email" name="kg_contact_email" placeholder="Work Email">
+                                <label class="kg_contact_label sr-only"> Work Email<sup>*</sup> </label>
+                                <input type="text" class="inputField" id="kg_contact_email" name="kg_contact_email" placeholder="Work Email*">
                                 <div class="contact_error"></div>
                             </div>
                         </div>  
                         <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap">
-                                <label class="kg_contact_label"> Phone Number<sup>*</sup> </label>
-                                <input type="text" class="inputField numberonly" id="kg_contact_phone" name="kg_contact_phone" placeholder="Your Phone">
+                                <label class="kg_contact_label sr-only"> Phone Number<sup>*</sup> </label>
+                                <input type="text" class="inputField numberonly" id="kg_contact_phone" name="kg_contact_phone" placeholder="Phone Number*">
                                 <div class="contact_error"></div>
                             </div>
                         </div>  
@@ -149,11 +142,11 @@ function contact_form() {
                                 </fieldset>
                             </div>
                         </div>  
-                        <div class="kg_contact_col col-md-12">
+                        <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap kg_contact_selectWrap">
-                                <label class="kg_contact_label"> Type of Site<sup>*</sup> </label>
+                                <label class="kg_contact_label sr-only"> Type of Site<sup>*</sup> </label>
                                 <select id="kg_contact_site_types" name="kg_contact_site_types" class="selectField">
-                                    <option value="" class="placeholder" disabled="" selected="selected">Select</option>
+                                    <option value="" class="placeholder" disabled="" selected="selected">Type of Site*</option>
                                     <option value="Construction Site">Construction Site</option>
                                     <option value="Hotel">Hotel</option>
                                     <option value="Condominium">Condominium</option>
@@ -166,11 +159,11 @@ function contact_form() {
                                 <div class="contact_error"></div>
                             </div>
                         </div>  
-                        <div class="kg_contact_col col-md-12">
+                        <div class="kg_contact_col col-md-6">
                             <div class="kg_contact_inputWrap kg_contact_selectWrap">
-                                <label class="kg_contact_label"> Length of Cover  </label>
+                                <label class="kg_contact_label sr-only"> Length of Cover  </label>
                                 <select id="kg_contact_length_cover" name="kg_contact_length_cover" class="selectField">
-                                    <option value="" class="placeholder" disabled selected>Select</option>
+                                    <option value="" class="placeholder" disabled selected>Length of Coverage</option>
                                     <option value="1 to 5 Days">1 to 5 Days</option>
                                     <option value="Couple Weeks">Couple Weeks</option>
                                     <option value="Couple Months">Couple Months</option>
@@ -182,7 +175,7 @@ function contact_form() {
                         </div>  
                         <div class="kg_contact_col col-md-12">
                             <div class="kg_contact_inputWrap kg_contact_inputWrap_textarea">
-                                <label class="kg_contact_label"> Additional Information </label>
+                                <label class="kg_contact_label sr-only"> Additional Information </label>
                                 <textarea class="inputField" id="kg_contact_add_info" name="kg_contact_add_info" placeholder="Additional Information"></textarea>
                                 <div class="contact_error"></div>
                             </div>
@@ -191,7 +184,7 @@ function contact_form() {
                             <div class="kg_contact_inputWrap kg_contact_checkWrap">
                                 <input type="hidden" name="kg_contact_consent_checkbox" value="No">
                                 <input type="checkbox" class="kg_contact_consent_checkbox" id="kg_contact_consent_checkbox" name="kg_contact_consent_checkbox" value="Yes">
-                                <label class="kg_contact_label" for="kg_contact_consent_checkbox">Yes, I consent to receiving communications from KingsGuard Security. I understand that I can withdraw my consent at any time. (Optional)</label>
+                                <label class="kg_contact_label kg_consent_label" for="kg_contact_consent_checkbox">Yes, I consent to receiving communications from KingsGuard Security. I understand that I can withdraw my consent at any time. (Optional)</label>
                             </div>  
                         </div>  
                         <div class="kg_contact_col col-md-12">
