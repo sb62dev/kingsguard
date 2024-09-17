@@ -99,9 +99,91 @@ get_header();
     </section>
     <?php endif; wp_reset_query(); ?> 
 
+    <?php if (have_rows('our_services')) : ?>
+    <section>
+        <div class="clientSec ServiceSec py100" id="logoSliderWrap">
+            <div class="sm_container">
+                <div class="clientInner text-center">
+                    <?php
+                        $our_services_title = get_field('our_services_title');
+                        if (isset($our_services_title) && !empty($our_services_title)) {
+                    ?>
+                    <div class="title" data-aos="fade-down" data-aos-duration="1000">
+                        <h2 class="h2"> <?php echo $our_services_title; ?> </h2>
+                    </div>
+                    <?php } ?>
+                    <ul class="nav nav-tabs tabsHead" role="tablist" data-aos="fade-up" data-aos-duration="1000" >
+                        <?php $count = 0; while (have_rows('our_services')) : the_row(); ?>
+                            <?php 
+                                $our_service_tab_title = get_sub_field('our_service_tab_title');
+                                if(isset($our_service_tab_title) && !empty($our_service_tab_title)){
+                            ?> 
+                            <li class="nav-item">
+                                <a class="nav-link <?php echo ($count === 0) ? 'active' : ''; ?>" data-toggle="tab" href="#tabs-<?php echo $count; ?>" role="tab"><?php echo $our_service_tab_title; ?></a>
+                            </li>
+                            <?php } ?>
+                        <?php $count++; endwhile; ?>
+                    </ul>
+                    <div class="tab-content tabsBody" data-aos="fade-up" data-aos-duration="1000" >
+                        <?php $counter = 0; while (have_rows('our_services')) : the_row(); ?>
+                        <div class="tab-pane <?php echo ($counter === 0) ? 'active' : ''; ?>" id="tabs-<?php echo $counter; ?>" role="tabpanel">
+                            <div class="serviceTabWrapper">
+                                <div class="row">
+                                    <?php
+                                        $our_service_image = get_sub_field('our_service_image');
+                                        if (isset($our_service_image) && !empty($our_service_image)) {
+                                            $image_url = wp_get_attachment_image_src($our_service_image, 'full')[0];
+                                            $image_alt = get_post_meta($our_service_image, '_wp_attachment_image_alt', true);
+                                    ?>
+                                    <div class="col-lg-6">
+                                        <div class="serviceTabImg">
+                                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <div class="col-lg-6">
+                                        <div class="serviceTabCont">
+                                            <div class="serviceTabContInner">
+                                                <?php 
+                                                    $our_service_title = get_sub_field('our_service_title');
+                                                    if(isset($our_service_title) && !empty($our_service_title)){
+                                                ?> 
+                                                <h3 class="h3"><?php echo $our_service_title; ?></h3>
+                                                <?php } ?>
+                                                <?php 
+                                                    $our_service_description = get_sub_field('our_service_description');
+                                                    if(isset($our_service_description) && !empty($our_service_description)){
+                                                ?> 
+                                                <?php echo $our_service_description; ?>
+                                                <?php } ?>     
+                                                <?php 
+                                                    $our_service_button_title = get_sub_field('our_service_button_title');
+                                                    if(isset($our_service_button_title) && !empty($our_service_button_title)){
+                                                    $our_service_button_url = get_sub_field('our_service_button_url');
+                                                    $our_service_button_target = get_sub_field('our_service_button_target');
+                                                    $our_service_button_aria_label = get_sub_field('our_service_button_aria_label');
+                                                ?> 
+                                                <div class="btnWrap">
+                                                    <a href="<?php echo $our_service_button_url; ?>" class="btn-style gradientBtn" target="<?php echo $our_service_button_target; ?>" aria-label="<?php echo $our_service_button_aria_label; ?>"><?php echo $our_service_button_title; ?></a>
+                                                </div>
+                                                <?php } ?>                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php $counter++; endwhile; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php endif; wp_reset_query(); ?>
+
     <?php if (have_rows('why_choose_kingsguard')) : ?>
     <section>
-        <div class="whyChooseUs py200">
+        <div class="whyChooseUs py100">
             <div class="sm_container">
                 <div class="whyChooseInner">
                     <?php
@@ -189,88 +271,6 @@ get_header();
         </div>
     </section>
     <?php endif; wp_reset_query(); ?> 
-
-    <?php if (have_rows('our_services')) : ?>
-    <section>
-        <div class="clientSec ServiceSec" id="logoSliderWrap">
-            <div class="sm_container">
-                <div class="clientInner text-center">
-                    <?php
-                        $our_services_title = get_field('our_services_title');
-                        if (isset($our_services_title) && !empty($our_services_title)) {
-                    ?>
-                    <div class="title" data-aos="fade-down" data-aos-duration="1000">
-                        <h2 class="h2"> <?php echo $our_services_title; ?> </h2>
-                    </div>
-                    <?php } ?>
-                    <ul class="nav nav-tabs tabsHead" role="tablist" data-aos="fade-up" data-aos-duration="1000" >
-                        <?php $count = 0; while (have_rows('our_services')) : the_row(); ?>
-                            <?php 
-                                $our_service_tab_title = get_sub_field('our_service_tab_title');
-                                if(isset($our_service_tab_title) && !empty($our_service_tab_title)){
-                            ?> 
-                            <li class="nav-item">
-                                <a class="nav-link <?php echo ($count === 0) ? 'active' : ''; ?>" data-toggle="tab" href="#tabs-<?php echo $count; ?>" role="tab"><?php echo $our_service_tab_title; ?></a>
-                            </li>
-                            <?php } ?>
-                        <?php $count++; endwhile; ?>
-                    </ul>
-                    <div class="tab-content tabsBody" data-aos="fade-up" data-aos-duration="1000" >
-                        <?php $counter = 0; while (have_rows('our_services')) : the_row(); ?>
-                        <div class="tab-pane <?php echo ($counter === 0) ? 'active' : ''; ?>" id="tabs-<?php echo $counter; ?>" role="tabpanel">
-                            <div class="serviceTabWrapper">
-                                <div class="row">
-                                    <?php
-                                        $our_service_image = get_sub_field('our_service_image');
-                                        if (isset($our_service_image) && !empty($our_service_image)) {
-                                            $image_url = wp_get_attachment_image_src($our_service_image, 'full')[0];
-                                            $image_alt = get_post_meta($our_service_image, '_wp_attachment_image_alt', true);
-                                    ?>
-                                    <div class="col-lg-6">
-                                        <div class="serviceTabImg">
-                                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                                        </div>
-                                    </div>
-                                    <?php } ?>
-                                    <div class="col-lg-6">
-                                        <div class="serviceTabCont">
-                                            <div class="serviceTabContInner">
-                                                <?php 
-                                                    $our_service_title = get_sub_field('our_service_title');
-                                                    if(isset($our_service_title) && !empty($our_service_title)){
-                                                ?> 
-                                                <h3 class="h3"><?php echo $our_service_title; ?></h3>
-                                                <?php } ?>
-                                                <?php 
-                                                    $our_service_description = get_sub_field('our_service_description');
-                                                    if(isset($our_service_description) && !empty($our_service_description)){
-                                                ?> 
-                                                <?php echo $our_service_description; ?>
-                                                <?php } ?>     
-                                                <?php 
-                                                    $our_service_button_title = get_sub_field('our_service_button_title');
-                                                    if(isset($our_service_button_title) && !empty($our_service_button_title)){
-                                                    $our_service_button_url = get_sub_field('our_service_button_url');
-                                                    $our_service_button_target = get_sub_field('our_service_button_target');
-                                                    $our_service_button_aria_label = get_sub_field('our_service_button_aria_label');
-                                                ?> 
-                                                <div class="btnWrap">
-                                                    <a href="<?php echo $our_service_button_url; ?>" class="btn-style gradientBtn" target="<?php echo $our_service_button_target; ?>" aria-label="<?php echo $our_service_button_aria_label; ?>"><?php echo $our_service_button_title; ?></a>
-                                                </div>
-                                                <?php } ?>                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php $counter++; endwhile; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <?php endif; wp_reset_query(); ?>
         
     <?php 
         $get_started_title = get_field('get_started_title');

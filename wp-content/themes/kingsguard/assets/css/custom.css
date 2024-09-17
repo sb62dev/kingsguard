@@ -452,7 +452,7 @@ header.Sticky-fixed .logo .logotxt {
     line-height: 1.2;
     overflow: hidden;
     position: relative;
-    text-transform: capitalize;
+    text-transform: inherit;
 }
 .main-navigation .menu-header-menu-2-container ul > li:last-child > a:before {
     content: "";
