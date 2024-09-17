@@ -196,7 +196,7 @@ function generate_contact_user_email_html($name) {
 }
 
 // Function to create admin html
-function generate_contact_admin_email_html($name,$email,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo) {
+function generate_contact_admin_email_html($name,$email,$phone,$service,$parkingservice,$securityservice,$sitetype,$addinfo) {
     ob_start();
     ?>
     <html>
@@ -291,10 +291,6 @@ function generate_contact_admin_email_html($name,$email,$phone,$service,$parking
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
                                                                                 <tr>
-                                                                                    <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Length of Cover: </strong> {{lengthcover}} </td>
-                                                                                </tr>
-                                                                                <tr><td style="height: 2px;" height="2"></td></tr>  
-                                                                                <tr>
                                                                                     <td align="left" style="font-size: 14px;font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;text-align: left;color: #ffffff;"> <strong> Additional Information: </strong> {{addinfo}} </td>
                                                                                 </tr>
                                                                                 <tr><td style="height: 2px;" height="2"></td></tr>  
@@ -338,10 +334,10 @@ function send_contact_user_email($email, $name) {
 }
 
 // Function to send email to admin with replaced placeholders
-function send_contact_admin_email($name,$email,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo) {
+function send_contact_admin_email($name,$email,$phone,$service,$parkingservice,$securityservice,$sitetype,$addinfo) {
     $subject = 'Quote Form!';
     $adminemail= ADMIN_EMAILS_QUOTE;
-    $message = generate_contact_admin_email_html($name,$email,$phone,$service,$parkingservice,$securityservice,$sitetype,$lengthcover,$addinfo);
+    $message = generate_contact_admin_email_html($name,$email,$phone,$service,$parkingservice,$securityservice,$sitetype,$addinfo);
 
     // Replace placeholders with actual values 
     $message = str_replace('{{name}}', $name, $message); 
@@ -351,7 +347,6 @@ function send_contact_admin_email($name,$email,$phone,$service,$parkingservice,$
     $message = str_replace('{{parkingservice}}', $parkingservice, $message); 
     $message = str_replace('{{securityservice}}', $securityservice, $message); 
     $message = str_replace('{{sitetype}}', $sitetype, $message); 
-    $message = str_replace('{{lengthcover}}', $lengthcover, $message); 
     $message = str_replace('{{addinfo}}', $addinfo, $message); 
     $headers = array('Content-Type: text/html; charset=UTF-8');
     wp_mail($adminemail, $subject, $message, $headers);

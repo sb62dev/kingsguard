@@ -142,7 +142,7 @@ function contact_form() {
                                 </fieldset>
                             </div>
                         </div>  
-                        <div class="kg_contact_col col-md-6">
+                        <div class="kg_contact_col col-md-12">
                             <div class="kg_contact_inputWrap kg_contact_selectWrap">
                                 <label class="kg_contact_label sr-only"> Type of Site<sup>*</sup> </label>
                                 <select id="kg_contact_site_types" name="kg_contact_site_types" class="selectField">
@@ -155,20 +155,6 @@ function contact_form() {
                                     <option value="Industrial">Industrial</option>
                                     <option value="Event Venue">Event Venue</option>
                                     <option value="Other">Other</option>
-                                </select>
-                                <div class="contact_error"></div>
-                            </div>
-                        </div>  
-                        <div class="kg_contact_col col-md-6">
-                            <div class="kg_contact_inputWrap kg_contact_selectWrap">
-                                <label class="kg_contact_label sr-only"> Length of Cover  </label>
-                                <select id="kg_contact_length_cover" name="kg_contact_length_cover" class="selectField">
-                                    <option value="" class="placeholder" disabled selected>Length of Coverage</option>
-                                    <option value="1 to 5 Days">1 to 5 Days</option>
-                                    <option value="Couple Weeks">Couple Weeks</option>
-                                    <option value="Couple Months">Couple Months</option>
-                                    <option value="6 to 12 Months">6 to 12 Months</option>
-                                    <option value="1 Year +">1 Year +</option>
                                 </select>
                                 <div class="contact_error"></div>
                             </div>

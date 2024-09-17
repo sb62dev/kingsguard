@@ -29,7 +29,6 @@ function handle_contact_form() {
             $security_services = isset($_POST['kg_contact_security_services']) ? implode(', ', $_POST['kg_contact_security_services']) : '';
             $parking_services = isset($_POST['kg_contact_parking_services']) ? implode(', ', $_POST['kg_contact_parking_services']) : '';
             $site_types = sanitize_text_field($_POST['kg_contact_site_types']);
-            $length_cover = sanitize_text_field($_POST['kg_contact_length_cover']);
             $add_info = sanitize_textarea_field($_POST['kg_contact_add_info']);  
             $consent_checkbox = sanitize_text_field($_POST['kg_contact_consent_checkbox']); 
 
@@ -51,7 +50,6 @@ function handle_contact_form() {
                     'contact_security_services' => $security_services,
                     'contact_parking_services' => $parking_services,
                     'contact_site_types' => $site_types,
-                    'contact_length_cover' => $length_cover,
                     'contact_add_info' => $add_info,
                     'contact_consent' => $consent_checkbox,
                     'submission_date' => $datetime->format('Y-m-d H:i:s'),
@@ -70,7 +68,7 @@ function handle_contact_form() {
             ); 
 
             send_contact_user_email($email, $name);  
-            send_contact_admin_email($name,$email,$phone,$services_list,$parking_services,$security_services,$site_types,$length_cover,$add_info); 
+            send_contact_admin_email($name,$email,$phone,$services_list,$parking_services,$security_services,$site_types,$add_info); 
             if (!isEmailInZoho($email)) {
                 sendDataToZohoLeads($userData);
             } 
