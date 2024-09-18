@@ -1201,6 +1201,9 @@ button.modal_close:focus {
 .pageBody.homeBody {
     padding-top: 123px;
 } 
+.pageBody.childServicePage {
+    padding-top: 120px;
+}
 .h2,
 h3 .job-title {
     font-size: 50px;
@@ -4582,4 +4585,37 @@ input[type=checkbox], input[type=radio] {
 }
 .contactDetailWrap.contactMobile {
     display: none;
+}
+.hiringBtnWrap {
+    margin-top: 20px;
+}
+.monitoringBannerWrap {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    height: 800px;
+    background-attachment: fixed;
+}
+.monitoringBannerWrap .sm_container,
+.monitoringBannerWrap .sm_container .monitoringBannerInner {
+    height: 800px;
+}
+.monitoringBannerWrap .monitoringBannerInner {
+    display: flex;
+    align-items: center;
+}
+.monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont {
+    text-align: left;
+    max-width: 550px;
+    margin-bottom: 0;
+}
+.monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont h1 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont h1,
+.monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont p {
+    color: #0e0e0e !important;
 }

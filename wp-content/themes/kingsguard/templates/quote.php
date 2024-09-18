@@ -31,6 +31,19 @@ get_header();
                                             <div class="quoteleft_adrs">
                                                 <?php echo $contact_detail_description; ?>
                                             </div>
+                                            <?php 
+                                                $hiring_button_text = get_field('hiring_button_text');
+                                                if(isset($hiring_button_text) && !empty($hiring_button_text)){
+                                                $hiring_button_link = get_field('hiring_button_link');
+                                                $hiring_button_target = get_field('hiring_button_target');
+                                                $hiring_button_aria_label = get_field('hiring_button_aria_label');
+                                            ?> 
+                                            <div class="hiringBtnWrap">
+                                                <div class="btnWrap">
+                                                    <a href="<?php echo $hiring_button_link; ?>" class="btn-style gradientBtn" target="<?php echo $hiring_button_target; ?>" aria-label="<?php echo $hiring_button_aria_label; ?>"><?php echo $hiring_button_text; ?></a>
+                                                </div>
+                                            </div>
+                                            <?php } ?>   
                                         </div>
                                     </div>
                                 </div>
@@ -54,6 +67,19 @@ get_header();
                             <div class="quoteleft_adrs">
                                 <?php echo $contact_detail_description; ?>
                             </div>
+                            <?php 
+                                $hiring_button_text = get_field('hiring_button_text');
+                                if(isset($hiring_button_text) && !empty($hiring_button_text)){
+                                $hiring_button_link = get_field('hiring_button_link');
+                                $hiring_button_target = get_field('hiring_button_target');
+                                $hiring_button_aria_label = get_field('hiring_button_aria_label');
+                            ?> 
+                            <div class="hiringBtnWrap">
+                                <div class="btnWrap">
+                                    <a href="<?php echo $hiring_button_link; ?>" class="btn-style gradientBtn" target="<?php echo $hiring_button_target; ?>" aria-label="<?php echo $hiring_button_aria_label; ?>"><?php echo $hiring_button_text; ?></a>
+                                </div>
+                            </div>
+                            <?php } ?>   
                         </div>
                     </div>
                     <?php } ?>

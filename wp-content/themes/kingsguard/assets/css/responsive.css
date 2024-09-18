@@ -397,6 +397,9 @@
     .homeVideoSlider.homeBannerWrap .h2 {
         font-size: 80px;
     }
+    .monitoringBannerWrap, .monitoringBannerWrap .sm_container, .monitoringBannerWrap .sm_container .monitoringBannerInner {
+        height: 700px;
+    }
 }
 
 @media screen and ( max-width: 1199px ){
@@ -691,6 +694,9 @@ h3 {
 .desktopSubMenuWrap .subMenuOptions .serviceSubMenuDetails .childSubmenuWrap ul.child-sub-menu li a, 
 .desktopSubMenuWrap .subMenuOptions .industrySubMenuDetails .childSubmenuWrap ul.child-sub-menu li a {
     height: 70px;
+}
+.monitoringBannerWrap, .monitoringBannerWrap .sm_container, .monitoringBannerWrap .sm_container .monitoringBannerInner {
+    height: 600px;
 }
 } 
 
@@ -1164,6 +1170,9 @@ h3 {
 }
 .homeVideoSlider.homeBannerWrap .h2 {
     font-size: 55px;
+}
+.monitoringBannerWrap, .monitoringBannerWrap .sm_container, .monitoringBannerWrap .sm_container .monitoringBannerInner {
+    height: 500px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -2096,6 +2105,12 @@ button.modal_close span {
 .commonBannerWrapper.quoteWrapper {
     margin-bottom: 30px;
 }
+.monitoringBannerWrap, .monitoringBannerWrap .sm_container, .monitoringBannerWrap .sm_container .monitoringBannerInner {
+    height: 400px;
+}
+.monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont {
+    text-align: center;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -2152,6 +2167,9 @@ button.modal_close span {
     }
     .reportSecOuter .reportSecCont {
         padding: 25px 0 0;
+    }
+    .monitoringBannerWrap, .monitoringBannerWrap .sm_container, .monitoringBannerWrap .sm_container .monitoringBannerInner {
+        height: 350px;
     }
 }
 
