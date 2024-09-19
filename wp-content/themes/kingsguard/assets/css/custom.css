@@ -1409,7 +1409,7 @@ h3 .job-title {
     margin: 0 35px;
 }
 .clientSec .tabsBody {
-    margin-top: 120px;
+    margin-top: 75px;
 }
 .clientLogoSlide, .clientLogoSlide .clientLogoSlideInner {
     display: flex !important;
@@ -4326,9 +4326,6 @@ input[type=checkbox], input[type=radio] {
     line-height: 1;
     filter: drop-shadow(0px 0px 10px #1E1E20);
     letter-spacing: normal;
-}
-.quote_thankBody .commonBannerWrapper {
-    display: none;
 }
 .ErrorInnerWrap {
     text-align: center;

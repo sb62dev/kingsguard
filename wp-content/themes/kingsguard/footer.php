@@ -55,7 +55,7 @@
 		</div>
 		<div class="footer_top">
 			<div class="row">
-				<div class="col-lg-7 col-md-12">
+				<div class="col-lg-8 col-md-12">
 					<div class="ftrMainMenu">
 						<?php  
 							wp_nav_menu(
@@ -67,7 +67,7 @@
 						?>
 					</div>
 				</div>
-				<div class="col-lg-5 col-md-12">
+				<div class="col-lg-4 col-md-12">
 					<?php
 						$general_post_name = 'footer'; 
 						$general_post = get_page_by_path($general_post_name, OBJECT, 'general_settings');

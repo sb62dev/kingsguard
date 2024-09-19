@@ -29,7 +29,7 @@ get_header();
 
 <?php if (have_rows('our_goals')) : ?>
 <section>
-    <div class="aboutUsSec mt200">
+    <div class="aboutUsSec mt100">
         <div class="sm_container">
             <div class="aboutUsInner" data-aos="fade-down" data-aos-duration="1000">
                 <div class="row">
@@ -88,7 +88,7 @@ get_header();
 
 <?php if (have_rows('why_choose_kingsguard')) : ?>
 <section>
-    <div class="whyChooseUs mt200">
+    <div class="whyChooseUs mt100">
         <div class="sm_container">
             <div class="whyChooseInner" data-aos="fade-down" data-aos-duration="1000">
                 <?php
@@ -189,7 +189,7 @@ get_header();
 
 <?php if (have_rows('our_clients')) : ?>
 <section>
-    <div class="clientSec py200">
+    <div class="clientSec py100">
         <div class="sm_container">
             <div class="clientInner text-center" data-aos="fade-down" data-aos-duration="1000">
                 <ul class="nav nav-tabs tabsHead" role="tablist">
@@ -241,7 +241,7 @@ get_header();
     $join_button_text = get_field('join_button_text');
 ?> 
 <section>
-    <div class="joinUsSecOuter py200">
+    <div class="joinUsSecOuter py100">
         <div class="sm_container">
             <div class="joinUsSec">
                 <div class="joinUsInner text-center">

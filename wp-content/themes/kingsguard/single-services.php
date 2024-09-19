@@ -235,7 +235,7 @@ get_header();
 
             <?php if (have_rows('support_block')) : ?>
             <section>
-                <div class="securityServiceSec bgTexture py200">
+                <div class="securityServiceSec bgTexture py100">
                     <div class="sm_container">
                         <div class="securityServiceInner">
                             <div class="securityServiceBlock" data-aos="fade-down" data-aos-duration="1000">

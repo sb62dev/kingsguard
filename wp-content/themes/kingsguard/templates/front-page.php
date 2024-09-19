@@ -279,7 +279,7 @@ get_header();
         $get_started_button_label = get_field('get_started_button_label');
     ?> 
     <section>
-        <div class="joinUsSecOuter getStartedSec mt200">
+        <div class="joinUsSecOuter getStartedSec">
             <div class="sm_container">
                 <div class="joinUsSec" data-aos="zoom-in-down" data-aos-duration="1000">
                     <div class="joinUsInner text-center">
@@ -336,7 +336,7 @@ get_header();
     
     <?php if (have_rows('client_testimonials_tabs')) : ?>
     <section>
-        <div class="clientSec testimonialsSec py200">
+        <div class="clientSec testimonialsSec py100">
             <div class="sm_container">
                 <div class="testimonialsInner">
                     <?php

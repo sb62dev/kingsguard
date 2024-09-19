@@ -95,7 +95,7 @@ get_header();
         $stay_informed_description = get_field('stay_informed_description');
     ?> 
     <section>
-        <div class="joinUsSecOuter py200">
+        <div class="joinUsSecOuter py100">
             <div class="sm_container">
                 <div class="joinUsSec">
                     <div class="joinUsInner text-center">
