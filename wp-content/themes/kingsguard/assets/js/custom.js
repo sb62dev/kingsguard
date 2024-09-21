@@ -2,6 +2,18 @@ jQuery(document).ready(function () {
 
     AOS.init();
 
+    // When an accordion is shown
+    jQuery('.proMonitoringWrapper .accordion').on('show.bs.collapse', function (e) {
+        jQuery(e.target).prev('.card-header').find('.accordPlusIcon').addClass('minus');
+        jQuery(e.target).prev('.card-header').find('.accordPlusIcon').removeClass('plus');
+    });
+
+    // When an accordion is hidden
+    jQuery('.proMonitoringWrapper .accordion').on('hide.bs.collapse', function (e) {
+        jQuery(e.target).prev('.card-header').find('.accordPlusIcon').addClass('plus');
+        jQuery(e.target).prev('.card-header').find('.accordPlusIcon').removeClass('minus');
+    });
+
     // Hide the submenu on page load
     jQuery('.desktopSubMenuWrap').hide();
 

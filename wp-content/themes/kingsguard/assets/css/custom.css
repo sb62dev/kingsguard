@@ -1217,6 +1217,13 @@ h3 .job-title {
 .h2 .blueFont{
     color: #0098FF;
 }
+.h2.smHeading {
+    font-size: 36px;
+    text-align: left;
+}
+.blueLink {
+    color: #0098FF;
+}
 .mt100 {
     margin-top: 100px;
 }
@@ -1266,20 +1273,20 @@ h3 .job-title {
     border-radius: 20px;
     border: 1px solid #0098FF;
 }
-.aboutAccordion .card {
+.accordion .card {
     background-color: transparent;
     border: 0;
 }
-.aboutAccordion .card + .card {
+.accordion .card + .card {
     margin-top: 10px;
 }
-.aboutAccordion .card .card-header {
+.accordion .card .card-header {
     background-color: transparent;
     border: 0;
     padding: 0;
     margin-bottom: 20px;
 }
-.aboutAccordion .card .card-body {
+.accordion .card .card-body {
     padding: 0;
     margin-bottom: 20px;
 }
@@ -4594,6 +4601,17 @@ input[type=checkbox], input[type=radio] {
     position: relative;
     height: 800px;
     background-attachment: fixed;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.monitoringBannerWrap:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
 }
 .monitoringBannerWrap .sm_container,
 .monitoringBannerWrap .sm_container .monitoringBannerInner {
@@ -4602,6 +4620,8 @@ input[type=checkbox], input[type=radio] {
 .monitoringBannerWrap .monitoringBannerInner {
     display: flex;
     align-items: center;
+    z-index: 1;
+    position: relative;
 }
 .monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont {
     text-align: left;
@@ -4612,7 +4632,199 @@ input[type=checkbox], input[type=radio] {
     margin-bottom: 20px;
     text-align: left;
 }
-.monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont h1,
-.monitoringBannerWrap .monitoringBannerInner .monitoringBannerCont p {
-    color: #0e0e0e !important;
+.solutionSec .solutionTitle h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.solutionSec .solutionGrid {
+    display: flex;
+    align-items: flex-start;
+}
+.solutionSec .solutionGrid + .solutionGrid {
+    margin-top: 30px;
+}
+.solutionSec .solutionIcon {
+    width: 90px;
+}
+.solutionSec .solutionCont {
+    width: calc(100% - 60px);
+    margin-top: 8px;
+}
+.proMonitoringSec {
+    background-color: #133148;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.proMonitoringSec .proMonitoringTitle {
+    margin-bottom: 70px;
+    text-align: center;
+}
+.proMonitoringSec .proMonitoringTitle h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.proMonitoringWrapper.proMonitorWrap {
+    padding-right: 90px;
+}
+.proMonitoringWrapper .accordion h3 {
+    position: relative;
+    padding-right: 40px;
+    cursor: pointer;
+}
+.proMonitoringWrapper .accordion h3 .accordPlusIcon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url('../images/plus-white.png');
+    background-repeat: no-repeat;
+    background-size: 16px auto;
+    background-position: center right;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.proMonitoringWrapper .accordion .accordPlusIcon.minus {
+    background-image: url('../images/minus-white.png');
+}
+.proMonitoringWrapper .accordion .card {
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #3b444c !important;
+    border-radius: 0;
+}
+.proMonitoringWrapper .accordion .card .card-header {
+    margin-bottom: 0;
+}
+.proMonitoringWrapper .accordion .card .card-body {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+.proMonitoringWrapper .accordion .card .card-body p {
+    margin-bottom: 0;
+}
+.proMonitoringWrapper .accordion .card + .card {
+    margin-top: 0;
+}
+.reverseGridSec .reverseGridInner {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.reverseGridSec .reverseGridInner .reverseGridImg img {
+    width: 100%;
+}
+.reverseGridSec .reverseGridInner .reverseGridCont {
+    padding: 100px;
+}
+.reverseGridSec .reverseGridInner .reverseGridCont .h3 {
+    text-align: left;
+    font-size: 34px;
+    margin-bottom: 24px;
+}
+.reverseGridSec .reverseGridInner .reverseGridCont p {
+    line-height: 1.5;
+}
+.alarmLicenseSec {
+    background-color: #133148;
+}
+.alarmLicenseSec .alarmLicenseWrapper {
+    background-color: #008fd9;
+    background-image: linear-gradient(to right, #0098FF, #F9FBFC);
+    padding: 1px;
+    border: 0;
+    border-radius: 20px;
+    height: 100%;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner {
+    position: relative;
+    background-color: #1c242b;
+    padding: 35px;
+    overflow: hidden;
+    height: 100%;
+    border: 0;
+    border-radius: 20px;
+}
+.alarmLicenseSec .alarmLicenseTitle {
+    margin-bottom: 70px;
+}
+.alarmLicenseSec .alarmLicenseTitle .h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseSubtitle {
+    margin-bottom: 15px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicensePrice {
+    margin-top: 30px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicensePrice p {
+    color: #0098FF;
+    font-size: 16px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeatures {
+    margin-top: 20px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeatures h5 {
+    margin-bottom: 15px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeaturesList li {
+    display: flex;
+    align-items: flex-start;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeaturesList li .alarmLicenseFeaturesIcon {
+    width: 22px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeaturesCont {
+    width: calc(100% - 22px);
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeaturesCont p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeatures + .alarmLicenseFeatures {
+    border-top: 1px solid #45515b !important;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.alarmLicenseSec .alarmLicenseWrapper .alarmLicenseInner .alarmLicenseFeaturesList li + li {
+    margin-top: 10px;
+}
+.proMonitoringWrapper.faqAccordian {
+    margin-left: 70px;
+}
+.freeTrialSec {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 550px;
+    position: relative;
+}
+.freeTrialSec::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.freeTrialSec .sm_container,
+.freeTrialSec .sm_container .monitoringBannerInner {
+    height: 100%;
+}
+.freeTrialSec .sm_container .monitoringBannerInner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 700px;
+}
+.freeTrialSec .sm_container .monitoringBannerInner .monitoringBannerCont .h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.freeTrialSec .sm_container .monitoringBannerInner .monitoringBannerCont .freeTrialBtnWrap {
+    margin-top: 30px;
 }
