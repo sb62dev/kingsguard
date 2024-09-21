@@ -4378,6 +4378,9 @@ input[type=checkbox], input[type=radio] {
 .securityServiceSec .securityServiceCont p {
     font-size: 16px;
 }
+.securityServiceSec .securityServiceBtnWrap {
+    margin-top: 25px;
+}
 .securityServiceSec .securityServiceBox {
     background-color: #1e1e20;
     border-radius: 10px;
@@ -4827,4 +4830,48 @@ input[type=checkbox], input[type=radio] {
 }
 .freeTrialSec .sm_container .monitoringBannerInner .monitoringBannerCont .freeTrialBtnWrap {
     margin-top: 30px;
+}
+.guardTourSec .row {
+    align-items: center;
+}
+.guardTourSec .guardTourTitle {
+    margin-right: 80px;
+}
+.guardTourSec .guardTourTitle .h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.guardTourSec .guardTourTitle p {
+    font-size: 16px;
+}
+.supportProtectSec {
+    background-color: #133148;
+}
+.supportProtectSec .supportProtectImg {
+    margin: 60px auto;
+    text-align: center;
+}
+.supportProtectSec .supportProtectTitle .h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.liveTrackingWrap {
+    margin-bottom: 200px;
+}
+.liveTrackingWrap .liveTrackingInner .liveTrackingImg {
+    position: relative;
+}
+.liveTrackingWrap .liveTrackingInner .liveTrackingImg .liveTrackingCont {
+    position: absolute;
+    background-color: #133148;
+    max-width: 800px;
+    padding: 40px;
+    right: 100px;
+    bottom: -100px;
+}
+.liveTrackingWrap .liveTrackingInner .liveTrackingImg .liveTrackingCont .h3 {
+    margin-bottom: 20px;
+}
+.gpsTrackingWrap {
+    margin-top: 100px;
 }

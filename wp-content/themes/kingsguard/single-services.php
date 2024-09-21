@@ -138,6 +138,17 @@ get_header();
                                                         <div class="securityServiceContInner">
                                                             <h4 class="h4"><?php echo $security_service_title; ?></h4>
                                                             <?php echo $security_service_description; ?>
+                                                            <?php 
+                                                                $security_service_button_text = get_sub_field('security_service_button_text');
+                                                                if(isset($security_service_button_text) && !empty($security_service_button_text)){
+                                                                $security_service_button_link = get_sub_field('security_service_button_link');
+                                                                $security_service_button_target = get_sub_field('security_service_button_target');
+                                                                $security_service_button_arialabel = get_sub_field('security_service_button_arialabel');
+                                                            ?> 
+                                                            <div class="securityServiceBtnWrap">
+                                                                <a href="<?php echo $security_service_button_link; ?>" class="btn-style gradientBtn" target="<?php echo $security_service_button_target; ?>" aria-label="<?php echo $security_service_button_arialabel; ?>"><?php echo $security_service_button_text; ?></a>
+                                                            </div>
+                                                            <?php } ?> 
                                                         </div>                                
                                                     </div>
                                                 <?php } ?>

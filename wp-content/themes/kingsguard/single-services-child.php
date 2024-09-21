@@ -8,32 +8,131 @@
 ?>
 
 <div class="pageBody childServicePage">
-    <?php 
+    <?php
         $montoring_banner_title = get_field('montoring_banner_title');
-        if(isset($montoring_banner_title) && !empty($montoring_banner_title))
+        if (isset($montoring_banner_title) && !empty($montoring_banner_title)) {
         $montoring_banner_des = get_field('montoring_banner_des');
-        $montoring_banner_bg_img = get_field('montoring_banner_bg_img');
-        $image_url = wp_get_attachment_image_src($montoring_banner_bg_img, 'full')[0]; {
-    ?> 
-    <div class="monitoringBannerWrap" style="background-image: url('<?php echo $image_url; ?>');">
-        <div class="sm_container">
-            <div class="monitoringBannerInner">
-                <div class="monitoringBannerCont animated-text" data-aos="fade-up" data-aos-duration="1000">
-                    <h1 class="h2"><?php echo $montoring_banner_title; ?></h1>
-                    <?php echo $montoring_banner_des; ?>
-                    <?php 
-                        $montoring_banner_btn_text = get_field('montoring_banner_btn_text');
-                        if(isset($montoring_banner_btn_text) && !empty($montoring_banner_btn_text)){
-                        $montoring_banner_btn_link = get_field('montoring_banner_btn_link');
-                        $montoring_banner_btn_target = get_field('montoring_banner_btn_target');
-                        $montoring_banner_btn_aria_label = get_field('montoring_banner_btn_aria_label');
-                    ?> 
-                    <div class="hiringBtnWrap">
-                        <div class="btnWrap">
-                            <a href="<?php echo $montoring_banner_btn_link; ?>" class="btn-style gradientBtn" target="<?php echo $montoring_banner_btn_target; ?>" aria-label="<?php echo $montoring_banner_btn_aria_label; ?>"><?php echo $montoring_banner_btn_text; ?></a>
-                        </div>
+    ?>
+    <section>
+        <div class="commonBannerWrapper">
+            <div class="sm_container">
+                <div class="commonBanner" data-aos="fade-down" data-aos-duration="1000">
+                    <div class="bannerContent">
+                        <h1 class="mb0 h2"> <?php echo $montoring_banner_title; ?> </h1>
+                        <div class="banner_cont"><?php echo $montoring_banner_des; ?></div>
                     </div>
-                    <?php } ?>   
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php } ?>
+
+    <?php 
+        $about_page_title = get_field('about_page_title');
+        if(isset($about_page_title) && !empty($about_page_title)) {
+        $about_page_description = get_field('about_page_description'); 
+    ?> 
+    <div class="guardTourSec py100">
+        <div class="sm_container">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="guardTourTitle" data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="mb0 h2 smHeading"><?php echo $about_page_title; ?> </h2>
+                        <div class=""><?php echo $about_page_description; ?></div>
+                    </div>
+                </div>
+                <?php
+                    $about_pg_image = get_field('about_pg_image');
+                    if (isset($about_pg_image) && !empty($about_pg_image)) {
+                        $image_url = wp_get_attachment_image_src($about_pg_image, 'full')[0];
+                        $image_alt = get_post_meta($about_pg_image, '_wp_attachment_image_alt', true);
+                ?>
+                <div class="col-md-6">
+                    <div class="guardTourImg" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+
+    <?php 
+        $live_tracking_title = get_field('live_tracking_title');
+        if(isset($live_tracking_title) && !empty($live_tracking_title)) {
+        $live_tracking_description = get_field('live_tracking_description');
+        $live_tracking_image = get_field('live_tracking_image');
+        $tracking_image_url = wp_get_attachment_image_src($live_tracking_image, 'full')[0]; 
+        $tracking_image_alt = get_post_meta($support_protect_image, '_wp_attachment_image_alt', true);
+    ?>
+    <div class="liveTrackingWrap">
+        <div class="sm_container">
+            <div class="liveTrackingInner">
+                <div class="liveTrackingImg" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="<?php echo esc_url($tracking_image_url); ?>" alt="<?php echo esc_attr($tracking_image_alt); ?>">
+                    <div class="liveTrackingCont animated-text" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="h3 smHeading"><?php echo $live_tracking_title; ?></h1>
+                        <?php echo $live_tracking_description; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+
+    <?php 
+        $support_protect_title = get_field('support_protect_title');
+        if(isset($support_protect_title) && !empty($support_protect_title)) {
+        $support_protect_description = get_field('support_protect_description'); 
+    ?> 
+    <div class="supportProtectSec py100">
+        <div class="sm_container">
+            <div class="supportProtectTitle" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="mb0 h2 smHeading"><?php echo $support_protect_title; ?> </h2>
+                <div class=""><?php echo $support_protect_description; ?></div>
+            </div>
+            <?php
+                $support_protect_image = get_field('support_protect_image');
+                if (isset($support_protect_image) && !empty($support_protect_image)) {
+                    $image_url = wp_get_attachment_image_src($support_protect_image, 'full')[0];
+                    $image_alt = get_post_meta($support_protect_image, '_wp_attachment_image_alt', true);
+            ?>
+            <div class="supportProtectImg" data-aos="fade-up" data-aos-duration="1000">
+                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+            </div>
+            <?php } ?>
+            <?php 
+                $identify_incident_title = get_field('identify_incident_title');
+                if(isset($identify_incident_title) && !empty($identify_incident_title)) {
+                $identify_incident_description = get_field('identify_incident_description'); 
+            ?> 
+            <div class="supportProtectTitle" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="mb0 h2 smHeading"><?php echo $identify_incident_title; ?> </h2>
+                <div class=""><?php echo $identify_incident_description; ?></div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+    <?php } ?>
+
+    <?php 
+        $gps_tracking_title = get_field('gps_tracking_title');
+        if(isset($gps_tracking_title) && !empty($gps_tracking_title)) {
+        $gps_tracking_description = get_field('gps_tracking_description');
+        $gps_tracking_image = get_field('gps_tracking_image');
+        $gps_image_url = wp_get_attachment_image_src($gps_tracking_image, 'full')[0]; 
+        $gps_image_alt = get_post_meta($support_protect_image, '_wp_attachment_image_alt', true);
+    ?>
+    <div class="liveTrackingWrap gpsTrackingWrap">
+        <div class="sm_container">
+            <div class="liveTrackingInner">
+                <div class="liveTrackingImg" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="<?php echo esc_url($gps_image_url); ?>" alt="<?php echo esc_attr($gps_image_alt); ?>">
+                    <div class="liveTrackingCont animated-text" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="h3 smHeading"><?php echo $gps_tracking_title; ?></h1>
+                        <?php echo $gps_tracking_description; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -281,67 +380,15 @@
         </div>
     </div>
     <?php } ?>
-
-    <?php if (have_rows('frequently_asked_questions')) : ?>    
-    <div class="faqSec py100">
-        <div class="sm_container">
-            <div class="row">
-                <?php 
-                    $frequently_asked_questions_title = get_field('frequently_asked_questions_title');
-                    if(isset($frequently_asked_questions_title) && !empty($frequently_asked_questions_title)) {
-                ?> 
-                <div class="col-md-4">
-                    <div class="faqTitle" data-aos="fade-up" data-aos-duration="1000">
-                        <h2 class="mb0 h2 smHeading"><?php echo $frequently_asked_questions_title; ?> </h2>
-                    </div>
-                </div>
-                <?php } ?>
-                
-                <div class="col-md-8">
-                    <div class="proMonitoringWrapper faqAccordian" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="accordion" id="faqAccordian">
-                            <?php $count = 0; while (have_rows('frequently_asked_questions')) : the_row(); ?>
-                            <div class="card">
-                                <?php 
-                                    $frequently_asked_questions_title = get_sub_field('frequently_asked_questions_title');
-                                    if(isset($frequently_asked_questions_title) && !empty($frequently_asked_questions_title)){
-                                ?> 
-                                <div class="card-header" id="headingg<?php echo $count; ?>">
-                                    <h3 class="h5 mb-0 <?php echo ($count === 0) ? '' : 'collapsed'; ?>" data-toggle="collapse" data-target="#collapsee<?php echo $count; ?>" aria-expanded="<?php echo ($count === 0) ? 'true' : 'false'; ?>" aria-controls="collapsee<?php echo $count; ?>">
-                                        <?php echo $frequently_asked_questions_title; ?>
-                                        <span class="accordPlusIcon <?php echo ($count === 0) ? 'minus' : 'plus'; ?>">
-                                        </span>
-                                    </h3>
-                                </div>
-                                <?php } ?>
-                                <?php 
-                                    $frequently_asked_questions_description = get_sub_field('frequently_asked_questions_description');
-                                    if(isset($frequently_asked_questions_description) && !empty($frequently_asked_questions_description)){
-                                ?> 
-                                <div id="collapsee<?php echo $count; ?>" class="collapse <?php echo ($count === 0) ? 'show' : ''; ?>" aria-labelledby="headingg<?php echo $count; ?>" data-parent="#faqAccordian">
-                                    <div class="card-body">
-                                        <?php echo $frequently_asked_questions_description; ?>                                      
-                                    </div>
-                                </div>
-                                <?php } ?>
-                            </div>
-                            <?php $count++; endwhile; ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php endif; wp_reset_query(); ?>
     
     <?php 
         $free_trial_title = get_field('free_trial_title');
-        if(isset($free_trial_title) && !empty($free_trial_title))
+        if(isset($free_trial_title) && !empty($free_trial_title)) {
         $free_trial_description = get_field('free_trial_description');
         $free_trial_background = get_field('free_trial_background');
         $image_url = wp_get_attachment_image_src($free_trial_background, 'full')[0];
         $free_trial_mob_background = get_field('free_trial_mob_background');
-        $mob_image_url = wp_get_attachment_image_src($free_trial_mob_background, 'full')[0]; {
+        $mob_image_url = wp_get_attachment_image_src($free_trial_mob_background, 'full')[0]; 
     ?> 
     <style>
         .freeTrialSec {
@@ -375,6 +422,29 @@
                         </div>
                     </div>
                     <?php } ?>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+
+    <?php 
+        $timely_reporting_title = get_field('timely_reporting_title');
+        if(isset($timely_reporting_title) && !empty($timely_reporting_title)) {
+        $timely_reporting_description = get_field('timely_reporting_description');
+        $timely_reporting_image = get_field('timely_reporting_image');
+        $timely_image_url = wp_get_attachment_image_src($timely_reporting_image, 'full')[0]; 
+        $timely_image_alt = get_post_meta($timely_reporting_image, '_wp_attachment_image_alt', true);
+    ?>
+    <div class="liveTrackingWrap">
+        <div class="sm_container">
+            <div class="liveTrackingInner">
+                <div class="liveTrackingImg" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="<?php echo esc_url($timely_image_url); ?>" alt="<?php echo esc_attr($timely_image_alt); ?>">
+                    <div class="liveTrackingCont animated-text" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="h3 smHeading"><?php echo $timely_reporting_title; ?></h1>
+                        <?php echo $timely_reporting_description; ?>
+                    </div>
                 </div>
             </div>
         </div>

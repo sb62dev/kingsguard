@@ -410,6 +410,9 @@
     .proMonitoringWrapper.proMonitorWrap {
         padding-right: 70px;
     }
+    .gpsTrackingWrap {
+        margin-top: 80px;
+    }
 }
 
 @media screen and ( max-width: 1199px ){
@@ -735,6 +738,19 @@ h3 {
 }
 .proMonitoringWrapper.proMonitorWrap {
     padding-right: 60px;
+}
+.guardTourSec .guardTourTitle {
+    margin-right: 50px;
+}
+.supportProtectSec .supportProtectImg {
+    margin: 40px auto;
+}
+.liveTrackingWrap .liveTrackingInner .liveTrackingImg .liveTrackingCont {
+    max-width: 700px;
+    padding: 30px;
+}
+.gpsTrackingWrap {
+    margin-top: 70px;
 }
 } 
 
@@ -1233,6 +1249,25 @@ h3 {
 }
 .proMonitoringWrapper.proMonitorWrap {
     padding-right: 50px;
+}
+.h2.smHeading {
+    font-size: 30px;
+}
+.guardTourSec .guardTourTitle {
+    margin-right: 20px;
+}
+.liveTrackingWrap {
+    margin-bottom: 60px;
+}
+.liveTrackingWrap .liveTrackingInner .liveTrackingImg .liveTrackingCont {
+    position: relative;
+    max-width: 100%;
+    padding: 30px;
+    right: 0;
+    bottom: 0;
+}
+.gpsTrackingWrap {
+    margin-top: 60px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -2203,6 +2238,18 @@ button.modal_close span {
 }
 .proMonitoringWrapper.proMonitorWrap {
     padding-right: 0;
+}
+.guardTourSec .guardTourTitle {
+    margin-right: 0;
+}
+.guardTourSec .guardTourImg {
+    margin-top: 20px;
+}
+.supportProtectSec .supportProtectImg {
+    margin: 30px auto;
+}
+.liveTrackingWrap .liveTrackingInner .liveTrackingImg .liveTrackingCont {
+    padding: 25px;
 }
 }
 @media only screen and (max-width: 600px) {
