@@ -329,7 +329,10 @@ function send_contact_user_email($email, $name) {
 
     // Replace placeholders with actual values 
     $message = str_replace('{{name}}', $name, $message); 
-    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: KingsGuard Security <noreply@kingsguard.ca>'
+    );
     wp_mail($email, $subject, $message, $headers);
 }
 
@@ -347,8 +350,11 @@ function send_contact_admin_email($name,$email,$phone,$service,$parkingservice,$
     $message = str_replace('{{parkingservice}}', $parkingservice, $message); 
     $message = str_replace('{{securityservice}}', $securityservice, $message); 
     $message = str_replace('{{sitetype}}', $sitetype, $message); 
-    $message = str_replace('{{addinfo}}', $addinfo, $message); 
-    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $message = str_replace('{{addinfo}}', $addinfo, $message);  
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: KingsGuard Security <noreply@kingsguard.ca>'
+    );
     wp_mail($adminemail, $subject, $message, $headers);
 }
 
