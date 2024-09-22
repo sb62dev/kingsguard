@@ -207,7 +207,10 @@ function send_applications_email($email, $firstname, $lastname, $job_title) {
     $message = str_replace('{{first_name}}', $firstname, $message);
     $message = str_replace('{{last_name}}', $lastname, $message);
     $message = str_replace('{{job_title}}', $job_title, $message);
-    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: KingsGuard Security <noreply@kingsguard.ca>'
+    );
     wp_mail($email, $subject, $message, $headers);
 }
 
@@ -221,7 +224,10 @@ function send_admin_applications_email($firstname, $lastname, $job_title) {
     $message = str_replace('{{first_name}}', $firstname, $message);
     $message = str_replace('{{last_name}}', $lastname, $message);
     $message = str_replace('{{job_title}}', $job_title, $message);
-    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: KingsGuard Security <noreply@kingsguard.ca>'
+    );
     wp_mail($adminemail, $subject, $message, $headers);
 }
 
