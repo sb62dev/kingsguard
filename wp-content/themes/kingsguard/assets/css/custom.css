@@ -4380,6 +4380,8 @@ input[type=checkbox], input[type=radio] {
 }
 .securityServiceSec .securityServiceBtnWrap {
     margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
 }
 .securityServiceSec .securityServiceBox {
     background-color: #1e1e20;
@@ -4874,4 +4876,17 @@ input[type=checkbox], input[type=radio] {
 }
 .gpsTrackingWrap {
     margin-top: 100px;
+}
+.liveTrackingWrap .liveTrackingImg {
+    height: 600px;
+}
+.liveTrackingWrap .liveTrackingImg img {
+    object-fit: cover;
+    height: 600px;
+    width: 100%;
+}
+.proMonitoringSec .proMonitoringVideo video {
+    height: auto;
+    border-radius: 0;
+    max-width: 100%;
 }

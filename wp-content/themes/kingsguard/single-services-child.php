@@ -236,15 +236,16 @@
                     </div>
                 </div>
                 <?php endif; wp_reset_query(); ?>
-                <?php
-                    $pro_montoring_img = get_field('pro_montoring_img');
-                    if (isset($pro_montoring_img) && !empty($pro_montoring_img)) {
-                        $image_url = wp_get_attachment_image_src($pro_montoring_img, 'full')[0];
-                        $image_alt = get_post_meta($pro_montoring_img, '_wp_attachment_image_alt', true);
-                ?>
+                <?php 
+                    $pro_montoring_video = get_field('pro_montoring_video');
+                    if(isset($pro_montoring_video) && !empty($pro_montoring_video)){
+                ?> 
                 <div class="col-md-6">
                     <div class="proMonitoringVideo" data-aos="fade-up" data-aos-duration="1000">
-                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                        <video id="proMonitoringVideo" loop controls>
+                            <source src="<?php echo $pro_montoring_video; ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>     
                     </div>
                 </div>
                 <?php } ?>

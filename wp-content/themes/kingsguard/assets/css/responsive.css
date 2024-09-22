@@ -1269,6 +1269,14 @@ h3 {
 .gpsTrackingWrap {
     margin-top: 60px;
 }
+.liveTrackingWrap .liveTrackingImg {
+    height: auto;
+}
+.liveTrackingWrap .liveTrackingImg img {
+    object-fit: inherit;
+    height: auto;
+    width: 100%;
+}
 } 
 @media screen and ( max-width: 767px ){
 p {
