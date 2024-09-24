@@ -111,12 +111,8 @@ function send_forgot_verification_email($email, $name, $reset_url) {
 
     // Replace placeholders with actual values
     $message = str_replace('{{reset_url}}', $reset_url, $message);
-    $message = str_replace('{{name}}', $name, $message); 
-    $headers = array(
-        'Content-Type: text/html; charset=UTF-8',
-        'From: KingsGuard Security <noreply@kingsguard.ca>'
-    );
-    wp_mail($email, $subject, $message, $headers);
+    $message = str_replace('{{name}}', $name, $message);  
+    send_email_via_outlook_api([$email], $subject, $message);  
 }
 
 ?>

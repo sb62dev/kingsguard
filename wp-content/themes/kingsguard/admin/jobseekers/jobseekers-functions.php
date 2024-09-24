@@ -1,7 +1,7 @@
 <?php
-
-define('ADMIN_EMAILS', 'operations@kingsguard.ca'); 
-define('ADMIN_EMAILS_QUOTE', 'quotes@kingsguard.ca'); 
+ 
+define('ADMIN_EMAILS', ['operations@kingsguard.ca']); 
+define('ADMIN_EMAILS_QUOTE', ['quotes@kingsguard.ca']); 
 
 /* Function to add common JS for Jobseekers */
 function enqueue_custom_jobseekers_scripts() {
@@ -296,3 +296,81 @@ function custom_jobseekers_dashboard_template_redirect() {
     }
 }
 add_action('template_redirect', 'custom_jobseekers_dashboard_template_redirect'); 
+
+// Outlook graph API
+function send_email_via_outlook_api($recipients, $subject, $message) {
+    $client_id = OUTLOOK_CLIENT_ID;
+    $client_secret = OUTLOOK_CLIENT_SECRET;
+    $tenant_id = OUTLOOK_TENANT_TOKEN; 
+    $outlook_email_id = 'noreply@kingsguard.ca'; 
+
+    // Get access token from Microsoft
+    $token_url = "https://login.microsoftonline.com/$tenant_id/oauth2/v2.0/token";
+    $token_body = array(
+        'client_id' => $client_id,
+        'scope' => 'https://graph.microsoft.com/.default',
+        'client_secret' => $client_secret,
+        'grant_type' => 'client_credentials',
+    );
+    
+    // Make request to get the access token
+    $response = wp_remote_post($token_url, array(
+        'body' => $token_body,
+    ));
+
+    $body = json_decode(wp_remote_retrieve_body($response)); 
+
+    if (!isset($body->access_token)) {
+        return false; // Handle error
+    }
+
+    $access_token = $body->access_token;
+
+    // Now send the email via Microsoft Graph API
+    $email_url = "https://graph.microsoft.com/v1.0/users/$outlook_email_id/sendMail";
+
+    // Prepare the email body
+    $toRecipients = array();
+    foreach ($recipients as $recipient) {
+        $toRecipients[] = array(
+            'emailAddress' => array(
+                'name' => ' ',
+                'address' => $recipient, 
+            ),
+        );
+    }
+
+    $email_body = json_encode(array(
+        'message' => array(
+            'subject' => $subject,
+            'body' => array(
+                'contentType' => 'HTML',
+                'content' => $message,
+            ),
+            'toRecipients' => $toRecipients,
+            'from' => array(
+                'emailAddress' => array(
+                    'address' => $outlook_email_id,
+                    'name' => 'KingsGuard Security',
+                )
+            ), 
+        ),
+    )); 
+
+    $response = wp_remote_post($email_url, array(
+        'body' => $email_body,
+        'headers' => array(
+            'Authorization' => 'Bearer ' . $access_token,
+            'Content-Type' => 'application/json',
+        ),
+    )); 
+
+    error_log('Email API Response: ' . print_r($response, true));
+
+    if (is_wp_error($response)) {
+        error_log('Email send error: ' . print_r($response->get_error_message(), true)); // Log error details
+        return false; // Handle error
+    }
+
+    return true; // Email sent successfully
+}

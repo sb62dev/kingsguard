@@ -199,12 +199,8 @@ function generate_newsletter_admin_email_html($email) {
 // Function to send email to user with replaced placeholders
 function send_newsletter_user_email($email) {
     $subject = 'Welcome to KingsGuard Security Newsletter!';
-    $message = generate_newsletter_user_email_html(); 
-    $headers = array(
-        'Content-Type: text/html; charset=UTF-8',
-        'From: KingsGuard Security <noreply@kingsguard.ca>'
-    );
-    wp_mail($email, $subject, $message, $headers);
+    $message = generate_newsletter_user_email_html();  
+    send_email_via_outlook_api([$email], $subject, $message);  
 }
 
 // Function to send email to admin with replaced placeholders
@@ -213,12 +209,8 @@ function send_newsletter_admin_email($email) {
     $adminemail= ADMIN_EMAILS;
     $message = generate_newsletter_admin_email_html($email);
     // Replace placeholders with actual values  
-    $message = str_replace('{{email}}', $email, $message);  
-    $headers = array(
-        'Content-Type: text/html; charset=UTF-8',
-        'From: KingsGuard Security <noreply@kingsguard.ca>'
-    );
-    wp_mail($adminemail, $subject, $message, $headers);
+    $message = str_replace('{{email}}', $email, $message);   
+    send_email_via_outlook_api($adminemail, $subject, $message); 
 }
 
 ?>
