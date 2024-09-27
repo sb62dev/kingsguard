@@ -2,29 +2,24 @@ jQuery(document).ready(function () {
 
     AOS.init();
 
-    // When an accordion is shown
     jQuery('.proMonitoringWrapper .accordion').on('show.bs.collapse', function (e) {
         jQuery(e.target).prev('.card-header').find('.accordPlusIcon').addClass('minus');
         jQuery(e.target).prev('.card-header').find('.accordPlusIcon').removeClass('plus');
     });
 
-    // When an accordion is hidden
     jQuery('.proMonitoringWrapper .accordion').on('hide.bs.collapse', function (e) {
         jQuery(e.target).prev('.card-header').find('.accordPlusIcon').addClass('plus');
         jQuery(e.target).prev('.card-header').find('.accordPlusIcon').removeClass('minus');
     });
 
-    // Hide the submenu on page load
     jQuery('.desktopSubMenuWrap').hide();
 
-    // Function to show the submenu with a transition
     function showSubmenu(submenuClass) {
         jQuery('.desktopSubMenuWrap .subMenuOptions > div').hide();
         jQuery('.desktopSubMenuWrap .' + submenuClass).show();
         jQuery('.desktopSubMenuWrap').slideDown(300).addClass('show');
     }
 
-    // Function to check for the presence of multichild_menu class and update HTML structure
     function updateSubMenuStructure(menuItem) {
         var $submenuDetails = jQuery(menuItem).find('.sub-menu').html();
         var hasMultiChild = jQuery(menuItem).hasClass('multichild_menu');
@@ -44,7 +39,6 @@ jQuery(document).ready(function () {
                 </div>
             `);
 
-            // Show the first child submenu by default
             var firstChild = jQuery('.submenuWrap.simpleList > li:first-child');
             if (firstChild.length) {
                 var firstChildSubmenu = firstChild.find('.sub-menu').html();
@@ -58,7 +52,6 @@ jQuery(document).ready(function () {
                 }
             }
 
-            // Add hover event for submenu items to show child submenu in childSubmenuWrap
             jQuery('.submenuWrap.simpleList > li').hover(
                 function () {
                     var childSubmenu = jQuery(this).find('.sub-menu').html();
@@ -908,3 +901,28 @@ jQuery(window).on('load', function() {
     });
 
 }); 
+
+jQuery(document).ready(function () {
+var proVideo = jQuery('#proMonitoringVideo');
+
+function isVideoInView() {
+    var videoTop = proVideo.offset().top;
+    var videoBottom = videoTop + proVideo.outerHeight();
+    var viewportTop = jQuery(window).scrollTop();
+    var viewportBottom = viewportTop + jQuery(window).height();
+
+    return videoBottom > viewportTop && videoTop < viewportBottom;
+}
+
+jQuery(window).on('scroll', function() {
+    if (isVideoInView()) {
+        proVideo[0].play();
+    } else {
+        proVideo[0].pause();
+    }
+});
+
+if (isVideoInView()) {
+    proVideo[0].play();
+}
+});

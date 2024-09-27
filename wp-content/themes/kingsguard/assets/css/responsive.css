@@ -2259,6 +2259,9 @@ button.modal_close span {
 .liveTrackingWrap .liveTrackingInner .liveTrackingImg .liveTrackingCont {
     padding: 25px;
 }
+.reportSecOuter .reportSecCont .btnWrap {
+    padding-top: 10px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {

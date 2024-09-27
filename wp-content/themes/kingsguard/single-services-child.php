@@ -242,7 +242,7 @@
                 ?> 
                 <div class="col-md-6">
                     <div class="proMonitoringVideo" data-aos="fade-up" data-aos-duration="1000">
-                        <video id="proMonitoringVideo" loop controls>
+                        <video id="proMonitoringVideo" loop controls muted>
                             <source src="<?php echo $pro_montoring_video; ?>" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>     

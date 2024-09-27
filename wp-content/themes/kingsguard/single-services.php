@@ -234,6 +234,17 @@ get_header();
                                                 </ul>
                                             </div>
                                             <?php endif; wp_reset_query(); ?>
+                                            <?php 
+                                                $report_button_text = get_field('report_button_text');
+                                                if(isset($report_button_text) && !empty($report_button_text)){
+                                                $report_button_link = get_field('report_button_link');
+                                                $report_button_target = get_field('report_button_target');
+                                                $report_button_aria_label = get_field('report_button_aria_label');
+                                            ?> 
+                                            <div class="btnWrap">
+                                                <a href="<?php echo $report_button_link; ?>" class="btn-style" target="<?php echo $report_button_target; ?>" aria-label="<?php echo $report_button_aria_label; ?>"><?php echo $report_button_text; ?></a>
+                                            </div>
+                                            <?php } ?>
                                         </div>                                
                                     </div>
                                 <?php } ?>

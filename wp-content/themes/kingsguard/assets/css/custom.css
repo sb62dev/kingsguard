@@ -4491,6 +4491,11 @@ input[type=checkbox], input[type=radio] {
 .reportSecOuter .reportImgSec .reportPlayBtnWrap .playBtn:hover i.after {
     transform: translate3d(5px,0,0);
 }
+.reportSecOuter .reportSecCont .btnWrap {
+    padding-top: 20px;
+    float: none;
+    clear: both;
+}
 .commonBannerWrapper.quoteWrapper .commonBanner {
     background: transparent;
     text-align: left;
