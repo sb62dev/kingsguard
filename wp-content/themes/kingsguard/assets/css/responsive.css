@@ -413,6 +413,10 @@
     .gpsTrackingWrap {
         margin-top: 80px;
     }
+    .proMonitoringVideoSec,
+    .proMonitoringVideoSec video {
+        height: 650px;
+    }
 }
 
 @media screen and ( max-width: 1199px ){
@@ -751,6 +755,10 @@ h3 {
 }
 .gpsTrackingWrap {
     margin-top: 70px;
+}
+.proMonitoringVideoSec,
+.proMonitoringVideoSec video {
+    height: 550px;
 }
 } 
 
@@ -1276,6 +1284,10 @@ h3 {
     object-fit: inherit;
     height: auto;
     width: 100%;
+}
+.proMonitoringVideoSec,
+.proMonitoringVideoSec video {
+    height: 500px;
 }
 } 
 @media screen and ( max-width: 767px ){
@@ -2262,6 +2274,10 @@ button.modal_close span {
 .reportSecOuter .reportSecCont .btnWrap {
     padding-top: 10px;
 }
+.proMonitoringVideoSec,
+.proMonitoringVideoSec video {
+    height: 400px;
+}
 }
 @media only screen and (max-width: 600px) {
     .wpforms-field {
@@ -2321,6 +2337,13 @@ button.modal_close span {
     }
     .monitoringBannerWrap, .monitoringBannerWrap .sm_container, .monitoringBannerWrap .sm_container .monitoringBannerInner {
         height: 350px;
+    }
+    .proMonitoringVideoSec,
+    .proMonitoringVideoSec video {
+        height: 350px;
+    }
+    .proMonitoringVideoSec .proVideoText .h2 {
+        max-width: 300px;
     }
 }
 

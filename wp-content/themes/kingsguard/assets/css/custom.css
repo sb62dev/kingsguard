@@ -4895,3 +4895,46 @@ input[type=checkbox], input[type=radio] {
     border-radius: 0;
     max-width: 100%;
 }
+.proMonitoringVideoSec {
+    position: relative;
+    width: 100%;
+    height: 730px;
+    overflow: hidden;
+}
+.proMonitoringVideoSec video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 730px;
+    object-fit: cover;
+}
+.proMonitoringVideoSec::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.proMonitoringVideoSec .proVideoText{
+    position: relative;
+    z-index: 2;
+}
+.proMonitoringVideoSec .proVideoText, 
+.proMonitoringVideoSec .proVideoText * {
+    height: 100%;
+    width: 100%;
+}
+.proMonitoringVideoSec .proVideoText .h2 {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}

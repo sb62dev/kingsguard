@@ -162,6 +162,30 @@ get_header();
                 </div>
             </section>
             <?php endif; wp_reset_query(); ?>
+            
+            <?php 
+                $live_mon_video_url = get_field('live_mon_video_url');
+                if(isset($live_mon_video_url) && !empty($live_mon_video_url)){
+            ?> 
+            <section>
+                <div class="proMonitoringVideoSec" data-aos="fade-up" data-aos-duration="1000">
+                    <video id="proMonitoringVid" autoplay muted loop controls playsinline>
+                        <source src="<?php echo $live_mon_video_url; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>  
+                    <?php 
+                        $live_mon_video_text = get_field('live_mon_video_text');
+                        if(isset($live_mon_video_text) && !empty($live_mon_video_text)){ 
+                    ?>   
+                    <div class="proVideoText">
+                        <div class="sm_container">
+                            <h4 class="h2"><?php echo $live_mon_video_text; ?></h4>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </section>
+            <?php } ?>
             <?php 
                 $resport_sec_title = get_field('resport_sec_title');
                 if(isset($resport_sec_title) && !empty($resport_sec_title)){ 
