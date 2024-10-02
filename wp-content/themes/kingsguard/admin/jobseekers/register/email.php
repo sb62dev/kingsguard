@@ -112,12 +112,8 @@ function send_verification_email($email, $firstname, $lastname, $verification_li
     // Replace placeholders with actual values
     $message = str_replace('{{verification_link}}', $verification_link, $message);
     $message = str_replace('{{first_name}}', $firstname, $message);
-    $message = str_replace('{{last_name}}', $lastname, $message);
-    $headers = array(
-        'Content-Type: text/html; charset=UTF-8',
-        'From: KingsGuard Security <noreply@kingsguard.ca>'
-    );
-    wp_mail($email, $subject, $message, $headers);
+    $message = str_replace('{{last_name}}', $lastname, $message); 
+    send_email_via_outlook_api([$email], $subject, $message);  
 }
 
 ?>

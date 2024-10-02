@@ -328,12 +328,8 @@ function send_contact_user_email($email, $name) {
     $message = generate_contact_user_email_html($name);
 
     // Replace placeholders with actual values 
-    $message = str_replace('{{name}}', $name, $message); 
-    $headers = array(
-        'Content-Type: text/html; charset=UTF-8',
-        'From: KingsGuard Security <noreply@kingsguard.ca>'
-    );
-    wp_mail($email, $subject, $message, $headers);
+    $message = str_replace('{{name}}', $name, $message);  
+    send_email_via_outlook_api([$email], $subject, $message);  
 }
 
 // Function to send email to admin with replaced placeholders
@@ -350,12 +346,8 @@ function send_contact_admin_email($name,$email,$phone,$service,$parkingservice,$
     $message = str_replace('{{parkingservice}}', $parkingservice, $message); 
     $message = str_replace('{{securityservice}}', $securityservice, $message); 
     $message = str_replace('{{sitetype}}', $sitetype, $message); 
-    $message = str_replace('{{addinfo}}', $addinfo, $message);  
-    $headers = array(
-        'Content-Type: text/html; charset=UTF-8',
-        'From: KingsGuard Security <noreply@kingsguard.ca>'
-    );
-    wp_mail($adminemail, $subject, $message, $headers);
+    $message = str_replace('{{addinfo}}', $addinfo, $message);   
+    send_email_via_outlook_api($adminemail, $subject, $message); 
 }
 
 ?>
